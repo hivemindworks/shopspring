@@ -1,0 +1,2 @@
+# shopspring
+redesigns for shopspring
