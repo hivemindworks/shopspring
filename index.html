@@ -8,14 +8,11 @@ layout: default
     </section>
 
     <h3 class="page-heading">Iterations</h4>
-    <section class="main-content">
-    
-    </section>
-    <ul class="post-list">
+    <ul class="post-list limit">
       {% for post in site.posts %}
         <li>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <span class="fr post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         </li>
       {% endfor %}
     </ul>
