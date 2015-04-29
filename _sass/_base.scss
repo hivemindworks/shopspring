@@ -1,14 +1,46 @@
-/**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
-}
+/*=========================================
+Reset
+=========================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
 
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
 
+body {
+  line-height: 1; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.group:before,
+.group:before,
+.group:after {
+  content: "";
+  display: table; }
+
+.group:after {
+  clear: both; }
+
+.group {
+  zoom: 1; }
 
 /**
  * Basic styling
@@ -28,9 +60,6 @@ body {
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
 }
@@ -63,8 +92,9 @@ figcaption {
 /**
  * Lists
  */
-ul, ol {
+ol {
     margin-left: $spacing-unit;
+    margin-bottom: 3em;
 }
 
 li {
@@ -83,7 +113,53 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
 
+%caps {
+  text-transform: uppercase;
+  color: #111;
+  font-weight: bold;
+  letter-spacing: .15em;
+}
 
+
+
+h1 {
+  font-size: 48px;
+  letter-spacing: .25em;
+  line-height: 6em;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 5em;
+}
+
+
+h3 {
+  @extend %caps;
+  line-height: 5em;
+
+}
+
+
+h4 {
+  @extend %caps;
+  font-size: 12px;
+  line-height: 5em;
+
+}
+
+h5 {
+  @extend %caps;
+  font-size: 10px;
+  line-height: 5em;
+
+}
+
+p {
+  line-height: 1.5em;
+  color: #777;
+  padding: 2em 0;
+}
 
 /**
  * Links
@@ -93,12 +169,11 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+      color: $brand-color;
     }
 
     &:hover {
-        color: $text-color;
-        text-decoration: underline;
+        color: darken($brand-color, 15%);
     }
 }
 
@@ -108,8 +183,6 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
     padding-left: $spacing-unit / 2;
     font-size: 18px;
     letter-spacing: -1px;
@@ -128,7 +201,7 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
+    border: 1px solid $gray;
     border-radius: 3px;
     background-color: #eef;
 }
@@ -148,44 +221,6 @@ pre {
     }
 }
 
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
-}
-
-
-
-/**
- * Clearfix
- */
-%clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
-
-
-
 /**
  * Icons
  */
@@ -198,7 +233,13 @@ pre {
         vertical-align: middle;
 
         path {
-            fill: $grey-color;
+            fill: $gray;
         }
     }
+}
+
+.wrapper {
+  max-width: 48em;
+  margin-left: auto;
+  margin-right: auto;
 }

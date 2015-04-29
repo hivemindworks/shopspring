@@ -6,17 +6,93 @@
 </description>
     <link>http://hivemind.works/shopspring/</link>
     <atom:link href="http://hivemind.works/shopspring/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 24 Apr 2015 11:29:16 -0700</pubDate>
-    <lastBuildDate>Fri, 24 Apr 2015 11:29:16 -0700</lastBuildDate>
+    <pubDate>Wed, 29 Apr 2015 00:09:02 -0700</pubDate>
+    <lastBuildDate>Wed, 29 Apr 2015 00:09:02 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Navigation Work: header/footer</title>
-        <description>
+        <description>&lt;p&gt;I began work by reviewing the PSDs Eli had been working on, and cross referencing them with the &lt;a href=&quot;https://drive.google.com/file/d/0BwNoUKizWBdnTG50SzB2MVhQWDg/view&quot;&gt;site map document&lt;/a&gt; Lisa shared with me.&lt;/p&gt;
+
+&lt;p&gt;I wanted to:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Determine which links would appear in both the signed in and signed out views&lt;/li&gt;
+  &lt;li&gt;Make/test assumptions on which links are more heirarchically important&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I started by familiarizing myself with the site map and deciding which links/pages were most heirachical. Displaying every endpoint in the header would be a poor solution, so I narrowed the scope to the following:&lt;/p&gt;
+
+&lt;h2 id=&quot;primary&quot;&gt;Primary&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Shop&lt;/li&gt;
+  &lt;li&gt;For Brands&lt;/li&gt;
+  &lt;li&gt;About&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;secondary&quot;&gt;Secondary&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Blog&lt;/li&gt;
+  &lt;li&gt;Developers&lt;/li&gt;
+  &lt;li&gt;Help&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I imagine that +90% of visitors will be users/customers/brands, which created the framework to choose the primary links. The secondary links are the ones I thought deserved a spot in the header, but would likely be used infrequently (If you have any analytics data on your footer links usage, that might be helpful).&lt;/p&gt;
+
+&lt;p&gt;I also think changing the Technology link/page to ‘Developers’ is strategic. Technology seems limiting and apersonal, whereas ‘Developers’ is directed at a group of individuals and more clearly can contain a broad set of content.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I then familiarized myself with Eli’s existing work. Below is Eli’s header, which organizes the ways you can narrow your shopping experience on the left, with app functionalities (account, favorites, search) on the left.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/headerSignedIn.png&quot; alt=&quot;eli&#39;s header&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In my first pass, I maintained the layout that Eli set in his mockups, with navigation links on the left and actionable elements on the right. In the site map document I saw that the ‘shop’ elements were out of scope, but I chose to show what the design should show once these elements are added.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/headerSignedOut.png&quot; alt=&quot;first pass&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I tested this design on multiple backgrounds as well:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/headerDark.png&quot; alt=&quot;dark&quot; /&gt;
+&lt;img src=&quot;/img/headerBlue.png&quot; alt=&quot;dark&quot; /&gt;
+&lt;img src=&quot;/img/headerImg.png&quot; alt=&quot;dark&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I still want to put more time into the button execution. I’m also interested in your thoughts on how I’ve chosen and organized the menu options.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;With the first take at the main navigation’s execution completed, I turned my attention to the secondary navigation.&lt;/p&gt;
+
+&lt;p&gt;I first wanted to experiment with using dropdowns as the secondary navigational elements.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/dropdown1.png&quot; alt=&quot;dropdown&quot; /&gt;
+&lt;img src=&quot;/img/dropdown4.png&quot; alt=&quot;dropdown&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While making these, I realized that they weren’t the best solutions. Since ‘About’ would have its own endpoint, a user would either need to double click (click to instantiate the dropdown, click to go to /about), or hover then click. Neither of these is ideal and I don’t think that surfacing the secondary nav in the header is very valuable. These links should always be present in the footer.&lt;/p&gt;
+
+&lt;p&gt;With that in mind, I worked on excuting a secondary nav that would exist on the page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/secondNav.png&quot; alt=&quot;2nd&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I could use &lt;a href=&quot;https://aerolab.github.io/midnight.js/&quot;&gt;midnight.js&lt;/a&gt; to make sure that the links were visible, even without a background color/container.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I also began work on the footer&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/footerLineHeight.png&quot; alt=&quot;footer&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Here is &lt;a href=&quot;/iterations/shopspring.html&quot;&gt;my progress on the working version&lt;/a&gt;, which includes work standardizing the scss. The code can be found &lt;a href=&quot;https://github.com/hivemindworks/shopspring&quot;&gt;on github&lt;/a&gt;. Let me know if you’d like me to make this repo private.&lt;/p&gt;
+
+&lt;p&gt;With the work on this started, I’ll be able to iterate more and more quickly. More importantly I can get started with creative coding (adding &lt;a href=&quot;http://dvncan.com/work/2014/06/01/news-app.html&quot;&gt;‘finger’ elements&lt;/a&gt; to springs web experience).&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 Apr 2015 12:18:45 -0700</pubDate>
-        <link>http://hivemind.works/shopspring/jekyll/update/2015/04/23/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://hivemind.works/shopspring/jekyll/update/2015/04/23/welcome-to-jekyll.html</guid>
+        <link>http://hivemind.works/shopspring/jekyll/update/2015/04/23/navigation.html</link>
+        <guid isPermaLink="true">http://hivemind.works/shopspring/jekyll/update/2015/04/23/navigation.html</guid>
         
         
         <category>jekyll</category>
