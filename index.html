@@ -10,7 +10,7 @@ layout: default
     <ul class="post-list limit">
       {% for post in site.posts %}
         <li>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a class="post-link" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
           <span class="fr post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         </li>
       {% endfor %}
