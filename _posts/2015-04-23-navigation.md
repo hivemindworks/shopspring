@@ -35,17 +35,17 @@ I also think changing the Technology link/page to 'Developers' is strategic. Tec
 
 I then familiarized myself with Eli's existing work. Below is Eli's header, which organizes the ways you can narrow your shopping experience on the left, with app functionalities (account, favorites, search) on the left. 
 
-![eli's header](/img/headerSignedIn.png)
+![eli's header]({{ site.url }}/img/headerSignedIn.png)
 
 In my first pass, I maintained the layout that Eli set in his mockups, with navigation links on the left and actionable elements on the right. In the site map document I saw that the 'shop' elements were out of scope, but I chose to show what the design should show once these elements are added.
 
-![first pass](/img/headerSignedOut.png)
+![first pass]({{ site.url }}/img/headerSignedOut.png)
 
 I tested this design on multiple backgrounds as well:
 
-![dark](/img/headerDark.png)
-![dark](/img/headerBlue.png)
-![dark](/img/headerImg.png)
+![dark]({{ site.url }}/img/headerDark.png)
+![dark]({{ site.url }}/img/headerBlue.png)
+![dark]({{ site.url }}/img/headerImg.png)
 
 I still want to put more time into the button execution. I'm also interested in your thoughts on how I've chosen and organized the menu options.
 
@@ -55,14 +55,14 @@ With the first take at the main navigation's execution completed, I turned my at
 
 I first wanted to experiment with using dropdowns as the secondary navigational elements.
 
-![dropdown](/img/dropdown1.png)
-![dropdown](/img/dropdown4.png)
+![dropdown]({{ site.url }}/img/dropdown1.png)
+![dropdown]({{ site.url }}/img/dropdown4.png)
 
 While making these, I realized that they weren't the best solutions. Since 'About' would have its own endpoint, a user would either need to double click (click to instantiate the dropdown, click to go to /about), or hover then click. Neither of these is ideal and I don't think that surfacing the secondary nav in the header is very valuable. These links should always be present in the footer.
 
 With that in mind, I worked on excuting a secondary nav that would exist on the page.
 
-![2nd](/img/secondNav.png)
+![2nd]({{ site.url }}/img/secondNav.png)
 
 I could use [midnight.js](https://aerolab.github.io/midnight.js/) to make sure that the links were visible, even without a background color/container.
 
@@ -70,10 +70,10 @@ I could use [midnight.js](https://aerolab.github.io/midnight.js/) to make sure t
 
 I also began work on the footer
 
-![footer](/img/footerLineHeight.png)
+![footer]({{ site.url }}/img/footerLineHeight.png)
 
 ---
 
-Here is [my progress on the working version](/iterations/shopspring.html), which includes work standardizing the scss. The code can be found [on github](https://github.com/hivemindworks/shopspring). Let me know if you'd like me to make this repo private.
+Here is [my progress on the working version](iterations/shopspring.html), which includes work standardizing the scss. The code can be found [on github](https://github.com/hivemindworks/shopspring). Let me know if you'd like me to make this repo private.
 
 With the work on this started, I'll be able to iterate more and more quickly. More importantly I can get started with creative coding (adding ['finger' elements](http://dvncan.com/work/2014/06/01/news-app.html) to springs web experience).
