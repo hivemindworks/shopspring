@@ -74,6 +74,6 @@ I also began work on the footer
 
 ---
 
-Here is [my progress on the working version](iterations/shopspring.html), which includes work standardizing the scss. The code can be found [on github](https://github.com/hivemindworks/shopspring). Let me know if you'd like me to make this repo private.
+Here is [my progress on the working version]({{ site.url }}/iterations/shopspring.html), which includes work standardizing the scss. The code can be found [on github](https://github.com/hivemindworks/shopspring). Let me know if you'd like me to make this repo private.
 
 With the work on this started, I'll be able to iterate more and more quickly. More importantly I can get started with creative coding (adding ['finger' elements](http://dvncan.com/work/2014/06/01/news-app.html) to springs web experience).
