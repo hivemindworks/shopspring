@@ -6,9 +6,67 @@
 </description>
     <link>http://hivemind.works/shopspring/</link>
     <atom:link href="http://hivemind.works/shopspring/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Apr 2015 09:01:07 -0700</pubDate>
-    <lastBuildDate>Wed, 29 Apr 2015 09:01:07 -0700</lastBuildDate>
+    <pubDate>Sun, 03 May 2015 13:45:11 -0500</pubDate>
+    <lastBuildDate>Sun, 03 May 2015 13:45:11 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Team Page design</title>
+        <description>&lt;p&gt;After meeting on wednesday, I began mapping out what elements would make for a successful team page. The goals for page, as outlined by Vivi are&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;show the value of the team&lt;/li&gt;
+  &lt;li&gt;show how the team is organized&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I spent some time thinking about the headspace of individuals that would visit the team page.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“Do I want to work at Spring?”&lt;/li&gt;
+  &lt;li&gt;“Who would I work with?”&lt;/li&gt;
+  &lt;li&gt;“What would my responsibilities be?”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these goals and use cases in mind, I made a list of elements that would solve them.&lt;/p&gt;
+
+&lt;h2 id=&quot;elements&quot;&gt;Elements&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Mission Statement
+    &lt;ul&gt;
+      &lt;li&gt;sell people on the goal&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;a “we’re hiring” callout, with a button to redirect to open positions&lt;/li&gt;
+  &lt;li&gt;blurb on how awesome the team is
+    &lt;ul&gt;
+      &lt;li&gt;backgrounds&lt;/li&gt;
+      &lt;li&gt;diversity stats?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Org Dept Navigation
+    &lt;ul&gt;
+      &lt;li&gt;Blurb about different departments, if selected&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Team members
+    &lt;ul&gt;
+      &lt;li&gt;bios&lt;/li&gt;
+      &lt;li&gt;photos&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Wed, 29 Apr 2015 14:18:45 -0500</pubDate>
+        <link>http://hivemind.works/shopspring/jekyll/update/2015/04/29/team.html</link>
+        <guid isPermaLink="true">http://hivemind.works/shopspring/jekyll/update/2015/04/29/team.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>Navigation Work: header/footer</title>
@@ -90,7 +148,7 @@
 
 &lt;p&gt;With the work on this started, I’ll be able to iterate more and more quickly. More importantly I can get started with creative coding (adding &lt;a href=&quot;http://dvncan.com/work/2014/06/01/news-app.html&quot;&gt;‘finger’ elements&lt;/a&gt; to springs web experience).&lt;/p&gt;
 </description>
-        <pubDate>Thu, 23 Apr 2015 12:18:45 -0700</pubDate>
+        <pubDate>Thu, 23 Apr 2015 14:18:45 -0500</pubDate>
         <link>http://hivemind.works/shopspring/jekyll/update/2015/04/23/navigation.html</link>
         <guid isPermaLink="true">http://hivemind.works/shopspring/jekyll/update/2015/04/23/navigation.html</guid>
         
