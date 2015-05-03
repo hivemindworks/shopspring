@@ -51,7 +51,6 @@ body {
   line-height: 1.5;
   font-weight: 300;
   color: #111;
-  background-color: #f9f9f9;
   -webkit-text-size-adjust: 100%; }
 
 /**
@@ -388,6 +387,21 @@ hr {
 footer nav {
   padding: 0;
   box-shadow: none; }
+
+.more:before {
+  content: 'more';
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 200ms ease-in;
+  text-transform: uppercase;
+  letter-spacing: .75px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500; }
+
+.dropdown-menu {
+  display: none; }
 
 /**
  * Syntax highlighting styles

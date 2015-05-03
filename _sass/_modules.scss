@@ -1,0 +1,16 @@
+.more:before {
+  content: 'more';
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 200ms ease-in;
+  text-transform: uppercase;
+  letter-spacing: .75px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.dropdown-menu {
+  display: none;
+}
