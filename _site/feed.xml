@@ -6,8 +6,8 @@
 </description>
     <link>http://hivemind.works/shopspring/shopspring/</link>
     <atom:link href="http://hivemind.works/shopspring/shopspring/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 May 2015 09:32:21 -0700</pubDate>
-    <lastBuildDate>Wed, 06 May 2015 09:32:21 -0700</lastBuildDate>
+    <pubDate>Wed, 06 May 2015 10:25:23 -0700</pubDate>
+    <lastBuildDate>Wed, 06 May 2015 10:25:23 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -58,7 +58,70 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://hivemind.works/shopspring/img/team/team-head-2.png&quot; alt=&quot;team head&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;header&quot;&gt;Header&lt;/h1&gt;
+
+&lt;p&gt;I didn’t want to go the typical route with a large splash image, which I think is overdone, often stagnant, and competes with the copy for attention.&lt;/p&gt;
+
+&lt;p&gt;To draw people to interact with the page, I’d like to add animations to the icons, similar to the old &lt;a href=&quot;http://www.thestarvedblog.co.za/whud-up/badass-blog-formfiftyfive-com/&quot;&gt;Form Fifty Five header&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Though I tested other layouts, I think 1 column centered approach works best for this typ of page. It degrades most elegantly on mobile, maintains a singular focus, and allows the grid to stay above the fold.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/team/team-2.png&quot; alt=&quot;team head&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;grid&quot;&gt;Grid&lt;/h1&gt;
+
+&lt;p&gt;I spent much of my time working out the besst way to display the team members. Though the list Spring uses currently works well from desktop to mobile, the affordances for interaction and play a grid provides seemed more valuable than a list to me.&lt;/p&gt;
+
+&lt;p&gt;I then began playing with the ways the grid could be executed.&lt;/p&gt;
+
+&lt;p&gt;The department sub-nav would remain sticky at the top of the page, and if a specific team was selected, a blurb on that teams resposibilities would appear directly beneath the sub-nav.&lt;/p&gt;
+
+&lt;p&gt;If we use an orthoganal grid of images, my first idea for a ‘finger’ was to mimic the brady bunch title sequence, having the team members follow the mouse around. I know I could pull this off in a perfomant way, but it would mean that each team member would need 6 pictures (looking straight, up, up-left, left, down-left, down. up-left, left, and down-left could be mirrored). I’d be happy to make a prototype using headshots of myself, if you’re interested in pursuing this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/team/team-grid-info.png&quot; alt=&quot;team head&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My second idea was to keep the typical grid, but swap the squares for circles, then add an interaction that draws people to explore, like &lt;a href=&quot;http://v2.desandro.com/articles/undulate/&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/team/team-circles-grid.png&quot; alt=&quot;team head&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/team/team-circles-grid-hover.png&quot; alt=&quot;team head&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;footer&quot;&gt;Footer&lt;/h1&gt;
+
+&lt;p&gt;I’m currently working on the footer, but I’d like your input.&lt;/p&gt;
+
+&lt;p&gt;What should be the reward for scrolling to the bottom of the team page? Another call out to see open positions? or maybe here is the place for the full page splash image, with a more prominent “Life at Spring” button.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;implementation&quot;&gt;Implementation&lt;/h1&gt;
+
+&lt;p&gt;You can see the changes to the implementation &lt;a href=&quot;/shopspring/iterations/team-1.html&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;progress&quot;&gt;Progress&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;More button&lt;/li&gt;
+  &lt;li&gt;Account buttons&lt;/li&gt;
+  &lt;li&gt;Styleguide refinement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;next&quot;&gt;Next&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;team page footer&lt;/li&gt;
+  &lt;li&gt;implement header icons&lt;/li&gt;
+  &lt;li&gt;implement interactive grid&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;add real content to team page&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;begin careers/engineering page&lt;/li&gt;
+&lt;/ul&gt;
 
 </description>
         <pubDate>Wed, 29 Apr 2015 12:18:45 -0700</pubDate>
