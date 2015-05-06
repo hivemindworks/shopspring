@@ -4,10 +4,10 @@
     <title>Shopspring + HiveMind</title>
     <description>Designs for Shopspring
 </description>
-    <link>http://hivemind.works/shopspring/</link>
-    <atom:link href="http://hivemind.works/shopspring/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 May 2015 01:34:00 -0700</pubDate>
-    <lastBuildDate>Wed, 06 May 2015 01:34:00 -0700</lastBuildDate>
+    <link>http://hivemind.works/shopspring/shopspring/</link>
+    <atom:link href="http://hivemind.works/shopspring/shopspring/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 06 May 2015 09:01:42 -0700</pubDate>
+    <lastBuildDate>Wed, 06 May 2015 09:01:42 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -60,8 +60,8 @@
 
 </description>
         <pubDate>Wed, 29 Apr 2015 12:18:45 -0700</pubDate>
-        <link>http://hivemind.works/shopspring/jekyll/update/2015/04/29/team.html</link>
-        <guid isPermaLink="true">http://hivemind.works/shopspring/jekyll/update/2015/04/29/team.html</guid>
+        <link>http://hivemind.works/shopspring/shopspring/jekyll/update/2015/04/29/team.html</link>
+        <guid isPermaLink="true">http://hivemind.works/shopspring/shopspring/jekyll/update/2015/04/29/team.html</guid>
         
         
         <category>jekyll</category>
@@ -151,8 +151,8 @@
 &lt;p&gt;With the work on this started, I’ll be able to iterate more and more quickly. More importantly I can get started with creative coding (adding &lt;a href=&quot;http://dvncan.com/work/2014/06/01/news-app.html&quot;&gt;‘finger’ elements&lt;/a&gt; to springs web experience).&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 Apr 2015 12:18:45 -0700</pubDate>
-        <link>http://hivemind.works/shopspring/jekyll/update/2015/04/23/navigation.html</link>
-        <guid isPermaLink="true">http://hivemind.works/shopspring/jekyll/update/2015/04/23/navigation.html</guid>
+        <link>http://hivemind.works/shopspring/shopspring/jekyll/update/2015/04/23/navigation.html</link>
+        <guid isPermaLink="true">http://hivemind.works/shopspring/shopspring/jekyll/update/2015/04/23/navigation.html</guid>
         
         
         <category>jekyll</category>
