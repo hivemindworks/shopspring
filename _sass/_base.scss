@@ -46,12 +46,13 @@ table {
  * Basic styling
  */
 body {
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    font-weight: 300;
-    color: $text-color;
-    -webkit-text-size-adjust: 100%;
+  font-family: 'Gotham A', 'Gotham B';
+  font-weight: 500;
+  font-style: normal;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $text-color;
+  -webkit-text-size-adjust: 100%;
 }
 
 
@@ -128,14 +129,13 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
-  line-height: 5em;
+  font-size: 2em;
+  line-height: 2em;
 }
 
 
 h3 {
-  @extend %caps;
-  line-height: 5em;
+  font-size: 1.25em;
 
 }
 
@@ -172,6 +172,19 @@ a {
 
     &:hover {
         color: darken($brand-color, 15%);
+    }
+
+    &.quiet {
+      color: $gray;
+      font-weight: 400;
+
+      &:hover {
+        color: #111;
+      }
+    }
+
+    &.small {
+      font-size: 11px;
     }
 }
 
