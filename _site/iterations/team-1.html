@@ -27,14 +27,24 @@
   <body>
     <style>
 
-  .grid {
-    list-style-type: none;
+  #grid {
+    min-height: 1px;
   }
   .grid li {
     float: left;
-    width: 33%;
-    height: 12em;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    margin: 1em;
+    transition: all .2s;
+    position: absolute;
   }
+
+  .grid li:hover {
+    width: 7em;
+    height: 7em;
+  }
+
   .grid li:nth-child(odd) {
     background-color: #e4e4e4;
     }
@@ -149,28 +159,145 @@
 
     </div>
 
-  <ul class='grid space-top2'>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+    <ul id='grid' class='space-top2'></ul>
   </div>
 
 
 </div>
 </div>
+
+<script>
+
+  var team = [
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+  ]
+
+  function getColor () {
+    //there are 360 distinct hue values in hsl
+    var h = Math.random() * 360;
+    // FUN FACT! ~~ is shorthand for Math.floor(). not relevant anymore, but still useful.
+
+    var color = "hsla(" + h + ", 75%, 60%, 1)";
+    return (color);
+  }
+
+  function Employee (x, y, size, data) {
+
+  }
+
+  function Team (element, spacing, employeeSize) {
+    this.element = element;
+    this.employeeSize = employeeSize;
+
+    //calculate the # of rows based on # of employees
+    var rows = Math.ceil(team.length/4.5);
+
+    this.width = this.element.offsetWidth;
+    this.height = ( employeeSize + (spacing*2) ) * rows;
+    //set height
+    this.element.style.height = this.height + 'px';
+
+
+
+
+
+    //calculate rows/columns based on size
+    //do I even need rows? maybe just columns.
+    //also, to get an offset grid i'll need to check if the row is even or odd, but I don't need a total row value for that
+    //total rows could be nice so I can center the final row though...
+
+    //for each employee in team make new employee object
+
+
+  }
+
+
+  new Team(document.getElementById('grid'), 60, 60)
+
+</script>
 
 <footer class='space-top4'>
   <div class='space-bottom2 clearfix'>
