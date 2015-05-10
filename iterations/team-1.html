@@ -194,7 +194,10 @@ layout: spring
   }
 
   function Employee (x, y, size, data) {
+    //create document fragment with the params
 
+
+    //add that shit to the Team element!
   }
 
   function Team (element, spacing, employeeSize) {
@@ -210,17 +213,19 @@ layout: spring
     this.element.style.height = this.height + 'px';
 
 
-
-
-
     //calculate rows/columns based on size
     //do I even need rows? maybe just columns.
     //also, to get an offset grid i'll need to check if the row is even or odd, but I don't need a total row value for that
     //total rows could be nice so I can center the final row though...
 
     //for each employee in team make new employee object
+    team.forEach(function ( employee, i ) {
+      rowCount = 0;
+      if ( i % 5 === 0 ) {
+      
+      }
 
-
+    })
   }
 
 

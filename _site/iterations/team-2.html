@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/style.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/custom.css" media="screen">
 
-    <link rel="canonical" href="http://hivemind.works/shopspring/shopspring/iterations/team-1.html">
+    <link rel="canonical" href="http://hivemind.works/shopspring/shopspring/iterations/team-2.html">
     <link rel="alternate" type="application/rss+xml" title="Shopspring + HiveMind" href="http://hivemind.works/shopspring/shopspring/feed.xml" />
   </head>
 
@@ -30,7 +30,11 @@
   #grid {
     min-height: 1px;
   }
-  .grid li {
+
+
+
+
+  #grid .employee {
     float: left;
     width: 5em;
     height: 5em;
@@ -40,16 +44,16 @@
     position: absolute;
   }
 
-  .grid li:hover {
+  #grid .employee:hover {
     width: 7em;
     height: 7em;
   }
 
-  .grid li:nth-child(odd) {
+  #grid .employee:nth-child(odd) {
     background-color: #e4e4e4;
     }
 
-  .grid li:nth-child(even) {
+    #grid .employee:nth-child(even) {
     background-color: #a7a7a7;
       }
 </style>
@@ -167,8 +171,15 @@
 </div>
 
 <script>
+/* Modernizr 2.0 (Custom Build) | MIT & BSD
+ * Contains: csstransforms | csstransforms3d | cssclasses | prefixed | teststyles | testprop | testallprops | prefixes | domprefixes
+ */
+/*global Modernizr: true */
+;window.Modernizr=function(a,b,c){function C(a,b){var c=a.charAt(0).toUpperCase()+a.substr(1),d=(a+" "+o.join(c+" ")+c).split(" ");return B(d,b)}function B(a,b){for(var d in a)if(k[a[d]]!==c)return b=="pfx"?a[d]:!0;return!1}function A(a,b){return!!~(""+a).indexOf(b)}function z(a,b){return typeof a===b}function y(a,b){return x(n.join(a+";")+(b||""))}function x(a){k.cssText=a}var d="2.0",e={},f=!0,g=b.documentElement,h=b.head||b.getElementsByTagName("head")[0],i="modernizr",j=b.createElement(i),k=j.style,l,m=Object.prototype.toString,n=" -webkit- -moz- -o- -ms- -khtml- ".split(" "),o="Webkit Moz O ms Khtml".split(" "),p={},q={},r={},s=[],t=function(a,c,d,e){var f,h,j,k=b.createElement("div");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:i+(d+1),k.appendChild(j);f=["&shy;","<style>",a,"</style>"].join(""),k.id=i,k.innerHTML+=f,g.appendChild(k),h=c(k,a),k.parentNode.removeChild(k);return!!h},u,v={}.hasOwnProperty,w;!z(v,c)&&!z(v.call,c)?w=function(a,b){return v.call(a,b)}:w=function(a,b){return b in a&&z(a.constructor.prototype[b],c)};var D=function(a,c){var d=a.join(""),f=c.length;t(d,function(a,c){var d=b.styleSheets[b.styleSheets.length-1],g=d.cssText||d.cssRules[0].cssText,h=a.childNodes,i={};while(f--)i[h[f].id]=h[f];e.csstransforms3d=i.csstransforms3d.offsetLeft===9},f,c)}([,["@media (",n.join("transform-3d),("),i,")","{#csstransforms3d{left:9px;position:absolute}}"].join("")],[,"csstransforms3d"]);p.csstransforms=function(){return!!B(["transformProperty","WebkitTransform","MozTransform","OTransform","msTransform"])},p.csstransforms3d=function(){var a=!!B(["perspectiveProperty","WebkitPerspective","MozPerspective","OPerspective","msPerspective"]);a&&"webkitPerspective"in g.style&&(a=e.csstransforms3d);return a};for(var E in p)w(p,E)&&(u=E.toLowerCase(),e[u]=p[E](),s.push((e[u]?"":"no-")+u));x(""),j=l=null,e._version=d,e._prefixes=n,e._domPrefixes=o,e.testProp=function(a){return B([a])},e.testAllProps=C,e.testStyles=t,e.prefixed=function(a){return C(a,"pfx")},g.className=g.className.replace(/\bno-js\b/,"")+(f?" js "+s.join(" "):"");return e}(this,this.document);
 
-  var team = [
+  
+
+var team = [
     {
       'photo': null,
       'name': 'Bob Bobbington',
@@ -255,6 +266,8 @@
     },
   ]
 
+  var transformProp = Modernizr.prefixed('transform');
+
   function getColor () {
     //there are 360 distinct hue values in hsl
     var h = Math.random() * 360;
@@ -264,12 +277,55 @@
     return (color);
   }
 
-  function Employee (x, y, size, data) {
+  function Employee (grid, x, y, size, data) {
     //create document fragment with the params
+    this.grid = grid;
+    this.x = x;
+    this.y = y;
 
+    this.gridOffset = {
+      x : this.grid.element.offsetLeft,
+      y : this.grid.element.offsetTop
+    };
 
+    this.element = document.createElement('div');
+    this.element.className = 'employee';
+
+    this.offset = {
+      x: 0,
+      y: 0
+    };
+
+    this.element.style.backgroundColor = getColor();
     //add that shit to the Team element!
+
+
+    this.transformedX = x;
+    this.transformedY = y;
+    this.scale = 1;
+    this.positionAndScale();
   }
+
+
+  if ( Modernizr.csstransforms && Modernizr.csstransforms3d ) {
+    // 3d transforms
+    Employee.prototype.positionAndScale = function() {
+      this.element.style[ transformProp ] = 'translate3d(' + this.transformedX + 'px, ' + this.transformedY + 'px, 0 ) scale3d(' + this.scale + ', ' + this.scale + ', 1)';
+    };
+  } else if ( Modernizr.csstransforms ) {
+    // 2d transforms
+    Employee.prototype.positionAndScale = function() {
+      this.element.style[ transformProp ] = 'translate(' + this.transformedX + 'px, ' + this.transformedY + 'px) scale(' + this.scale + ')';
+    };
+  } else {
+    // absolute positioning
+    Employee.prototype.positionAndScale = function() {
+      this.element.style.left = this.transformedX + 'px'; 
+      this.element.style.top = this.transformedY + 'px'; 
+    };
+
+  }
+
 
   function Team (element, spacing, employeeSize) {
     this.element = element;
@@ -279,28 +335,64 @@
     var rows = Math.ceil(team.length/4.5);
 
     this.width = this.element.offsetWidth;
-    this.height = ( employeeSize + (spacing*2) ) * rows;
+    this.height = ( employeeSize + (spacing*3) ) * rows;
     //set height
     this.element.style.height = this.height + 'px';
+    this.employees = new Array();
 
-
-    //calculate rows/columns based on size
-    //do I even need rows? maybe just columns.
-    //also, to get an offset grid i'll need to check if the row is even or odd, but I don't need a total row value for that
-    //total rows could be nice so I can center the final row though...
+    var frag = document.createDocumentFragment(),  
+    x,
+    y, 
+    row = 0, 
+    col = 0, 
+    colLength,
+    data, 
+    employee;
 
     //for each employee in team make new employee object
-    team.forEach(function ( employee, i ) {
-      rowCount = 0;
-      if ( i % 5 === 0 ) {
-      
+    for ( row = 0; row < team.length; row++ ) {
+
+
+      //if even
+      if ( row%2 == 0) {
+        colLength = 5;
+      } else {
+        colLength = 4; 
       }
 
-    })
+      if ( colLength%2 == 0 ) {
+        isEven = 1;
+      } else {
+        isEven = 0;
+      }
+      console.log(colLength);
+      for ( col = 0; col < colLength; col++ ) {
+        //figure out spacing
+        x = ( col * spacing ) + ( spacing*.5*isEven)
+        y = ( row * spacing );
+      
+
+      var size = 1;
+      //figure out what num FIX
+      data = team[row*col];
+
+
+
+      employee = new Employee( this, x, y, size, data )
+
+
+      //add employee to employee array
+      frag.appendChild( employee.element )
+      this.employees.push( employee )
+      }
+    }
+
+    //add employees array to the team grid
+    this.element.appendChild( frag );
   }
 
 
-  new Team(document.getElementById('grid'), 60, 60)
+  new Team(document.getElementById('grid'), 160, 60)
 
 </script>
 
