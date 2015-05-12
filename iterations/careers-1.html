@@ -1,0 +1,70 @@
+---
+layout: spring
+---
+
+<style>
+
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+
+    width: 58%;
+    padding-top: .4em;
+
+    background-color: #FFF;
+    border-bottom: 1px solid #e4e4e4;
+  }
+
+  #grid {
+    min-height: 1px;
+  }
+
+  #grid .employee {
+    float: left;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    margin: 1em;
+    transition: all .2s;
+    position: absolute;
+  }
+
+  #grid .employee:hover {
+    width: 7em;
+    height: 7em;
+  }
+
+  #grid .employee:nth-child(odd) {
+    background-color: #e4e4e4;
+    }
+
+    #grid .employee:nth-child(even) {
+    background-color: #a7a7a7;
+      }
+</style>
+
+{% include header-blue.html %}
+<div class="page-content clearfix blue">
+  <div class="wrapper team">
+    <h3 class='space-top2'>Life at Spring</h3>
+
+    <p>We're <span id='team-num'>42</span> curious and driven people</p>
+    <p>working together to make a better shopping experience.</p>
+
+    <a class='space-top4 btn btn-white btn-outline btn-small'>
+      View Open Positions
+    </a>
+    <hr class='space-top8' />
+
+    <ul id='grid' class='space-top2'></ul>
+  </div>
+
+
+</div>
+</div>
+
+
+{% include footer-1.html %}
+

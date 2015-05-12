@@ -7,280 +7,308 @@
 HEADER STYLES
 ==========================*/
 
-header {
-  text-transform: uppercase;
-  padding: 30px;
-  font-size: 11px;
-  box-shadow: 0px 1px 1px $gray-light;
-
-  .logo {
-  font-family: 'Gotham A', 'Gotham B'; 
-  font-weight: 500; 
-  font-style: normal;
-  font-size: 19px;
-  margin-right: 35px;
-  float: left;
-}
-
-.account {
-  margin-top: -10px;
-  font-size: 11px;
-  //BARF, fix this entire bit
-  height: 0em;
-  
-  a {
-    margin: 0px 6px;
-  }
-}
-}
-
-
-/*
-NAV STYLES
-==========================*/
-
-ul.nav {
-  list-style-type: none;
-  text-transform: uppercase;
-
-  &.sub-nav {
+  header {
+    text-transform: uppercase;
+    padding: 30px;
     font-size: 11px;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-  }
-}
+    position: relative;
+    box-shadow: 0px 1px 1px $gray-light;
 
-.nav li, .more {
-  float: left;
-  padding: 0 14px;
-  line-height: 2.7em;
-}
+    &.dark {
+      box-shadow: 0px 1px 0px rgba(17, 17, 17, 0.1);
 
-.nav a, .more {
-  color: $gray;
-  transition: all .3s;
+      .nav a, .more {
+        color: #FFF;
+      }
+    }
 
-  &:hover {
-    color: $gray-dark;
-  }
-}
+    .logo {
+      font-family: 'Gotham A', 'Gotham B'; 
+      font-weight: 500; 
+      font-style: normal;
+      font-size: 19px;
+      margin-right: 35px;
+      float: left;
+    }
 
-.nav.nav-secondary a {
-  color: $gray-light;
+    .account {
+      margin-top: -10px;
+      font-size: 11px;
+      //BARF, fix this entire bit
+      height: 0em;
 
-  &:hover {
-    color: $gray-dark;
-  }
-}
-
-/*
-FOOTER STYLES
-==========================*/
-
-footer {
-  overflow: auto;
-  width: 720px;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 12px;
-}
-
-footer nav {
-  font-family: 'Gotham A', 'Gotham B'; 
-  font-weight: 500; 
-  font-style: normal;
-  text-transform: uppercase;
-  float: left;
-}
-
-footer nav ul {
-  list-style-type: none;
-}
-
-footer .nav {
-  color: $gray-light;
-  font-family: 'Gotham A', 'Gotham B'; 
-  font-weight: 400; 
-  font-style: normal;
-}
-
-footer .nav li:first-child {
-  padding-left: 0px;
-}
-
-footer a {
-  color: $gray;
-}
-
-footer h3 {
-  font-family: 'Gotham A', 'Gotham B'; 
-  font-weight: 500; 
-  font-style: normal;
-  margin-bottom: 1em;
-
-  a, a:visited {
-    color: $text-color;
-  }
-}
-
-ul.post-list {
-list-style-type: none;
-margin: 3em 0em 6em;
-  float: left;
-}
-
-footer nav ul {
-  list-style-type: none;
-}
-
-/*
-BUTTON STYLES
-==========================*/
-
-.btn {
-  @extend %caps;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 12px;
-  background: #222;
-  padding: 20px 40px;
-  color: white;
-  border-radius: .35em;
-  -webkit-transition: background .15s ease;
-  &:hover {
-    background: #000;
-    -webkit-transition: background .15s ease;
-
-  }
-}
-
-.btn-outline {
-  border-width: 2px;
-  border-style: solid;
-  border-color: #111;
-  color: #111;
-  background-color: transparent;
-
-  &:hover {
-    background-color: #111;
-    color: #fff;
-  }
-
-  &.btn-secondary {
-    border-color: $gray;
-    color: $gray;
-
-    &:hover {
-      background-color: $gray;
+      a {
+        margin: 0px 6px;
+      }
     }
   }
 
-  &.btn-main {
-    border-color: $brand-color;
-    color: $brand-color;
+
+  /*
+  NAV STYLES
+  ==========================*/
+
+  ul.nav {
+    list-style-type: none;
+    text-transform: uppercase;
+
+    &.sub-nav {
+      font-size: 11px;
+      margin-left: auto;
+      margin-right: auto;
+      display: inline-block;
+    }
+  }
+
+  .nav li, .more {
+    float: left;
+    padding: 0 14px;
+    line-height: 2.7em;
+  }
+
+  .nav a, .more {
+    color: $gray-dark;
+    opacity: .3;
+    transition: all .3s;
 
     &:hover {
-      background-color: $brand-color;
+      opacity: 1;
+    }
+  }
+
+  .nav.nav-secondary a {
+    color: $gray-light;
+
+    &:hover {
+      color: $gray-dark;
+    }
+  }
+
+  /*
+  FOOTER STYLES
+  ==========================*/
+
+  footer {
+    overflow: auto;
+    width: 720px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 12px;
+  }
+
+  footer nav {
+    font-family: 'Gotham A', 'Gotham B'; 
+    font-weight: 500; 
+    font-style: normal;
+    text-transform: uppercase;
+    float: left;
+  }
+
+  footer nav ul {
+    list-style-type: none;
+  }
+
+  footer .nav {
+    color: $gray-light;
+    font-family: 'Gotham A', 'Gotham B'; 
+    font-weight: 400; 
+    font-style: normal;
+  }
+
+  footer .nav li:first-child {
+    padding-left: 0px;
+  }
+
+  footer a {
+    color: $gray;
+  }
+
+  footer h3 {
+    font-family: 'Gotham A', 'Gotham B'; 
+    font-weight: 500; 
+    font-style: normal;
+    margin-bottom: 1em;
+
+    a, a:visited {
+      color: $text-color;
+    }
+  }
+
+  ul.post-list {
+    list-style-type: none;
+    margin: 3em 0em 6em;
+    float: left;
+  }
+
+  footer nav ul {
+    list-style-type: none;
+  }
+
+  /*
+  BUTTON STYLES
+  ==========================*/
+
+  .btn {
+    @extend %caps;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    background: #222;
+    padding: 20px 40px;
+    color: white;
+    border-radius: .35em;
+    -webkit-transition: background .15s ease;
+    &:hover {
+      background: #000;
+      -webkit-transition: background .15s ease;
+
+    }
+  }
+
+  .btn-outline {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #111;
+    color: #111;
+    background-color: transparent;
+
+    &:hover {
+      background-color: #111;
       color: #fff;
     }
+
+    &.btn-secondary {
+      border-color: $gray;
+      color: $gray;
+
+      &:hover {
+        background-color: $gray;
+      }
+    }
+
+    &.btn-main {
+      border-color: $brand-color;
+      color: $brand-color;
+
+      &:hover {
+        background-color: $brand-color;
+        color: #fff;
+      }
+    }
+
+    &.btn-white {
+      border-color: #FFF;
+      color: #FFF;
+
+      &:hover {
+        color: $brand-color;
+        background-color: #fff;
+      }
+    }
+
+
   }
 
-}
+  .btn-small {
+    font-size: 11px;
+    padding: 15px 25px;
+    border-radius: 3px;
+  }
 
-.btn-small {
-  font-size: 11px;
-  padding: 15px 25px;
-  border-radius: 3px;
-}
+  .btn-tiny {
+    font-size: 9px;
+    padding: 13px 17px;
+  }
 
-.btn-tiny {
-  font-size: 9px;
-  padding: 13px 17px;
-}
-
-.btn-secondary {
-  background: white;
-  box-shadow: inset 0px 0px 0px 3px #eee;
-  -webkit-transition: box-shadow .15s ease;
-  color: #222;
-  &:hover {
+  .btn-secondary {
     background: white;
-    box-shadow: inset 0px 0px 0px 3px #ddd;
+    box-shadow: inset 0px 0px 0px 3px #eee;
     -webkit-transition: box-shadow .15s ease;
+    color: #222;
+    &:hover {
+      background: white;
+      box-shadow: inset 0px 0px 0px 3px #ddd;
+      -webkit-transition: box-shadow .15s ease;
+    }
   }
-}
 
-.btn-secondary.btn-tiny{
-  box-shadow: inset 0px 0px 0px 1.5px #eee;
-  &:hover {
-    box-shadow: inset 0px 0px 0px 1.5px #ddd;
-    -webkit-transition: box-shadow .15s ease;
+  .btn-secondary.btn-tiny{
+    box-shadow: inset 0px 0px 0px 1.5px #eee;
+    &:hover {
+      box-shadow: inset 0px 0px 0px 1.5px #ddd;
+      -webkit-transition: box-shadow .15s ease;
+    }
   }
-}
 
 
-.btn-secondary.btn-small{
-  box-shadow: inset 0px 0px 0px 2.5px #eee;
-  &:hover {
-    box-shadow: inset 0px 0px 0px 2.5px #ddd;
-    -webkit-transition: box-shadow .15s ease;
+  .btn-secondary.btn-small{
+    box-shadow: inset 0px 0px 0px 2.5px #eee;
+    &:hover {
+      box-shadow: inset 0px 0px 0px 2.5px #ddd;
+      -webkit-transition: box-shadow .15s ease;
+    }
   }
-}
 
-.team {
-  text-align: center;
+  .team {
+    text-align: center;
 
-  p {
-    color: #a7a7a7;
-    font-weight: 400;
-    padding: 0em;
+    p {
+      opacity: .6;
+      font-weight: 400;
+      padding: 0em;
+    }
   }
-}
 
-ul.post-list {
-list-style-type: none;
-margin: 3em 0em 6em;
-}
+  ul.post-list {
+    list-style-type: none;
+    margin: 3em 0em 6em;
+  }
 
-header.post-header {
-  padding: 40px 0px;
-  color: $gray;
-  text-transform: uppercase;
-  font-weight: 900;
-  margin-bottom: 2em;
-  box-shadow: none;
-}
+  header.post-header {
+    padding: 40px 0px;
+    color: $gray;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 2em;
+    box-shadow: none;
+  }
 
-.post-content { 
-  font-weight: bold; 
-  color: #444;
-  line-height: 1.25em;
-}
+  .post-content { 
+    font-weight: bold; 
+    color: #444;
+    line-height: 1.25em;
+  }
 
-.post-content img {
-  margin-top: 6em;
-  margin-bottom: 6em;
-  margin-left: -30%;
-  max-width: 160%;
-}
+  .post-content img {
+    margin-top: 6em;
+    margin-bottom: 6em;
+    margin-left: -30%;
+    max-width: 160%;
+  }
 
-.post-content img + img {
-margin-top: -2em;
-}
+  .post-content img + img {
+    margin-top: -2em;
+  }
 
-.post-content p {
-  margin-bottom: 1em;
-}
+  .post-content p {
+    margin-bottom: 1em;
+  }
 
-hr {
-  margin: 3em 0em 1em;
-  height: 1px;
-  border: 0; 
-  border-top: 1px solid #e4e4e4;
-}
+  hr {
+    margin: 3em 0em 1em;
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #e4e4e4;
+  }
 
-footer nav {
-padding: 0;
-box-shadow: none;
-}
+  footer nav {
+    padding: 0;
+    box-shadow: none;
+  }
+
+  //COLORS
+
+  .blue { 
+    color: #FFF;
+    background-color: $brand-color; 
+  }
