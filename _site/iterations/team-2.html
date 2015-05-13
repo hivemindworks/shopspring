@@ -27,25 +27,9 @@
   <body>
     <style>
 
-
-  .sticky {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-
-    width: 58%;
-    padding-top: .4em;
-
-    background-color: #FFF;
-    border-bottom: 1px solid #e4e4e4;
-  }
-
   #grid {
     min-height: 1px;
   }
-
-
-
 
   #grid .employee {
     float: left;
@@ -55,11 +39,14 @@
     margin: 1em;
     transition: all .2s;
     position: absolute;
+    cursor: pointer;
   }
 
   #grid .employee:hover {
     width: 7em;
     height: 7em;
+    margin-left: 0em;
+    margin-top: 0em;
   }
 
   #grid .employee:nth-child(odd) {
@@ -122,7 +109,7 @@
 
 <div class="page-content clearfix">
   <div class="wrapper team">
-    <h3 class='space-top2'>Our team</h3>
+    <h3 class='space-top2 space-bottom2'>Our team</h3>
 
     <p>We're <span id='team-num'>42</span> curious and driven people</p>
     <p>working together to make a better shopping experience</p>
@@ -131,7 +118,7 @@
     <p>mention the background of the team</p>
 
 
-    <h3 class='space-top4'>We're Hiring!</h3>
+    <h3 class='space-top4 space-bottom1'>We're Hiring!</h3>
     <a class='btn btn-main btn-outline btn-small'>
       View Open Positions
     </a>
@@ -180,6 +167,16 @@
     <ul id='grid' class='space-top2'></ul>
   </div>
 
+
+  <section class='space-top4 center'>
+    <h2>Looking for more?</h2>
+    <div class='space-top2'>
+    <a href=''>Check out how we work</a>
+    or <a href=''>view our open positions</a>
+    </div>
+  </section>
+
+  <hr/>
 
 </div>
 </div>
@@ -295,21 +292,7 @@ var team = [
 
   function placeNav(){
     var scrollTop = window.scrollY;
-
-    console.log(scrollTop);
-    /*
-    var windowWidth = $(window).innerWidth();
-    if (windowWidth > 640) {
-      if (scrollTop > stickyNavTop) {
-        $('.sticky-nav').addClass('sticky');
-        $('.sticky-nav + div').addClass('space-top4');
-      } else {
-        $('.sticky-nav').removeClass('sticky');
-        $('.sticky-nav + div').removeClass('space-top4');
-      }
-    }
-    */
-
+    
     if ( stickyNavTop >= scrollTop && hasClass(stickyNav, 'sticky') ) {
       stickyNav.className = 'center';
     }

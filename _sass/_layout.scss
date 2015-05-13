@@ -33,6 +33,12 @@ padding-left: 15px;
 SPACING
 ========================*/
 
+.space-bottom0 { margin-bottom: 0em; }
+.space-bottom1 { margin-bottom: 1em; }
+.space-bottom2 { margin-bottom: 2em; }
+.space-bottom4 { margin-bottom: 4em; }
+.space-bottom8 { margin-bottom: 8em; }
+
 .space-top0 { margin-top: 0em; }
 .space-top1 { margin-top: 1em; }
 .space-top2 { margin-top: 2em; }
@@ -42,3 +48,14 @@ SPACING
 .space-bottom2 {
   margin-bottom: 2em;
 }
+
+/*
+COLUMNZ
+========================*/
+
+.col6 { 
+  float: left; 
+  min-height: 1em;
+}
+
+.col6 { width: 50%; }

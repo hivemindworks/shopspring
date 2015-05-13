@@ -3,20 +3,6 @@ layout: spring
 ---
 
 <style>
-
-
-  .sticky {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-
-    width: 58%;
-    padding-top: .4em;
-
-    background-color: #FFF;
-    border-bottom: 1px solid #e4e4e4;
-  }
-
   #grid {
     min-height: 1px;
   }
@@ -38,33 +24,172 @@ layout: spring
 
   #grid .employee:nth-child(odd) {
     background-color: #e4e4e4;
-    }
+  }
 
-    #grid .employee:nth-child(even) {
+  #grid .employee:nth-child(even) {
     background-color: #a7a7a7;
-      }
+  }
 </style>
 
 {% include header-blue.html %}
-<div class="page-content clearfix blue">
-  <div class="wrapper team">
-    <h3 class='space-top2'>Life at Spring</h3>
+<div class="clearfix blue">
+  <div class="wrapper team ">
+    <h3 class='space-top4 space-bottom2'>
+      Life at Spring
+    </h3>
 
-    <p>We're <span id='team-num'>42</span> curious and driven people</p>
-    <p>working together to make a better shopping experience.</p>
+    <p class='space-top2'>Blurb that outlines why working for Spring is exceptional</p>
+    <p>Blurb that outlines why working for Spring is exceptional</p>
 
-    <a class='space-top4 btn btn-white btn-outline btn-small'>
+    <a class='space-top4 space-bottom8 btn btn-white btn-outline btn-small'>
       View Open Positions
     </a>
-    <hr class='space-top8' />
 
-    <ul id='grid' class='space-top2'></ul>
+  </div>
+</div>
+<div class="clearfix">
+  <div class="wrapper team">
+    <div id='nav-sticky' class='center'>
+      <nav class="clearfix center">
+        <ul class="nav sub-nav center clearfix">
+          <li>
+            <a href="/">
+              What we do
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              How we work
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              Where we work
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              Perks
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              Current Openings
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
   </div>
 
+  <div class='wrapper'>
+    <section class='clearfix'>
+      <div class='col6'>
+        <h4>What we do</h4>
+        <p class='space-bottom2'>
+          Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+
+          Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+        </p>
+
+        <a class='quiet' href='#'>Check out our Blog ></a>
+        <br/>
+        <a class='space-top1 quiet' href='#'>Take a look at our apps ></a>
+      </div>
+      <div class='col6'>
+      </div>
+
+    </section>
+    <hr/>
+    <section class='clearfix'>
+      <div class='col6'>
+      </div>
+      <div class='col6'>
+        <h4>How we work</h4>
+        <p>
+          Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+
+          Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+        </p>
+      </div>
+    </section>
+
+    <hr/>
+
+    <section class='clearfix'>
+      <div class='col6'>
+        <h4>Where we work</h4>
+        <p>
+          Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+
+          Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+        </p>
+      </div>
+      <div class='col6'>
+      </div>
+    </section>
+
+    <hr/>
+    
+    <section class='clearfix'>
+      <div class='col6'>
+      </div>
+      <div class='col6'>
+        <h4>Perks</h4>
+        <p>
+          Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+
+          Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+        </p>
+      </div>
+    </section>
+    <hr/>
+    <section class='clearfix center'>
+
+      <h3 class='space-bottom4'>Open Positions</h3>
+
+    <script type="text/javascript" id="rbox-loader-script">
+      _rbox = { host_protocol:document.location.protocol, ready:function(cb){this.onready=cb;} };
+      (function(d, e) {
+        var s, t, i, src=['/static/client-src-served/widget/18795/rbox_api.js', '/static/client-src-served/widget/18795/rbox_impl.js'];
+        t = d.getElementsByTagName(e); t=t[t.length - 1];
+        for(i=0; i<src.length; i++) {
+          s = d.createElement(e); s.src = _rbox.host_protocol + '//w.recruiterbox.com' + src[i];
+          t.parentNode.insertBefore(s, t.nextSibling);
+        }})(document, 'script');
+    </script>
+    </section>
+  </div>
+</div>
+<ul id='grid' class='space-top2'></ul>
 
 </div>
-</div>
 
+<script >
+  var stickyNav = document.getElementById('nav-sticky');  
+  var stickyNavTop = document.getElementById('nav-sticky').offsetTop;  
+
+  function init () {
+    window.addEventListener('scroll', function () {
+      placeNav()
+    })
+  }
+
+  function placeNav(){
+    var scrollTop = window.scrollY;
+
+    if ( stickyNavTop >= scrollTop && hasClass(stickyNav, 'sticky') ) {
+      stickyNav.className = 'center';
+    }
+    else if ( stickyNavTop <= scrollTop && !hasClass(stickyNav, 'sticky') ) {
+      stickyNav.className += ' sticky';
+    }
+  };
+
+  init();
+
+</script>
 
 {% include footer-1.html %}
 

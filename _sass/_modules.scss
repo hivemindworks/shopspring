@@ -1,3 +1,16 @@
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  width: 48em;
+  padding-top: .4em;
+
+  background-color: #FFF;
+  border-bottom: 1px solid #e4e4e4;
+
+}
+
 .more {
   &:before {
     content: 'more';
@@ -58,10 +71,9 @@
       color: $gray;
 
       &:hover {
-      color: $brand-color;
+        color: $brand-color;
       }
     }
   }
 }
-
 
