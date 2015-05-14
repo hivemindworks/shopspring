@@ -176,19 +176,6 @@ a {
     &:hover {
         color: darken($brand-color, 15%);
     }
-
-    &.quiet {
-      color: $gray;
-      font-weight: 400;
-
-      &:hover {
-        color: #111;
-      }
-    }
-
-    &.small {
-      font-size: 11px;
-    }
 }
 
 section {

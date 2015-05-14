@@ -6,9 +6,131 @@
 </description>
     <link>http://hivemind.works/shopspring/shopspring/</link>
     <atom:link href="http://hivemind.works/shopspring/shopspring/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 May 2015 08:30:34 -0700</pubDate>
-    <lastBuildDate>Wed, 13 May 2015 08:30:34 -0700</lastBuildDate>
+    <pubDate>Thu, 14 May 2015 02:03:56 -0700</pubDate>
+    <lastBuildDate>Thu, 14 May 2015 02:03:56 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Careers Page design, Team Page Continuation</title>
+        <description>&lt;h1 id=&quot;careers-page-work&quot;&gt;Careers page work&lt;/h1&gt;
+&lt;p&gt;Like I did with the Team page, I thought about the goals a visitor may have. If someone is considering spring as an employer, what questions would they have?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;What we do
+    &lt;ul&gt;
+      &lt;li&gt;products, moonshot goal&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How we work
+    &lt;ul&gt;
+      &lt;li&gt;processes, software&lt;/li&gt;
+      &lt;li&gt;show how the team is organized&lt;/li&gt;
+      &lt;li&gt;links to engineering blog&lt;/li&gt;
+      &lt;li&gt;photos might be nice&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Where we work
+    &lt;ul&gt;
+      &lt;li&gt;though we’re located at the wonderful 41 Union Sq West, New York, NY, we have Spring-ers all over the world&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;What are the perks?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The only set goal was to display the current open positions widget from recruiterbox, which I was able to do (though it still needs work).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;header&quot;&gt;Header&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/careers/map-4.png&quot; alt=&quot;careers head&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;sections&quot;&gt;Sections&lt;/h2&gt;
+
+&lt;p&gt;I thought of two hooks for the careers page section.&lt;/p&gt;
+
+&lt;p&gt;The first would be animated svgs (like the finger), or my work on &lt;a href=&quot;https://www.mapbox.com/auto/#14/37.7577/-122.4135&quot;&gt;mapbox auto&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/careers/sections-1.png&quot; alt=&quot;sections&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;recruiter-box&quot;&gt;Recruiter Box&lt;/h1&gt;
+
+&lt;p&gt;The bottom of the careers page would be the open positions (currentyl powered by recruiter box).&lt;/p&gt;
+
+&lt;p&gt;At the very bottom I think a make you own role position might be awesome (if that type of inquiry fits into your hiring strategy).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;implementation&quot;&gt;Implementation&lt;/h1&gt;
+
+&lt;p&gt;You can see the changes to the implementation &lt;a href=&quot;/shopspring/iterations/careers-1.html&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;progress&quot;&gt;Progress&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;dark header made&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Styleguide refinement&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;team-page-updates&quot;&gt;Team Page Updates&lt;/h1&gt;
+
+&lt;h2 id=&quot;header-1&quot;&gt;Header&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Letter Spacing&lt;/li&gt;
+  &lt;li&gt;new flair&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;creative commons&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/team/team-images.png&quot; alt=&quot;sections&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;neon&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Javascript Grid work (still need to implement rippling)&lt;/li&gt;
+  &lt;li&gt;sticky-nav (reused on the careers page)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;next&quot;&gt;Next&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;team page footer&lt;/li&gt;
+  &lt;li&gt;implement header icons&lt;/li&gt;
+  &lt;li&gt;implement interactive grid&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;add real content to team page&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;begin careers/engineering page&lt;/li&gt;
+  &lt;li&gt;modal work&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 14 May 2015 12:18:45 -0700</pubDate>
+        <link>http://hivemind.works/shopspring/shopspring/jekyll/update/2015/05/14/careers.html</link>
+        <guid isPermaLink="true">http://hivemind.works/shopspring/shopspring/jekyll/update/2015/05/14/careers.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>Team Page design</title>
