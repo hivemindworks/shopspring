@@ -6,13 +6,26 @@
 </description>
     <link>http://hivemind.works/shopspring/shopspring/</link>
     <atom:link href="http://hivemind.works/shopspring/shopspring/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 May 2015 02:03:56 -0700</pubDate>
-    <lastBuildDate>Thu, 14 May 2015 02:03:56 -0700</lastBuildDate>
+    <pubDate>Thu, 14 May 2015 11:17:47 -0700</pubDate>
+    <lastBuildDate>Thu, 14 May 2015 11:17:47 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Careers Page design, Team Page Continuation</title>
-        <description>&lt;h1 id=&quot;careers-page-work&quot;&gt;Careers page work&lt;/h1&gt;
+        <description>&lt;h2&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;I spent most of my time this week implementing the Team page grid, and working on the careers page. I continued to iterate on the team page (making edits to the footer and header). I also continued to building out the styleguide.&lt;/p&gt;
+
+&lt;p&gt;When does development work on the web app begin? It would be good if we could sync/work in tandem so as to share css assets.&lt;/p&gt;
+
+&lt;p&gt;You can see the most up-to-date implementations here:
+&lt;a href=&quot;/shopspring/iterations/careers-1.html&quot;&gt;Careers&lt;/a&gt;
+ &amp;amp; 
+&lt;a href=&quot;/shopspring/iterations/team-2.html&quot;&gt;Team&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;careers-page-work&quot;&gt;Careers page work&lt;/h1&gt;
 &lt;p&gt;Like I did with the Team page, I thought about the goals a visitor may have. If someone is considering spring as an employer, what questions would they have?&lt;/p&gt;
 
 &lt;ol&gt;
@@ -43,23 +56,35 @@
 
 &lt;h2 id=&quot;header&quot;&gt;Header&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/shopspring/img/careers/map-4.png&quot; alt=&quot;careers head&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/careers/map-5.png&quot; alt=&quot;careers head&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;sections&quot;&gt;Sections&lt;/h2&gt;
 
-&lt;p&gt;I thought of two hooks for the careers page section.&lt;/p&gt;
+&lt;p&gt;I thought of two hooks for the careers page sections.&lt;/p&gt;
 
 &lt;p&gt;The first would be animated svgs (like the finger), or my work on &lt;a href=&quot;https://www.mapbox.com/auto/#14/37.7577/-122.4135&quot;&gt;mapbox auto&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/shopspring/img/careers/sections-1.png&quot; alt=&quot;sections&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The second would be to reuse the code and theme from the team page in a new wa, arranging photos in a way to make them exciting to explore&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/careers/section-how-2.png&quot; alt=&quot;where&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The final idea was to include a world map with the locations of all Spring-ers&lt;/p&gt;
+
+&lt;p&gt;This execution needs work though.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/careers/section-where-1.png&quot; alt=&quot;where&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;recruiter-box&quot;&gt;Recruiter Box&lt;/h1&gt;
 
 &lt;p&gt;The bottom of the careers page would be the open positions (currentyl powered by recruiter box).&lt;/p&gt;
+
+&lt;p&gt;I need to continue working with recruiter box to allow people to filter by department.&lt;/p&gt;
 
 &lt;p&gt;At the very bottom I think a make you own role position might be awesome (if that type of inquiry fits into your hiring strategy).&lt;/p&gt;
 
@@ -107,19 +132,42 @@
 
 &lt;hr /&gt;
 
+&lt;h2 id=&quot;the-grid&quot;&gt;The Grid&lt;/h2&gt;
+
+&lt;p&gt;powered by a JSON object, dynamically placed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/team/employee.png&quot; alt=&quot;employee&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;now I need to add the ripple effect, real data, and a better hover state.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;footer&quot;&gt;Footer&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/shopspring/img/team/team-footer-2.png&quot; alt=&quot;footer&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I want to test out buttons here as well.&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;h1 id=&quot;next&quot;&gt;Next&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;team page footer&lt;/li&gt;
-  &lt;li&gt;implement header icons&lt;/li&gt;
-  &lt;li&gt;implement interactive grid&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;add real content to team page&lt;/p&gt;
+    &lt;p&gt;work more closely with Chris Diken to begin adding real content&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;begin careers/engineering page&lt;/li&gt;
-  &lt;li&gt;modal work&lt;/li&gt;
+  &lt;li&gt;implement interactive grid pulsing/rippling&lt;/li&gt;
+  &lt;li&gt;add real content to team page&lt;/li&gt;
+  &lt;li&gt;implement map on careers page&lt;/li&gt;
+  &lt;li&gt;iterate on recruiterbox style&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;implement careers section filter&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;modal work&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;start on engineering/press&lt;/li&gt;
 &lt;/ul&gt;
-
 </description>
         <pubDate>Thu, 14 May 2015 12:18:45 -0700</pubDate>
         <link>http://hivemind.works/shopspring/shopspring/jekyll/update/2015/05/14/careers.html</link>
