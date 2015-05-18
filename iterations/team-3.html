@@ -1,0 +1,461 @@
+---
+layout: spring
+---
+
+<style>
+
+  #grid {
+    min-height: 1px;
+  }
+
+  #grid .employee {
+    float: left;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    margin: 1em;
+    transition: all .2s;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  #grid .employee:hover {
+    width: 7em;
+    height: 7em;
+    margin-left: 0em;
+    margin-top: 0em;
+  }
+
+  #grid .employee:nth-child(odd) {
+    background-color: #e4e4e4;
+    }
+
+    #grid .employee:nth-child(even) {
+    background-color: #a7a7a7;
+      }
+</style>
+
+{% include header-2.html %}
+<div class="page-content clearfix">
+  <div class="wrapper center team">
+    <h3 class='space-top2 space-bottom2'>Our team</h3>
+
+    <p>We're <span id='team-num'>42</span> curious and driven people</p>
+    <p>working together to make a better shopping experience</p>
+
+    <p class='space-top2'>mention the background of the team</p>
+    <p>mention the background of the team</p>
+
+
+    <h3 class='space-top4 space-bottom1'>We're Hiring!</h3>
+    <a class='btn btn-main btn-outline btn-small'>
+      View Open Positions
+    </a>
+    <div  class='space-top1'>
+    <a href='#' class='quiet small'>Life at Spring ></a>
+    </div>
+    <hr/>
+    <div id='nav-sticky' class='center'>
+      <nav class="clearfix center">
+        <ul class="nav sub-nav center clearfix">
+          <li>
+            <a href="/">
+              Engineering
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              Design
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              Marketing
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              Operations
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              Brand
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              Leadership
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <ul id='grid' class='space-top2'></ul>
+  </div>
+
+
+  <section class='space-top4 center'>
+    <h2>Looking for more?</h2>
+    <div class='space-top2'>
+    <a href=''>Check out how we work</a>
+    or <a href=''>view our open positions</a>
+    </div>
+  </section>
+
+  <hr/>
+
+</div>
+</div>
+
+<script>
+/* Modernizr 2.0 (Custom Build) | MIT & BSD
+ * Contains: csstransforms | csstransforms3d | cssclasses | prefixed | teststyles | testprop | testallprops | prefixes | domprefixes
+ */
+/*global Modernizr: true */
+;window.Modernizr=function(a,b,c){function C(a,b){var c=a.charAt(0).toUpperCase()+a.substr(1),d=(a+" "+o.join(c+" ")+c).split(" ");return B(d,b)}function B(a,b){for(var d in a)if(k[a[d]]!==c)return b=="pfx"?a[d]:!0;return!1}function A(a,b){return!!~(""+a).indexOf(b)}function z(a,b){return typeof a===b}function y(a,b){return x(n.join(a+";")+(b||""))}function x(a){k.cssText=a}var d="2.0",e={},f=!0,g=b.documentElement,h=b.head||b.getElementsByTagName("head")[0],i="modernizr",j=b.createElement(i),k=j.style,l,m=Object.prototype.toString,n=" -webkit- -moz- -o- -ms- -khtml- ".split(" "),o="Webkit Moz O ms Khtml".split(" "),p={},q={},r={},s=[],t=function(a,c,d,e){var f,h,j,k=b.createElement("div");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:i+(d+1),k.appendChild(j);f=["&shy;","<style>",a,"</style>"].join(""),k.id=i,k.innerHTML+=f,g.appendChild(k),h=c(k,a),k.parentNode.removeChild(k);return!!h},u,v={}.hasOwnProperty,w;!z(v,c)&&!z(v.call,c)?w=function(a,b){return v.call(a,b)}:w=function(a,b){return b in a&&z(a.constructor.prototype[b],c)};var D=function(a,c){var d=a.join(""),f=c.length;t(d,function(a,c){var d=b.styleSheets[b.styleSheets.length-1],g=d.cssText||d.cssRules[0].cssText,h=a.childNodes,i={};while(f--)i[h[f].id]=h[f];e.csstransforms3d=i.csstransforms3d.offsetLeft===9},f,c)}([,["@media (",n.join("transform-3d),("),i,")","{#csstransforms3d{left:9px;position:absolute}}"].join("")],[,"csstransforms3d"]);p.csstransforms=function(){return!!B(["transformProperty","WebkitTransform","MozTransform","OTransform","msTransform"])},p.csstransforms3d=function(){var a=!!B(["perspectiveProperty","WebkitPerspective","MozPerspective","OPerspective","msPerspective"]);a&&"webkitPerspective"in g.style&&(a=e.csstransforms3d);return a};for(var E in p)w(p,E)&&(u=E.toLowerCase(),e[u]=p[E](),s.push((e[u]?"":"no-")+u));x(""),j=l=null,e._version=d,e._prefixes=n,e._domPrefixes=o,e.testProp=function(a){return B([a])},e.testAllProps=C,e.testStyles=t,e.prefixed=function(a){return C(a,"pfx")},g.className=g.className.replace(/\bno-js\b/,"")+(f?" js "+s.join(" "):"");return e}(this,this.document);
+
+  
+
+var team = [
+    {
+      'photo': null,
+      'name': 'Tobias Funke',
+      'bio': 'Yeah, that\'s a cultural problem is what it is. You know, your average American male is in a perpetual state of adolescence, you know, arrested development. (Hey. That\'s the name of the show!) Bob Loblaw Law Blog',
+      'team': 'Leadership',
+      'role': 'Analyst/Therapist',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+    {
+      'photo': null,
+      'name': 'Bob Bobbington',
+      'bio': 'blah blah blah I\'m bob',
+      'link': ''
+    },
+  ]
+
+  var transformProp = Modernizr.prefixed('transform');
+  var stickyNav = document.getElementById('nav-sticky');  
+  var stickyNavTop = document.getElementById('nav-sticky').offsetTop;  
+
+  //mouse info
+  var isTouch = !!('createTouch' in document),
+    cursorStartEvent = isTouch ? 'touchstart' : 'mousedown',
+    cursorMoveEvent = isTouch ? 'touchmove' : 'mousemove',
+    cursorEndEvent = isTouch ? 'touchend' : 'mouseup';
+  var mouseX = 0;
+  var mouseY = 0;
+
+
+  //animation code 
+  // shim layer with setTimeout fallback
+  // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+  var requestAnimFrame = (function(){
+    return  window.requestAnimationFrame       || 
+      window.webkitRequestAnimationFrame || 
+      window.mozRequestAnimationFrame    || 
+      window.oRequestAnimationFrame      || 
+      window.msRequestAnimationFrame     || 
+      function( callback, element){
+      window.setTimeout(callback, 1000 / 60);
+    };
+  })();
+
+  function placeNav(){
+    var scrollTop = window.scrollY;
+    
+    if ( stickyNavTop >= scrollTop && hasClass(stickyNav, 'sticky') ) {
+      stickyNav.className = 'center';
+    }
+    else if ( stickyNavTop <= scrollTop && !hasClass(stickyNav, 'sticky') ) {
+      stickyNav.className += ' sticky';
+    }
+  };
+
+  function hasClass(element, cls) {
+      return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+  }
+
+  function isInArray(value, array) {
+    return array.indexOf(value) > -1;
+  }
+
+  function getColor () {
+    //there are 360 distinct hue values in hsl
+    var h = Math.random() * 360;
+    // FUN FACT! ~~ is shorthand for Math.floor(). not relevant anymore, but still useful.
+
+    var color = "hsla(" + h + ", 75%, 60%, 1)";
+    return (color);
+  }
+
+  function Employee (team, x, y, size, data) {
+    //create document fragment with the params
+    this.team = team;
+    this.x = x;
+    this.y = y;
+
+    this.gridOffset = {
+      x : this.team.element.offsetLeft,
+      y : this.team.element.offsetTop
+    };
+
+    this.element = document.createElement('div');
+    this.element.className = 'employee';
+
+    this.offset = {
+      x: 0,
+      y: 0
+    };
+
+    this.element.style.backgroundColor = getColor();
+    //add that shit to the Team element!
+
+
+    this.transformedX = x;
+    this.transformedY = y;
+    this.scale = 1;
+    this.positionAndScale();
+  }
+
+  Employee.prototype.render = function () {
+
+    var node, cursor, distance, angle;
+
+    //get orginal position
+    //if closest point, then turn black
+    for ( node in this.team.cursors ) {
+      cursor = this.team.cursors[ node ];
+    }
+
+
+    //get transformed position
+
+    //position the element 
+    this.positionAndScale();
+  };
+
+  if ( Modernizr.csstransforms && Modernizr.csstransforms3d ) {
+    // 3d transforms
+    Employee.prototype.positionAndScale = function() {
+      this.element.style[ transformProp ] = 'translate3d(' + this.transformedX + 'px, ' + this.transformedY + 'px, 0 ) scale3d(' + this.scale + ', ' + this.scale + ', 1)';
+    };
+  } else if ( Modernizr.csstransforms ) {
+    // 2d transforms
+    Employee.prototype.positionAndScale = function() {
+      this.element.style[ transformProp ] = 'translate(' + this.transformedX + 'px, ' + this.transformedY + 'px) scale(' + this.scale + ')';
+    };
+  } else {
+    // absolute positioning
+    Employee.prototype.positionAndScale = function() {
+      this.element.style.left = this.transformedX + 'px'; 
+      this.element.style.top = this.transformedY + 'px'; 
+    };
+
+  }
+
+  function Team (element, spacing, employeeSize) {
+    this.element = element;
+    this.employeeSize = employeeSize;
+
+    //calculate the # of rows based on # of employees
+    var rows = Math.ceil(team.length/4.5);
+
+    this.width = this.element.offsetWidth;
+    this.height = ( employeeSize + (spacing*3) ) * rows;
+    //set height
+    this.element.style.height = this.height + 'px';
+
+    //listen for cursor event
+    this.element.addEventListener( cursorMoveEvent, this, false );
+
+    this.employees = new Array();
+    this.cols = new Array();
+    this.rows = new Array();
+
+    var frag = document.createDocumentFragment(),  
+    x,
+    y, 
+    row = 0, 
+    col = 0, 
+    colLength,
+    isEven,
+    data, 
+    employee;
+
+    //for each employee in team make new employee object
+    for ( row = 0; row < team.length; row++ ) {
+
+      // determine number of columns
+      //if the row is even columns == 5, else 4
+      //isEven is neccessary for the spacing function
+      //5 column rows have no leading space, where 4 column rows do
+      if ( row%2 == 0) {
+        colLength = 5;
+        isEven = 0;
+      } else {
+        colLength = 4; 
+        isEven = 1;
+      }
+
+     for ( col = 0; col < colLength; col++ ) {
+      //figure out spacing
+      x = ( col * spacing ) + ( spacing*.5*isEven)
+      y = ( row * spacing );
+      
+      //add x and y to rows and cols arrays
+      //use these to check for closest node
+      if ( !isInArray(x, this.rows) ) { this.rows.push(x) }
+      if ( !isInArray(y, this.cols) ) { this.cols.push(y) }
+
+      var size = 1;
+      //figure out what num FIX
+      //what needs to be fixed?
+      data = team[row*col];
+
+      employee = new Employee( this, x, y, size, data )
+
+      //add employee to employee array
+      frag.appendChild( employee.element )
+      this.employees.push( employee )
+      }
+    }// end employee circle placement
+
+    //add employees array to the team grid
+    this.element.appendChild( frag );
+
+    this.cursors = {};
+
+    this.animate();
+  }
+
+  Team.prototype.setClosest = function () {
+    if ( this.cursors.mouse ) {
+     var cursor = this.cursors.mouse,
+        x = cursor.pageX, 
+        y = cursor.pageY;
+    
+     //find closest based on this.cols & this.rows
+
+     //use closest coordinates to set isClosest property of that node
+    }
+  };
+
+  //animation loop
+  Team.prototype.animate = function () {
+    //add employee render loop
+
+    var instance = this;
+  
+    this.setClosest();
+
+    for ( var i = 0, len = this.employees.length; i < len; i++ ) {
+
+      this.employees[i].render();
+    }
+    //push animation frame
+    requestAnimFrame( function(){ instance.animate(); } );
+  };
+
+  Team.prototype.handleEvent = function( event ) {
+    //if Team has the correct mappings to mouse events
+      if ( this[event.type] ) {
+        this[event.type](event);
+      }
+  };
+
+  Team.prototype.mousemove = function( cursor ) {
+      //for every mouse move, save cursor
+      //use cursor variable in the Employee.prototype.render method
+      this.cursors.mouse = cursor;
+  };
+
+  //WE HAVE LIFTOFF IN 3...2...1....
+  function init () {
+    new Team(document.getElementById('grid'), 160, 60)
+    window.addEventListener('scroll', function () {
+    
+    placeNav()
+    })
+  }
+
+  //LETS GOOOOOOO!
+  window.addEventListener( 'load', init, false); 
+</script>
+
+{% include footer-2.html %}
+
