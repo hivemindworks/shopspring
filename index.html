@@ -9,7 +9,7 @@ layout: default
 
     <div class='clearfix'>
     <h4>Weekly Updates</h4>
-    <ul class="post-list limit">
+    <ul class="post-list limit space-top1">
       {% for post in site.posts %}
         <li>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -21,12 +21,18 @@ layout: default
 
     <div>
     <h4>Page Iterations</h4>
-    <ul class="post-list limit">
+    <ul class="post-list limit space-top1">
         <li>
           <a class="post-link" href="{{ site.baseurl }}/team/">Team</a>
           </li>
         <li>
           <a class="post-link" href="{{ site.baseurl }}/careers/">Careers</a>
+        </li>
+        <li>
+          <a class="post-link" href="{{ site.baseurl }}/eng/">Engineering</a>
+        </li>
+        <li>
+          <a class="post-link" href="{{ site.baseurl }}/press/">Press</a>
         </li>
     </ul>
     </div>

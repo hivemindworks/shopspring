@@ -137,7 +137,7 @@ HEADER STYLES
 
   ul.post-list {
     list-style-type: none;
-    margin: 3em 0em 6em;
+    margin-bottom: 6em;
     float: left;
   }
 
@@ -304,11 +304,6 @@ HEADER STYLES
   //Fix
   .header {
     min-height: 30em;
-  }
-
-  ul.post-list {
-    list-style-type: none;
-    margin: 3em 0em 6em;
   }
 
   header.post-header {
