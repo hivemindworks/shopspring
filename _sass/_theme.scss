@@ -368,6 +368,10 @@ HEADER STYLES
 
   .dark {
     color: #FFF;
+
+    p {
+      color: rgba(255,255,255,.6);
+    }
   }
 
   .small { 
@@ -382,6 +386,11 @@ HEADER STYLES
     &:hover {
       color: #111;
     }
+  }
+
+  .strong { 
+    font-weight: 500;
+    color: #222;
   }
 
   .quiet {
