@@ -165,8 +165,8 @@ HEADER STYLES
       -webkit-transition: background .15s ease;
 
     }
-    
-   &.btn-main {
+
+    &.btn-main {
       border-color: $brand-color;
       color: #FFF;
 
@@ -176,8 +176,8 @@ HEADER STYLES
       }
     }
 
-    
-   &.btn-light {
+
+    &.btn-light {
       border-color: $brand-color;
       color: #FFF;
       background-color: rgba(255, 255, 255, 0.25);
@@ -188,7 +188,7 @@ HEADER STYLES
       }
     }
 
-  &.btn-quiet {
+    &.btn-quiet {
       border-color: $gray;
       background-color: $gray;
       color: #FFF;
@@ -198,9 +198,8 @@ HEADER STYLES
         color: #fff;
       }
     }
-  }//end .btn
-  
-  .btn-outline {
+
+  &.btn-outline {
     border-width: 2px;
     border-style: solid;
     border-color: #111;
@@ -212,7 +211,7 @@ HEADER STYLES
       color: #fff;
     }
 
-&.btn-main {
+    &.btn-main {
       border-color: $brand-color;
       color: $brand-color;
 
@@ -232,6 +231,18 @@ HEADER STYLES
       }
     }
 
+    &.btn-light {
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #FFF;
+
+      &:hover {
+        color: $brand-color;
+        background-color: #fff;
+      }
+    }
+
+
+
     &.btn-white {
       border-color: #FFF;
       color: #FFF;
@@ -243,7 +254,8 @@ HEADER STYLES
     }
 
 
-  }
+  }//end btn-outline
+}
 
   .btn-small {
     font-size: 11px;
@@ -290,7 +302,7 @@ HEADER STYLES
   }
 
   //Fix
-  .team {
+  .header {
     min-height: 30em;
   }
 
@@ -335,7 +347,7 @@ HEADER STYLES
   }
 
   hr {
-    margin: 3em 0em 1em;
+    margin: 1em 0em;
     height: 1px;
     border: 0; 
     border-top: 1px solid $gray-light;
@@ -347,10 +359,15 @@ HEADER STYLES
   }
 
   //COLORS
-
+  .gray { 
+    background-color: $gray-med; 
+  }
   .blue { 
-    color: #FFF;
     background-color: $brand-color; 
+  }
+
+  .dark {
+    color: #FFF;
   }
 
   .small { 
@@ -362,15 +379,15 @@ HEADER STYLES
     //Fix
     color: $brand-color !important;
 
-      &:hover {
-        color: #111;
+    &:hover {
+      color: #111;
     }
   }
 
   .quiet {
-      color: $gray;
+    color: $gray;
 
-      &:hover {
-        color: #111;
+    &a:hover {
+      color: #111;
+    }
   }
-}

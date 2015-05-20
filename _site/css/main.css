@@ -95,7 +95,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h4, h5, .btn {
   text-transform: uppercase;
-  color: #111;
   font-weight: bold;
   letter-spacing: .15em; }
 
@@ -113,12 +112,11 @@ h3 {
   line-height: 1; }
 
 h4 {
-  font-size: 12px;
-  line-height: 5em; }
+  font-size: 14px;
+  line-height: 1.25em; }
 
 h5 {
-  font-size: 10px;
-  line-height: 5em; }
+  font-size: 10px; }
 
 p {
   line-height: 1.5em;
@@ -137,9 +135,15 @@ a {
     color: #3B8FFF; }
   a:hover {
     color: #0066ee; }
+  a.dark {
+    color: rgba(255, 255, 255, 0.5); }
+  a.dark:hover {
+    color: #FFF; }
 
 section {
-  padding: 8em 0em; }
+  padding: 4em 0em; }
+  section.space {
+    padding: 8em 0em; }
 
 /**
  * Blockquotes
@@ -213,14 +217,6 @@ pre {
   margin-left: auto;
   margin-right: auto; }
 
-.col0, .col1, .col2, .col3 {
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px; }
-
-.col4 {
-  width: 25%; }
-
 /*
 SPACING
 ========================*/
@@ -270,12 +266,47 @@ SPACING
 /*
 COLUMNZ
 ========================*/
-.col6 {
+.col0, .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
+  min-height: 1px;
   float: left;
-  min-height: 1em; }
+  padding-right: 15px;
+  padding-left: 15px; }
+
+.col4 {
+  width: 25%; }
+
+.col5 {
+  width: 37.5%; }
 
 .col6 {
   width: 50%; }
+
+.col8 {
+  width: 75%; }
+
+.no-pad {
+  padding: 0em; }
+
+.margin2 {
+  margin-left: 12.5%; }
+
+.margin4 {
+  margin-left: 25%; }
+
+.margin2r {
+  margin-right: 12.5%; }
+
+.margin4r {
+  margin-right: 25%; }
+
+.margin6r {
+  margin-right: 50%; }
+
+.margin7r {
+  margin-right: 62.5%; }
+
+.margin8r {
+  margin-right: 75%; }
 
 .page-content {
   padding: 2em 100px; }
@@ -422,33 +453,38 @@ BUTTON STYLES
     .btn.btn-quiet:hover {
       background-color: #3B8FFF;
       color: #fff; }
-
-.btn-outline {
-  border-width: 2px;
-  border-style: solid;
-  border-color: #111;
-  color: #111;
-  background-color: transparent; }
-  .btn-outline:hover {
-    background-color: #111;
-    color: #fff; }
-  .btn-outline.btn-main {
-    border-color: #3B8FFF;
-    color: #3B8FFF; }
-    .btn-outline.btn-main:hover {
-      background-color: #3B8FFF;
+  .btn.btn-outline {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #111;
+    color: #111;
+    background-color: transparent; }
+    .btn.btn-outline:hover {
+      background-color: #111;
       color: #fff; }
-  .btn-outline.btn-secondary {
-    border-color: #a7a7a7;
-    color: #a7a7a7; }
-    .btn-outline.btn-secondary:hover {
-      background-color: #a7a7a7; }
-  .btn-outline.btn-white {
-    border-color: #FFF;
-    color: #FFF; }
-    .btn-outline.btn-white:hover {
-      color: #3B8FFF;
-      background-color: #fff; }
+    .btn.btn-outline.btn-main {
+      border-color: #3B8FFF;
+      color: #3B8FFF; }
+      .btn.btn-outline.btn-main:hover {
+        background-color: #3B8FFF;
+        color: #fff; }
+    .btn.btn-outline.btn-secondary {
+      border-color: #a7a7a7;
+      color: #a7a7a7; }
+      .btn.btn-outline.btn-secondary:hover {
+        background-color: #a7a7a7; }
+    .btn.btn-outline.btn-light {
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #FFF; }
+      .btn.btn-outline.btn-light:hover {
+        color: #3B8FFF;
+        background-color: #fff; }
+    .btn.btn-outline.btn-white {
+      border-color: #FFF;
+      color: #FFF; }
+      .btn.btn-outline.btn-white:hover {
+        color: #3B8FFF;
+        background-color: #fff; }
 
 .btn-small {
   font-size: 11px;
@@ -483,7 +519,7 @@ BUTTON STYLES
     box-shadow: inset 0px 0px 0px 2.5px #ddd;
     -webkit-transition: box-shadow .15s ease; }
 
-.team {
+.header {
   min-height: 30em; }
 
 ul.post-list {
@@ -520,7 +556,7 @@ header.post-header {
   margin-bottom: 1em; }
 
 hr {
-  margin: 3em 0em 1em;
+  margin: 1em 0em;
   height: 1px;
   border: 0;
   border-top: 1px solid #e4e4e4; }
@@ -529,9 +565,14 @@ footer nav {
   padding: 0;
   box-shadow: none; }
 
+.gray {
+  background-color: #333; }
+
 .blue {
-  color: #FFF;
   background-color: #3B8FFF; }
+
+.dark {
+  color: #FFF; }
 
 .small {
   font-size: 11px;
@@ -544,7 +585,7 @@ footer nav {
 
 .quiet {
   color: #a7a7a7; }
-  .quiet:hover {
+  .quieta:hover {
     color: #111; }
 
 .sticky {

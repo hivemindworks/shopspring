@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Designs for Shopspring
+">
+
+    <title>Shopspring + HiveMind</title>
+
+    <!-- Gotham fonts! -->
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7704154/694546/css/fonts.css" />
+
+    <link rel="stylesheet" href="/shopspring/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/custom.css" media="screen">
+
+    <link rel="canonical" href="http://hivemind.works/shopspring/shopspring/iterations/eng-1.html">
+    <link rel="alternate" type="application/rss+xml" title="Shopspring + HiveMind" href="http://hivemind.works/shopspring/shopspring/feed.xml" />
+  </head>
+
+
+  <body>
+    <!-- ENGINEERING -->
+
+<header class='gray dark'>
+  <div class='logo'>
+    Spring
+  </div>
+
+  <nav class='clearfix'>
+    <ul class='nav'>
+      <li>
+        <a href='/'>
+          Shop
+        </a>
+      </li>
+      <li>
+        <a href='/'>
+          For Brands
+        </a>
+      </li>
+      <li>
+        <a href='/'>
+          About
+        </a>
+      </li>
+    </ul>
+    <div id='nav-more' class='more'>
+      <div class='menu-arrow'>
+        <div class="dropdown-menu" menu-id="more">
+          <a href="/blog">Blog</a>
+          <a href="/jobs">Jobs</a>
+          <a href="/team">Team</a>
+          <a href="/team">Engineering</a>
+          <a href="/jobs">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div class='fr account'>
+      <a href='#' class='quiet'>
+        Login
+      </a>
+      <a class='btn btn-outline btn-light btn-tiny'>
+        Sign Up
+      </a>
+      <a class='btn btn-light btn-tiny'>
+        Get the App
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-content clearfix dark gray">
+  <div class="wrapper center header">
+    <h3 class='space-top4 space-bottom4'>Engineering</h3>
+
+    <p>We are a group of adults writing software to solve real problems</p>
+
+    <a class='btn btn-white btn-outline btn-small space-top8'>View Open Positions</a>
+    <div  class='space-top1'>
+      <a href='#' class='quiet small'>Check out our engineering blog</a>
+    </div>
+  </div>
+</div>
+
+<div class='wrapper'>
+  <div id='nav-sticky' class='center '>
+    <nav class="clearfix center">
+      <ul class="nav sub-nav center clearfix">
+        <li>
+          <a href="/">Overview</a>
+        </li>
+        <li>
+          <a href="/">Approach</a>
+        </li>
+        <li>
+          <a href="/">Tools</a>
+        </li>
+        <li>
+          <a href="/">Projects</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+</div>
+
+</div>
+
+<script>
+  var stickyNav = document.getElementById('nav-sticky');  
+  var stickyNavTop = document.getElementById('nav-sticky').offsetTop;  
+
+  function init () {
+    window.addEventListener('scroll', function () {
+      placeNav()
+    })
+  }
+
+  function placeNav(){
+    var scrollTop = window.scrollY;
+
+    if ( stickyNavTop >= scrollTop && hasClass(stickyNav, 'sticky') ) {
+      stickyNav.className = 'center';
+    }
+    else if ( stickyNavTop <= scrollTop && !hasClass(stickyNav, 'sticky') ) {
+      stickyNav.className += ' sticky';
+    }
+  };
+
+  init();
+
+</script>
+<footer class='space-vert4'>
+  <div class='space-bottom2 clearfix'>
+  <nav class='col4'>
+    <h3>
+      <a href='/shop'>
+        Shop
+      </a>
+    </h3>
+
+    <ul>
+      <li>
+        <a href=''>
+         Women 
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Men
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Brands
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Lifestyle
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Beauty
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Collections
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <nav class='col4'>
+    <h3>
+      <a href='/'>
+        About
+      </a>
+    </h3>
+
+    <ul>
+      <li>
+        <a href=''>
+         Our Story
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Team
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Careers
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Press
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Presskit
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class='col4'>
+    <h3>
+      <a href='/'>
+        Technology
+      </a>
+    </h3>
+
+    <ul>
+      <li>
+        <a href=''>
+         Our Stack
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Engineering Blog
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Getting Hired
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class='col4'>
+    <h3>
+      <a href='/'>
+        Help
+      </a>
+    </h3>
+
+    <ul>
+      <li>
+        <a href=''>
+          FAQ
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          How to use spring
+        </a>
+      </li>
+      <li>
+        <a href=''>
+          Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+  </div>
+
+  <ul class='nav'>
+    <li>
+      © Jello Labs 2015
+    </li>
+    <li>
+      <a href='/tos'>
+        Terms of Service
+      </a>
+    </li>
+    <li>
+      |
+    </li>
+    <li>
+      <a href='/tos'>
+        Privacy Policy
+      </a>
+    </li>
+  </ul>
+</footer>
+
+
+
+    </body>
+
+    <script type='text/javascript' src='/shopspring/js/base.js'></script>
+</html>

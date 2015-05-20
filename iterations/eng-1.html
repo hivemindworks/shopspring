@@ -1,0 +1,71 @@
+---
+layout: spring
+---
+
+<!-- ENGINEERING -->
+
+{% include header-gray.html %}
+<div class="page-content clearfix dark gray">
+  <div class="wrapper center header">
+    <h3 class='space-top4 space-bottom4'>Engineering</h3>
+
+    <p>We are a group of adults writing software to solve real problems</p>
+
+    <a class='btn btn-white btn-outline btn-small space-top8'>View Open Positions</a>
+    <div  class='space-top1'>
+      <a href='#' class='quiet small'>Check out our engineering blog</a>
+    </div>
+  </div>
+</div>
+
+<div class='wrapper'>
+  <div id='nav-sticky' class='center '>
+    <nav class="clearfix center">
+      <ul class="nav sub-nav center clearfix">
+        <li>
+          <a href="/">Overview</a>
+        </li>
+        <li>
+          <a href="/">Approach</a>
+        </li>
+        <li>
+          <a href="/">Tools</a>
+        </li>
+        <li>
+          <a href="/">Projects</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+</div>
+
+</div>
+
+<script>
+  var stickyNav = document.getElementById('nav-sticky');  
+  var stickyNavTop = document.getElementById('nav-sticky').offsetTop;  
+
+  function init () {
+    window.addEventListener('scroll', function () {
+      placeNav()
+    })
+  }
+
+  function placeNav(){
+    var scrollTop = window.scrollY;
+
+    if ( stickyNavTop >= scrollTop && hasClass(stickyNav, 'sticky') ) {
+      stickyNav.className = 'center';
+    }
+    else if ( stickyNavTop <= scrollTop && !hasClass(stickyNav, 'sticky') ) {
+      stickyNav.className += ' sticky';
+    }
+  };
+
+  init();
+
+</script>
+{% include footer-2.html %}
+

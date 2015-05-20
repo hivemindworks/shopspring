@@ -115,7 +115,6 @@ h1, h2, h3, h4, h5, h6 {
 
 %caps {
   text-transform: uppercase;
-  color: #111;
   font-weight: bold;
   letter-spacing: .15em;
 }
@@ -142,15 +141,14 @@ h3 {
 
 h4 {
   @extend %caps;
-  font-size: 12px;
-  line-height: 5em;
+  font-size: 14px;
+  line-height: 1.25em;
 
 }
 
 h5 {
   @extend %caps;
   font-size: 10px;
-  line-height: 5em;
 
 }
 
@@ -176,10 +174,23 @@ a {
     &:hover {
         color: darken($brand-color, 15%);
     }
+
+
+    &.dark {
+      color: rgba(255,255,255,.5);
+    }
+
+    &.dark:hover {
+      color: #FFF;
+    }
 }
 
 section {
+  padding: 4em 0em;
+
+  &.space {
   padding: 8em 0em;
+  }
 }
 
 
