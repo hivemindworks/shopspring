@@ -285,9 +285,7 @@ var team = [
 
   //mouse info
   var isTouch = !!('createTouch' in document),
-    cursorStartEvent = isTouch ? 'touchstart' : 'mousedown',
-    cursorMoveEvent = isTouch ? 'touchmove' : 'mousemove',
-    cursorEndEvent = isTouch ? 'touchend' : 'mouseup';
+    cursorMoveEvent = isTouch ? 'touchmove' : 'mousemove';
   var mouseX = 0;
   var mouseY = 0;
 
@@ -485,16 +483,16 @@ var team = [
      var cursor = this.cursors.mouse,
          x, y, rowResult, colResult;
 
-     y = cursor.pageY - this.element.offsetTop - size/2,
+     y = cursor.pageY - this.element.offsetTop - size,
      rowResult = Math.round(y/spacing);
      //closestY = this.cols[ res ];
 
      //if an even number, then offset the column num
      if ( rowResult % 2 == 0 ) {
        console.log('even')
-       x = cursor.pageX - this.element.offsetLeft - spacing/2; 
+       x = cursor.pageX - this.element.offsetLeft - size; 
      } else {
-       x = cursor.pageX - this.element.offsetLeft - spacing; 
+       x = cursor.pageX - this.element.offsetLeft - spacing/2; 
      }
 
      colResult = Math.round(x/spacing);
