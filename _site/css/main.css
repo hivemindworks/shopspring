@@ -372,6 +372,7 @@ HEADER STYLES
 ==========================*/
 header {
   text-transform: uppercase;
+  z-index: 100;
   padding: 30px;
   font-size: 11px;
   position: relative;
