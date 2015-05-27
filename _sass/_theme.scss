@@ -4,7 +4,13 @@
 
 
 .text-right { text-align: right; }
-.center { text-align: center; }
+.text-center { text-align: center; }
+
+.center { 
+float: none;
+margin-right: auto;
+margin-left: auto;
+}
 
 /*
 HEADER STYLES
@@ -32,6 +38,7 @@ HEADER STYLES
       font-size: 19px;
       margin-right: 35px;
       float: left;
+      opacity: 1;
     }
 
     .account {
@@ -100,8 +107,12 @@ HEADER STYLES
 
     &.new {
       width: 100%;
-      padding: 4em 30px 4em;
+      padding: 4em 30px 2em;
       border-top: 1px solid $gray-light;
+    }
+
+    i {
+      font-size: 16px;
     }
   }
 
@@ -110,7 +121,6 @@ HEADER STYLES
     font-weight: 500; 
     font-style: normal;
     text-transform: uppercase;
-    float: left;
   }
 
   footer nav ul {
@@ -146,7 +156,6 @@ HEADER STYLES
   ul.post-list {
     list-style-type: none;
     margin-bottom: 6em;
-    float: left;
   }
 
   footer nav ul {
@@ -384,6 +393,10 @@ HEADER STYLES
     .strong {
       color: #FFF;
     }
+
+    a:hover {
+      color: #Fff;
+    }
   }
 
   .small { 
@@ -405,6 +418,22 @@ HEADER STYLES
     color: #222;
   }
 
+  .light {
+    font-weight: 400;
+  }
+
+  .silent {
+    color: $gray-light;
+
+    a {
+      color: $gray-light;
+    }
+
+    a:hover {
+      color: $gray-med;
+    }
+  }
+
   .quiet {
     color: $gray;
 
@@ -412,3 +441,11 @@ HEADER STYLES
       color: #111;
     }
   }
+
+// BORDERS
+
+.b  { border: 1px solid $gray-light; }
+.bt { border-top: 1px solid $gray-light; }
+.br { border-right: 1px solid $gray-light; }
+.bb { border-bottom: 1px solid $gray-light; }
+.bl { border-left: 1px solid $gray-light; }

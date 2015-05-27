@@ -78,3 +78,17 @@
 }
 
 .gopher { margin-top: -7em; }
+.logo { 
+  max-height: 1em;
+  width: auto;
+  opacity: .25 
+}
+
+.eng-header {
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+  opacity: .25;
+}

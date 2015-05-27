@@ -45,6 +45,34 @@ SPACING
   margin-bottom: 2em;
 }
 
+
+/*
+ABSOLUTE POSITIONS
+========================*/
+
+.top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+/*
+ROWZ
+========================*/
+
+.row-med {
+  height: 8em;
+}
+
+.row-lrg {
+  height: 12em;
+}
+
+
 /*
 COLUMNZ
 ========================*/
@@ -62,8 +90,7 @@ padding-left: 15px;
 .col6 { width: 50%; }
 .col8 { width: 75%; }
 
-.no-pad { padding: 0em; }
-
+.margin0 { margin-left: 3.5%;}
 .margin1 { margin-left: 7%;}
 .margin2 { margin-left: 12.5%;}
 .margin3 { margin-left: 25%;}
@@ -75,3 +102,7 @@ padding-left: 15px;
 .margin6r { margin-right: 50%;}
 .margin7r { margin-right: 62.5%;}
 .margin8r { margin-right: 75%;}
+
+.no-pad { padding-left: 0em; padding-right: 0em; }
+.pad-lrg { padding-left: 3em; padding-right: 3em; }
+
