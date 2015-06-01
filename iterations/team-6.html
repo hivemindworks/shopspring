@@ -242,24 +242,34 @@ function Employee (team, x, y, size, data) {
   this.size = size;
   this.isActive = false;
 
-  this.gridOffset = {
+  this.elasticity = 0.93;
+  this.responsiveness = 0.07;
+
+  this.scale = 1;
+  this.scaleDelta = 0;
+
+  this.angle = 0;
+  this.distance = 0;
+
+  this.teamOffset = {
     x : this.team.element.offsetLeft,
     y : this.team.element.offsetTop
   };
 
-  this.element = document.createElement('div');
-  this.element.className = 'employee';
-  this.element.style.width = this.size + 'px';
-  this.element.style.height = this.size + 'px';
+  this.offsetX = 0;
+  this.offsetY = 0;
 
   this.offset = {
     x: 0,
     y: 0
   };
 
+  this.element = document.createElement('div');
+  this.element.className = 'employee';
+  this.element.style.width = this.size + 'px';
+  this.element.style.height = this.size + 'px';
   this.element.style.backgroundColor = getColor();
   //add that shit to the Team element!
-
 
   this.transformedX = x;
   this.transformedY = y;
@@ -267,34 +277,75 @@ function Employee (team, x, y, size, data) {
   this.positionAndScale();
 }
 
+Employee.prototype.elasticizeProperty = function ( prop, target ) {
+    var deltaProp = prop + 'Delta';
+    this[ deltaProp ] = ( this[ deltaProp ] || 0 ) * this.elasticity + (this[ prop ] - target) * this.responsiveness;
+    this[ prop ] -= this[ deltaProp ];
+};
+
 Employee.prototype.render = function () {
 
-  var node, cursor, distance, angle;
-
-  //get orginal position
-  //if closest point, then turn black
-  for ( node in this.team.cursors ) {
-    cursor = this.team.cursors[ node ];
-  }
+  var cursor = { x: 0, y: 0 }, distance, angle, dx, dy;
 
   //if there is an active employee
   if ( this.team.activeEmployee ) {
 
     //animate active employee
-    if ( this.isActive && this.team.activeEmployee ) {
-      this.scale = 1.5;
-    } 
+    if ( this.isActive ) {
+      var targetScale = 2;
+      this.elasticizeProperty( 'scale', targetScale );
+    }
     //if there's an active employee, animate others
     else {
-    }
+      cursor.x = this.team.activeEmployee.x;
+      cursor.y = this.team.activeEmployee.y;
 
+      dx = cursor.x - this.x;
+      dy = cursor.y - this.y;
+      distance = Math.sqrt( dx * dx + dy * dy );
+      angle = Math.atan2( dy, dx );
+
+      this.angle = angle || this.angle;
+      distance = distance || 0;
+
+      var targetD = distance ? (300 - distance) : 0;
+      targetD = Math.max( targetD, 0 );
+
+      var targetScale = 1 - (targetD / 250) * 0.5;
+
+      this.elasticizeProperty( 'scale', targetScale );
+
+      var targetOffsetX = Math.cos( this.angle ) * -targetD * 0.25,
+        targetOffsetY = Math.sin( this.angle ) * -targetD * 0.25;
+
+      this.elasticizeProperty( 'offsetX', targetOffsetX );
+      this.elasticizeProperty( 'offsetY', targetOffsetY );
+
+      this.transformedX = this.x + this.offsetX;
+      this.transformedY = this.y + this.offsetY;
+    }
   }
   //else, revert to orginal
   else {
-    this.isActive = false;
-    this.scale = 1;
-    this.transformedX = this.x;
-    this.transformedY = this.y;
+      this.isActive = false;
+      this.angle = this.angle;
+      distance = 0;
+
+      var targetD = distance ? (300 - distance) : 0;
+      targetD = Math.max( targetD, 0 );
+
+      var targetScale = 1 - (targetD / 250) * 0.5;
+
+      this.elasticizeProperty( 'scale', targetScale );
+
+      var targetOffsetX = Math.cos( this.angle ) * -targetD * 0.25,
+        targetOffsetY = Math.sin( this.angle ) * -targetD * 0.25;
+
+      this.elasticizeProperty( 'offsetX', targetOffsetX );
+      this.elasticizeProperty( 'offsetY', targetOffsetY );
+
+      this.transformedX = this.x + this.offsetX;
+      this.transformedY = this.y + this.offsetY;
   }
 
   //position the element 
@@ -404,8 +455,6 @@ function Team (element, spacing, employeeSize, colNum) {
 
 Team.prototype.isHovering = function() {
   if ( hasClass(this.cursors.mouse.target, 'employee') ) {
-    console.log('oh yea')
-
     var cursor = this.cursors.mouse,
       x, y, rowResult, colResult;
 
