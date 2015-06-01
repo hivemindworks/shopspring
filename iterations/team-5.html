@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html>
+---
+layout: spring
+---
 
-    <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Designs for Shopspring
-">
-
-    <title>Shopspring + HiveMind</title>
-
-    <!-- Gotham fonts! -->
-    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7704154/694546/css/fonts.css" />
-
-    <link rel="stylesheet" href="/shopspring/css/main.css">
-
-    <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/normalize.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/style.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/custom.css" media="screen">
-
-    <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-codes.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-embedded.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-ie7-codes.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-ie7.css" media="screen">
-
-    <link rel="canonical" href="http://hivemind.works/shopspring/shopspring/iterations/team-4.html">
-    <link rel="alternate" type="application/rss+xml" title="Shopspring + HiveMind" href="http://hivemind.works/shopspring/shopspring/feed.xml" />
-  </head>
-
-
-  <body>
-    <style>
+<style>
 
   #grid {
     min-height: 1px;
@@ -54,76 +26,19 @@
   }
 </style>
 
-<header>
-    <a class='logo' href='/shopspring/iterations/index-3.html'>
-    Spring
-  </a>
-
-  <nav class='clearfix'>
-    <ul class='nav'>
-
-      
-        <li class='margin0'>
-          <a href='/'>
-            Shop
-          </a>
-        </li>
-      
-      <li>
-        <a href='/shopspring/iterations/brands-1.html'>
-          For Brands
-        </a>
-      </li>
-      <li>
-        <a href='/shopspring/iterations/about-1.html'>
-          About
-        </a>
-      </li>
-    </ul>
-    <div id='nav-more' class='more'>
-      <div class='menu-arrow'>
-        <div class="dropdown-menu" menu-id="more">
-          <a href="/shopspring/iterations/blog-1.html">Blog</a>
-          <a href="/shopspring/iterations/careers-3.html">Careers</a>
-          <a href="/shopspring/iterations/team-5.html">Team</a>
-          <a href="/shopspring/iterations/eng-3.html">Engineering</a>
-          <a href="/shopspring/iterations/contact-1.html">Contact</a>
-        </div>
-      </div>
-    </div>
-
-    <div class='fr account'>
-      <a class='quiet'  href='#'>
-        Login
-      </a>
-      <a class='btn btn-secondary btn-tiny'>
-        Sign Up
-      </a>
-      <a class='btn btn-quiet btn-tiny'>
-        Get the App
-      </a>
-    </div>
-  </nav>
-
-</header>
-
+{% include header-2.html %}
 <div class="page-content clearfix">
   <div class="wrapper text-center team">
     <h3 class='space-top2 space-bottom2'>Our team</h3>
 
-    <p>We're <span id='team-num'>50+</span> curious and driven people</p>
-    <p>working together to make a better shopping experience</p>
-
-    <p class='space-top2'>mention the background of the team</p>
-    <p>mention the background of the team</p>
-
+    <p class='col8 center'>Our team is made up of awesome people who have done wildly impressive things at companies and organizations including Google, eBay, R/GA, Gilt, Marc Jacobs, DVF, CFDA, Bloomberg, Bitly, BlackRock, Lockheed Martin, BeachMint, MIT, Birchbox, Quidsi, Celine, Fab, and NYC City Hall. This diverse background translates into an office and work vibe that is a lively mix of product, fashion, tech, ecommerce, and design.</p>
 
     <h3 class='space-top4 space-bottom1'>We're Hiring!</h3>
     <a class='btn btn-main btn-outline btn-small'>
       View Open Positions
     </a>
     <div  class='space-top1 space-bottom4'>
-      <a href='#' class='quiet small'>Life at Spring ></a>
+      <a href='{{ site.baseurl}}/iterations/careers-{{ site.careers }}.html' class='quiet small'>Life at Spring ></a>
     </div>
     <hr/>
     <div id='nav-sticky' class='text-center'>
@@ -163,9 +78,9 @@
       </nav>
 
     </div>
+  </div>
 
     <ul id='grid' class='space-top2'></ul>
-  </div>
 
 
   <section class='space-top4 text-center space-bottom6'>
@@ -418,12 +333,12 @@ if ( Modernizr.csstransforms && Modernizr.csstransforms3d ) {
 
 }
 
-function Team (element, spacing, employeeSize) {
+function Team (element, spacing, employeeSize, colNum) {
   this.element = element;
   this.employeeSize = employeeSize;
 
   //calculate the # of rows based on # of employees
-  var rows = Math.ceil(team.length/4.5);
+  var rows = Math.ceil(team.length/(colNum-.5));
 
   this.width = this.element.offsetWidth;
   this.height = ( employeeSize + (spacing*3) ) * rows;
@@ -456,10 +371,10 @@ function Team (element, spacing, employeeSize) {
     //isEven is neccessary for the spacing function
     //5 column rows have no leading space, where 4 column rows do
     if ( row%2 == 0) {
-      colLength = 5;
+      colLength = colNum;
       isEven = 0;
     } else {
-      colLength = 4; 
+      colLength = colNum - 1; 
       isEven = 1;
     }
 
@@ -567,9 +482,11 @@ Team.prototype.mousemove = function( cursor ) {
 //WE HAVE LIFTOFF IN 3...2...1....
 var spacing = 160;
 var size = 80;
+//TODO get size of container, determine column number by size/spacing
+var columns = 5;
 
 function init () {
-  new Team(document.getElementById('grid'), spacing, size)
+  new Team(document.getElementById('grid'), spacing, size, columns)
   window.addEventListener('scroll', function () {
 
     placeNav()
@@ -580,177 +497,5 @@ function init () {
 window.addEventListener( 'load', init, false); 
 </script>
 
-<footer class='new gray-light'>
-  <div class='space-bottom6 clearfix'>
-    <nav class='col2'>
-      <h3>
-        <a href='/shop'>
-          Shop
-        </a>
-      </h3>
+{% include footer-4.html %}
 
-      <ul>
-        <li>
-          <a href=''>
-            Women 
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Men
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Brands
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Lifestyle
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Beauty
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Collections
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <nav class='col2'>
-      <h3>
-        <a href='/shopspring/iterations/about-1.html'>
-          About
-        </a>
-      </h3>
-
-      <ul>
-        <li>
-          <a href=''>
-            Our Story
-          </a>
-        </li>
-        <li>
-          <a href='/shopspring/iterations/team-5.html'>
-            Team
-          </a>
-        </li>
-        <li>
-          <a href='/shopspring/iterations/careers-3.html'>
-            Careers
-          </a>
-        </li>
-        <li>
-          <a href='/shopspring/iterations/press-3.html'>
-            Press
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <nav class='col2'>
-      <h3>
-        <a href='/shopspring/iterations/eng-3.html'>
-          Engineering
-        </a>
-      </h3>
-
-      <ul>
-        <li>
-          <a href=''>
-            Our Stack
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Engineering Blog
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Getting Hired
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <nav class='col2'>
-      <h3>
-        <a href='/shopspring/iterations/help-1.html'>
-          Help
-        </a>
-      </h3>
-
-      <ul>
-        <li>
-          <a href=''>
-            FAQ
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            How to use spring
-          </a>
-        </li>
-        <li>
-          <a href='/shopspring/iterations/contact-1.html'>
-            Contact Us
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class='margin2 col2'>
-      <nav class='clearfix space-bottom1'>
-        <ul>
-          <li class='col2 no-pad'>
-            <a href='https://instagram.com/spring/'>
-              <i class="icon-instagram"></i> 
-            </a>
-          </li>
-          <li class='col2 margin1 no-pad'>
-            <a href='https://www.facebook.com/SpringNYC'>
-              <i class="icon-facebook-squared"></i> 
-            </a>
-          </li>
-          <li class='col2 margin1 no-pad'>
-            <a href='https://twitter.com/shopspring'>
-              <i class="icon-twitter"></i> 
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <p class='quiet'>
-          Follow us for inspiration, deals, and notifications on new brands launching
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <nav class='silent light col6'>
-    <span>© Jello Labs 2015</span>
-    <span class='margin0'>
-      <a href='/shopspring/iterations/tos-1.html'>
-        Terms of Service
-      </a>
-    </span>
-    <span class='margin0'>
-      <a href='/shopspring/iterations/privacy-1.html'>
-        Privacy Policy
-      </a>
-    </span>
-  </nav>
-</footer>
-
-
-
-    </body>
-
-    <script type='text/javascript' src='/shopspring/js/base.js'></script>
-</html>

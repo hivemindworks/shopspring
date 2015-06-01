@@ -50,6 +50,11 @@ SPACING
 ABSOLUTE POSITIONS
 ========================*/
 
+.z100 {
+  z-index: 100;
+  position: relative;
+}
+
 .top {
   position: absolute;
   top: 0;

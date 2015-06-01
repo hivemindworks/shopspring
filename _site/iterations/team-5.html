@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-ie7-codes.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-ie7.css" media="screen">
 
-    <link rel="canonical" href="http://hivemind.works/shopspring/shopspring/iterations/team-4.html">
+    <link rel="canonical" href="http://hivemind.works/shopspring/shopspring/iterations/team-5.html">
     <link rel="alternate" type="application/rss+xml" title="Shopspring + HiveMind" href="http://hivemind.works/shopspring/shopspring/feed.xml" />
   </head>
 
@@ -111,19 +111,14 @@
   <div class="wrapper text-center team">
     <h3 class='space-top2 space-bottom2'>Our team</h3>
 
-    <p>We're <span id='team-num'>50+</span> curious and driven people</p>
-    <p>working together to make a better shopping experience</p>
-
-    <p class='space-top2'>mention the background of the team</p>
-    <p>mention the background of the team</p>
-
+    <p class='col8 center'>Our team is made up of awesome people who have done wildly impressive things at companies and organizations including Google, eBay, R/GA, Gilt, Marc Jacobs, DVF, CFDA, Bloomberg, Bitly, BlackRock, Lockheed Martin, BeachMint, MIT, Birchbox, Quidsi, Celine, Fab, and NYC City Hall. This diverse background translates into an office and work vibe that is a lively mix of product, fashion, tech, ecommerce, and design.</p>
 
     <h3 class='space-top4 space-bottom1'>We're Hiring!</h3>
     <a class='btn btn-main btn-outline btn-small'>
       View Open Positions
     </a>
     <div  class='space-top1 space-bottom4'>
-      <a href='#' class='quiet small'>Life at Spring ></a>
+      <a href='/shopspring/iterations/careers-3.html' class='quiet small'>Life at Spring ></a>
     </div>
     <hr/>
     <div id='nav-sticky' class='text-center'>
@@ -163,9 +158,9 @@
       </nav>
 
     </div>
+  </div>
 
     <ul id='grid' class='space-top2'></ul>
-  </div>
 
 
   <section class='space-top4 text-center space-bottom6'>
@@ -418,12 +413,12 @@ if ( Modernizr.csstransforms && Modernizr.csstransforms3d ) {
 
 }
 
-function Team (element, spacing, employeeSize) {
+function Team (element, spacing, employeeSize, colNum) {
   this.element = element;
   this.employeeSize = employeeSize;
 
   //calculate the # of rows based on # of employees
-  var rows = Math.ceil(team.length/4.5);
+  var rows = Math.ceil(team.length/(colNum-.5));
 
   this.width = this.element.offsetWidth;
   this.height = ( employeeSize + (spacing*3) ) * rows;
@@ -456,10 +451,10 @@ function Team (element, spacing, employeeSize) {
     //isEven is neccessary for the spacing function
     //5 column rows have no leading space, where 4 column rows do
     if ( row%2 == 0) {
-      colLength = 5;
+      colLength = colNum;
       isEven = 0;
     } else {
-      colLength = 4; 
+      colLength = colNum - 1; 
       isEven = 1;
     }
 
@@ -567,9 +562,11 @@ Team.prototype.mousemove = function( cursor ) {
 //WE HAVE LIFTOFF IN 3...2...1....
 var spacing = 160;
 var size = 80;
+//TODO get size of container, determine column number by size/spacing
+var columns = 5;
 
 function init () {
-  new Team(document.getElementById('grid'), spacing, size)
+  new Team(document.getElementById('grid'), spacing, size, columns)
   window.addEventListener('scroll', function () {
 
     placeNav()
