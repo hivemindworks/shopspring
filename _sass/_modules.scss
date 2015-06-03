@@ -11,6 +11,13 @@
 
 }
 
+.wrapper.large {
+
+  .sticky {
+    width: 60em;
+  }
+}
+
 .more {
   &:before {
     content: 'more';
