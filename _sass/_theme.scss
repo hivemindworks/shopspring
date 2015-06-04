@@ -1,5 +1,5 @@
 .page-content {
-  padding: 2em 100px;
+  padding: 2em 100px 1em;
 }
 
 
@@ -7,9 +7,9 @@
 .text-center { text-align: center; }
 
 .center { 
-float: none;
-margin-right: auto;
-margin-left: auto;
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /*
@@ -31,39 +31,28 @@ HEADER STYLES
     &.dark {
       box-shadow: 0px 1px 0px rgba(17, 17, 17, 0.1);
 
-     .logo, .nav a, .more {
+      .logo, .nav a, .more {
         color: #FFF;
       }
+    }
+
+    &.new {
+      position: absolute;
+      width: 100%;
+      box-shadow: none;
     }
 
     &.img {
       position: absolute;
       width: 100%;
-      background-color: #000;
-      box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
-    }
-
-    &.img:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: .9;
-
-
-      -webkit-filter: blur(20px);
-      -moz-filter: blur(15px);
-      -o-filter: blur(15px);
-      -ms-filter: blur(15px);
-      filter: blur(15px);
+      background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+      background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+      box-shadow: none;
     }
 
     .logo {
@@ -76,7 +65,7 @@ HEADER STYLES
       opacity: 1;
     }
 
-   a.hiring {
+    a.hiring {
       opacity: 1;
       background-color: $brand-color;
       color: #FFF;
@@ -182,21 +171,55 @@ HEADER STYLES
     margin-right: auto;
     margin-left: auto;
     font-size: 12px;
+    position: relative;
 
     &.new {
       width: 100%;
-      padding: 4em 30px 2em;
-      border-top: 1px solid $gray-light;
+      border-top: 1px solid #F6f6f6;
+
+    }
+
+    &.color {
+      background-image: -webkit-linear-gradient(-90deg,#3BD2FF,#2448BB);
+      background-image: -moz-linear-gradient(-90deg,#3BD2FF,#2448BB);
+      background-image: -ms-linear-gradient(-90deg,#3BD2FF,#2448BB);
+      background-image: -o-linear-gradient(-90deg,#3BD2FF,#2448BB);
+      background: linear-gradient(-90deg,#3BD2FF,#2448BB);
+    }
+
+    .page-content {
+      padding: 2em 30px 1em;
+    }
+
+    .strong {
+      color: #999;
+
+      &:hover {
+        color: $brand-color;
+      }
+    }
+
+    .bottom-border {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background-image: -webkit-linear-gradient(-90deg,#3BD2FF,#2448BB);
+      background-image: -moz-linear-gradient(-90deg,#3BD2FF,#2448BB);
+      background-image: -ms-linear-gradient(-90deg,#3BD2FF,#2448BB);
+      background-image: -o-linear-gradient(-90deg,#3BD2FF,#2448BB);
+      background: linear-gradient(-90deg,#3BD2FF,#2448BB);
     }
 
     i {
-      font-size: 16px;
+      font-size: 12px;
+      margin-top: 2px
     }
   }
 
   footer nav {
     font-family: 'Gotham A', 'Gotham B'; 
-    font-weight: 500; 
+    font-weight: 400; 
     font-style: normal;
     text-transform: uppercase;
   }
@@ -205,7 +228,7 @@ HEADER STYLES
     list-style-type: none;
 
     li {
-      font-weight: 500;
+      font-weight: 400;
       padding: 0em;
       line-height: 2.25em;
     }
@@ -223,7 +246,7 @@ HEADER STYLES
   }
 
   footer a {
-    color: $gray;
+    color: #ccc;
   }
 
   footer h3 {
@@ -255,14 +278,14 @@ HEADER STYLES
     cursor: pointer;
     display: inline-block;
     font-size: 12px;
-    background: #222;
+    background: rgba(40, 59, 86, 0.5);
     padding: 20px 40px;
     color: white;
     border-radius: .35em;
     -webkit-transition: background .15s ease;
 
     &:hover {
-      background: #000;
+      background: #222;
       -webkit-transition: background .15s ease;
 
     }
@@ -272,8 +295,22 @@ HEADER STYLES
       color: #FFF;
 
       &:hover {
-        background-color: $brand-color;
+      background-image: -webkit-linear-gradient(-90deg,#3B8FFF,#2448BB);
+      background-image: -moz-linear-gradient(-90deg,#3B8FFF,#2448BB);
+      background-image: -ms-linear-gradient(-90deg,#3B8FFF,#2448BB);
+      background-image: -o-linear-gradient(-90deg,#3B8FFF,#2448BB);
+      background: linear-gradient(-90deg,#3B8FFF,#2448BB);
         color: #fff;
+      }
+    }
+
+    &.btn-transparent {
+      border-color: transparent;
+      background-color: transparent;
+
+      &:hover {
+        background-image: none;
+        background-color: rgba(255, 255, 255, 0.25);
       }
     }
 
@@ -285,7 +322,8 @@ HEADER STYLES
 
       &:hover {
         background-color: #FFF;
-        color: $brand-color;
+        color: #222;
+        background-image: none;
       }
     }
 
@@ -295,68 +333,69 @@ HEADER STYLES
       color: #FFF;
 
       &:hover {
-        background-color: $brand-color;
+        background-color: #FFF;
+        color: #222;
+      }
+    }
+
+    &.btn-outline {
+      border-width: 2px;
+      border-style: solid;
+      border-color: #111;
+      color: #111;
+      background-color: transparent;
+
+      &:hover {
+        background-image: none;
+        background-color: #111;
         color: #fff;
       }
-    }
 
-  &.btn-outline {
-    border-width: 2px;
-    border-style: solid;
-    border-color: #111;
-    color: #111;
-    background-color: transparent;
-
-    &:hover {
-      background-color: #111;
-      color: #fff;
-    }
-
-    &.btn-main {
-      border-color: $brand-color;
-      color: $brand-color;
-
-      &:hover {
-        background-color: $brand-color;
-        color: #fff;
-      }
-    }
-
-
-    &.btn-secondary {
-      border-color: $gray;
-      color: $gray;
-
-      &:hover {
-        background-color: $gray;
-      }
-    }
-
-    &.btn-light {
-      border-color: rgba(255, 255, 255, 0.25);
-      color: #FFF;
-
-      &:hover {
+      &.btn-main {
+        border-color: $brand-color;
         color: $brand-color;
-        background-color: #fff;
+
+        &:hover {
+          background-color: $brand-color;
+          color: #fff;
+        }
       }
-    }
 
 
+      &.btn-secondary {
+        border-color: $gray;
+        color: $gray;
 
-    &.btn-white {
-      border-color: #FFF;
-      color: #FFF;
-
-      &:hover {
-        color: $brand-color;
-        background-color: #fff;
+        &:hover {
+          background-color: $gray;
+        }
       }
-    }
+
+      &.btn-light {
+        border-color: rgba(255, 255, 255, 0.25);
+        color: #FFF;
+
+        &:hover {
+          color: $brand-color;
+          background-color: #fff;
+        }
+      }
 
 
-  }//end btn-outline
-}
+
+      &.btn-white {
+        border-color: #FFF;
+        color: #FFF;
+
+        &:hover {
+          color: $brand-color;
+          background-color: #fff;
+        }
+      }
+
+
+    }//end btn-outline
+  }
 
   .btn-small {
     font-size: 11px;
@@ -530,10 +569,10 @@ HEADER STYLES
     }
   }
 
-// BORDERS
+  // BORDERS
 
-.b  { border: 1px solid #f0f0f0; }
-.bt { border-top: 1px solid #f0f0f0; }
-.br { border-right: 1px solid #f0f0f0; }
-.bb { border-bottom: 1px solid #f0f0f0; }
-.bl { border-left: 1px solid #f0f0f0; }
+  .b  { border: 1px solid #f0f0f0; }
+  .bt { border-top: 1px solid #f0f0f0; }
+  .br { border-right: 1px solid #f0f0f0; }
+  .bb { border-bottom: 1px solid #f0f0f0; }
+  .bl { border-left: 1px solid #f0f0f0; }

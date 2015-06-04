@@ -56,13 +56,9 @@
   .splash:after {
     background: url(/shopspring/img/grass.jpg) #000 no-repeat center center fixed; 
   }
-
-  header.img:after {
-    background: url(/shopspring/img/grass.jpg) #000 no-repeat center center inherit; 
-  }
 </style>
 
-<header>
+<header class='dark img'>
     <a class='logo' href='/shopspring/iterations/index-3.html'>
     Spring
   </a>
@@ -101,13 +97,13 @@
     </div>
 
     <div class='fr account'>
-      <a class='quiet'  href='#'>
+      <a class='btn btn-transparent btn-tiny'  href='#'>
         Login
       </a>
-      <a class='btn btn-secondary btn-tiny'>
+      <a class='btn btn-transparent btn-tiny'>
         Sign Up
       </a>
-      <a class='btn btn-quiet btn-tiny'>
+      <a class='btn btn-tiny'>
         Get the App
       </a>
     </div>
@@ -115,17 +111,17 @@
 
 </header>
 
-<div class="page-content clearfix splash space-bottom1">
-  <div class="wrapper text-center dark">
+<div class="page-content clearfix splash space-bottom0">
+  <div class="wrapper text-center dark space-top4">
     <h3 class='col8 center space-top1 space-bottom1 heading'>Good humans grow here</h3>
 
-    <p class='col8 center desc'>A lot of really excellent humans work at Spring. As proof, here are photos of them smiling.</p>
+    <p class='col8 center desc space-bottom1'>A lot of excellent people work at Spring. People that make it awesome to work at Spring.</p>
 
-    <a class='space-top4 btn btn-white btn-outline btn-small'>
+    <a class='space-top4 btn btn-light btn-small'>
       We're Hiring! View Open Positions
     </a>
     <div  class='space-top1 space-bottom4'>
-      <a href='/shopspring/iterations/careers-3.html' class='quiet small'>Life at Spring ></a>
+      <a href='/shopspring/iterations/careers-3.html' class='quiet small'>Learn more about life at Spring ></a>
     </div>
   </div>
 </div>
@@ -1087,16 +1083,15 @@ function init () {
 window.addEventListener( 'load', init, false); 
 </script>
 
-<footer class='new gray-light'>
-  <div class='space-bottom6 clearfix'>
+<footer class='new'>
+  <div class='page-content clearfix'>
     <nav class='col2'>
-      <h3>
-        <a href='/shop'>
+      <ul>
+        <li>
+        <a class='strong' href='/shop'>
           Shop
         </a>
-      </h3>
-
-      <ul>
+        </li>
         <li>
           <a href=''>
             Women 
@@ -1130,13 +1125,12 @@ window.addEventListener( 'load', init, false);
       </ul>
     </nav>
     <nav class='col2'>
-      <h3>
-        <a href='/shopspring/iterations/about-1.html'>
+      <ul>
+        <li>
+        <a class='strong' href='/shopspring/iterations/about-1.html'>
           About
         </a>
-      </h3>
-
-      <ul>
+        </li>
         <li>
           <a href=''>
             Our Story
@@ -1161,13 +1155,12 @@ window.addEventListener( 'load', init, false);
     </nav>
 
     <nav class='col2'>
-      <h3>
-        <a href='/shopspring/iterations/eng-3.html'>
+      <ul>
+        <li>
+        <a class='strong' href='/shopspring/iterations/eng-3.html'>
           Engineering
         </a>
-      </h3>
-
-      <ul>
+        </li>
         <li>
           <a href=''>
             Our Stack
@@ -1187,13 +1180,12 @@ window.addEventListener( 'load', init, false);
     </nav>
 
     <nav class='col2'>
-      <h3>
-        <a href='/shopspring/iterations/help-1.html'>
+      <ul>
+        <li>
+        <a class='strong' href='/shopspring/iterations/help-1.html'>
           Help
         </a>
-      </h3>
-
-      <ul>
+        </li>
         <li>
           <a href=''>
             FAQ
@@ -1212,7 +1204,34 @@ window.addEventListener( 'load', init, false);
       </ul>
     </nav>
 
+<nav class='margin2 col2'>
+      <ul>
+        <li>
+        <a class='strong' href='/shopspring/iterations/help-1.html'>
+          Stay connected
+        </a>
+        </li>
+        <li>
+          <a href='https://instagram.com/spring/'>
+            <i class="icon-instagram"></i> Instagram 
+            </a>
+        </li>
+        <li>
+            <a href='https://www.facebook.com/SpringNYC'>
+              <i class="icon-facebook-squared"></i> Facebook
+            </a>
+        </li>
+        <li>
+            <a href='https://twitter.com/shopspring'>
+              <i class="icon-twitter"></i>  Twitter
+            </a>
+        </li>
+      </ul>
+    </nav>
+      <!--
     <div class='margin2 col2'>
+      <p class='strong'>Get our newsletter for exclusive deals</p>
+      <input type='text' placeholder='enter your email'>
       <nav class='clearfix space-bottom1'>
         <ul>
           <li class='col2 no-pad'>
@@ -1238,9 +1257,11 @@ window.addEventListener( 'load', init, false);
         </p>
       </div>
     </div>
+      -->
   </div>
 
-  <nav class='silent light col6'>
+  <div class='page-content'>
+  <nav class='silent space-bottom1 light col6'>
     <span>© Jello Labs 2015</span>
     <span class='margin0'>
       <a href='/shopspring/iterations/tos-1.html'>
@@ -1253,6 +1274,9 @@ window.addEventListener( 'load', init, false);
       </a>
     </span>
   </nav>
+
+  </div>
+  <div class='bottom-border'></div>
 </footer>
 
 

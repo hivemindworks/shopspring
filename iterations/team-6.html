@@ -28,24 +28,20 @@ layout: spring
   .splash:after {
     background: url({{ site.baseurl }}/img/grass.jpg) #000 no-repeat center center fixed; 
   }
-
-  header.img:after {
-    background: url({{ site.baseurl }}/img/grass.jpg) #000 no-repeat center center inherit; 
-  }
 </style>
 
-{% include header-2.html %}
-<div class="page-content clearfix splash space-bottom1">
-  <div class="wrapper text-center dark">
+{% include header-img.html %}
+<div class="page-content clearfix splash space-bottom0">
+  <div class="wrapper text-center dark space-top4">
     <h3 class='col8 center space-top1 space-bottom1 heading'>Good humans grow here</h3>
 
-    <p class='col8 center desc'>A lot of really excellent humans work at Spring. As proof, here are photos of them smiling.</p>
+    <p class='col8 center desc space-bottom1'>A lot of excellent people work at Spring. People that make it awesome to work at Spring.</p>
 
-    <a class='space-top4 btn btn-white btn-outline btn-small'>
+    <a class='space-top4 btn btn-light btn-small'>
       We're Hiring! View Open Positions
     </a>
     <div  class='space-top1 space-bottom4'>
-      <a href='{{ site.baseurl}}/iterations/careers-{{ site.careers }}.html' class='quiet small'>Life at Spring ></a>
+      <a href='{{ site.baseurl}}/iterations/careers-{{ site.careers }}.html' class='quiet small'>Learn more about life at Spring ></a>
     </div>
   </div>
 </div>
@@ -1007,5 +1003,5 @@ function init () {
 window.addEventListener( 'load', init, false); 
 </script>
 
-{% include footer-4.html %}
+{% include footer-5.html %}
 
