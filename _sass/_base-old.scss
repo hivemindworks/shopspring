@@ -253,3 +253,13 @@ pre {
         }
     }
 }
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em 0em;
+
+  &.large {
+    max-width: 60em;
+  }
+}
