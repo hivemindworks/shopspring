@@ -43,11 +43,88 @@ table {
   zoom: 1; }
 
 /**
- * Basic styling
+ * Baseline
  */
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+};
+
+@media all and (max-width: 72em) {
+  body {
+    // font-size: 95%;
+  }
+}
+
+p {
+  font-size: 1em;       /* 15 */
+  line-height: 1.5em;   /* 22.5 */
+  margin-bottom: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  // padding-top: 1px;
+}
+
+h1 {
+  font-size: 3em;       /* 48 */
+  line-height: 1em;     /* 48 */
+}
+
+h2 {
+  font-size: 2.25em;       /* 36 */
+  line-height: 1.3333em;   /* 48 */
+  // margin: .66667em;
+}
+
+h3 {
+  font-size: 1.5em;     /* 24 */
+  line-height: 1em;     /* 24 */
+}
+
+h4, h5, h6 {
+  font-size: 1em;      /* 16 */
+  line-height: 1.5em;  /* 24 */
+}
+
+small,
+.dablink,
+.hatnote {
+  max-width: 46em;
+  font-size: .875em;            /* 14 */
+  line-height: 1.714285714em;   /* 24 */
+  margin: 0 0 1.714285714em;
+}
+
+tr, td, th {
+  padding: 0;
+}
+
+tr th {
+  padding-top: 1.714285714em;
+}
+
+label {
+  font-weight: bold;
+}
+
+/**
+ * Basis Styling
+ */
+
 body {
   font-family: 'Gotham A', 'Gotham B';
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -160,9 +237,8 @@ h5 {
 }
 
 p {
-  line-height: 1.5em;
+  //TOFIX use a var
   color: rgba(17, 17, 17, 0.6);
-  font-weight: 400;
 }
 
 /**

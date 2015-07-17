@@ -9,7 +9,7 @@ HEADER STYLES
     text-transform: uppercase;
     z-index: 100;
     padding: 30px;
-    font-size: 11px;
+    font-size: .875em;
     position: relative;
     box-shadow: 0px 1px 1px $gray-light;
 
@@ -97,7 +97,10 @@ HEADER STYLES
     text-transform: uppercase;
     width: 870px;
     margin-top: 0em;
-    padding-top: 4.5em;
+    color: #FFF;
+    text-align: center;
+
+     @include vertical-align;
   }
 
   .desc {
@@ -107,10 +110,10 @@ HEADER STYLES
   .cta {
     font-weight: 400;
     position: absolute;
-    bottom: 90px;
+    bottom: 6em;
     left: 50%;
-    width: 200px;
-    margin-left: -100px;
+    width: 20em;
+    margin-left: -10em;
     letter-spacing: .14em;
   }
 
@@ -130,19 +133,26 @@ HEADER STYLES
     }
 
     li:first-child {
-      margin-left: 19px;
+      margin-left: 19px; // 19 + 15 = 34px which was Eli's header spacing
     }
+
     li a {
       color: #FFF;
       font-size: 11px;
       letter-spacing: .08em;
+
+      &:hover {
+        padding-bottom: .42em;
+        border-bottom: 2px solid #FFF;
+      }
     }
   }
 
-  .nav li, .more {
+  .nav li {
     float: left;
-    padding: 0 15px;
-    line-height: 2.4em;
+    padding: 0px 15px;
+    line-height: 1em;
+    margin-top: 5px;
   }
   .nav.nav-secondary a {
     color: $gray-light;
@@ -178,7 +188,7 @@ HEADER STYLES
   .info {
     width: 470px; 
     text-align: center;
-    margin-top: 30px;
+    margin-top: 2em;
   }
 
 
@@ -188,16 +198,19 @@ HEADER STYLES
 
   footer {
     overflow: auto;
-    width: 720px;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     font-size: 12px;
     position: relative;
+    color: #ccc;
 
-    &.new {
-      width: 100%;
-      border-top: 1px solid #F6f6f6;
+    .nav-group {
+      padding: 4em 0 8em 3em;
+    }
 
+    nav {
+      margin-right: 5em;
     }
 
     &.color {
@@ -206,18 +219,6 @@ HEADER STYLES
       background-image: -ms-linear-gradient(-90deg,#3BD2FF,#2448BB);
       background-image: -o-linear-gradient(-90deg,#3BD2FF,#2448BB);
       background: linear-gradient(-90deg,#3BD2FF,#2448BB);
-    }
-
-    .page-content {
-      padding: 2em 30px 1em;
-    }
-
-    .strong {
-      color: #999;
-
-      &:hover {
-        color: $brand-color;
-      }
     }
 
     .bottom-border {
@@ -268,6 +269,8 @@ HEADER STYLES
 
   footer a {
     color: #ccc;
+
+    &:hover { color: $brand-color; }
   }
 
   footer h3 {
@@ -296,11 +299,13 @@ HEADER STYLES
 
   .btn {
     @extend %caps;
+
+    text-align: center;
     cursor: pointer;
     display: inline-block;
     font-size: 12px;
     background: $brand-color;
-    padding: 7px 15px;
+    padding: 1em;
     color: white;
     border-radius: .35em;
     -webkit-transition: background .15s ease;
@@ -314,38 +319,13 @@ HEADER STYLES
 
     &.btn-large {
       font-weight: 500;
-      width: 400px;
+      width: 33%;
       display: block;
       text-align: center;
-      font-size: 24px;
+      font-size: 1.2em;
       letter-spacing: .14em;
 
-      padding: 13px 5px;
       margin: 90px auto 30px auto;
-    }
-
-    &.btn-main {
-      border-color: $brand-color;
-      color: #FFF;
-
-      &:hover {
-      background-image: -webkit-linear-gradient(-90deg,#3B8FFF,#2448BB);
-      background-image: -moz-linear-gradient(-90deg,#3B8FFF,#2448BB);
-      background-image: -ms-linear-gradient(-90deg,#3B8FFF,#2448BB);
-      background-image: -o-linear-gradient(-90deg,#3B8FFF,#2448BB);
-      background: linear-gradient(-90deg,#3B8FFF,#2448BB);
-        color: #fff;
-      }
-    }
-
-    &.btn-transparent {
-      border-color: transparent;
-      background-color: transparent;
-
-      &:hover {
-        background-image: none;
-        background-color: rgba(255, 255, 255, 0.25);
-      }
     }
 
 
@@ -362,151 +342,18 @@ HEADER STYLES
       }
     }
 
-    &.btn-quiet {
-      border-color: $gray;
-      background-color: $gray;
-      color: #FFF;
-
-      &:hover {
-        background-color: #FFF;
-        color: #222;
-      }
-    }
-
-    &.btn-outline {
-      border-width: 2px;
-      border-style: solid;
-      border-color: #111;
-      color: #111;
-      background-color: transparent;
-
-      &:hover {
-        background-image: none;
-        background-color: #111;
-        color: #fff;
-      }
-
-      &.btn-main {
-        border-color: $brand-color;
-        color: $brand-color;
-
-        &:hover {
-          background-color: $brand-color;
-          color: #fff;
-        }
-      }
-
-
-      &.btn-secondary {
-        border-color: $gray;
-        color: $gray;
-
-        &:hover {
-          background-color: $gray;
-        }
-      }
-
-      &.btn-light {
-        border-color: rgba(255, 255, 255, 0.25);
-        color: #FFF;
-
-        &:hover {
-          color: $brand-color;
-          background-color: #fff;
-        }
-      }
-
-
-
-      &.btn-white {
-        border-color: #FFF;
-        color: #FFF;
-
-        &:hover {
-          color: $brand-color;
-          background-color: #fff;
-        }
-      }
-
-
-    }//end btn-outline
-  }
-
   .btn-small {
-    font-size: 11px;
-    padding: 15px;
+    font-size: .875em;
+    padding: 1em;
     border-radius: 3px;
   }
 
   .btn-tiny {
     font-size: 9px;
     padding: 13px 17px;
-
-    &.btn-outline {
-      border-width: 1px;
-    }
   }
-
-  .btn-secondary {
-    background: transparent;
-    box-shadow: inset 0px 0px 0px 3px #eee;
-    -webkit-transition: box-shadow .15s ease;
-    color: $gray;
-    &:hover {
-      background: white;
-      box-shadow: inset 0px 0px 0px 3px #ddd;
-      -webkit-transition: box-shadow .15s ease;
-    }
-  }
-
-  .btn-secondary.btn-tiny{
-    box-shadow: inset 0px 0px 0px 1.5px #eee;
-    &:hover {
-      box-shadow: inset 0px 0px 0px 1.5px #ddd;
-      -webkit-transition: box-shadow .15s ease;
-    }
-  }
-
-
-  .btn-secondary.btn-small{
-    box-shadow: inset 0px 0px 0px 2.5px #eee;
-    &:hover {
-      box-shadow: inset 0px 0px 0px 2.5px #ddd;
-      -webkit-transition: box-shadow .15s ease;
-    }
-  }
-
-  //Fix
-  .header {
-    min-height: 30em;
-  }
-
-  header.post-header {
-    padding: 40px 0px;
-    color: $gray;
-    text-transform: uppercase;
-    font-weight: 900;
-    margin-bottom: 2em;
-    box-shadow: none;
-  }
-
-  .post-content { 
-    font-weight: bold; 
-    color: #444;
-    line-height: 1.25em;
-  }
-
-  .post-content img {
-    margin-top: 6em;
-    margin-bottom: 6em;
-    margin-left: -30%;
-    max-width: 160%;
-  }
-
-  .post-content img + img {
-    margin-top: -2em;
-  }
-
+}
+  
   .longform p {
     padding: 2em 0em;
   }
@@ -573,7 +420,6 @@ HEADER STYLES
 
   .strong { 
     font-weight: 500;
-    color: #222;
   }
 
   .light {

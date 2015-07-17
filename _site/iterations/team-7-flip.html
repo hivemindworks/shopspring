@@ -1,12 +1,39 @@
----
-layout: default
----
-<link rel='stylesheet' href='{{ site.baseurl }}/css/animate.css'>
+<!DOCTYPE html>
+<html>
 
-<style>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Designs for Shopspring
+">
+
+    <title>Shopspring + HiveMind</title>
+
+    <!-- Gotham fonts! -->
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7704154/694546/css/fonts.css" />
+
+    <link rel="stylesheet" href="/shopspring/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/shopspring/stylesheets/custom.css" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-codes.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-embedded.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-ie7-codes.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/shopspring/css/spring-ie7.css" media="screen">
+
+    <link rel="canonical" href="http://hivemind.works/shopspring/shopspring/iterations/team-7-flip.html">
+    <link rel="alternate" type="application/rss+xml" title="Shopspring + HiveMind" href="http://hivemind.works/shopspring/shopspring/feed.xml" />
+  </head>
+
+
+  <body>
+    <style>
   .employee {
+    perspective: 1000;
     width: 100%;
-    border: 3px solid #eee;
     margin-top: 3em;
     text-align: center;
     text-transform: uppercase;
@@ -15,15 +42,42 @@ layout: default
     height: 390px;
   }
 
-  .employee .role, .employee .bio, .employee .quiet, .employee .brand { display: none; }
-  .employee.active .role, .employee.active .bio, .employee.active .quiet, .employee.active .brand { display: block; }
-
-  .employee:hover {
-    color: #3b8fff;
-    cursor: pointer;
+  /* flip the pane when hovered */
+  .employee.active .flipper {
+    transform: rotateY(180deg);
   }
 
-  .employee.active {
+  /* flip speed goes here */
+  .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    border: 3px solid #eee;
+    position: relative;
+  }
+
+  .front, .back { height: inherit}
+
+  /* hide back of pane during swap */
+  .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  /* front pane, placed above back */
+  .front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+  }
+
+  /* back, initially hidden pane */
+  .back {
+    transform: rotateY(180deg);
     background: #3b8fff;
     text-align: left;
     text-transform: none;
@@ -31,29 +85,17 @@ layout: default
     border-color: #3b8fff;
     padding: 1em 2em;
     font-weight: 300;
+
   }
 
-  .employee.active img {
-    display: none;
+  .employee .role, .employee .bio, .employee .quiet, .employee .brand { display: none; }
+
+  .employee:hover {
+    color: #3b8fff;
+    cursor: pointer;
   }
 
-  .employee.active .brand-block {
-    -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s; }
-
-  .employee.active .bio {
-    -webkit-animation-delay: .75s;
-  -moz-animation-delay: .75s; }
-
-  .employee.active .role {
-    -webkit-animation-delay: .5s;
-  -moz-animation-delay: .5s; }
-
-  .employee.active .name {
-    -webkit-animation-delay: .25s;
-  -moz-animation-delay: .25s; }
-
-  .employee.active .name {
+  .employee .back .name {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.2em;
@@ -63,16 +105,19 @@ layout: default
     letter-spacing: .14em;
   }
 
-  .employee.active .role {
+  .back .role {
     line-height: 1em;
+    display: block; 
     margin-bottom: 2em;
   }
 
-  .employee.active .bio {
+  .back .bio {
     font-size: .875rem;
+    display: block; 
   }
 
-  .employee.active .quiet {
+  .back .quiet {
+    display: block; 
     color: #fff;
     opacity: .33;
     font-size: .875rem;
@@ -80,7 +125,8 @@ layout: default
     bottom: 3rem;
   }
 
-  .employee.active .brand {
+  .back .brand {
+    display: block; 
     position: absolute;
     bottom: 1.5rem;
   }
@@ -96,11 +142,75 @@ layout: default
   .employee:first-child { margin-top: 0; }
 
   .splash:after {
-    background: url({{ site.baseurl }}/img/grass.jpg) #000 no-repeat center center fixed; 
+    background: url(/shopspring/img/grass.jpg) #000 no-repeat center center fixed; 
   }
 </style>
 
-{% include header.html %}
+<header class='dark img'>
+    <a class='logo' href='/shopspring/iterations/index-3.html'>
+    Spring
+  </a>
+
+  <nav class='clearfix'>
+    <ul class='nav'>
+
+      
+        <li>
+          <a href='/'>
+            Shop
+          </a>
+        </li>
+      
+      <li>
+        <a href='/shopspring/iterations/brands-1.html'>
+          For Brands
+        </a>
+      </li>
+      <li>
+        <a href='/shopspring/iterations/about-1.html'>
+          About
+        </a>
+      </li>
+      <li>
+        <a href='/shopspring/iterations/about-1.html'>
+          Team
+        </a>
+      </li>
+      <li>
+        <a href='/shopspring/iterations/about-1.html'>
+          Careers
+        </a>
+      </li>
+      <li>
+        <a href='/shopspring/iterations/about-1.html'>
+          Engineering
+        </a>
+      </li>
+    </ul>
+
+    <div class='fr account'>
+      <ul class='nav'>
+      <li>
+        <a href='/shopspring/iterations/about-1.html'>
+          Login
+        </a>
+      </li>
+      <li>
+        <a href='/shopspring/iterations/about-1.html'>
+          Sign Up
+        </a>
+      </li>
+      <li>
+      <a style='line-height: 1em; margin-top: -15px' class='btn btn-light'>
+        Get the App
+      </a>
+      </li>
+      </ul>
+    </div>
+  </nav>
+
+</header>
+
 <div class="clearfix splash">
   <h1 class='center heading'>Good people grow here</h1>
 
@@ -123,28 +233,204 @@ layout: default
   <div class='grid mt6'>
     <div class='col3'>
       <div class='employee'>
-        <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
-        <div class='name'>
-          Andrew <span class='strong'>Adams</span>
-        </div>
-        <div class='role'>Product Analyst</div>
-        <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
-        <div class='brand-block'>
-        <div class='quiet'>Favorite Brand</div>
-        <div class='brand'>Knowlita</div>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='/shopspring/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
         </div>
       </div>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='/shopspring/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='/shopspring/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
+<div class='col3'>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='/shopspring/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='/shopspring/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
 
-</section>
 
-<section class='gray'>
-  <h2 class='subheader center'>Think you'd be a good addition?</h2>
-  <a class='btn btn-large center'>
-    View Open Positions
-  </a>
-</section>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='/shopspring/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='col3'>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='/shopspring/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='/shopspring/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='/shopspring/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+  </section>
+
+  <section class='gray'>
+    <h2 class='subheader center'>Think you'd be a good addition?</h2>
+    <a class='btn btn-large center'>
+      View Open Positions
+    </a>
+  </section>
 
 </div>
 </div>
@@ -160,7 +446,6 @@ layout: default
     } else {
       $('.active').removeClass('active');
       $this.addClass('active');
-      $this.children('.name, .role, .bio, .brand').addClass('animated bounceInUp');
     }
   })  
 </script>
@@ -194,7 +479,7 @@ var team = [
   },
   {
     'name': 'David Tisch',
-    'photo': '{{ site.baseurl}}/img/employees/.jpg',
+    'photo': '/shopspring/img/employees/.jpg',
     'bio': 'David Tisch is Managing Partner of BoxGroup, an NYC-based angel capital firm, as well as Head of Startup Studio at Cornell Tech. He is the co-founder of TechStars NYC and served on Mayor Bloomberg’s Advisory Council on Technology. He likes wearing hoodies and enjoys using ellipses...',
     'team': 'leadership',
     'role': 'Founder & Chairman of the Board',
@@ -203,7 +488,7 @@ var team = [
   {
     'name': 'Dan Zeehandelaar',
     'photo': 'https://photos-6.dropbox.com/t/2/AAAdx6NiuHqTJIZCUC7SYQDXtDsWv-pAxm5kOkyPvZhfeg/12/23013116/jpeg/32x32/1/1433271600/0/2/02.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/sNTMA_-QmogupP12qcMjkfmLGsgWwl4ugtf_T_dgr2k%2CwXpqr1NxqAWNCoaPVk3bjZGWzjVFkNyqHiaFmdeKL70%2C_pg2KECDugnNgR3ExCc2cDDeqbOR5odJfcl7AowlyL4%2C7zdXWqm_jJJfc9D0LLr-iXDuEdFft0DgxfPKVmaV7FY%2C6PTwXJqHyaHzpUMmK9E3anFY5e4phGqOw9I8gFSBofk%2C0br_oLnu2eqgVM9udBBkwX_NnwfAcrUHoUP5bihzXHQ?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Dan was an early employee at Birchbox, where he helped develop the company\'s operations systems. Before that, he worked as a strategy consultant. He\'s an airplane geek and a private pilot, and loves to collect and spend frequent flyer miles.',
     'team': 'product',
     'role': 'Product Manager',
@@ -212,7 +497,7 @@ var team = [
   {
     'name': 'Jim Grandpre',
     'photo': 'https://photos-1.dropbox.com/t/2/AADAGxLlxxKvMllyIzURhC3zc64UHvd5fNI5JAHO-oGr2A/12/23013116/jpeg/32x32/1/1433271600/0/2/03.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/1BiefZMGMJON1k4mXFfhffHavQqdNM3tydy4cMYUHHk%2C3zZsdFZ5jklUocXM7NuBKMg-Q1DIC63o_uzmaqZUiJ8%2C4WcClorfZeDGxh_orwsFJiXGj2n-XIGxuSYggyG3GC4%2CvsZlQuNrIaSb0id8__Foqrrl-W88HfUNxREPnR-ZpqQ%2CFZMdc7-BTgtNZIHiZXiEA6QaXHOaM85yH3SRove9t2U%2CKpHpKTCBY2IGp6-xoPHhMBNHonMEGXLwGxe1I80GT5E?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Jim dropped out of UPenn to found, build, and eventually sell Lore. He enjoys building things and frequently wears orange.',
     'team': 'product',
     'role': 'Engineer',
@@ -221,7 +506,7 @@ var team = [
   {
     'name': 'Artem Titoulenko',
     'photo': 'https://photos-6.dropbox.com/t/2/AAB0L98ZdIZ1ZWIWFwBh3JdRDRc4LtQUrqWt71KXu6GoEA/12/23013116/jpeg/32x32/1/1433271600/0/2/04.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/TmvK_EdSGr7OOKmZYUWCvIFb_ymNfCWeeO_3UOeGHro%2CoFHRHVlD4pY9ljjpMYR_nlKsDgUqQaHWVbjygjrj_Oo%2C8TyUAA2wEV4_QF3tyKpHnwKTD7uWFBtb4QgFEvwUpgM%2CxlkFIp3van6-e0fosX0KDcvvvZz0wUm2yzEzQhcwPmU%2CuoatlAZLkEKB2rnjNB3f-FkkGiWQTy3G5Pqrc4As6DQ?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Artem is a young soul who has loved programming since an early age. He was part of the first Hacker School class and later went on to build products at Codecademy and Medium. He\'s an avid sailor and cyclist with an insufferable love for New York and electronic music.',
       'team': 'product',
     'role': 'Software Engineer',
@@ -230,7 +515,7 @@ var team = [
   {
     'name': 'Katherine Prime',
     'photo': 'https://photos-4.dropbox.com/t/2/AAC2nq9vQuAfnAgxw97y648wc2mF5kZ1lSw9yV1L90QABg/12/23013116/jpeg/32x32/1/1433271600/0/2/08.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/ylKOmVEHHfHqcntR05-AAvBQK_FPfjpwjFCUWpFCsmU%2CfhsBSTzQFUm7hbR40FCGNq_eEU7taP0sEvK8l_dhClc?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Katherine previously worked at Amazon, where she launched Casa.com, and AOL, where she served as GM of Style & Home. She has an MBA from Harvard and a BA from Yale. Katherine is a real New Yorker whose first word was “bagel,” but she harbors a secret love of Garth Brooks.',
     'team': 'leadership',
     'role': 'VP Operations',
@@ -239,7 +524,7 @@ var team = [
   {
     'name': 'Tessa Mu',
     'photo': 'https://photos-6.dropbox.com/t/2/AADWGNdFU9kLYIwdVhCePxYJLBAE8zBYGWRchGcBASO4aA/12/23013116/jpeg/32x32/1/1433271600/0/2/10.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/P9DwLtzRtenOQovimbGwto9mwxnlz9xTh8_BnwkqmBE%2C7GC2_ue64bfEa49iN4jJVXQEkU7cAn0mzgYe1uMtrpg%2CbnsMhp-x7vjlo8W5h58jSAhvO6b6XwHRd3pK7XzDAxA%2CgSKgl8bnxpg-q9r1K29pnzsZ4YC64i7SgC-J16G536U%2CYG0NUDltQPTXkC0GvwGqCINJ_Ehj6tXdNPVHm1kFuTs?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Tessa comes from Marc Jacobs, where she built the brand\'s online presence from the ground up, reaching 6.2MM followers and landing accolades such as Best Facebook, Twitter, and Instagram by a Fashion Brand. She is an advocate of all things fashion and tech, and likes dogs a lot, too.',
     'team': 'marketing',
     'role': 'Head of Digital/Social Media',
@@ -248,7 +533,7 @@ var team = [
   {
     'name': 'Arielle Welt',
     'photo': 'https://photos-5.dropbox.com/t/2/AAAI-XQrHXEjYZDtN-wV-x0zNAlGuW5_xY6jW51LymQ4zg/12/23013116/jpeg/32x32/1/1433271600/0/2/11.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/r3lFweiKP7H-AT0dnkJjwjVDHyP72nNZm4r7E7PIZdM?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Arielle\'s experience spans luxury and contemporary markets: She has worked agency-side in PR and brand-side in Wholesale. She helped launch Rachel Zoe\'s RTW collection and most recently spent time at CÉLINE. Arielle enjoys bad television, good sushi, and fabulous shoes (and any combo of the three).',
     'team': 'brand-management',
     'role': 'Director of Brand Strategy',
@@ -257,7 +542,7 @@ var team = [
   {
     'name': 'Anis Rashid',
     'photo': 'https://photos-1.dropbox.com/t/2/AACMrIqOEOCFiCen0hm7DoBLkTygwWIlZUFgGcr3RaKTQg/12/23013116/jpeg/32x32/1/1433271600/0/2/14.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/E1qm4ygCAqIomYoNlqA2Lc93-vqyX9wkm2VMT4fCKT8%2C-DVhE-9ZzGrJ89ApgVInukUK6jlMHc-wZnGglKwnKKo?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Anis previously worked in tech banking at Goldman Sachs, where he was involved in Disney\'s acquisition of LucasFilm, zulily\'s IPO, and DirecTV\'s sale to AT&T. Previously, Anis tried to build a social blogging platform called Opin. He spends his free time buying Twitter followers.',
     'team': 'brand-management',
     'role': 'Brand Operations',
@@ -266,7 +551,7 @@ var team = [
   {
     'name': 'April Uchitel',
     'photo': 'https://photos-1.dropbox.com/t/2/AACzdBlxsZtQChBpyW4TXcdQLnDC74u4YRXVIMaolEr-1Q/12/23013116/jpeg/32x32/1/1433271600/0/2/17.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/NGlU3Md2N-pvDKLtUd_zmq0M8FxP-QlHzwzN73hDcxg%2Cgof4k0PuiP2kkFKG2TEzMpGaA7ZrWUdoKdmy02d2R5Q%2ClchYs3RYO_v-IwKk35m3KGfEUuaJoaW99UEicEalJfs%2CkICGqrD7BDkWA4SPoIERBxABfsPlmH8IvcmIUrt4aig%2CX9v17w6RHZp2TJSAQEb2M18wufJ7JMNeH0mDSXnjMf0%2CViBATDw8xsrLZywjR2M1Idf-jjZI5z_wio8GaAxuqhw%2CZJCdawAxIJESagS22Hgq3paJX0QuzXav_XR5FbspA0w%2CGU_n-KvehU1Zump4hkuQHbmJdkg-rh2li1-dfIn5AbA?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'April is fashion veteran with 25+ years experience in sales, merchandising, and strategy. She spent 9 years developing DVF and has served as a CFDA incubator mentor and a brand consultant. April has a chai latte addiction, a penchant for RED lipstick, and spends down time upstate with her family.',
       'team': 'brand-partnerships',
     'role': 'Chief Brand Officer',
@@ -275,7 +560,7 @@ var team = [
   {
     'name': 'Sam Nirenberg',
     'photo': 'https://photos-3.dropbox.com/t/2/AAAXjzJGc8VlAfkjTkM1xVyxe8wVXZMsa3dBYapGAKezug/12/23013116/jpeg/32x32/1/1433271600/0/2/21.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/q3JtadSBzDOGzks-eVP6PbeCJ0CUQdMG3CCImbhr7HA%2CXWeR695w-awv-_X6garEHPljLbHKcoo_VPgHeCUpzFM?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Sam\'s career started in LA as a wardrobe stylist while at FIDM. Next, at BeachMint, she produced video and photo content for direct-to-consumer brands. In 2014, Sam left the sunny beaches of Malibu for NYC. When not working, she\'s likely scouting the streets for live music.',
       'team': 'brand-management',
     'role': 'Brand Manager',
@@ -284,7 +569,7 @@ var team = [
   {
     'name': 'Mindy Welford',
     'photo': 'https://photos-3.dropbox.com/t/2/AADP2gdSCvAqfzF0pOxRabeLN4ZTY3H5rNM-VRDfL12l0g/12/23013116/jpeg/32x32/1/1433271600/0/2/22.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/v4ilXyJ-n5eG8OkCiLVaIQIJJxfFTGYztkRYLAJswQ4%2CEhlqjv0A6GirmSz26lNElMxhWpkT9pqoSgmgt7eCXHY?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Mindy has developed email marketing strategies at retailers including From You Flowers, Penguin Random House Publishing, and Dylan\'s Candy Bar. She is a born-and-raised Michigander who loves David Lynch films, speaks Spanish and Hebrew, and enjoys extremely high-waisted jeans.',
     'team': 'marketing',
     'role': 'Email & CRM',
@@ -293,7 +578,7 @@ var team = [
   {
     'name': 'Ara Katz',
     'photo': 'https://photos-1.dropbox.com/t/2/AABNZnryjlCFvlu4Kxc2Rz3QkFc3HaVIgNYD6_YmYb1yww/12/23013116/jpeg/32x32/1/1433271600/0/2/25.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/M4T87ckRfajWDmwC2A27PRYCmBc8ZmH9zp3ZT1XvJzM%2CQUa3EPWoQtUIdGVo2i4CVBRduqbd9rXkofZROIRXZGM%2CtqaOvaPEoFgQKkiz9T8nZnCk9F_yqXLknVzWfKfwkOM%2CoxtaMyt0dlaSyhfpazlovQ7iLIp4ajO1_Xq4tpNkO-c%2CBH8Xdv6kyVWxbcGg4oCus9yuSIZQqFS0AAEqG4djvzs%2CCFCA5tiV3zyhF1MoyLYtLL-ykFGMEA3kdZG2f-Km77Y%2CQ3ccdDhiwXBtlGIyDkXbafyXznCo0UfFgXMPnhEDN6c%2Crn0kQbEqrPHubE68RaFpCwZUfMYg_L40EoMrN0zwQVw%2CGlhGKrXHOqI16Lsrh94aayeqoOWV2sbC1Iz3Tiw5dTo%2C-wL4x9z5JGrvsQRioEW8x6a-4rShSrGeiiY2ABM0syo%2CoeAmzNs2ECvH0IMc_STRXPjp-8hRgU4dM0dbQquDkBU%2CyGkk8GTsWknD4N3fSkGQnesb2InRtjLsrQsmjDG0Pmw?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Ara is a founder of BeachMint and advises a variety of startups. She is a CCA DesignMBA Fellow and a Visiting Fellow at MIT Media Lab\'s Center for Future Storytelling. She has consulted with the Department of Defense and Mullen, and loves all things design (including designing her own furniture).',
       'team': 'leadership',
     'role': 'Chief Marketing Officer',
@@ -302,7 +587,7 @@ var team = [
   {
     'name': 'Brian Eoff',
     'photo': 'https://photos-4.dropbox.com/t/2/AAAl9l-UZhWSN2-s7oO2PsaFHn15xSa3IkPwC-c19O9POQ/12/23013116/jpeg/32x32/1/1433271600/0/2/27.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/p0MaYV6PaE3lSMXjZZ_BDl46Qb8rw_rRJTh3cbinOPk%2Cep_K9-WXPy7Uyd3PebZSxsaxPJKROWQaWocIuoLRKNI%2CXZ6Hlko8WrCU3Q4z7ZzjMG4NSYl4dhT2PpzJmSjs2Nc%2C6GZs1GmapROCdawM6J_npiMJ1jQyUcu6PLMePwj-IeM%2CTXw6394UBRzRF5ZVPrboRLt-A7VmlzeJekYxXgWrwOE%2CdzFdTqqS_mYKYqDx1ptrBU8fiGWaFcwV7oVBhZc_brA%2CCqja7bLPvLfTbvN4VHii15FBYSrXWWY93LtoNxna27Q%2CsU2gmv_F0YMd0zt8mD7gaca9NCN31kX1HfzpWugWsAM%2COt-cI_EIfOspbHNUB7zTOGNUJie5pR1OFexCBWx1p4o%2CaN8RTHsdXSRPoXvPugxd3FKWWcrg-LZeO7cOaWC9ncI%2ChW1ITMOBOJO3eb9yZ6bueIGBCT-qg9LcVHU30NzLUpc?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Brian was wooed away from his PhD at Texas A&M by the bright lights of Broadway. He was previously the lead data scientist at Bitly. Brian is originally from Huntsville, Alabama, and he too is unsure what happened to his southern accent. He has a perfectly healthy obsession with Auburn football.',
     'team': 'product',
     'role': 'Data Scientist',
@@ -311,7 +596,7 @@ var team = [
   {
     'name': 'Jeff Tierney',
     'photo': 'https://photos-2.dropbox.com/t/2/AABWUybMmPSZZMWxqQsSNB_tRfUlEjx2YCGhb4X3yJolVg/12/23013116/jpeg/32x32/1/1433271600/0/2/29.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/h-COOvuATF7xp6bAUVV3U1z3WnsUWFhKOsGvo70flxE%2CPFhja058E59XE0yy3VFwfRNcfn6__b14IUyKIyAQCUA?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'After working at a large insurance company, Jeff saw the light and switched to startups. He previously led front-end development at Bitly. He lives with his wife and three kids in NJ, where he roots for the Jets and Yankees, sings along to Springsteen, and scours the Internet for the perfect GIF.',
       'team': 'product',
     'role': 'Animated Gif',
@@ -320,7 +605,7 @@ var team = [
   {
     'name': 'Scott Amenta',
     'photo': 'https://photos-1.dropbox.com/t/2/AAAc1eg9KSsz84ikdhLoS7-DuyL8f4-ShsJTC7Rqnb9hjA/12/23013116/jpeg/32x32/1/1433271600/0/2/35.tif/CPzN_AogASACIAMgBCAFIAYgBygBKAI/zHcc3WRHtGBLxk8kZIgB1UonWBT3hN31qMyHZ5vbIWk%2CUjwiM2N4V5PdjydcWFYNM-BFql4JgMKNiMSK0irajxY%2CnyJkmlLOh4H54C3MP6Jk0XDzRyB4zEi_SBIbRg8AAXc%2CDRno0S_oeGNX9htcg9wU16ck-Y_TPp2q_98wYa8IvC8%2CrX-QF1OKc8Mz9DiflDVxtH4XIsb2h189de7u6KnTkKY?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Scott has worked at a variety of NYC-based technology startups, including Foursquare, TechStars, and ChatID. At ChatID, Scott was responsible for building partnerships with some of the world\'s largest consumer electronic brands. In his free time, Scott rides his fixie around the city.',
       'team': 'brand-partnerships',
     'role': 'Business Development',
@@ -329,7 +614,7 @@ var team = [
   {
     'name': 'Octavian Costache',
     'photo': 'https://lh3.googleusercontent.com/1BFwSVqDlx9sip6IJpVWu9C4fYLP_FR8QVsSldt7IDK9YG7ED2wgEOH3NR2n8Ts-fH44ZQDc7o2Fnw0=w2504-h1162-rw',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Octavian is an ex-Googler: author of Multiple Inboxes in Gmail, Charts on Google Finance, and contributions to Google Maps and Maps Search. He\'s written code in Javascript, Actionscript, Java, C++, Ruby, ObjectiveC, and   Go. He likes skydiving, paragliding, and pretending to be Borat.',
     'team': 'leadership',
     'role': 'CTO',
@@ -338,7 +623,7 @@ var team = [
   {
     'name': 'John White',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'John is from London, the capital of a country called England. He has loads of experience leading design teams, and was previously a Creative Director at R/GA, where he worked on enough Nike projects to choke a horse. He enjoys cycling, film, reading, nice socks, and his daughter Virginia.',
     'team': 'design',
     'role': 'Creative Director',
@@ -347,7 +632,7 @@ var team = [
   {
     'name': 'Sonia Tsao',
     'photo': 'https://photos-4.dropbox.com/t/2/AACF6GmDbNJiYBTLJe27n_Jc2iTFZxJOdSDlhz8iov0HjQ/12/301153496/jpeg/32x32/1/1433296800/0/2/Sonia.JPG/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/PZhh-BlI-yezL-LRtZsifBHG-Zgw-dXLLDyXWzWpYEo?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Sonia\'s background is in real estate and lifestyle partnerships, and she has also worked with Chanel and Conde Naste Traveler. She holds a BA in Anthropology from Tufts and an MBA from Harvard. A Singapore transplant, Sonia loves spicy food, jumpsuits, and running after her pup, Rex.',
     'team': 'brand-management',
     'role': 'Brand Manager',
@@ -357,7 +642,7 @@ var team = [
   {
     'name': 'Vadim Graboys',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Vadim previously built simulation engines for mortgage-backed securities at Bloomberg before starting a Bitcoin exchange. He also spent time creating transaction-processing infrastructure at Chartbeat. Vadim enjoys hiking, biking, and psychedelic trance festivals.',
       'team': 'product',
     'role': 'Software Engineer',
@@ -366,7 +651,7 @@ var team = [
   {
     'name': 'Viviana Rodriguez',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Viviana comes from finance, where she expanded a commodities business into Latin America and focused on client acquisition, marketing, and relationship management. She left the beaches of Puerto Rico to attend Yale, and now pursues warm weather to stay sane. Although food and wine also do the trick.',
     'team': 'conceirge',
     'role': 'Director of Customer Operations',
@@ -375,7 +660,7 @@ var team = [
   {
     'name': 'Alan Wang',
     'photo': 'https://photos-5.dropbox.com/t/2/AAC1kecSQGNVSKNPZ0CrMX7rogddrPIDwRjt7mkQVO6M_g/12/301153496/jpeg/32x32/1/1433296800/0/2/Alan%20W.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/s-CFPY3isxTwd9Yk078kcho21xudugt8sbHijshcICc?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'A Cal graduate with an MS in structural engineering, Alan spent 2 years designing buildings before attending the Recurse Center and moving to software. He enjoys games of all kinds, and can tell you more about concrete and steel than you would ever care to know.',
     'team': 'product',
     'role': 'Software Engineer',
@@ -385,7 +670,7 @@ var team = [
   {
     'name': 'Adam Fried',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Adam has developed a variety of software, from embedded to mobile apps. He previously worked at BlackRock and Lockheed Martin. He holds a BS in Computer Eng. and an MBA from SUNY Binghamton, and a Master\'s in Systems Eng. from Cornell. Adam enjoys hiking, biking, and skiing.',
     'team': 'product',
     'role': 'Software Engineer',
@@ -394,7 +679,7 @@ var team = [
   {
     'name': 'Andrew Adams',
     'photo': 'https://photos-3.dropbox.com/t/2/AACXdRDJm20q-X0boPMNHjtHAml_BK0xWvbPU-Zlel47KA/12/301153496/jpeg/32x32/1/1433296800/0/2/Andrew%20A.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/SnuuO8Ea2HNFJlRMNrBtEosugsjLIemkRwDRaX8gHTY?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lane. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.',
       'team': 'product',
     'role': 'Product Analyst',
@@ -404,7 +689,7 @@ var team = [
   {
     'name': 'Chaz Yoon',
     'photo': 'https://photos-5.dropbox.com/t/2/AAD3JdXy8Imn3qTbRlD1ZUZcufvV3Dhpq9iWBBTG26ROmQ/12/301153496/jpeg/32x32/1/1433296800/0/2/Chaz.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/HukOONcdNagR35LTayGbBuSYTSdkCe6sAA4DZ0fVy5g?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Chaz iz chaz. Obvz.',
     'team': 'product',
     'role': 'Head, Business Intelligence',
@@ -413,7 +698,7 @@ var team = [
   {
     'name': 'Chris Fahey',
     'photo': 'https://photos-6.dropbox.com/t/2/AAAoxuTMtZN1ABTetfeGQ73PsBaykR6s_hqmGdGJ9mQSHw/12/301153496/jpeg/32x32/1/1433296800/0/2/Chris%20F.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/W5OTXVgQhfJNDOTrnEQGgGJO9_5ohWxsdjpQCiipR3Y?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Chris helps Spring\'s team of awesome designers be even more awesome. With over 20 years experience, he has led interaction design teams at ZocDoc, Big Spaceship, and Behavior, a firm he cofounded. Chris likes to juggle and run long distances, but never at the same time.',
     'team': 'design',
     'role': 'VP Product Design',
@@ -423,7 +708,7 @@ var team = [
   {
     'name': 'Christy Maddox',
     'photo': 'https://photos-1.dropbox.com/t/2/AABkn3tetmJxpHRaCWldp1_AM7FMXJJ5v5Kc73oBHtYWrQ/12/301153496/jpeg/32x32/1/1433296800/0/2/Christy.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/4K-54r-w1XY_Gc-xAEyorlufgryBBPC5WdXlO7WLtqE?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'A native Atlantan who moved to the Big Apple by way of Nashville, Christy cut her teeth in the advertising department at Barneys. After that, she went into Wholesale and worked for Givenchy and Marni. Christy lives for Friday Night Lights, flea markets, and chicken fingers.',
       'team': 'brand-management',
     'role': 'Brand Manager',
@@ -432,7 +717,7 @@ var team = [
   {
     'name': 'Courtney Ortiz',
     'photo': 'https://photos-6.dropbox.com/t/2/AAALB1Xc7fMhDEEbuGrJAx1n7gjIsAK2SZirZ64vtCC3UQ/12/301153496/jpeg/32x32/1/1433296800/0/2/Courtney.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/KIwB4WIPUPpDBDpmdyhx7cE1A84unTBeM2gIWKQ48RY?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Courtney graduated from Boston University with a BA in Anthropology, but has spent most of her career leading web-based technology projects. In her spare time she enjoys cooking, traveling, and playing golf.',
     'team': 'product',
     'role': 'Director, Platform Integrations',
@@ -441,7 +726,7 @@ var team = [
   {
     'name': 'Dan Chen',
     'photo': 'https://photos-3.dropbox.com/t/2/AADoxWOV8ZRevt_L6Yqx7s0vg5QcIt5faSbTOKXKxIBezA/12/301153496/jpeg/32x32/1/1433296800/0/2/Dan%20C.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/8kXBw8zRQBwnj3AGfodE-JnmHel27lvQxtNeHe8xD-Q?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'A native New Yorker, Dan has launched products for Mercedes-Benz, The New York Times, and Samsung. When he\'s not designing, Dan can be found visiting galleries or planning his next trip into the backcountry.',
       'team': 'design',
     'role': 'Product Designer',
@@ -450,7 +735,7 @@ var team = [
   {
     'name': 'Daniel Ortiz',
     'photo': 'https://photos-1.dropbox.com/t/2/AAAZZWad8t1WVnd_qLj-0NYT6TK3b7h0GySVRBztUaLi_A/12/301153496/jpeg/32x32/1/1433296800/0/2/Daniel.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/I2ZSg-Y0HKWqVY7QoJZAJXtpoeWJ1Wc8sab_JM6so00?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Daniel graduated from The Wharton School in 2014. Before joining Spring, he started his career in Macy\'s Merchandising Group, helping to develop its American Rag brand. He lived in Florida for most of his life, interspersed with trips to Ecuador to visit his family.',
       'team': 'brand-management',
     'role': 'Brand Manager',
@@ -460,7 +745,7 @@ var team = [
   {
     'name': 'Dianna Cohen',
     'photo': 'https://photos-5.dropbox.com/t/2/AACvZ-KJ26pd1T6h4KlQRDssOSE_jlCjtlGs5o6TrlzZ5w/12/301153496/jpeg/32x32/1/1433296800/0/2/Dianna.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/143xVUXPsLJkB5IDDjmDN3trVpNwUwFJfqhYW1uf3AY?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Dianna has worked for a variety of NYC-based fashion and technology startups, including Into The Gloss and Beyond The Row. She previously spent time at Valentino, Philip Crangi\'s Giles & Brother, and Thakoon. She’s an art and design nerd; a comedy geek; and a leather pants enthusiast.',
     'team': 'marketing',
     'role': 'Strategic Marketing Manager',
@@ -470,7 +755,7 @@ var team = [
   {
     'name': 'Erin Gusty',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Erin has a BA from Denison University and has worked with Toll Brothers marketing homes across the country. She is a recent college grad and is excited to leave her small Pennsylvania town to join the startup world of NYC. Erin has a passion for traveling and learning new languages.',
       'team': 'conceirge',
     'role': 'Customer Service Representative',
@@ -480,7 +765,7 @@ var team = [
   {
     'name': 'Imran Sobh',
     'photo': 'https://photos-3.dropbox.com/t/2/AAAQHzoUuiClUAK8ODcseu7MxlRMDy2L4vk5p-jmJ47HbQ/12/301153496/jpeg/32x32/1/1433296800/0/2/Imran.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/dCgMvrssIr_Jh6q0A9iHx2u9v3nsCo7UwoNXYyEJDns?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Imran has helped companies of all sizes design and launch products from wearables to websites. One of his favorites so far is Nike+ Basketball — the first shoe to track how high you jump. He bikes as much as possible to offset his unhealthy obsession with donuts.',
     'team': 'design',
     'role': 'Product Designer',
@@ -489,7 +774,7 @@ var team = [
   {
     'name': 'Lauren Devereux',
     'photo': 'https://photos-5.dropbox.com/t/2/AACHDTkKk6K2y4oNYrdFe15BvVhVNmQPO_mgspiWv3X3Dg/12/301153496/jpeg/32x32/1/1433296800/0/2/Lauren.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/O3VD6vt-wuFcRJdE3S6SdKA9m5HhbaF1LNwKqkOI3Kw?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Lauren has worked at a number of NYC-based fashion and media startups, including Zady and #waywire. She holds a BA from Loyola Marymount in Los Angeles, and swears she doesn\'t miss the sunshine. When she’s not working, Lauren\'s usually making or baking something, or chasing her dog, Pearl.',
     'team': 'marketing',
     'role': 'Marketing Manager',
@@ -498,7 +783,7 @@ var team = [
   {
     'name': 'Leslie Fish',
     'photo': 'https://photos-3.dropbox.com/t/2/AAAP8iIHfgp-AiJdomEBXsuhHO-svIjfC30z-Xnc4AfFVA/12/301153496/jpeg/32x32/1/1433296800/0/2/Leslie.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/sZKytxNpqkW1U2Vg2Mx6SUuXkNQxbg34g-qw0j-LGtY?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Leslie previously worked for a leading hedge fund, managing the firm\'s strategic relationships and conducting research projects on global retail and fashion companies. In her down time, she frequents Shake Shack and takes Tuxedo, her Boston Terrier, on long walks.',
       'team': 'brand-management',
     'role': 'Brand Manager',
@@ -507,7 +792,7 @@ var team = [
   {
     'name': 'Lisa Zhu',
     'photo': 'https://photos-6.dropbox.com/t/2/AABXqq_NRcMKWRhhAc7EYHIe1sxhpMjt7vH69K5jQC3WSg/12/301153496/jpeg/32x32/1/1433296800/0/2/Lisa.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/_AFNWblhC24kLclA_P_13rOCMjbkP_T_VV4ixv0aPsA?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Lisa used to work at PayPal, where she product-managed fingerprint payments and merchant onboarding. Before that, she graduated from Penn and lived a nomadic life as a McKinsey consultant. Lisa enjoys running marathons and travel; she has 53 passport stamps and counting.',
     'team': 'product',
     'role': 'Product Manager',
@@ -517,7 +802,7 @@ var team = [
   {
     'name': 'Maia McCormick',
     'photo': 'https://photos-6.dropbox.com/t/2/AABebhugYgYWszLdwzVRgtwlPk_IqfdFSRpdp64WBJyJyw/12/301153496/jpeg/32x32/1/1433296800/0/2/Maia.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/o5C2IBj9TxEGHgc_d1LRiP382103yd4W_H1Sc4jsuGo?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'An NYC native, Maia earned a BA in music from Williams College, tripped and fell, and landed in the tech world by way of the Recurse Center. Outside of work, Maia can be found singing Renaissance music, folk-dancing, or eating tasty food.',
     'team': 'product',
     'role': 'Software Engineer',
@@ -526,7 +811,7 @@ var team = [
   {
     'name': 'Maya Poulton',
     'photo': 'https://photos-2.dropbox.com/t/2/AADt4Fh04jBUJCMYNF50hSMIWj6FDb5DpRdLU6MWZ_CU1g/12/301153496/jpeg/32x32/1/1433296800/0/2/Maya.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/HhvQrNZqBAIQZlWPKs9wnFm15Fu8F-VpltWU37ja7Z4?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Maya has a decade of experience in business development, strategy, and marketing for luxury brands and startups. Prior to Spring, she spent time at ASMALLWORLD and Jetsetter. She has lived in six countries and holds a B.Com from McGill. She loves travel, dumplings, Spring\'s dogs, and shoes.',
       'team': 'marketing',
     'role': 'Head of Partnerships',
@@ -536,7 +821,7 @@ var team = [
   {
     'name': 'Trey Lawrence',
     'photo': 'https://photos-6.dropbox.com/t/2/AABPuRG64mPBmbeQNrsqVQRfCaQ7f414NxmGOtUQlNO1EA/12/301153496/jpeg/32x32/1/1433296800/0/2/Trey.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/5Wheaa8A0pgzVCgfIGrReEnhXblapAzanUOmiqUvp08?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Trey is a recovering hardware engineer, but has now moved on to the softer stuff. He started out in silicon manufacturing, hardware design, and firmware; studied at Hacker School; and was at eBay NYC. He is a craft beer enthusiast and likely the world\'s best puzzle Bobble player.',
     'team': 'product',
     'role': 'Software Engineer',
@@ -546,7 +831,7 @@ var team = [
   {
     'name': 'Vivian Esquerre',
     'photo': 'https://photos-6.dropbox.com/t/2/AACgfE4zJfY0miLMkbjWcARh557mHZJBeoztKJXDbjTvzQ/12/301153496/jpeg/32x32/1/1433296800/0/2/Vivian.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/VREOGFXs1JvQECAmLGAO-UYPeXR81sNpDGTtjY6bVAE?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Vivian is a graduate of the University of Maryland, College Park. She is a fashion enthusiast and has spent the last 7 years working in luxury retail. Outside of work, Vivian spends her time raising her wonderful daughter Paige and traveling with her family.',
     'team': 'conceirge',
     'role': 'Customer Service Representative',
@@ -556,7 +841,7 @@ var team = [
   {
     'name': 'Wayne Sun',
     'photo': 'https://photos-5.dropbox.com/t/2/AADXzj3sPQ_-9afMzolcVXJeDjgAzR2QRndxtWQS4xeOzw/12/301153496/jpeg/32x32/1/1433296800/0/2/Wayne.jpg/CNj5zI8BIAEgAiADIAQgBSAGIAcoASgC/ZrmLNbWArLuG2G7cE4ZCKgq6HYmDPj7S-hsibmX7BzM?size=1024x768&size_mode=2',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Once upon a time, Wayne designed award-winning experiences for Nike, Quirky, Samsung, and Google. Prior to that, he was part of TechStars NYC. He\'s into product, manufacturing, and design, and he\'s a big fan of \'90s music. He remains the world\'s longest-lurking redditor.',
       'team': 'design',
     'role': 'Product Designer',
@@ -566,7 +851,7 @@ var team = [
   {
     'name': 'Adam Beckerman',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Adam is a veteran innovator in the ecommerce industry. He holds an MBA from Columbia Business School and a BS in Marketing from the Smith School of Business at the University of Maryland, College Park. When not working, he can be found enjoying his family and tinkering with tech.',
     'team': 'product',
     'role': 'VP, Platform Integrations',
@@ -576,7 +861,7 @@ var team = [
   {
     'name': 'Maud Pasturaud',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Maud has more than 7 years of experience in growth, having led acquisition, engagement, and monetization initiatives for Gilt, Secret, and Jetsetter. A fashionista at heart, Maud can be found dancing salsa, buying too many shoes, and being super French (she\'s from Paris and yes it\'s a full-time job).',
       'team': 'growth',
     'role': 'VP, Growth',
@@ -586,7 +871,7 @@ var team = [
   {
     'name': 'Thomas Jeon',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Thomas is da bomb.',
     'team': 'product',
     'role': 'Software Engineer',
@@ -596,7 +881,7 @@ var team = [
   {
     'name': 'Alex Routhier',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Alex is a Cal grad, but not an engineer. She went into fashion, and after graduating from Parsons worked at Alexander Wang handling global press, marketing, and collaborations with brands including H&M and BEATS by Dre. Alex has a small denim addiction and enjoys live music and cooking.',
     'team': 'brand-partnerships',
     'role': 'Brand Curator',
@@ -606,7 +891,7 @@ var team = [
   {
     'name': 'Courtney Fasciano',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'For the last decade Courtney\'s name has been on the masthead of fashion publications like T Magazine, Harper\'s Bazaar, and most recently Marie Claire, where she was the Market Director. She loves looking for the next big thing, talking about skiing, and showing people pictures of her cat Riley.',
       'team': 'brand-partnerships',
     'role': 'Head of Designer Curation & Brand Partnerships',
@@ -616,7 +901,7 @@ var team = [
   {
     'name': 'Amanda Howles',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Amanda is a Certified Public Accountant in North Carolina and holds a master’s degree in accounting from the University of North Carolina at Chapel Hill. She previously worked at Quintiles and Grant Thornton. When not looking at financial statements, Amanda pretends to be a food and wine aficionado.',
     'team': 'business-ops',
     'role': 'Financial Controller',
@@ -626,7 +911,7 @@ var team = [
   {
     'name': 'Jane Shapiro',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'Jane has experience in consumer tech and e-commerce having worked in Product at Etsy and at Zynga and earlier in quantitative marketing at Hotwire.com in San Francisco. She earned an MBA from MIT Sloan School of Management and a BA in Economics from McGill University. She loves Broadway musicals and admits to an expertise in pop culture.',
     'team': 'product',
     'role': 'Lead Product Manager',
@@ -636,7 +921,7 @@ var team = [
   {
     'name': 'Max Coulter',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': 'After spending time in Healthcare (Siemens) and Finance (Amex), Maximilian decided the next obvious move would be to Fashion! Max loves doing whatever is necessary to get an awesome products to people. Generally, that means pushing pixels by way of bits in Objective-C, GO Lang, or whatever.',
     'team': 'product',
     'role': 'Software Engineer',
@@ -645,7 +930,7 @@ var team = [
   {
     'name': 'Siyuan Zhu',
     'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-      'photo': '{{ site.baseurl}}/img/employees/.jpg',
+      'photo': '/shopspring/img/employees/.jpg',
     'bio': '',
     'team': 'product',
     'role': 'Integration Engineer',
@@ -1065,5 +1350,203 @@ for ( row = 0; row < rows; row++ ) {
   window.addEventListener( 'load', init, false); 
 </script>
 -->
-{% include footer-5.html %}
+<footer>
+  <div class='nav-group clearfix'>
+    <nav class='col2'>
+      <ul>
+        <li>
+        <a class='strong' href='/shop'>
+          Shop
+        </a>
+        </li>
+        <li>
+          <a href=''>
+            Women 
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Men
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Brands
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Lifestyle
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Beauty
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Collections
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class='col2'>
+      <ul>
+        <li>
+        <a class='strong' href='/shopspring/iterations/about-1.html'>
+          About
+        </a>
+        </li>
+        <li>
+          <a href=''>
+            Our Story
+          </a>
+        </li>
+        <li>
+          <a href='/shopspring/iterations/team-6.html'>
+            Team
+          </a>
+        </li>
+        <li>
+          <a href='/shopspring/iterations/careers-3.html'>
+            Careers
+          </a>
+        </li>
+        <li>
+          <a href='/shopspring/iterations/press-3.html'>
+            Press
+          </a>
+        </li>
+      </ul>
+    </nav>
 
+    <nav class='col2'>
+      <ul>
+        <li>
+        <a class='strong' href='/shopspring/iterations/eng-3.html'>
+          Engineering
+        </a>
+        </li>
+        <li>
+          <a href=''>
+            Our Stack
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Engineering Blog
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Getting Hired
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class='col2'>
+      <ul>
+        <li>
+        <a class='strong' href='/shopspring/iterations/help-1.html'>
+          Help
+        </a>
+        </li>
+        <li>
+          <a href=''>
+            FAQ
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            How to use spring
+          </a>
+        </li>
+        <li>
+          <a href='/shopspring/iterations/contact-1.html'>
+            Contact Us
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+<nav class='margin2 col2'>
+      <ul>
+        <li>
+        <a class='strong' href='/shopspring/iterations/help-1.html'>
+          Stay connected
+        </a>
+        </li>
+        <li>
+          <a href='https://instagram.com/spring/'>
+            <i class="icon-instagram"></i> Instagram 
+            </a>
+        </li>
+        <li>
+            <a href='https://www.facebook.com/SpringNYC'>
+              <i class="icon-facebook-squared"></i> Facebook
+            </a>
+        </li>
+        <li>
+            <a href='https://twitter.com/shopspring'>
+              <i class="icon-twitter"></i>  Twitter
+            </a>
+        </li>
+      </ul>
+    </nav>
+      <!--
+    <div class='margin2 col2'>
+      <p class='strong'>Get our newsletter for exclusive deals</p>
+      <input type='text' placeholder='enter your email'>
+      <nav class='clearfix space-bottom1'>
+        <ul>
+          <li class='col2 no-pad'>
+            <a href='https://instagram.com/spring/'>
+              <i class="icon-instagram"></i> 
+            </a>
+          </li>
+          <li class='col2 margin1 no-pad'>
+            <a href='https://www.facebook.com/SpringNYC'>
+              <i class="icon-facebook-squared"></i> 
+            </a>
+          </li>
+          <li class='col2 margin1 no-pad'>
+            <a href='https://twitter.com/shopspring'>
+              <i class="icon-twitter"></i> 
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div>
+        <p class='quiet'>
+          Follow us for inspiration, deals, and notifications on new brands launching
+        </p>
+      </div>
+    </div>
+      -->
+  </div>
+
+  <nav class='silent ml3 mb2'>
+    <span>© Jello Labs 2015</span>
+    <span class='ml1'>
+      <a href='/shopspring/iterations/tos-1.html'>
+        Terms of Service
+      </a>
+    </span>
+    <span class='ml1'>
+      <a href='/shopspring/iterations/privacy-1.html'>
+        Privacy Policy
+      </a>
+    </span>
+  </nav>
+
+  <div class='bottom-border'></div>
+</footer>
+
+
+
+  </body>
+
+  <script type='text/javascript' src='/shopspring/js/base.js'></script>
+</html>

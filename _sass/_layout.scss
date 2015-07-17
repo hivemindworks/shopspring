@@ -25,25 +25,38 @@
 SPACING
 ========================*/
 
-.space-vert4 { margin-top: 4em; margin-bottom: 4em; }
+.mb0 { margin-bottom: 0em; }
+.mb1 { margin-bottom: 1em; }
+.mb2 { margin-bottom: 2em; }
+.mb4 { margin-bottom: 4em; }
+.mb6 { margin-bottom: 6em; }
+.mb8 { margin-bottom: 8em; }
 
-.space-bottom0 { margin-bottom: 0em; }
-.space-bottom1 { margin-bottom: 1em; }
-.space-bottom2 { margin-bottom: 2em; }
-.space-bottom4 { margin-bottom: 4em; }
-.space-bottom6 { margin-bottom: 6em; }
-.space-bottom8 { margin-bottom: 8em; }
+.mt0 { margin-top: 0em; }
+.mt1 { margin-top: 1em; }
+.mt2 { margin-top: 2em; }
+.mt3 { margin-top: 3em; }
+.mt4 { margin-top: 4em; }
+.mt6 { margin-top: 6em; }
+.mt8 { margin-top: 8em; }
 
-.space-top0 { margin-top: 0em; }
-.space-top1 { margin-top: 1em; }
-.space-top2 { margin-top: 2em; }
-.space-top4 { margin-top: 4em; }
-.space-top6 { margin-top: 6em; }
-.space-top8 { margin-top: 8em; }
+.ml0 { margin-left: 0em; }
+.ml1 { margin-left: 1em; }
+.ml2 { margin-left: 2em; }
+.ml3 { margin-left: 3em; }
+.ml4 { margin-left: 4em; }
+.ml6 { margin-left: 6em; }
+.ml8 { margin-left: 8em; }
 
-.space-bottom2 {
-  margin-bottom: 2em;
-}
+
+.mr0 { margin-right: 0em; }
+.mr1 { margin-right: 1em; }
+.mr2 { margin-right: 2em; }
+.mr3 { margin-right: 3em; }
+.mr4 { margin-right: 4em; }
+.mr6 { margin-right: 6em; }
+.mr8 { margin-right: 8em; }
+
 
 
 /*
@@ -81,33 +94,40 @@ ROWZ
 /*
 COLUMNZ
 ========================*/
-.col0,.col1,.col2,.col3,.col4,.col5,.col6,.col7,.col8,.col9,.col10,.col11,.col12 {
-min-height: 1px;
-float: left;
-padding-right: 15px;
-padding-left: 15px;
+[class*='col-'] {
+  float: left;
 }
 
-.col2 { width: 16.5%; }
-.col3 { width: 25%; }
-.col4 { width: 33%; }
-.col5 { width: 37.5%; }
-.col6 { width: 50%; }
-.col8 { width: 75%; }
 
-.margin0 { margin-left: 3.5%;}
-.margin1 { margin-left: 7%;}
-.margin2 { margin-left: 12.5%;}
-.margin3 { margin-left: 25%;}
-.margin4 { margin-left: 33%;}
-.margin6 { margin-left: 50%;}
+/*
+TRYPTYCH
+========================*/
 
-.margin2r { margin-right: 12.5%;}
-.margin4r { margin-right: 25%;}
-.margin6r { margin-right: 50%;}
-.margin7r { margin-right: 62.5%;}
-.margin8r { margin-right: 75%;}
+.grid {
+  max-width: 1270px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 4em;
 
-.no-pad { padding-left: 0em; padding-right: 0em; }
-.pad-lrg { padding-left: 3em; padding-right: 3em; }
 
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+[class*='col'] {
+  float: left;
+}
+
+.col3 { 
+  width: 33.33%; 
+  padding: 0 1.2em;
+  
+  &:first-child {
+  }
+
+  &:last-child {
+  }
+}

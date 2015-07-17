@@ -1,12 +1,11 @@
 ---
 layout: default
 ---
-<link rel='stylesheet' href='{{ site.baseurl }}/css/animate.css'>
 
 <style>
   .employee {
+    perspective: 1000;
     width: 100%;
-    border: 3px solid #eee;
     margin-top: 3em;
     text-align: center;
     text-transform: uppercase;
@@ -15,15 +14,42 @@ layout: default
     height: 390px;
   }
 
-  .employee .role, .employee .bio, .employee .quiet, .employee .brand { display: none; }
-  .employee.active .role, .employee.active .bio, .employee.active .quiet, .employee.active .brand { display: block; }
-
-  .employee:hover {
-    color: #3b8fff;
-    cursor: pointer;
+  /* flip the pane when hovered */
+  .employee.active .flipper {
+    transform: rotateY(180deg);
   }
 
-  .employee.active {
+  /* flip speed goes here */
+  .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    border: 3px solid #eee;
+    position: relative;
+  }
+
+  .front, .back { height: inherit}
+
+  /* hide back of pane during swap */
+  .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  /* front pane, placed above back */
+  .front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+  }
+
+  /* back, initially hidden pane */
+  .back {
+    transform: rotateY(180deg);
     background: #3b8fff;
     text-align: left;
     text-transform: none;
@@ -31,29 +57,17 @@ layout: default
     border-color: #3b8fff;
     padding: 1em 2em;
     font-weight: 300;
+
   }
 
-  .employee.active img {
-    display: none;
+  .employee .role, .employee .bio, .employee .quiet, .employee .brand { display: none; }
+
+  .employee:hover {
+    color: #3b8fff;
+    cursor: pointer;
   }
 
-  .employee.active .brand-block {
-    -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s; }
-
-  .employee.active .bio {
-    -webkit-animation-delay: .75s;
-  -moz-animation-delay: .75s; }
-
-  .employee.active .role {
-    -webkit-animation-delay: .5s;
-  -moz-animation-delay: .5s; }
-
-  .employee.active .name {
-    -webkit-animation-delay: .25s;
-  -moz-animation-delay: .25s; }
-
-  .employee.active .name {
+  .employee .back .name {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.2em;
@@ -63,16 +77,19 @@ layout: default
     letter-spacing: .14em;
   }
 
-  .employee.active .role {
+  .back .role {
     line-height: 1em;
+    display: block; 
     margin-bottom: 2em;
   }
 
-  .employee.active .bio {
+  .back .bio {
     font-size: .875rem;
+    display: block; 
   }
 
-  .employee.active .quiet {
+  .back .quiet {
+    display: block; 
     color: #fff;
     opacity: .33;
     font-size: .875rem;
@@ -80,7 +97,8 @@ layout: default
     bottom: 3rem;
   }
 
-  .employee.active .brand {
+  .back .brand {
+    display: block; 
     position: absolute;
     bottom: 1.5rem;
   }
@@ -123,28 +141,204 @@ layout: default
   <div class='grid mt6'>
     <div class='col3'>
       <div class='employee'>
-        <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
-        <div class='name'>
-          Andrew <span class='strong'>Adams</span>
-        </div>
-        <div class='role'>Product Analyst</div>
-        <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
-        <div class='brand-block'>
-        <div class='quiet'>Favorite Brand</div>
-        <div class='brand'>Knowlita</div>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
         </div>
       </div>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
+<div class='col3'>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
 
-</section>
 
-<section class='gray'>
-  <h2 class='subheader center'>Think you'd be a good addition?</h2>
-  <a class='btn btn-large center'>
-    View Open Positions
-  </a>
-</section>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='col3'>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class='employee'>
+        <div class='flipper'>
+          <div class='front'>
+            <img src='{{ site.baseurl }}/img/employees/Andrew-A.jpg' />
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+          </div>
+          <div class='back'>
+            <div class='name'>
+              Andrew <span class='strong'>Adams</span>
+            </div>
+            <div class='role'>Product Analyst</div>
+            <div class='bio'>A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lan  e. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.</div>
+            <div class='quiet'>Favorite Brand</div>
+            <div class='brand'>Knowlita</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+  </section>
+
+  <section class='gray'>
+    <h2 class='subheader center'>Think you'd be a good addition?</h2>
+    <a class='btn btn-large center'>
+      View Open Positions
+    </a>
+  </section>
 
 </div>
 </div>
@@ -160,7 +354,6 @@ layout: default
     } else {
       $('.active').removeClass('active');
       $this.addClass('active');
-      $this.children('.name, .role, .bio, .brand').addClass('animated bounceInUp');
     }
   })  
 </script>
