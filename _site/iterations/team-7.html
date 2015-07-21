@@ -67,20 +67,20 @@
   }
 
   .employee.active .brand-block {
-    -webkit-animation-delay: .4s;
-  -moz-animation-delay: .4s; }
-
-  .employee.active .bio {
     -webkit-animation-delay: .3s;
   -moz-animation-delay: .3s; }
 
-  .employee.active .role {
+  .employee.active .bio {
     -webkit-animation-delay: .2s;
   -moz-animation-delay: .2s; }
 
-  .employee.active .name-active {
+  .employee.active .role {
     -webkit-animation-delay: .1s;
   -moz-animation-delay: .1s; }
+
+  .employee.active .name-active {
+    -webkit-animation-delay: 0s
+  -moz-animation-delay: 0s; }
 
   .employee.active .name-active {
     text-transform: uppercase;
@@ -101,17 +101,18 @@
     font-size: .875rem;
   }
 
+  .employee.active .brand-block {
+    position: absolute;
+    bottom: 1.5rem;
+  }
   .employee.active .quiet {
     color: #fff;
     opacity: .33;
     font-size: .875rem;
-    position: absolute;
-    bottom: 3rem;
   }
 
-  .employee.active .brand {
-    position: absolute;
-    bottom: 1.5rem;
+  .employee.active .brand:hover {
+    text-decoration: underline;
   }
 
   .employee img {
@@ -378,10 +379,12 @@
 
     if ( $this.hasClass('active') ) {
       $this.removeClass('active');
+      $this.children('.name-active, .role, .bio, .brand-block').removeClass('animated fadeInUp');
     } else {
+      $('.active').children('.name-active, .role, .bio, .brand-block').removeClass('animated fadeInUp');
       $('.active').removeClass('active');
       $this.addClass('active');
-      $this.children('.name-active, .role, .bio, .brand').addClass('animated fadeInUp');
+      $this.children('.name-active, .role, .bio, .brand-block').addClass('animated fadeInUp');
     }
   })  
 </script>
