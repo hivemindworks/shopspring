@@ -647,9 +647,17 @@ layout: default
       photo.src = data.photo;
       employee.appendChild(photo);
 
+      var fullName = data.name;
+      var fullName = fullName.split(' ');
+
       var empName = document.createElement('div');
       empName.className = 'name';
-      empName.innerHTML = data.name;
+      empName.innerHTML = fullName[0] + ' ';
+
+      var lastName = document.createElement('strong');
+      lastName.innerHTML = fullName[1];
+
+      empName.appendChild(lastName);
       employee.appendChild(empName);
 
       var nameActive = document.createElement('div');
