@@ -9,6 +9,16 @@ layout: default
     color: #FFF;
     border-color: #3b8fff;
   }
+
+  .filter .btn:hover {
+    background-color: #FFF;
+    color: #3b8fff;
+  }
+
+  .filter .active:hover {
+    background-color: #3b8fff;
+    color: #FFF;
+  }
   
   .employee {
     border: 3px solid #eee;
@@ -123,7 +133,7 @@ layout: default
 <section>
   <h2 class='subheader center'>Our team</h2>
 
-  <p class='info center'>
+  <p class='info center mt2'>
     Our team is made up of awesome people who have done wildly impressive things at companies and organizations including Google, eBay, R/GA, Gilt, Marc Jacobs, Bloomberg, Bitly, BlackRock, Lockheed Martin, BeachMint, MIT, Fab, and NYC City Hall. This diverse background translates into an office and work vibe that is a lively mix of product, fashion, tech, ecommerce, and design.
   </p>
 
@@ -131,7 +141,7 @@ layout: default
     <a href='#'>More on Life at Spring</a>
   </p>
 
-  <ul class='filter nav center clearfix limit mt4'>
+  <ul class='filter nav center clearfix limit mt6'>
     <li>
       <a id='product' class="btn btn-outline">
         engineering and product
@@ -696,7 +706,7 @@ layout: default
       $this.removeClass('active')
       $('.employee').show();
     } else {
-      $('.active').removeClass('active');
+      $('.filter .active').removeClass('active');
       $('.employee').hide();
       $("." + target.id).show();
       $this.addClass('active');
@@ -713,8 +723,8 @@ layout: default
       $this.removeClass('active');
       $this.children('.name-active, .role, .bio, .brand-block').removeClass('animated fadeInUp');
     } else {
-      $('.active').children('.name-active, .role, .bio, .brand-block').removeClass('animated fadeInUp');
-      $('.active').removeClass('active');
+      $('.employee.active').children('.name-active, .role, .bio, .brand-block').removeClass('animated fadeInUp');
+      $('.employee.active').removeClass('active');
       $this.addClass('active');
       $this.children('.name-active, .role, .bio, .brand-block').addClass('animated fadeInUp');
     }

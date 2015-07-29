@@ -1,72 +1,66 @@
-  <a class='logo' href='{{ site.baseurl }}/iterations/index-{{ site.index }}.html'>
-    Spring
-  </a>
+<a class='logo' href='{{ site.baseurl }}/final/index-{{ site.index }}.html'>
+  Spring
+</a>
 
-  <nav class='clearfix'>
+<nav class='clearfix'>
+  <ul class='nav'>
+
+    {% if site.hiring %}
+      <li>
+        <a class='hiring' href='{{ site.baseurl }}/final/careers-{{ site.careers }}.html#open-positions'>
+          !
+        </a>
+      </li>
+    {% endif %}
+    <li>
+      <a class='main' href='/'>
+        Shop
+      </a>
+    </li>
+    <li>
+      <a class='main' href='{{ site.baseurl }}/final/brands.html'>
+        For Brands
+      </a>
+    </li>
+    <li>
+      <a class='main' href='{{ site.baseurl }}/final/about.html'>
+        About
+      </a>
+    </li>
+    <li>
+      <a class='main' href='{{ site.baseurl }}/final/team.html'>
+        Team
+      </a>
+    </li>
+    <li>
+      <a class='main' href='{{ site.baseurl }}/final/careers.html'>
+        Careers
+      </a>
+    </li>
+    <li>
+      <a class='main' href='{{ site.baseurl }}/final/engineering.html'>
+        Engineering
+      </a>
+    </li>
+  </ul>
+
+  <div class='fr account'>
     <ul class='nav'>
-
-      {% if site.hiring %}
-        <li>
-          <a class='hiring' href='{{ site.baseurl }}/iterations/careers-{{ site.careers }}.html#open-positions'>
-            !
-          </a>
-        </li>
-        <li>
-          <a href='/'>
-            Shop
-          </a>
-        </li>
-      {% else %}
-        <li>
-          <a href='/'>
-            Shop
-          </a>
-        </li>
-      {% endif %}
       <li>
-        <a href='{{ site.baseurl }}/iterations/brands-{{ site.brands }}.html'>
-          For Brands
-        </a>
-      </li>
-      <li>
-        <a href='{{ site.baseurl }}/iterations/about-{{ site.about }}.html'>
-          About
-        </a>
-      </li>
-      <li>
-        <a href='{{ site.baseurl }}/iterations/about-{{ site.about }}.html'>
-          Team
-        </a>
-      </li>
-      <li>
-        <a href='{{ site.baseurl }}/iterations/about-{{ site.about }}.html'>
-          Careers
-        </a>
-      </li>
-      <li>
-        <a href='{{ site.baseurl }}/iterations/about-{{ site.about }}.html'>
-          Engineering
-        </a>
-      </li>
-    </ul>
-
-    <div class='fr account'>
-      <ul class='nav'>
-      <li>
-        <a href='{{ site.baseurl }}/iterations/about-{{ site.about }}.html'>
+        <a class='main' href='{{ site.baseurl }}/final/about-{{ site.about }}.html'>
           Login
         </a>
       </li>
       <li>
-        <a href='{{ site.baseurl }}/iterations/about-{{ site.about }}.html'>
+        <a class='main' href='{{ site.baseurl }}/final/about-{{ site.about }}.html'>
           Sign Up
         </a>
       </li>
       <li>
-      <a style='line-height: 1em; margin-top: -15px' class='btn btn-light'>
-        Get the App
-      </a>
+        <a style='margin-top: -18px' class='btn btn-light'>
+          Get the App
+        </a>
       </li>
-      </ul>
-    </div>
-  </nav>
+    </ul>
+  </div>
+</nav>

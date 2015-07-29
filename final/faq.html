@@ -1,0 +1,491 @@
+---
+layout: default
+---
+<link rel='stylesheet' href='{{ site.baseurl }}/css/animate.css'>
+
+<style>
+
+  .splash:after {
+    background: url({{ site.baseurl }}/img/ivy.jpg) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .qa.limit {
+    width: 52em;
+  }
+
+  .qa p {
+    width: 100%;
+    text-align: left;
+  }
+
+
+  .question { width: 100% }
+  .question:hover{
+    cursor: pointer;
+    color: #3b8fff;
+  }
+  .question:after {
+    content: '+';
+    float: right;
+    color: #ddd;
+  }
+
+  .active .question:after {
+    content: '-';
+  }
+
+  .question:hover:after {
+    color: #3b8fff;
+  }
+
+  .answer { 
+    height: 0;
+    overflow: hidden;
+    transition: all .2s;
+  }
+
+  .active .answer { 
+    height: auto;
+  }
+</style>
+
+{% include header.html %}
+<div class="clearfix splash">
+  <h1 class='center heading'>
+    Frequently asked questions 
+    <br/>
+    (and their answers)
+  </h1>
+
+  <a class='btn btn-small cta'>
+    Contact us
+  </a>
+</div>
+
+<section>
+
+  <div id='grid' class='grid'>
+
+    <ul class='center clearfix'>
+      <li>
+        <a class='block' href='#about'>
+          <h3 class='section'>
+            About spring
+          </h3>
+          <p>
+            Jump to section >
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class='block' href='#account'>
+          <h3 class='section'>
+            My account
+          </h3>
+          <p>
+            Jump to section >
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class='block' href='#orders'>
+          <h3 class='section'>
+            Orders
+          </h3>
+          <p>
+            Jump to section >
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class='block' href='#payment'>
+
+          <h3 class='section'>
+            Payment
+          </h3>
+          <p>
+            Jump to section >
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class='block' href='#shipping'>
+          <h3 class='section'>
+            Shipping and returns
+          </h3>
+          <p>
+            Jump to section >
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class='block' href='#howtouse'>
+          <h3 class='section'>
+            How to use spring
+          </h3>
+          <p>
+            Jump to section >
+          </p>
+        </a>
+      </li>
+    </ul>
+
+    <div class='mt4'>
+      <p>
+        Can't find what you're looking for?
+        <br/>
+        <a href='#contact'>Contact us</a>
+      </p>
+    </div>
+
+  </div>
+
+</section>
+<section id='about' class='gray'>
+  <h2 class='subheader center'>About Spring</h2>
+
+  <ul class='limit mt6 mb4 qa'>
+    <li class='mt2'>
+      <h3 class='question'>What is Spring?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How can I get Spring?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>Do I have to pay to use Spring?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>I'm a brand and I want to sell on Spring — can I join too?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+  </ul>
+</section>
+<section id='account' class=''>
+  <h2 class='subheader center'>My account</h2>
+  <ul class='limit mt6 mb4 qa'>
+    <li class='mt2'>
+      <h3 class='question'>What is guest mode?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I change my password?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I change my email address?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I deactivate my account?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+  </ul>
+</section>
+<section id='orders' class='gray'>
+  <h2 class='subheader center'>Orders</h2>
+  <ul class='limit mt6 mb4 qa'>
+    <li class='mt2'>
+      <h3 class='question'>When will my order arrive?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>When will you charge my credit card?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>Can I modify my order before it is shipped?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I cancel my order?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>Where can I find my order number?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>I placed an order but didn't receive a confirmation email. 
+        Did my order go through?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>I received credits on Spring. How do I apply them to my order?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+  </ul>
+</section>
+<section id='payment' class=''>
+  <h2 class='subheader center'>Payment</h2>
+  <ul class='limit mt6 mb4 qa'>
+    <li class='mt2'>
+      <h3 class='question'>What payment methods do you accept?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I add my credit card?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I change my billing details?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>Is my credit card information secure?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>Why was I charged multiple times?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>When will I receive my refund?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I take advantage of a Spring promotion?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>What’s the difference between a Spring credit and promotion?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+  </ul>
+</section>
+<section id='shipping' class='gray'>
+  <h2 class='subheader center'>Shipping and returns</h2>
+  <ul class='limit mt6 mb4 qa'>
+    <li class='mt2'>
+      <h3 class='question'>How much is shipping?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>Do you ship internationally?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I pay for expedited shipping?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>What is your return policy?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+
+      <h3 class='question'>How do I return my item?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>Did you receive my return?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>Can I return an item that was purchased as Final Sale?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I exchange my order?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+  </ul>
+</section>
+<section id='howtouse' class=''>
+  <h2 class='subheader center'>How to use spring</h2>
+  <ul class='limit mt6 mb4 qa'>
+    <li class='mt2'>
+      <h3 class='question'>How can I find and follow brands on Spring?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How can I find a specific product?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>Can I save items for later? Where can I see them?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+    <li class='mt2'>
+      <h3 class='question'>How do I buy my first item?</h3>
+      <p class='answer mt1'>
+        Spring is a mobile app that enables you to shop and discover more than 800 amazing brands in one place, with free shipping on everything. Every day Spring is filled with new arrivals from brands including Levi’s, Marc Jacobs, Calvin Klein, Opening Ceremony, Steven Alan, Everlane, Beyoncé, Warby Parker, 3.1 Phillip Lim, American Apparel, and hundreds more. 
+        <br/>
+        Spring is designed to be a marketplace where people and brands can connect — when you make a purchase, you are buying directly from the brand, and the brand sends its product directly to you. We just play matchmaker!
+      </p>
+    </li>
+  </ul>
+</section>
+<section id='contact' class='gray'>
+  <h2 class='subheader center'>Contact us</h2>
+  <p class='info center mt2'>
+    We'd love to hear from you! Spring Concierge is here for anything and everything! 
+  </p>
+  <p class='info center'>
+    You can reach us by emailing <a href='mailto:concierge@shopspring.com'>concierge@shopspring.com</a> and we will get back to you within 24 hours. We are here Monday to Friday from 8am to 8pm (EST). 
+  </p>
+</section>
+
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+
+  $('.qa li').on('click', function(){
+    var $this = $(this);
+
+    if ( $this.hasClass('active') ) {
+      $('.qa .active').removeClass('active');
+    } else {
+      $('.qa .active').removeClass('active');
+      $this.addClass('active');
+    }
+  });
+
+</script>
+{% include footer-5.html %}
+

@@ -57,6 +57,15 @@ SPACING
 .mr6 { margin-right: 6em; }
 .mr8 { margin-right: 8em; }
 
+.pb0 { padding-bottom: 0em !important; }
+.pb1 { padding-bottom: 1em; }
+.pb2 { padding-bottom: 2em; }
+.pb3 { padding-bottom: 3em; }
+.pb4 { padding-bottom: 4em; }
+.pb6 { padding-bottom: 6em; }
+.pb8 { padding-bottom: 8em; }
+
+
 
 
 /*
@@ -104,11 +113,8 @@ TRYPTYCH
 ========================*/
 
 .grid {
-  max-width: 1270px;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 4em;
-
 
   &:after {
     content: "";
@@ -117,17 +123,70 @@ TRYPTYCH
   }
 }
 
-[class*='col'] {
-  float: left;
-}
+.block {
+    border: 3px solid #eee;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: background .2s, border .2s;
+    height: 390px;
+    float: left;
+    color: $gray-dark;
 
-.col3 { 
-  width: 33.33%; 
-  padding: 0 1.2em;
+  &:hover {
+    background-color: $brand-color;
+    border-color: $brand-color;
+    color: #FFF;
+    cursor: pointer;
   
-  &:first-child {
+    p {
+      color: #FFF;
+    }
   }
 
-  &:last-child {
+  h3 {
+     @include vertical-align;
+     font-weight: 500;
+  }
+
+  p {
+    position: absolute;
+    bottom: 0em;
+    width: 100%;
+    text-align: center;
+    font-size: .875em;
+  }
+
+
+  }
+
+
+//TODO one column, maybe 2 column for ipad? test
+
+//three column smaller
+@media all and (max-width: 1301px) and (min-width: 1107px)  {
+  .grid {
+    width: 1107px;
+  }
+
+  .block {
+    width: 333px;
+    height: 333px;
+    margin: 18px;
   }
 }
+
+//three column larger
+@media all and (max-width: 1400px) and (min-width: 1302px)  {
+  .grid {
+    width: 1302px;
+  }
+
+  .block {
+    width: 398px;
+    height: 398px;
+    margin: 18px;
+  }
+}
+
+//TODO five column for 30' monitors

@@ -141,7 +141,7 @@ HEADER STYLES
       font-size: 11px;
       letter-spacing: .08em;
 
-      &:hover {
+      &.main:hover {
         padding-bottom: .42em;
         border-bottom: 2px solid #FFF;
       }
@@ -169,10 +169,17 @@ HEADER STYLES
   
 
   section {
-  
-  &.gray {
-    background: #f5f5f5;
-  }
+    &.gray {
+      background: #f5f5f5;
+    }
+
+
+    p{
+      width: 470px; 
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
 
@@ -188,7 +195,6 @@ HEADER STYLES
   .info {
     width: 470px; 
     text-align: center;
-    margin-top: 2em;
   }
 
 
@@ -204,6 +210,7 @@ HEADER STYLES
     font-size: 12px;
     position: relative;
     color: #ccc;
+    border-top: 1px solid $gray-lightest;
 
     .nav-group {
       padding: 4em 0 8em 3em;
@@ -296,16 +303,14 @@ HEADER STYLES
   /*
   BUTTON STYLES
   ==========================*/
-
   .btn {
     @extend %caps;
-
-    text-align: center;
     cursor: pointer;
     display: inline-block;
     font-size: 12px;
     background: $brand-color;
-    padding: 1em;
+    text-align: center;
+    padding: 7px 15px;
     color: white;
     border-radius: .35em;
     -webkit-transition: background .15s ease;
@@ -313,21 +318,24 @@ HEADER STYLES
     &:hover {
       background: #06E;
       color: white;
-      -webkit-transition: background .15s ease;
+      -webkit-transition: all .2s;
 
     }
 
-    &.btn-large {
-      font-weight: 500;
-      width: 33%;
-      display: block;
-      text-align: center;
-      font-size: 1.2em;
-      letter-spacing: .14em;
 
-      margin: 90px auto 30px auto;
+    &.btn-main {
+      border-color: $brand-color;
+      color: #FFF;
+
+      &:hover {
+        background-image: -webkit-linear-gradient(-90deg,#3B8FFF,#2448BB);
+        background-image: -moz-linear-gradient(-90deg,#3B8FFF,#2448BB);
+        background-image: -ms-linear-gradient(-90deg,#3B8FFF,#2448BB);
+        background-image: -o-linear-gradient(-90deg,#3B8FFF,#2448BB);
+        background: linear-gradient(-90deg,#3B8FFF,#2448BB);
+        color: #fff;
+      }
     }
-
 
     &.btn-light {
       border-color: $brand-color;
@@ -342,17 +350,44 @@ HEADER STYLES
       }
     }
 
-  .btn-small {
-    font-size: .875em;
-    padding: 1em;
-    border-radius: 3px;
+    &.btn-outline {
+      border: 1px solid $gray-lighter;
+      background-color: #FFF;
+      color: #222;
+
+
+      &:hover {
+        background-color: $brand-color;
+        border-color: $brand-color;
+        color: #FFF;
+        background-image: none;
+      }
+    }
+
+    &.btn-large {
+      font-weight: 500;
+      width: 400px;
+      display: block;
+      text-align: center;
+      font-size: 24px;
+      letter-spacing: .14em;
+
+      padding: 13px 5px;
+      margin: 90px auto 30px auto;
+    }
+
+    &.btn-small {
+      font-size: 11px;
+      padding: 15px;
+      border-radius: 3px;
+    }
+
+    &.btn-tiny {
+      font-size: 9px;
+      padding: 13px 17px;
+    }
   }
 
-  .btn-tiny {
-    font-size: 9px;
-    padding: 13px 17px;
-  }
-}
   
   .longform p {
     padding: 2em 0em;
@@ -380,12 +415,32 @@ HEADER STYLES
   }
 
   //COLORS
+  .teal { 
+    background-color: $teal; 
+  }
+
+  .blue { 
+    background-color: $brand-color; 
+  }
+
+  .gold { 
+    background-color: $gold; 
+  }
+
+  .purple { 
+    background-color: $purple; 
+  }
+
+  .red { 
+    background-color: $red; 
+  }
+
   .gray { 
-    background-color: $gray-med; 
+    background-color: $gray-lighter; 
   }
 
   .gray-light { 
-    background-color: #F8F8F8;
+    background-color: $gray-lightest;
   }
 
   .blue { 
@@ -434,7 +489,7 @@ HEADER STYLES
     }
 
     a:hover {
-      color: $gray-med;
+      color: $gray;
     }
   }
 

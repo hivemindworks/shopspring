@@ -33,10 +33,14 @@
     <link rel='stylesheet' href='/shopspring/css/animate.css'>
 
 <style>
+  .filter .active {
+    background-color: #3b8fff;
+    color: #FFF;
+    border-color: #3b8fff;
+  }
+  
   .employee {
-    width: 100%;
     border: 3px solid #eee;
-    margin-top: 3em;
     text-align: center;
     text-transform: uppercase;
     position: relative;
@@ -44,12 +48,14 @@
     height: 390px;
   }
 
-  .employee .name-active, .employee .role, .employee .bio, .employee .quiet, .employee .brand { display: none; }
-  .employee.active .name-active, .employee.active .role, .employee.active .bio, .employee.active .quiet, .employee.active .brand { display: block; }
+  .employee .name-active, .employee .role, .employee .bio, .employee .quiet, .employee .brand-favorite { display: none; }
+  .employee.active .name-active, .employee.active .role, .employee.active .bio, .employee.active .quiet, .employee.active .brand-favorite { display: block; }
 
   .employee:hover {
     color: #3b8fff;
     cursor: pointer;
+    border: 3px solid #eee;
+    background-color: #fff;
   }
 
   .employee.active {
@@ -111,7 +117,7 @@
     font-size: .875rem;
   }
 
-  .employee.active .brand:hover {
+  .employee.active .brand-favorite:hover {
     text-decoration: underline;
   }
 
@@ -121,78 +127,80 @@
   }
 
   .employee .name {
+    letter-spacing: .1em;
     line-height: 4em;
   }
 
-  .employee:first-child { margin-top: 0; }
-
   .splash:after {
     background: url(/shopspring/img/grass.jpg) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 </style>
 
 <header class='dark img'>
-    <a class='logo' href='/shopspring/iterations/index-3.html'>
-    Spring
-  </a>
+  <a class='logo' href='/shopspring/final/index-3.html'>
+  Spring
+</a>
 
-  <nav class='clearfix'>
+<nav class='clearfix'>
+  <ul class='nav'>
+
+    
+    <li>
+      <a class='main' href='/'>
+        Shop
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/shopspring/final/brands.html'>
+        For Brands
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/shopspring/final/about.html'>
+        About
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/shopspring/final/team.html'>
+        Team
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/shopspring/final/careers.html'>
+        Careers
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/shopspring/final/engineering.html'>
+        Engineering
+      </a>
+    </li>
+  </ul>
+
+  <div class='fr account'>
     <ul class='nav'>
-
-      
-        <li>
-          <a href='/'>
-            Shop
-          </a>
-        </li>
-      
       <li>
-        <a href='/shopspring/iterations/brands-1.html'>
-          For Brands
-        </a>
-      </li>
-      <li>
-        <a href='/shopspring/iterations/about-1.html'>
-          About
-        </a>
-      </li>
-      <li>
-        <a href='/shopspring/iterations/about-1.html'>
-          Team
-        </a>
-      </li>
-      <li>
-        <a href='/shopspring/iterations/about-1.html'>
-          Careers
-        </a>
-      </li>
-      <li>
-        <a href='/shopspring/iterations/about-1.html'>
-          Engineering
-        </a>
-      </li>
-    </ul>
-
-    <div class='fr account'>
-      <ul class='nav'>
-      <li>
-        <a href='/shopspring/iterations/about-1.html'>
+        <a class='main' href='/shopspring/final/about-1.html'>
           Login
         </a>
       </li>
       <li>
-        <a href='/shopspring/iterations/about-1.html'>
+        <a class='main' href='/shopspring/final/about-1.html'>
           Sign Up
         </a>
       </li>
       <li>
-      <a style='line-height: 1em; margin-top: -15px' class='btn btn-light'>
-        Get the App
-      </a>
+        <a style='margin-top: -18px' class='btn btn-light'>
+          Get the App
+        </a>
       </li>
-      </ul>
-    </div>
-  </nav>
+    </ul>
+  </div>
+</nav>
 
 </header>
 
@@ -215,7 +223,40 @@
     <a href='#'>More on Life at Spring</a>
   </p>
 
-  <div id='grid' class='grid mt6'>
+  <ul class='filter nav center clearfix limit mt4'>
+    <li>
+      <a id='product' class="btn btn-outline">
+        engineering and product
+      </a>
+    </li>
+    <li>
+      <a id='design' class="btn btn-outline">
+        design
+      </a>
+    </li>
+    <li>
+      <a id='marketing' class="btn btn-outline">
+        marketing
+      </a>
+    </li>
+    <li>
+      <a id='operations' class="btn btn-outline">
+        operations
+      </a>
+    </li>
+    <li>
+      <a id='brand' class="btn btn-outline">
+        brand curation
+      </a>
+    </li>
+    <li>
+      <a id='founders' class="btn btn-outline">
+        founders
+      </a>
+    </li>
+  </ul>
+
+  <div id='grid' class='grid mt2'>
 
   </div>
 
@@ -235,509 +276,527 @@
 
 <script>
   var team = [
-  {
-    'name': 'Alan Tisch',
-    'photo': 'https://lh3.googleusercontent.com/-eqjMBbZai3U/AAAAAAAAAAI/AAAAAAAAABs/CYFRxEE4cYg/photo.jpg',
+    {
+      'name': 'Alan Tisch',
+      'photo': 'https://lh3.googleusercontent.com/-eqjMBbZai3U/AAAAAAAAAAI/AAAAAAAAABs/CYFRxEE4cYg/photo.jpg',
       'bio': 'Alan previously worked at Fab, and before that launched initiatives such as NYC Big Apps and the 311 iOS app at NYC City Hall. He has an MBA from NYU Stern and a BBA from Michigan Ross School of Business, but more importantly he has a sneaker addiction and is always up for a game of FIFA.',
-    'team': 'leadership',
-    'role': 'CEO',
-    'link': ''
-  },
-  {
-    'name': 'Andrew Shipman',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'team': 'founders',
+      'role': 'CEO',
+      'link': ''
+    },
+    {
+      'name': 'Andrew Shipman',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
       'bio': 'Andrew works with Spring\'s awesome brands. He is passionate about tech, design, art, and juice.',
-    'team': 'brand-management',
-    'role': 'Brand Specialist',
-    'link': ''
-  },
-  {
-    'name': 'David Tisch',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'David Tisch is Managing Partner of BoxGroup, an NYC-based angel capital firm, as well as Head of Startup Studio at Cornell Tech. He is the co-founder of TechStars NYC and served on Mayor Bloomberg’s Advisory Council on Technology. He likes wearing hoodies and enjoys using ellipses...',
-    'team': 'leadership',
-    'role': 'Founder & Chairman of the Board',
-    'link': ''
-  },
-  {
-    'name': 'Dan Zeehandelaar',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Dan was an early employee at Birchbox, where he helped develop the company\'s operations systems. Before that, he worked as a strategy consultant. He\'s an airplane geek and a private pilot, and loves to collect and spend frequent flyer miles.',
-    'team': 'product',
-    'role': 'Product Manager',
-    'link': ''
-  },
-  {
-    'name': 'Jim Grandpre',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Jim dropped out of UPenn to found, build, and eventually sell Lore. He enjoys building things and frequently wears orange.',
-    'team': 'product',
-    'role': 'Engineer',
-    'link': ''
-  },
-  {
-    'name': 'Artem Titoulenko',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Artem is a young soul who has loved programming since an early age. He was part of the first Hacker School class and later went on to build products at Codecademy and Medium. He\'s an avid sailor and cyclist with an insufferable love for New York and electronic music.',
+      'team': 'operations',
+      'role': 'Brand Specialist',
+      'link': ''
+    },
+    {
+      'name': 'David Tisch',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'David Tisch is Managing Partner of BoxGroup, an NYC-based angel capital firm, as well as Head of Startup Studio at Cornell Tech. He is the co-founder of TechStars NYC and served on Mayor Bloomberg’s Advisory Council on Technology. He likes wearing hoodies and enjoys using ellipses...',
+      'team': 'founders',
+      'role': 'Founder & Chairman of the Board',
+      'link': ''
+    },
+    {
+      'name': 'Dan Zeehandelaar',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Dan was an early employee at Birchbox, where he helped develop the company\'s operations systems. Before that, he worked as a strategy consultant. He\'s an airplane geek and a private pilot, and loves to collect and spend frequent flyer miles.',
       'team': 'product',
-    'role': 'Software Engineer',
-    'link': ''
-  },
-  {
-    'name': 'Katherine Prime',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'team': 'leadership',
-    'role': 'VP Operations',
-    'link': ''
-  },
-  {
-    'name': 'Tessa Mu',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Tessa comes from Marc Jacobs, where she built the brand\'s online presence from the ground up, reaching 6.2MM followers and landing accolades such as Best Facebook, Twitter, and Instagram by a Fashion Brand. She is an advocate of all things fashion and tech, and likes dogs a lot, too.',
-    'team': 'marketing',
-    'role': 'Head of Digital/Social Media',
-    'link': ''
-  },
-  {
-    'name': 'Arielle Welt',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Arielle\'s experience spans luxury and contemporary markets: She has worked agency-side in PR and brand-side in Wholesale. She helped launch Rachel Zoe\'s RTW collection and most recently spent time at CÉLINE. Arielle enjoys bad television, good sushi, and fabulous shoes (and any combo of the three).',
-    'team': 'brand-management',
-    'role': 'Director of Brand Strategy',
-    'link': ''
-  },
-  {
-    'name': 'Anis Rashid',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Anis previously worked in tech banking at Goldman Sachs, where he was involved in Disney\'s acquisition of LucasFilm, zulily\'s IPO, and DirecTV\'s sale to AT&T. Previously, Anis tried to build a social blogging platform called Opin. He spends his free time buying Twitter followers.',
-    'team': 'brand-management',
-    'role': 'Brand Operations',
-    'link': ''
-  },
-  {
-    'name': 'April Uchitel',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'April is fashion veteran with 25+ years experience in sales, merchandising, and strategy. She spent 9 years developing DVF and has served as a CFDA incubator mentor and a brand consultant. April has a chai latte addiction, a penchant for RED lipstick, and spends down time upstate with her family.',
-      'team': 'brand-partnerships',
-    'role': 'Chief Brand Officer',
-    'link': ''
-  },
-  {
-    'name': 'Sam Nirenberg',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Sam\'s career started in LA as a wardrobe stylist while at FIDM. Next, at BeachMint, she produced video and photo content for direct-to-consumer brands. In 2014, Sam left the sunny beaches of Malibu for NYC. When not working, she\'s likely scouting the streets for live music.',
-      'team': 'brand-management',
-    'role': 'Brand Manager',
-    'link': ''
-  },
-  {
-    'name': 'Mindy Welford',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Mindy has developed email marketing strategies at retailers including From You Flowers, Penguin Random House Publishing, and Dylan\'s Candy Bar. She is a born-and-raised Michigander who loves David Lynch films, speaks Spanish and Hebrew, and enjoys extremely high-waisted jeans.',
-    'team': 'marketing',
-    'role': 'Email & CRM',
-    'link': ''
-  },
-  {
-    'name': 'Ara Katz',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Ara is a founder of BeachMint and advises a variety of startups. She is a CCA DesignMBA Fellow and a Visiting Fellow at MIT Media Lab\'s Center for Future Storytelling. She has consulted with the Department of Defense and Mullen, and loves all things design (including designing her own furniture).',
-      'team': 'leadership',
-    'role': 'Chief Marketing Officer',
-    'link': ''
-  },
-  {
-    'name': 'Brian Eoff',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Brian was wooed away from his PhD at Texas A&M by the bright lights of Broadway. He was previously the lead data scientist at Bitly. Brian is originally from Huntsville, Alabama, and he too is unsure what happened to his southern accent. He has a perfectly healthy obsession with Auburn football.',
-    'team': 'product',
-    'role': 'Data Scientist',
-    'link': ''
-  },
-  {
-    'name': 'Jeff Tierney',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'After working at a large insurance company, Jeff saw the light and switched to startups. He previously led front-end development at Bitly. He lives with his wife and three kids in NJ, where he roots for the Jets and Yankees, sings along to Springsteen, and scours the Internet for the perfect GIF.',
+      'role': 'Product Manager',
+      'link': ''
+    },
+    {
+      'name': 'Jim Grandpre',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Jim dropped out of UPenn to found, build, and eventually sell Lore. He enjoys building things and frequently wears orange.',
       'team': 'product',
-    'role': 'Animated Gif',
-    'link': ''
-  },
-  {
-    'name': 'Scott Amenta',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Scott has worked at a variety of NYC-based technology startups, including Foursquare, TechStars, and ChatID. At ChatID, Scott was responsible for building partnerships with some of the world\'s largest consumer electronic brands. In his free time, Scott rides his fixie around the city.',
-      'team': 'brand-partnerships',
-    'role': 'Business Development',
-    'link': ''
-  },
-  {
-    'name': 'Octavian Costache',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Octavian is an ex-Googler: author of Multiple Inboxes in Gmail, Charts on Google Finance, and contributions to Google Maps and Maps Search. He\'s written code in Javascript, Actionscript, Java, C++, Ruby, ObjectiveC, and   Go. He likes skydiving, paragliding, and pretending to be Borat.',
-    'team': 'leadership',
-    'role': 'CTO',
-    'link': ''
-  },
-  {
-    'name': 'John White',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'John is from London, the capital of a country called England. He has loads of experience leading design teams, and was previously a Creative Director at R/GA, where he worked on enough Nike projects to choke a horse. He enjoys cycling, film, reading, nice socks, and his daughter Virginia.',
-    'team': 'design',
-    'role': 'Creative Director',
-    'link': ''
-  },
-  {
-    'name': 'Sonia Tsao',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Sonia\'s background is in real estate and lifestyle partnerships, and she has also worked with Chanel and Conde Naste Traveler. She holds a BA in Anthropology from Tufts and an MBA from Harvard. A Singapore transplant, Sonia loves spicy food, jumpsuits, and running after her pup, Rex.',
-    'team': 'brand-management',
-    'role': 'Brand Manager',
-    'link': ''
-  },
-
-  {
-    'name': 'Vadim Graboys',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Vadim previously built simulation engines for mortgage-backed securities at Bloomberg before starting a Bitcoin exchange. He also spent time creating transaction-processing infrastructure at Chartbeat. Vadim enjoys hiking, biking, and psychedelic trance festivals.',
+      'role': 'Engineer',
+      'link': ''
+    },
+    {
+      'name': 'Artem Titoulenko',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Artem is a young soul who has loved programming since an early age. He was part of the first Hacker School class and later went on to build products at Codecademy and Medium. He\'s an avid sailor and cyclist with an insufferable love for New York and electronic music.',
       'team': 'product',
-    'role': 'Software Engineer',
-    'link': ''
-  },
-  {
-    'name': 'Viviana Rodriguez',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Viviana comes from finance, where she expanded a commodities business into Latin America and focused on client acquisition, marketing, and relationship management. She left the beaches of Puerto Rico to attend Yale, and now pursues warm weather to stay sane. Although food and wine also do the trick.',
-    'team': 'conceirge',
-    'role': 'Director of Customer Operations',
-    'link': ''
-  },
-  {
-    'name': 'Alan Wang',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'A Cal graduate with an MS in structural engineering, Alan spent 2 years designing buildings before attending the Recurse Center and moving to software. He enjoys games of all kinds, and can tell you more about concrete and steel than you would ever care to know.',
-    'team': 'product',
-    'role': 'Software Engineer',
-    'link': ''
-  },
-
-  {
-    'name': 'Adam Fried',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Adam has developed a variety of software, from embedded to mobile apps. He previously worked at BlackRock and Lockheed Martin. He holds a BS in Computer Eng. and an MBA from SUNY Binghamton, and a Master\'s in Systems Eng. from Cornell. Adam enjoys hiking, biking, and skiing.',
-    'team': 'product',
-    'role': 'Software Engineer',
-    'link': ''
-  },
-  {
-    'name': 'Andrew Adams',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lane. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.',
-      'team': 'product',
-    'role': 'Product Analyst',
-    'link': ''
-  },
-
-  {
-    'name': 'Chaz Yoon',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Chaz iz chaz. Obvz.',
-    'team': 'product',
-    'role': 'Head, Business Intelligence',
-    'link': ''
-  },
-  {
-    'name': 'Chris Fahey',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Chris helps Spring\'s team of awesome designers be even more awesome. With over 20 years experience, he has led interaction design teams at ZocDoc, Big Spaceship, and Behavior, a firm he cofounded. Chris likes to juggle and run long distances, but never at the same time.',
-    'team': 'design',
-    'role': 'VP Product Design',
-    'link': ''
-  },
-
-  {
-    'name': 'Christy Maddox',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'A native Atlantan who moved to the Big Apple by way of Nashville, Christy cut her teeth in the advertising department at Barneys. After that, she went into Wholesale and worked for Givenchy and Marni. Christy lives for Friday Night Lights, flea markets, and chicken fingers.',
-      'team': 'brand-management',
-    'role': 'Brand Manager',
-    'link': ''
-  },
-  {
-    'name': 'Courtney Ortiz',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Courtney graduated from Boston University with a BA in Anthropology, but has spent most of her career leading web-based technology projects. In her spare time she enjoys cooking, traveling, and playing golf.',
-    'team': 'product',
-    'role': 'Director, Platform Integrations',
-    'link': ''
-  },
-  {
-    'name': 'Dan Chen',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'A native New Yorker, Dan has launched products for Mercedes-Benz, The New York Times, and Samsung. When he\'s not designing, Dan can be found visiting galleries or planning his next trip into the backcountry.',
-      'team': 'design',
-    'role': 'Product Designer',
-    'link': ''
-  },
-  {
-    'name': 'Daniel Ortiz',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Daniel graduated from The Wharton School in 2014. Before joining Spring, he started his career in Macy\'s Merchandising Group, helping to develop its American Rag brand. He lived in Florida for most of his life, interspersed with trips to Ecuador to visit his family.',
-      'team': 'brand-management',
-    'role': 'Brand Manager',
-    'link': ''
-  },
-
-  {
-    'name': 'Dianna Cohen',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Dianna has worked for a variety of NYC-based fashion and technology startups, including Into The Gloss and Beyond The Row. She previously spent time at Valentino, Philip Crangi\'s Giles & Brother, and Thakoon. She’s an art and design nerd; a comedy geek; and a leather pants enthusiast.',
-    'team': 'marketing',
-    'role': 'Strategic Marketing Manager',
-    'link': ''
-  },
-
-  {
-    'name': 'Erin Gusty',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Erin has a BA from Denison University and has worked with Toll Brothers marketing homes across the country. She is a recent college grad and is excited to leave her small Pennsylvania town to join the startup world of NYC. Erin has a passion for traveling and learning new languages.',
-      'team': 'conceirge',
-    'role': 'Customer Service Representative',
-    'link': ''
-  },
-
-  {
-    'name': 'Imran Sobh',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Imran has helped companies of all sizes design and launch products from wearables to websites. One of his favorites so far is Nike+ Basketball — the first shoe to track how high you jump. He bikes as much as possible to offset his unhealthy obsession with donuts.',
-    'team': 'design',
-    'role': 'Product Designer',
-    'link': ''
-  },
-  {
-    'name': 'Lauren Devereux',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Lauren has worked at a number of NYC-based fashion and media startups, including Zady and #waywire. She holds a BA from Loyola Marymount in Los Angeles, and swears she doesn\'t miss the sunshine. When she’s not working, Lauren\'s usually making or baking something, or chasing her dog, Pearl.',
-    'team': 'marketing',
-    'role': 'Marketing Manager',
-    'link': ''
-  },
-  {
-    'name': 'Leslie Fish',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Leslie previously worked for a leading hedge fund, managing the firm\'s strategic relationships and conducting research projects on global retail and fashion companies. In her down time, she frequents Shake Shack and takes Tuxedo, her Boston Terrier, on long walks.',
-      'team': 'brand-management',
-    'role': 'Brand Manager',
-    'link': ''
-  },
-  {
-    'name': 'Lisa Zhu',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Lisa used to work at PayPal, where she product-managed fingerprint payments and merchant onboarding. Before that, she graduated from Penn and lived a nomadic life as a McKinsey consultant. Lisa enjoys running marathons and travel; she has 53 passport stamps and counting.',
-    'team': 'product',
-    'role': 'Product Manager',
-    'link': ''
-  },
-
-  {
-    'name': 'Maia McCormick',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'An NYC native, Maia earned a BA in music from Williams College, tripped and fell, and landed in the tech world by way of the Recurse Center. Outside of work, Maia can be found singing Renaissance music, folk-dancing, or eating tasty food.',
-    'team': 'product',
-    'role': 'Software Engineer',
-    'link': ''
-  },
-  {
-    'name': 'Maya Poulton',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Maya has a decade of experience in business development, strategy, and marketing for luxury brands and startups. Prior to Spring, she spent time at ASMALLWORLD and Jetsetter. She has lived in six countries and holds a B.Com from McGill. She loves travel, dumplings, Spring\'s dogs, and shoes.',
+      'role': 'Software Engineer',
+      'link': ''
+    },
+    {
+      'name': 'Katherine Prime',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'team': 'founders',
+      'role': 'VP Operations',
+      'link': ''
+    },
+    {
+      'name': 'Tessa Mu',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Tessa comes from Marc Jacobs, where she built the brand\'s online presence from the ground up, reaching 6.2MM followers and landing accolades such as Best Facebook, Twitter, and Instagram by a Fashion Brand. She is an advocate of all things fashion and tech, and likes dogs a lot, too.',
       'team': 'marketing',
-    'role': 'Head of Partnerships',
-    'link': ''
-  },
-
-  {
-    'name': 'Trey Lawrence',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Trey is a recovering hardware engineer, but has now moved on to the softer stuff. He started out in silicon manufacturing, hardware design, and firmware; studied at Hacker School; and was at eBay NYC. He is a craft beer enthusiast and likely the world\'s best puzzle Bobble player.',
-    'team': 'product',
-    'role': 'Software Engineer',
-    'link': ''
-  },
-
-  {
-    'name': 'Vivian Esquerre',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Vivian is a graduate of the University of Maryland, College Park. She is a fashion enthusiast and has spent the last 7 years working in luxury retail. Outside of work, Vivian spends her time raising her wonderful daughter Paige and traveling with her family.',
-    'team': 'conceirge',
-    'role': 'Customer Service Representative',
-    'link': ''
-  },
-
-  {
-    'name': 'Wayne Sun',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Once upon a time, Wayne designed award-winning experiences for Nike, Quirky, Samsung, and Google. Prior to that, he was part of TechStars NYC. He\'s into product, manufacturing, and design, and he\'s a big fan of \'90s music. He remains the world\'s longest-lurking redditor.',
+      'role': 'Head of Digital/Social Media',
+      'link': ''
+    },
+    {
+      'name': 'Arielle Welt',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Arielle\'s experience spans luxury and contemporary markets: She has worked agency-side in PR and brand-side in Wholesale. She helped launch Rachel Zoe\'s RTW collection and most recently spent time at CÉLINE. Arielle enjoys bad television, good sushi, and fabulous shoes (and any combo of the three).',
+      'team': 'operations',
+      'role': 'Director of Brand Strategy',
+      'link': ''
+    },
+    {
+      'name': 'Anis Rashid',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Anis previously worked in tech banking at Goldman Sachs, where he was involved in Disney\'s acquisition of LucasFilm, zulily\'s IPO, and DirecTV\'s sale to AT&T. Previously, Anis tried to build a social blogging platform called Opin. He spends his free time buying Twitter followers.',
+      'team': 'operations',
+      'role': 'Brand Operations',
+      'link': ''
+    },
+    {
+      'name': 'April Uchitel',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'April is fashion veteran with 25+ years experience in sales, merchandising, and strategy. She spent 9 years developing DVF and has served as a CFDA incubator mentor and a brand consultant. April has a chai latte addiction, a penchant for RED lipstick, and spends down time upstate with her family.',
+      'team': 'brand',
+      'role': 'Chief Brand Officer',
+      'link': ''
+    },
+    {
+      'name': 'Sam Nirenberg',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Sam\'s career started in LA as a wardrobe stylist while at FIDM. Next, at BeachMint, she produced video and photo content for direct-to-consumer brands. In 2014, Sam left the sunny beaches of Malibu for NYC. When not working, she\'s likely scouting the streets for live music.',
+      'team': 'operations',
+      'role': 'Brand Manager',
+      'link': ''
+    },
+    {
+      'name': 'Mindy Welford',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Mindy has developed email marketing strategies at retailers including From You Flowers, Penguin Random House Publishing, and Dylan\'s Candy Bar. She is a born-and-raised Michigander who loves David Lynch films, speaks Spanish and Hebrew, and enjoys extremely high-waisted jeans.',
+      'team': 'marketing',
+      'role': 'Email & CRM',
+      'link': ''
+    },
+    {
+      'name': 'Ara Katz',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Ara is a founder of BeachMint and advises a variety of startups. She is a CCA DesignMBA Fellow and a Visiting Fellow at MIT Media Lab\'s Center for Future Storytelling. She has consulted with the Department of Defense and Mullen, and loves all things design (including designing her own furniture).',
+      'team': 'founders',
+      'role': 'Chief Marketing Officer',
+      'link': ''
+    },
+    {
+      'name': 'Brian Eoff',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Brian was wooed away from his PhD at Texas A&M by the bright lights of Broadway. He was previously the lead data scientist at Bitly. Brian is originally from Huntsville, Alabama, and he too is unsure what happened to his southern accent. He has a perfectly healthy obsession with Auburn football.',
+      'team': 'product',
+      'role': 'Data Scientist',
+      'link': ''
+    },
+    {
+      'name': 'Jeff Tierney',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'After working at a large insurance company, Jeff saw the light and switched to startups. He previously led front-end development at Bitly. He lives with his wife and three kids in NJ, where he roots for the Jets and Yankees, sings along to Springsteen, and scours the Internet for the perfect GIF.',
+      'team': 'product',
+      'role': 'Animated Gif',
+      'link': ''
+    },
+    {
+      'name': 'Scott Amenta',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Scott has worked at a variety of NYC-based technology startups, including Foursquare, TechStars, and ChatID. At ChatID, Scott was responsible for building partnerships with some of the world\'s largest consumer electronic brands. In his free time, Scott rides his fixie around the city.',
+      'team': 'brand',
+      'role': 'Business Development',
+      'link': ''
+    },
+    {
+      'name': 'Octavian Costache',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Octavian is an ex-Googler: author of Multiple Inboxes in Gmail, Charts on Google Finance, and contributions to Google Maps and Maps Search. He\'s written code in Javascript, Actionscript, Java, C++, Ruby, ObjectiveC, and   Go. He likes skydiving, paragliding, and pretending to be Borat.',
+      'team': 'founders',
+      'role': 'CTO',
+      'link': ''
+    },
+    {
+      'name': 'John White',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'John is from London, the capital of a country called England. He has loads of experience leading design teams, and was previously a Creative Director at R/GA, where he worked on enough Nike projects to choke a horse. He enjoys cycling, film, reading, nice socks, and his daughter Virginia.',
       'team': 'design',
-    'role': 'Product Designer',
-    'link': ''
-  },
+      'role': 'Creative Director',
+      'link': ''
+    },
+    {
+      'name': 'Sonia Tsao',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Sonia\'s background is in real estate and lifestyle partnerships, and she has also worked with Chanel and Conde Naste Traveler. She holds a BA in Anthropology from Tufts and an MBA from Harvard. A Singapore transplant, Sonia loves spicy food, jumpsuits, and running after her pup, Rex.',
+      'team': 'operations',
+      'role': 'Brand Manager',
+      'link': ''
+    },
 
-  {
-    'name': 'Adam Beckerman',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Adam is a veteran innovator in the ecommerce industry. He holds an MBA from Columbia Business School and a BS in Marketing from the Smith School of Business at the University of Maryland, College Park. When not working, he can be found enjoying his family and tinkering with tech.',
-    'team': 'product',
-    'role': 'VP, Platform Integrations',
-    'link': ''
-  },
+    {
+      'name': 'Vadim Graboys',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Vadim previously built simulation engines for mortgage-backed securities at Bloomberg before starting a Bitcoin exchange. He also spent time creating transaction-processing infrastructure at Chartbeat. Vadim enjoys hiking, biking, and psychedelic trance festivals.',
+      'team': 'product',
+      'role': 'Software Engineer',
+      'link': ''
+    },
+    {
+      'name': 'Viviana Rodriguez',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Viviana comes from finance, where she expanded a commodities business into Latin America and focused on client acquisition, marketing, and relationship management. She left the beaches of Puerto Rico to attend Yale, and now pursues warm weather to stay sane. Although food and wine also do the trick.',
+      'team': 'operations',
+      'role': 'Director of Customer Operations',
+      'link': ''
+    },
+    {
+      'name': 'Alan Wang',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'A Cal graduate with an MS in structural engineering, Alan spent 2 years designing buildings before attending the Recurse Center and moving to software. He enjoys games of all kinds, and can tell you more about concrete and steel than you would ever care to know.',
+      'team': 'product',
+      'role': 'Software Engineer',
+      'link': ''
+    },
 
-  {
-    'name': 'Maud Pasturaud',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Maud has more than 7 years of experience in growth, having led acquisition, engagement, and monetization initiatives for Gilt, Secret, and Jetsetter. A fashionista at heart, Maud can be found dancing salsa, buying too many shoes, and being super French (she\'s from Paris and yes it\'s a full-time job).',
+    {
+      'name': 'Adam Fried',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Adam has developed a variety of software, from embedded to mobile apps. He previously worked at BlackRock and Lockheed Martin. He holds a BS in Computer Eng. and an MBA from SUNY Binghamton, and a Master\'s in Systems Eng. from Cornell. Adam enjoys hiking, biking, and skiing.',
+      'team': 'product',
+      'role': 'Software Engineer',
+      'link': ''
+    },
+    {
+      'name': 'Andrew Adams',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'A recent Stanford grad (BA \'13, MS \'14), Andrew worked in early-stage VC for SoftBank Capital and Forerunner Ventures, and as a software engineering intern for Amazon and One Kings Lane. Andrew enjoys playing and watching soccer, running marathons, and doing occasional artsy things.',
+      'team': 'product',
+      'role': 'Product Analyst',
+      'link': ''
+    },
+
+    {
+      'name': 'Chaz Yoon',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Chaz iz chaz. Obvz.',
+      'team': 'product',
+      'role': 'Head, Business Intelligence',
+      'link': ''
+    },
+    {
+      'name': 'Chris Fahey',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Chris helps Spring\'s team of awesome designers be even more awesome. With over 20 years experience, he has led interaction design teams at ZocDoc, Big Spaceship, and Behavior, a firm he cofounded. Chris likes to juggle and run long distances, but never at the same time.',
+      'team': 'design',
+      'role': 'VP Product Design',
+      'link': ''
+    },
+
+    {
+      'name': 'Christy Maddox',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'A native Atlantan who moved to the Big Apple by way of Nashville, Christy cut her teeth in the advertising department at Barneys. After that, she went into Wholesale and worked for Givenchy and Marni. Christy lives for Friday Night Lights, flea markets, and chicken fingers.',
+      'team': 'operations',
+      'role': 'Brand Manager',
+      'link': ''
+    },
+    {
+      'name': 'Courtney Ortiz',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Courtney graduated from Boston University with a BA in Anthropology, but has spent most of her career leading web-based technology projects. In her spare time she enjoys cooking, traveling, and playing golf.',
+      'team': 'product',
+      'role': 'Director, Platform Integrations',
+      'link': ''
+    },
+    {
+      'name': 'Dan Chen',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'A native New Yorker, Dan has launched products for Mercedes-Benz, The New York Times, and Samsung. When he\'s not designing, Dan can be found visiting galleries or planning his next trip into the backcountry.',
+      'team': 'design',
+      'role': 'Product Designer',
+      'link': ''
+    },
+    {
+      'name': 'Daniel Ortiz',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Daniel graduated from The Wharton School in 2014. Before joining Spring, he started his career in Macy\'s Merchandising Group, helping to develop its American Rag brand. He lived in Florida for most of his life, interspersed with trips to Ecuador to visit his family.',
+      'team': 'operations',
+      'role': 'Brand Manager',
+      'link': ''
+    },
+
+    {
+      'name': 'Dianna Cohen',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Dianna has worked for a variety of NYC-based fashion and technology startups, including Into The Gloss and Beyond The Row. She previously spent time at Valentino, Philip Crangi\'s Giles & Brother, and Thakoon. She’s an art and design nerd; a comedy geek; and a leather pants enthusiast.',
+      'team': 'marketing',
+      'role': 'Strategic Marketing Manager',
+      'link': ''
+    },
+
+    {
+      'name': 'Erin Gusty',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Erin has a BA from Denison University and has worked with Toll Brothers marketing homes across the country. She is a recent college grad and is excited to leave her small Pennsylvania town to join the startup world of NYC. Erin has a passion for traveling and learning new languages.',
+      'team': 'operations',
+      'role': 'Customer Service Representative',
+      'link': ''
+    },
+
+    {
+      'name': 'Imran Sobh',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Imran has helped companies of all sizes design and launch products from wearables to websites. One of his favorites so far is Nike+ Basketball — the first shoe to track how high you jump. He bikes as much as possible to offset his unhealthy obsession with donuts.',
+      'team': 'design',
+      'role': 'Product Designer',
+      'link': ''
+    },
+    {
+      'name': 'Lauren Devereux',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Lauren has worked at a number of NYC-based fashion and media startups, including Zady and #waywire. She holds a BA from Loyola Marymount in Los Angeles, and swears she doesn\'t miss the sunshine. When she’s not working, Lauren\'s usually making or baking something, or chasing her dog, Pearl.',
+      'team': 'marketing',
+      'role': 'Marketing Manager',
+      'link': ''
+    },
+    {
+      'name': 'Leslie Fish',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Leslie previously worked for a leading hedge fund, managing the firm\'s strategic relationships and conducting research projects on global retail and fashion companies. In her down time, she frequents Shake Shack and takes Tuxedo, her Boston Terrier, on long walks.',
+      'team': 'operations',
+      'role': 'Brand Manager',
+      'link': ''
+    },
+    {
+      'name': 'Lisa Zhu',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Lisa used to work at PayPal, where she product-managed fingerprint payments and merchant onboarding. Before that, she graduated from Penn and lived a nomadic life as a McKinsey consultant. Lisa enjoys running marathons and travel; she has 53 passport stamps and counting.',
+      'team': 'product',
+      'role': 'Product Manager',
+      'link': ''
+    },
+
+    {
+      'name': 'Maia McCormick',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'An NYC native, Maia earned a BA in music from Williams College, tripped and fell, and landed in the tech world by way of the Recurse Center. Outside of work, Maia can be found singing Renaissance music, folk-dancing, or eating tasty food.',
+      'team': 'product',
+      'role': 'Software Engineer',
+      'link': ''
+    },
+    {
+      'name': 'Maya Poulton',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Maya has a decade of experience in business development, strategy, and marketing for luxury brands and startups. Prior to Spring, she spent time at ASMALLWORLD and Jetsetter. She has lived in six countries and holds a B.Com from McGill. She loves travel, dumplings, Spring\'s dogs, and shoes.',
+      'team': 'marketing',
+      'role': 'Head of Partnerships',
+      'link': ''
+    },
+
+    {
+      'name': 'Trey Lawrence',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Trey is a recovering hardware engineer, but has now moved on to the softer stuff. He started out in silicon manufacturing, hardware design, and firmware; studied at Hacker School; and was at eBay NYC. He is a craft beer enthusiast and likely the world\'s best puzzle Bobble player.',
+      'team': 'product',
+      'role': 'Software Engineer',
+      'link': ''
+    },
+
+    {
+      'name': 'Vivian Esquerre',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Vivian is a graduate of the University of Maryland, College Park. She is a fashion enthusiast and has spent the last 7 years working in luxury retail. Outside of work, Vivian spends her time raising her wonderful daughter Paige and traveling with her family.',
+      'team': 'operations',
+      'role': 'Customer Service Representative',
+      'link': ''
+    },
+
+    {
+      'name': 'Wayne Sun',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Once upon a time, Wayne designed award-winning experiences for Nike, Quirky, Samsung, and Google. Prior to that, he was part of TechStars NYC. He\'s into product, manufacturing, and design, and he\'s a big fan of \'90s music. He remains the world\'s longest-lurking redditor.',
+      'team': 'design',
+      'role': 'Product Designer',
+      'link': ''
+    },
+
+    {
+      'name': 'Adam Beckerman',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Adam is a veteran innovator in the ecommerce industry. He holds an MBA from Columbia Business School and a BS in Marketing from the Smith School of Business at the University of Maryland, College Park. When not working, he can be found enjoying his family and tinkering with tech.',
+      'team': 'product',
+      'role': 'VP, Platform Integrations',
+      'link': ''
+    },
+
+    {
+      'name': 'Maud Pasturaud',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Maud has more than 7 years of experience in growth, having led acquisition, engagement, and monetization initiatives for Gilt, Secret, and Jetsetter. A fashionista at heart, Maud can be found dancing salsa, buying too many shoes, and being super French (she\'s from Paris and yes it\'s a full-time job).',
       'team': 'growth',
-    'role': 'VP, Growth',
-    'link': ''
-  },
+      'role': 'VP, Growth',
+      'link': ''
+    },
 
-  {
-    'name': 'Thomas Jeon',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Thomas is da bomb.',
-    'team': 'product',
-    'role': 'Software Engineer',
-    'link': ''
-  },
+    {
+      'name': 'Thomas Jeon',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Thomas is da bomb.',
+      'team': 'product',
+      'role': 'Software Engineer',
+      'link': ''
+    },
 
-  {
-    'name': 'Alex Routhier',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Alex is a Cal grad, but not an engineer. She went into fashion, and after graduating from Parsons worked at Alexander Wang handling global press, marketing, and collaborations with brands including H&M and BEATS by Dre. Alex has a small denim addiction and enjoys live music and cooking.',
-    'team': 'brand-partnerships',
-    'role': 'Brand Curator',
-    'link': ''
-  },
+    {
+      'name': 'Alex Routhier',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Alex is a Cal grad, but not an engineer. She went into fashion, and after graduating from Parsons worked at Alexander Wang handling global press, marketing, and collaborations with brands including H&M and BEATS by Dre. Alex has a small denim addiction and enjoys live music and cooking.',
+      'team': 'brand',
+      'role': 'Brand Curator',
+      'link': ''
+    },
 
-  {
-    'name': 'Courtney Fasciano',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'For the last decade Courtney\'s name has been on the masthead of fashion publications like T Magazine, Harper\'s Bazaar, and most recently Marie Claire, where she was the Market Director. She loves looking for the next big thing, talking about skiing, and showing people pictures of her cat Riley.',
-      'team': 'brand-partnerships',
-    'role': 'Head of Designer Curation & Brand Partnerships',
-    'link': ''
-  },
+    {
+      'name': 'Courtney Fasciano',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'For the last decade Courtney\'s name has been on the masthead of fashion publications like T Magazine, Harper\'s Bazaar, and most recently Marie Claire, where she was the Market Director. She loves looking for the next big thing, talking about skiing, and showing people pictures of her cat Riley.',
+      'team': 'brand',
+      'role': 'Head of Designer Curation & Brand Partnerships',
+      'link': ''
+    },
 
-  {
-    'name': 'Amanda Howles',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Amanda is a Certified Public Accountant in North Carolina and holds a master’s degree in accounting from the University of North Carolina at Chapel Hill. She previously worked at Quintiles and Grant Thornton. When not looking at financial statements, Amanda pretends to be a food and wine aficionado.',
-    'team': 'business-ops',
-    'role': 'Financial Controller',
-    'link': ''
-  },
+    {
+      'name': 'Amanda Howles',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Amanda is a Certified Public Accountant in North Carolina and holds a master’s degree in accounting from the University of North Carolina at Chapel Hill. She previously worked at Quintiles and Grant Thornton. When not looking at financial statements, Amanda pretends to be a food and wine aficionado.',
+      'team': 'business-ops',
+      'role': 'Financial Controller',
+      'link': ''
+    },
 
-  {
-    'name': 'Jane Shapiro',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'Jane has experience in consumer tech and e-commerce having worked in Product at Etsy and at Zynga and earlier in quantitative marketing at Hotwire.com in San Francisco. She earned an MBA from MIT Sloan School of Management and a BA in Economics from McGill University. She loves Broadway musicals and admits to an expertise in pop culture.',
-    'team': 'product',
-    'role': 'Lead Product Manager',
-    'link': ''
-  },
+    {
+      'name': 'Jane Shapiro',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'Jane has experience in consumer tech and e-commerce having worked in Product at Etsy and at Zynga and earlier in quantitative marketing at Hotwire.com in San Francisco. She earned an MBA from MIT Sloan School of Management and a BA in Economics from McGill University. She loves Broadway musicals and admits to an expertise in pop culture.',
+      'team': 'product',
+      'role': 'Lead Product Manager',
+      'link': ''
+    },
 
-  {
-    'name': 'Max Coulter',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': 'After spending time in Healthcare (Siemens) and Finance (Amex), Maximilian decided the next obvious move would be to Fashion! Max loves doing whatever is necessary to get an awesome products to people. Generally, that means pushing pixels by way of bits in Objective-C, GO Lang, or whatever.',
-    'team': 'product',
-    'role': 'Software Engineer',
-    'link': ''
-  },
-  {
-    'name': 'Siyuan Zhu',
-    'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
-    'bio': '',
-    'team': 'product',
-    'role': 'Integration Engineer',
-    'link': ''
+    {
+      'name': 'Max Coulter',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': 'After spending time in Healthcare (Siemens) and Finance (Amex), Maximilian decided the next obvious move would be to Fashion! Max loves doing whatever is necessary to get an awesome products to people. Generally, that means pushing pixels by way of bits in Objective-C, GO Lang, or whatever.',
+      'team': 'product',
+      'role': 'Software Engineer',
+      'link': ''
+    },
+    {
+      'name': 'Siyuan Zhu',
+      'photo': 'http://s3-ak.buzzfeed.com/static/2014-09/12/15/enhanced/webdr08/enhanced-29328-1410550760-9.jpg',
+      'bio': '',
+      'team': 'product',
+      'role': 'Integration Engineer',
+      'link': ''
+    }
+  ];
+
+  var frag = document.createDocumentFragment();
+  var num = 0;
+
+  console.log(team.length/3)
+
+  //columns
+  for ( var col = 0; col < team.length; col++ ) {
+
+    var column = document.createElement('div');
+    column.className = 'col3';
+
+    //rows
+    for ( var row = 0; row < team.length/3; row++ ) {
+      var data = team[num];
+
+      if ( data == undefined ) { break; }
+
+      var employee = document.createElement('div');
+      employee.className = 'employee block' + ' ' + data.team;
+
+      //build employee div
+      var photo = document.createElement('img');
+      photo.src = data.photo;
+      employee.appendChild(photo);
+
+      var empName = document.createElement('div');
+      empName.className = 'name';
+      empName.innerHTML = data.name;
+      employee.appendChild(empName);
+
+      var nameActive = document.createElement('div');
+      nameActive.className = 'name-active';
+      nameActive.innerHTML = data.name;
+      employee.appendChild(nameActive);
+
+      var role = document.createElement('div');
+      role.className = 'role';
+      role.innerHTML = data.role;
+      employee.appendChild(role);
+
+      var bio = document.createElement('div');
+      bio.className = 'bio';
+      bio.innerHTML = data.bio;
+      employee.appendChild(bio);
+
+      var brandBlock = document.createElement('div');
+      brandBlock.className = 'brand-block';
+
+      var quiet = document.createElement('div');
+      quiet.className = 'quiet';
+      quiet.innerHTML = 'Favorite Brand'
+      brandBlock.appendChild(quiet);
+
+      var brand = document.createElement('div');
+      brand.className = 'brand-favorite';
+      brand.innerHTML = data.brand;
+      brandBlock.appendChild(brand);
+
+      employee.appendChild(brandBlock);
+
+      column.appendChild(employee);
+      num ++; 
+    }
+
+    frag.appendChild( column );
+
   }
-];
 
-var frag = document.createDocumentFragment();
-var num = 0;
-
-console.log(team.length/3)
-
-//columns
-for ( var col = 0; col < team.length; col++ ) {
-
-  var column = document.createElement('div');
-  column.className = 'col3';
-  
-  //rows
-  for ( var row = 0; row < team.length/3; row++ ) {
-    var data = team[num];
-
-    if ( data == undefined ) { break; }
-
-    var employee = document.createElement('div');
-    employee.className = 'employee';
-
-    //build employee div
-    var photo = document.createElement('img');
-    photo.src = data.photo;
-    employee.appendChild(photo);
-
-    var empName = document.createElement('div');
-    empName.className = 'name';
-    empName.innerHTML = data.name;
-    employee.appendChild(empName);
-
-    var nameActive = document.createElement('div');
-    nameActive.className = 'name-active';
-    nameActive.innerHTML = data.name;
-    employee.appendChild(nameActive);
-
-    var role = document.createElement('div');
-    role.className = 'role';
-    role.innerHTML = data.role;
-    employee.appendChild(role);
-
-    var bio = document.createElement('div');
-    bio.className = 'bio';
-    bio.innerHTML = data.bio;
-    employee.appendChild(bio);
-
-    var brandBlock = document.createElement('div');
-    brandBlock.className = 'brand-block';
-
-    var quiet = document.createElement('div');
-    quiet.className = 'quiet';
-    quiet.innerHTML = 'Favorite Brand'
-    brandBlock.appendChild(quiet);
-
-    var brand = document.createElement('div');
-    brand.className = 'brand';
-    brand.innerHTML = data.brand;
-    brandBlock.appendChild(brand);
-
-    employee.appendChild(brandBlock);
-
-    column.appendChild(employee);
-    num ++; 
-  }
-
-  frag.appendChild( column );
-
-}
-
-document.getElementById('grid').appendChild( frag );
+  document.getElementById('grid').appendChild( frag );
 
 
 </script>
 
 
 <script>
+
+  $('.filter .btn').on('click', function(e){
+    var target = e.target;
+    var $this = $(target);
+
+    if ( $this.hasClass('active') ) {
+      $this.removeClass('active')
+      $('.employee').show();
+    } else {
+      $('.active').removeClass('active');
+      $('.employee').hide();
+      $("." + target.id).show();
+      $this.addClass('active');
+    }
+
+  
+  })
+
   $('.employee').on('click', function(){
 
     var $this = $(this);
@@ -753,419 +812,9 @@ document.getElementById('grid').appendChild( frag );
     }
   })  
 </script>
-
-<!--
-<script>
-//mouse info
-var isTouch = !!('createTouch' in document),
-  cursorMoveEvent = isTouch ? 'touchmove' : 'mousemove';
-var mouseX = 0;
-var mouseY = 0;
-
-
-//animation code 
-// shim layer with setTimeout fallback
-// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-var requestAnimFrame = (function(){
-  return  window.requestAnimationFrame       || 
-    window.webkitRequestAnimationFrame || 
-    window.mozRequestAnimationFrame    || 
-    window.oRequestAnimationFrame      || 
-    window.msRequestAnimationFrame     || 
-    function( callback, element){
-    window.setTimeout(callback, 1000 / 60);
-  };
-})();
-
-function filterTeam () {
-  var el = document.querySelectorAll('.filter');
-  for ( var i = 0; i < el.length; i++ ) {
-
-    el[i].addEventListener('click', function (e) {
-      var target = e.target
-      //show all
-      if ( hasClass(target, 'active') ) {
-        target.className = 'filter';
-      } 
-      //filter
-      else {
-
-        var el = document.querySelectorAll('.filter');
-        for ( var i = 0; i < el.length; i++ ) {
-          el[i].className = 'filter';
-        }
-
-        target.className += ' active';
-        var id = target.id;
-
-        var em = document.querySelectorAll('.employee');
-        for ( var i = 0; i < em.length; i++ ) {
-          if ( !hasClass(em[i], id) ) {
-            em[i].className =+ ' hide'; 
-          }
-        }
-
-      }
-    });
-  }
-}
-
-function placeNav(){
-  var scrollTop = window.scrollY;
-
-  if ( stickyNavTop >= scrollTop && hasClass(stickyNav, 'sticky') ) {
-    stickyNav.className = 'text-center';
-  }
-  else if ( stickyNavTop <= scrollTop && !hasClass(stickyNav, 'sticky') ) {
-    stickyNav.className += ' sticky';
-  }
-};
-
-function hasClass(element, cls) {
-  return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-}
-
-function isInArray(value, array) {
-  return array.indexOf(value) > -1;
-}
-
-function getColor () {
-  //there are 360 distinct hue values in hsl
-  var h = Math.random() * 360;
-  // FUN FACT! ~~ is shorthand for Math.floor(). not relevant anymore, but still useful.
-
-  var color = "hsla(" + h + ", 75%, 60%, 1)";
-  return (color);
-}
-
-function Employee (team, x, y, size, data) {
-  //create document fragment with the params
-  this.team = team;
-  this.x = x;
-  this.y = y;
-  this.size = size;
-  this.isActive = false;
-
-  this.elasticity = 0.80;
-  this.responsiveness = 0.07;
-
-  this.scale = 1;
-  this.scaleDelta = 0;
-
-  this.angle = 0;
-  this.distance = 0;
-
-  this.teamOffset = {
-    x : this.team.element.offsetLeft,
-    y : this.team.element.offsetTop
-  };
-
-  this.data = data;
-
-  this.offsetX = 0;
-  this.offsetY = 0;
-
-  this.offset = {
-    x: 0,
-    y: 0
-  };
-
-  this.element = document.createElement('div');
-  this.element.className = 'employee';
-  this.element.style.width = this.size + 'px';
-  this.element.style.height = this.size + 'px';
-
-  if ( data.photo ) {
-    //console.log('photo')
-    this.element.style.backgroundImage = 'url(' + this.data.photo + ')';
-  }
-  else {
-    this.element.style.backgroundColor = getColor();
-
-  }
-
-  //add that shit to the Team element!
-
-  this.transformedX = x;
-  this.transformedY = y;
-  this.scale = 1;
-  this.positionAndScale();
-}
-
-Employee.prototype.elasticizeProperty = function ( prop, target ) {
-  var deltaProp = prop + 'Delta';
-  this[ deltaProp ] = ( this[ deltaProp ] || 0 ) * this.elasticity + (this[ prop ] - target) * this.responsiveness;
-  this[ prop ] -= this[ deltaProp ];
-};
-
-Employee.prototype.render = function () {
-
-  var cursor = { x: 0, y: 0 }, distance, angle, dx, dy;
-
-  //if there is an active employee
-  if ( this.team.activeEmployee ) {
-
-    //animate active employee
-    if ( this.isActive ) {
-      var targetScale = 2;
-      this.elasticizeProperty( 'scale', targetScale );
-    }
-    //if there's an active employee, animate others
-    else {
-      cursor.x = this.team.activeEmployee.x;
-      cursor.y = this.team.activeEmployee.y;
-
-      dx = cursor.x - this.x;
-      dy = cursor.y - this.y;
-      distance = Math.sqrt( dx * dx + dy * dy );
-      angle = Math.atan2( dy, dx );
-
-      this.angle = angle || this.angle;
-      distance = distance || 0;
-
-      var targetD = distance ? (300 - distance) : 0;
-      targetD = Math.max( targetD, 0 );
-
-      var targetScale = 1 - (targetD / 250) * 0.5;
-
-      this.elasticizeProperty( 'scale', targetScale );
-
-      var targetOffsetX = Math.cos( this.angle ) * -targetD * 0.25,
-        targetOffsetY = Math.sin( this.angle ) * -targetD * 0.25;
-
-      this.elasticizeProperty( 'offsetX', targetOffsetX );
-      this.elasticizeProperty( 'offsetY', targetOffsetY );
-
-      this.transformedX = this.x + this.offsetX;
-      this.transformedY = this.y + this.offsetY;
-    }
-  }
-  //else, revert to orginal
-  else {
-    this.isActive = false;
-    this.angle = this.angle;
-    distance = 0;
-
-    var targetD = distance ? (300 - distance) : 0;
-    targetD = Math.max( targetD, 0 );
-
-    var targetScale = 1 - (targetD / 250) * 0.5;
-
-    this.elasticizeProperty( 'scale', targetScale );
-
-    var targetOffsetX = Math.cos( this.angle ) * -targetD * 0.25,
-      targetOffsetY = Math.sin( this.angle ) * -targetD * 0.25;
-
-    this.elasticizeProperty( 'offsetX', targetOffsetX );
-    this.elasticizeProperty( 'offsetY', targetOffsetY );
-
-    this.transformedX = this.x + this.offsetX;
-    this.transformedY = this.y + this.offsetY;
-  }
-
-  //position the element 
-  this.positionAndScale();
-};
-
-if ( Modernizr.csstransforms && Modernizr.csstransforms3d ) {
-  // 3d transforms
-  Employee.prototype.positionAndScale = function() {
-    this.element.style[ transformProp ] = 'translate3d(' + this.transformedX + 'px, ' + this.transformedY + 'px, 0 ) scale3d(' + this.scale + ', ' + this.scale + ', 1)';
-  };
-} else if ( Modernizr.csstransforms ) {
-  // 2d transforms
-  Employee.prototype.positionAndScale = function() {
-    this.element.style[ transformProp ] = 'translate(' + this.transformedX + 'px, ' + this.transformedY + 'px) scale(' + this.scale + ')';
-  };
-} else {
-  // absolute positioning
-  Employee.prototype.positionAndScale = function() {
-    this.element.style.left = this.transformedX + 'px'; 
-    this.element.style.top = this.transformedY + 'px'; 
-  };
-
-}
-
-function Team (element, spacing, employeeSize, colNum) {
-  this.element = element;
-  this.employeeSize = employeeSize;
-
-  //calculate the # of rows based on # of employees
-  var rows = Math.ceil(team.length/(colNum-.5));
-  //console.log('team.length: ' + team.length);
-  //console.log('(colNum-.5): ' + (colNum-.5));
-  //console.log('rows: ' + rows);
-
-  this.width = this.element.offsetWidth;
-  this.height = ( employeeSize + (spacing/2) ) * rows;
-  //set height
-  this.element.style.height = this.height + 'px';
-
-  //listen for cursor event
-  this.element.addEventListener( cursorMoveEvent, this, false );
-
-this.employees = new Array();
-this.closestEmployee = null,
-  this.cols = new Array();
-this.rows = new Array();
-
-var frag = document.createDocumentFragment(),  
-  x,
-y, 
-row = 0, 
-  col = 0, 
-  colLength,
-isEven,
-data, 
-employee,
-i = 0;
-
-//for each employee in team make new employee object
-for ( row = 0; row < rows; row++ ) {
-
-  // determine number of columns
-  //if the row is even columns == 5, else 4
-  //isEven is neccessary for the spacing function
-  //5 column rows have no leading space, where 4 column rows do
-  if ( row%2 == 0) {
-    colLength = colNum - 1;
-    isEven = 0;
-  } else {
-    colLength = colNum - 2; 
-    isEven = 1;
-  }
-
-  //console.log('colLength: ' + colLength)
-
-  for ( col = 0; col <= colLength; col++ ) {
-    //figure out spacing
-    x = ( col * spacing ) + ( spacing*.5*isEven)
-    y = ( row * spacing );
-
-    x = x + employeeSize/2;
-    y = y + employeeSize/2;
-
-    //add x and y to rows and cols arrays
-    //use these to check for closest node
-    if ( !isInArray(x, this.rows) ) { this.rows.push(x) }
-  if ( !isInArray(y, this.cols) ) { this.cols.push(y) }
-
-
-  //this doesn't seem right...
-  if ( i == team.length ) {
-  break
-  }
-
-  //figure out what num FIX
-  //what needs to be fixed?
-  data = team[i];
-
-  //console.log('i: ' + i)
-  //console.log(data.name)
-  //console.log(i);
-  employee = new Employee( this, x, y, employeeSize, data )
-
-  //add employee to employee array
-  frag.appendChild( employee.element )
-  this.employees.push( employee )
-
-  i ++;
-  }
-  }// end employee circle placement
-
-  //add employees array to the team grid
-  this.element.appendChild( frag );
-
-  var w = spacing*colNum;
-  this.element.style.width = w + 'px';
-  this.element.style.margin = '0 auto';
-
-  this.cursors = {};
-
-  this.animate();
-  }
-
-  Team.prototype.isHovering = function() {
-  if ( hasClass(this.cursors.mouse.target, 'employee') ) {
-  var cursor = this.cursors.mouse,
-  x, y, rowResult, colResult;
-
-  y = cursor.pageY - this.element.offsetTop - size,
-  rowResult = Math.round(y/spacing);
-  //closestY = this.cols[ res ];
-
-  //if an even number, then offset the column num
-  if ( rowResult % 2 == 0 ) {
-  x = cursor.pageX - this.element.offsetLeft - spacing/2; 
-  } else {
-  x = cursor.pageX - this.element.offsetLeft - spacing; 
-  }
-
-  colResult = Math.round(x/spacing);
-  //closestX = this.rows[ res ];
-
-  var teamMember = Math.round( (rowResult*4.5) + colResult );
-
-  this.employees[teamMember].isActive = true;
-  this.activeEmployee = this.employees[teamMember];
-  } else {
-  this.activeEmployee = null;
-  }
-  }
-
-  //animation loop
-  Team.prototype.animate = function () {
-
-  var instance = this;
-
-  if( this.cursors.mouse ) { this.isHovering() }
-
-  for ( var i = 0, len = this.employees.length; i < len; i++ ) {
-  this.employees[i].render();
-  }
-  //push animation frame
-  requestAnimFrame( function(){ instance.animate(); } );
-  };
-
-  Team.prototype.handleEvent = function( event ) {
-  //if Team has the correct mappings to mouse events
-  if ( this[event.type] ) {
-  this[event.type](event);
-  }
-  };
-
-  Team.prototype.mousemove = function( cursor ) {
-  //for every mouse move, save cursor
-  //use cursor variable in the Employee.prototype.render method
-  this.cursors.mouse = cursor;
-  };
-
-  //WE HAVE LIFTOFF IN 3...2...1....
-  var spacing = 160;
-  var size = 80;
-  //TODO get size of container, determine column number by size/spacing
-  var columns = 5;
-
-  function init () {
-  filterTeam()
-
-  window.addEventListener('scroll', function () {
-  placeNav()
-  })
-
-  new Team(document.getElementById('grid'), spacing, size, columns)
-  window.addEventListener('scroll', function () {
-
-  })
-  }
-
-  //LETS GOOOOOOO!
-  window.addEventListener( 'load', init, false); 
-</script>
--->
 <footer>
   <div class='nav-group clearfix'>
-    <nav class='col2'>
+    <nav class='fl'>
       <ul>
         <li>
         <a class='strong' href='/shop'>
@@ -1204,7 +853,7 @@ for ( row = 0; row < rows; row++ ) {
         </li>
       </ul>
     </nav>
-    <nav class='col2'>
+    <nav class='fl'>
       <ul>
         <li>
         <a class='strong' href='/shopspring/iterations/about-1.html'>
@@ -1234,7 +883,7 @@ for ( row = 0; row < rows; row++ ) {
       </ul>
     </nav>
 
-    <nav class='col2'>
+    <nav class='fl'>
       <ul>
         <li>
         <a class='strong' href='/shopspring/iterations/eng-3.html'>
@@ -1259,7 +908,7 @@ for ( row = 0; row < rows; row++ ) {
       </ul>
     </nav>
 
-    <nav class='col2'>
+    <nav class='fl'>
       <ul>
         <li>
         <a class='strong' href='/shopspring/iterations/help-1.html'>
@@ -1284,7 +933,7 @@ for ( row = 0; row < rows; row++ ) {
       </ul>
     </nav>
 
-<nav class='margin2 col2'>
+<nav class='fl'>
       <ul>
         <li>
         <a class='strong' href='/shopspring/iterations/help-1.html'>
@@ -1309,22 +958,22 @@ for ( row = 0; row < rows; row++ ) {
       </ul>
     </nav>
       <!--
-    <div class='margin2 col2'>
+    <div class='fl'>
       <p class='strong'>Get our newsletter for exclusive deals</p>
       <input type='text' placeholder='enter your email'>
       <nav class='clearfix space-bottom1'>
         <ul>
-          <li class='col2 no-pad'>
+          <li class='fl'>
             <a href='https://instagram.com/spring/'>
               <i class="icon-instagram"></i> 
             </a>
           </li>
-          <li class='col2 margin1 no-pad'>
+          <li class='fl'>
             <a href='https://www.facebook.com/SpringNYC'>
               <i class="icon-facebook-squared"></i> 
             </a>
           </li>
-          <li class='col2 margin1 no-pad'>
+          <li class='fl'>
             <a href='https://twitter.com/shopspring'>
               <i class="icon-twitter"></i> 
             </a>
