@@ -206,7 +206,8 @@ a {
     color: #FFF; }
 
 section {
-  padding: 90px 0em; }
+  padding: 90px 0em;
+  position: relative; }
   section.space {
     padding: 8em 0em; }
 
@@ -272,6 +273,12 @@ pre {
 
 .limit {
   width: 83.3333%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.limit {
+  width: 1440px;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto; }
@@ -442,7 +449,8 @@ TRYPTYCH
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    font-weight: 500; }
+    font-weight: 400;
+    line-height: 1.2em; }
   .block p {
     position: absolute;
     bottom: 0em;
@@ -588,7 +596,7 @@ ul.nav {
     margin-right: auto;
     display: inline-block; }
   ul.nav li:first-child {
-    margin-left: 19px; }
+    padding-left: 0; }
   ul.nav li a {
     color: #FFF;
     font-size: 11px;
@@ -602,6 +610,8 @@ ul.nav {
   padding: 0px 15px;
   line-height: 1em;
   margin-top: 5px; }
+  .nav li:last-child {
+    padding-right: 0; }
 
 .nav.nav-secondary a {
   color: #999; }
@@ -871,18 +881,14 @@ footer nav {
   z-index: 0;
   opacity: .25; }
 
-.mosaic {
-  border-top: 1px solid #FFF; }
-  .mosaic .col-big {
-    width: 66.66%; }
-    .mosaic .col-big div {
-      border: 1px solid #FFF;
-      height: 20em; }
-  .mosaic .col-small {
-    width: 33.33%; }
-    .mosaic .col-small div {
-      border: 1px solid #FFF;
-      height: 30em; }
+.mosaic .col-big {
+  width: 66.66%; }
+  .mosaic .col-big div {
+    height: 20em; }
+.mosaic .col-small {
+  width: 33.33%; }
+  .mosaic .col-small div {
+    height: 30em; }
 
 /**
  * Syntax highlighting styles
@@ -1022,3 +1028,7 @@ footer nav {
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+@media all and (max-width: 950px) {
+  header .nav li {
+    display: none; } }

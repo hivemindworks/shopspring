@@ -21,6 +21,14 @@
   margin-right:auto;
 }
 
+
+.limit {
+  width: 1440px;
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 /*
 SPACING
 ========================*/
@@ -146,7 +154,8 @@ TRYPTYCH
 
   h3 {
      @include vertical-align;
-     font-weight: 500;
+     font-weight: 400;
+     line-height: 1.2em;
   }
 
   p {

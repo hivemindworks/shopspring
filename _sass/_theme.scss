@@ -133,7 +133,7 @@ HEADER STYLES
     }
 
     li:first-child {
-      margin-left: 19px; // 19 + 15 = 34px which was Eli's header spacing
+      padding-left: 0;
     }
 
     li a {
@@ -153,6 +153,10 @@ HEADER STYLES
     padding: 0px 15px;
     line-height: 1em;
     margin-top: 5px;
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
   .nav.nav-secondary a {
     color: $gray-light;
