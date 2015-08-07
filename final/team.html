@@ -141,7 +141,10 @@ layout: default
     <a href='#'>More on Life at Spring</a>
   </p>
 
-  <ul class='filter nav center clearfix limit mt6'>
+  <div class='mobile btn btn-small center mt6'>
+    Filter by team
+  </div>
+  <ul class='filter nav center clearfix limit mt6 mobile-none'>
     <li>
       <a id='product' class="btn btn-outline">
         engineering and product
@@ -174,15 +177,15 @@ layout: default
     </li>
   </ul>
 
-  <div id='grid' class='grid mt2'>
+  <ul id='grid' class='grid mt2'>
 
-  </div>
+  </ul>
 
 </section>
 
 <section class='gray'>
   <h2 class='subheader center mb2'>Think you'd be a good addition?</h2>
-  <a class='btn btn-small cta'>
+  <a class='btn btn-small center'>
     View Open Positions
   </a>
 </section>
@@ -625,21 +628,14 @@ layout: default
   var frag = document.createDocumentFragment();
   var num = 0;
 
-  console.log(team.length/3)
-
   //columns
-  for ( var col = 0; col < team.length; col++ ) {
+  for ( var i = 0; i < team.length; i++ ) {
 
-    var column = document.createElement('div');
-    column.className = 'col3';
-
-    //rows
-    for ( var row = 0; row < team.length/3; row++ ) {
       var data = team[num];
 
       if ( data == undefined ) { break; }
 
-      var employee = document.createElement('div');
+      var employee = document.createElement('li');
       employee.className = 'employee block' + ' ' + data.team;
 
       //build employee div
@@ -690,12 +686,8 @@ layout: default
 
       employee.appendChild(brandBlock);
 
-      column.appendChild(employee);
+      frag.appendChild(employee);
       num ++; 
-    }
-
-    frag.appendChild( column );
-
   }
 
   document.getElementById('grid').appendChild( frag );

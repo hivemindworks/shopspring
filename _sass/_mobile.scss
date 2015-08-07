@@ -1,5 +1,40 @@
+.mobile {
+  display: none;
+}
+
+.mobile-none {
+  display: block;
+}
+
 @media all and (max-width: 950px)  {
   header {
     .nav li { display: none; }
+
+    .mobile {
+      display: block;
+      font-size: 1.5em;
+      margin-top: -.5em;
+    }
+
   }
+}
+
+@media all and (max-width: 870px) {
+  .heading {
+    width: 100%;
+  }
+
+  .info {
+    width: 100%;
+    padding: 0 2em;
+  }
+
+  .mobile-none {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
 }

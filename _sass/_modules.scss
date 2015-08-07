@@ -7,22 +7,218 @@
   opacity: .25;
 }
 
+header {
+  .mobile { display: none; }
+
+}
+
+.vert {
+  @include vertical-align;
+}
+
 .mosaic {
+
+  h4 {
+    transform: TranslateY(80%);
+
+    font-size: .6em;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 3em;
+
+    color: #ccc;
+  }
 
   .col-big {
     width: 66.66%;
 
-    div {
+    .section {
       height: 20em; 
     }
 
+
+    p {
+      text-align: center;
+      width: 20em;
+      margin: 0 auto;
+    }
   }
 
   .col-small {
     width: 33.33%;
 
-    div { 
+    .section { 
       height: 30em; 
     }
+
+    p {
+      text-align: center;
+      width: 10em;
+      margin: 0 auto;
+    }
+
   }
 }
+
+/*
+GRID
+========================*/
+
+  .grid {
+    margin-right: auto;
+    margin-left: auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    li {
+      width: 333px;
+      margin: 18px;
+      float: left;
+
+      h3 { 
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: .1em;
+        font-size: 1em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .block {
+    border: 3px solid #eee;
+    text-align: center;
+    position: relative;
+    transition: background .2s, border .2s;
+    float: left;
+    height: 333px;
+    width: inherit;
+    margin: inherit;
+    color: $gray-dark;
+
+    &:hover {
+      background-color: $brand-color;
+      border-color: $brand-color;
+      color: #FFF;
+      cursor: pointer;
+
+      p {
+        color: #FFF;
+      }
+    }
+
+    &.block-tall {
+      height: 390px;
+    }
+
+    h3 {
+      @include vertical-align;
+      font-weight: 400;
+      line-height: 1.2em;
+    }
+
+    .desc {
+      text-transform: none;
+      font-weight: 400;
+      width: 100%;
+      font-size: .875em;
+      line-height: 1.4em;
+      padding: 2em 2em 0em;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0em;
+      width: 100%;
+    }
+
+    .cta {
+      text-align: center;
+      font-size: .875em;
+      font-weight: 400;
+      text-transform: none;
+    }
+  }
+
+  @media all and (max-width: 738px) {
+    section p {
+      width: 100%;
+    }
+
+    .grid {
+      width: 369px;
+    }
+
+    .block {
+      min-height: 333px;
+    }
+
+    .grid li { 
+      width: 90%;
+      margin: 5%; 
+    }
+
+    .mosaic {
+
+      .col-big {
+        width: 100%;
+
+        div {
+          height: 20em;
+        }
+
+      }
+
+
+      .col-small {
+        width: 100%;
+
+        div {
+          height: 20em;
+        }
+      }
+
+    }
+
+  }
+
+  @media all and (max-width: 1107px) and (min-width: 738px)  {
+    .grid {
+      width: 738px;
+    }
+
+    .grid li {
+      width: 333px;
+      margin: 18px;
+    }
+  }
+
+  //three column smaller
+  @media all and (max-width: 1301px) and (min-width: 1107px)  {
+    .grid {
+      width: 1107px;
+    }
+
+    .grid li {
+      width: 333px;
+      margin: 18px;
+    }
+  }
+
+  //three column larger
+  @media all and (max-width: 1400px) and (min-width: 1302px)  {
+    .grid {
+      width: 1302px;
+    }
+
+    .grid li {
+      width: 398px;
+      margin: 18px;
+    }
+  }
+
+  //TODO five column for 30' monitors

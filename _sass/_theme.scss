@@ -16,7 +16,7 @@ HEADER STYLES
     position: absolute;
     top: 0;
 
-    .logo { color: #FFF; }
+    .btn { font-weight: 500; }
 
     li { 
       font-weight: 500;
@@ -45,6 +45,7 @@ HEADER STYLES
     }
 
     .logo {
+      color: #FFF;
       font-family: 'Gotham A', 'Gotham B'; 
       font-weight: 500; 
       font-style: normal;
@@ -72,6 +73,13 @@ HEADER STYLES
     position: relative;
     background: rgba(0,0,0,.4);
     height: 630px;
+
+    .cta {
+      position: absolute;
+      left: 50%;
+      width: 20em;
+      margin-left: -10em;
+    }
   }
 
   .splash:after {
@@ -111,10 +119,13 @@ HEADER STYLES
     font-weight: 400;
     position: absolute;
     bottom: 6em;
-    left: 50%;
     width: 20em;
-    margin-left: -10em;
     letter-spacing: .14em;
+
+    &.center { 
+    left: 50%; 
+    margin-left: -10em;
+  }
   }
 
   /*
@@ -310,7 +321,8 @@ HEADER STYLES
   .btn {
     @extend %caps;
     cursor: pointer;
-    display: inline-block;
+    display: block;
+    max-width: 20em;
     font-size: 12px;
     background: $brand-color;
     text-align: center;
@@ -318,6 +330,8 @@ HEADER STYLES
     color: white;
     border-radius: .35em;
     -webkit-transition: background .15s ease;
+    font-weight: 400;
+    letter-spacing: .14em;
 
     &:hover {
       background: #06E;
@@ -506,8 +520,8 @@ HEADER STYLES
   }
 
   // BORDERS
-  .b  { border: 1px solid #f0f0f0; }
-  .bt { border-top: 1px solid #f0f0f0; }
-  .br { border-right: 1px solid #f0f0f0; }
-  .bb { border-bottom: 1px solid #f0f0f0; }
-  .bl { border-left: 1px solid #f0f0f0; }
+  .b  { border: 1px solid #ddd; }
+  .bt { border-top: 1px solid #ddd; }
+  .br { border-right: 1px solid #ddd; }
+  .bb { border-bottom: 1px solid #ddd; }
+  .bl { border-left: 1px solid #ddd; }

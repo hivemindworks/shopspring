@@ -152,7 +152,7 @@
 
 <header class='dark img'>
   <div class='limit-large'>
-<a class='logo mr1' href='/shopspring/final/index-3.html'>
+<a class='logo mr2' href='/shopspring/final/index-3.html'>
   Spring
 </a>
 
@@ -205,11 +205,15 @@
         </a>
       </li>
       <li>
-        <a style='margin-top: -18px' class='btn btn-light'>
+        <a style='margin-top: -6px' class='btn btn-light'>
           Get the App
         </a>
       </li>
     </ul>
+  </div>
+
+  <div class='fr mobile btn btn-light'>
+    🍔
   </div>
 </nav>
 </div>
@@ -235,7 +239,10 @@
     <a href='#'>More on Life at Spring</a>
   </p>
 
-  <ul class='filter nav center clearfix limit mt6'>
+  <div class='mobile btn btn-small center mt6'>
+    Filter by team
+  </div>
+  <ul class='filter nav center clearfix limit mt6 mobile-none'>
     <li>
       <a id='product' class="btn btn-outline">
         engineering and product
@@ -268,15 +275,15 @@
     </li>
   </ul>
 
-  <div id='grid' class='grid mt2'>
+  <ul id='grid' class='grid mt2'>
 
-  </div>
+  </ul>
 
 </section>
 
 <section class='gray'>
   <h2 class='subheader center mb2'>Think you'd be a good addition?</h2>
-  <a class='btn btn-small cta'>
+  <a class='btn btn-small center'>
     View Open Positions
   </a>
 </section>
@@ -719,21 +726,14 @@
   var frag = document.createDocumentFragment();
   var num = 0;
 
-  console.log(team.length/3)
-
   //columns
-  for ( var col = 0; col < team.length; col++ ) {
+  for ( var i = 0; i < team.length; i++ ) {
 
-    var column = document.createElement('div');
-    column.className = 'col3';
-
-    //rows
-    for ( var row = 0; row < team.length/3; row++ ) {
       var data = team[num];
 
       if ( data == undefined ) { break; }
 
-      var employee = document.createElement('div');
+      var employee = document.createElement('li');
       employee.className = 'employee block' + ' ' + data.team;
 
       //build employee div
@@ -784,12 +784,8 @@
 
       employee.appendChild(brandBlock);
 
-      column.appendChild(employee);
+      frag.appendChild(employee);
       num ++; 
-    }
-
-    frag.appendChild( column );
-
   }
 
   document.getElementById('grid').appendChild( frag );
@@ -891,7 +887,7 @@
           </a>
         </li>
         <li>
-          <a href='/shopspring/iterations/careers-3.html'>
+          <a href='/shopspring/final/careers.html'>
             Careers
           </a>
         </li>
@@ -906,7 +902,7 @@
     <nav class='fl'>
       <ul>
         <li>
-        <a class='strong' href='/shopspring/iterations/eng-3.html'>
+        <a class='strong' href='/shopspring/final/engineering.html'>
           Engineering
         </a>
         </li>
