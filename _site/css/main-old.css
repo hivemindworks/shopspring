@@ -379,8 +379,6 @@ header {
   font-size: 11px;
   position: relative;
   box-shadow: 0px 1px 1px #e4e4e4; }
-  header .logo {
-    color: #FFF; }
   header li {
     font-weight: 500; }
   header.dark {
@@ -408,13 +406,12 @@ header {
     /* IE6-9 */
     box-shadow: none; }
   header .logo {
-    font-family: 'Gotham A', 'Gotham B';
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: .1em;
-    font-size: 19px;
-    float: left;
-    opacity: 1; }
+    width: 8em;
+    overflow: hidden;
+    text-indent: 100%;
+    background: url(/img/logo-white.svg) no-repeat scroll center 100%;
+    background-size: cover;
+    margin-top: 32px; }
   header a.hiring {
     opacity: 1;
     background-color: #3B8FFF;

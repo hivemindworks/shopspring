@@ -24,8 +24,6 @@ HEADER STYLES
     position: relative;
     box-shadow: 0px 1px 1px $gray-light;
 
-    .logo { color: #FFF; }
-
     li { 
       font-weight: 500;
     }
@@ -54,13 +52,12 @@ HEADER STYLES
     }
 
     .logo {
-      font-family: 'Gotham A', 'Gotham B'; 
-      font-weight: 500; 
-      font-style: normal;
-      letter-spacing: .1em;
-      font-size: 19px;
-      float: left;
-      opacity: 1;
+      width: 8em;
+      overflow: hidden;
+      text-indent: 100%;
+      background: url(/img/logo-white.svg) no-repeat scroll center 100%;
+      background-size: cover;
+      margin-top: 32px;
     }
 
     a.hiring {
@@ -70,7 +67,6 @@ HEADER STYLES
       padding: 0em .55em;
       border-radius: 50%;
     }
-
   }
 
   /*

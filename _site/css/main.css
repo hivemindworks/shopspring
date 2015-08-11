@@ -206,10 +206,8 @@ a {
     color: #FFF; }
 
 section {
-  padding: 90px 0em;
+  padding: 8em 0em;
   position: relative; }
-  section.space {
-    padding: 8em 0em; }
 
 /**
  * Blockquotes
@@ -432,6 +430,22 @@ header {
   font-size: .875em;
   position: relative;
   box-shadow: 0px 1px 1px #999;
+  width: 100%;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, transparent));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+  /* IE6-9 */
+  box-shadow: none;
   position: absolute;
   top: 0; }
   header .btn {
@@ -444,32 +458,17 @@ header {
     position: absolute;
     width: 100%;
     box-shadow: none; }
-  header.img {
-    width: 100%;
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, transparent));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-    /* IE10+ */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
-    /* IE6-9 */
-    box-shadow: none; }
   header .logo {
-    color: #FFF;
-    font-family: 'Gotham A', 'Gotham B';
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: .1em;
-    font-size: 19px;
     float: left;
-    opacity: 1; }
+    width: 90px;
+    margin-top: 2px;
+    overflow: hidden;
+    text-indent: 100%;
+    background: url(/shopspring/img/logo-light.svg) no-repeat;
+    background-size: 90px; }
+    header .logo:hover {
+      background: url(/shopspring/img/logohover.svg) no-repeat;
+      background-size: 90px; }
   header a.hiring {
     opacity: 1;
     background-color: #3B8FFF;
@@ -703,7 +702,7 @@ BUTTON STYLES
     background-color: #FFF;
     color: #222; }
     .btn.btn-light:hover {
-      background-color: #3B8FFF;
+      background-color: #0066ee;
       color: #FFF;
       background-image: none; }
   .btn.btn-outline {
@@ -843,6 +842,17 @@ header .mobile {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
+.mosaic.dark {
+  background: #000;
+  color: #FFF; }
+  .mosaic.dark img {
+    opacity: .4; }
+.mosaic.pics:hover img {
+  opacity: .4; }
+.mosaic.pics img {
+  transition: opacity .2s; }
+  .mosaic.pics img:hover {
+    opacity: 1; }
 .mosaic h4 {
   transform: TranslateY(80%);
   font-size: .6em;
@@ -853,7 +863,13 @@ header .mobile {
 .mosaic .col-big {
   width: 66.66%; }
   .mosaic .col-big .section {
-    height: 20em; }
+    height: 20em;
+    position: relative;
+    overflow: hidden; }
+    .mosaic .col-big .section img {
+      width: 100%;
+      height: auto;
+      position: absolute; }
   .mosaic .col-big p {
     text-align: center;
     width: 20em;
@@ -861,7 +877,13 @@ header .mobile {
 .mosaic .col-small {
   width: 33.33%; }
   .mosaic .col-small .section {
-    height: 30em; }
+    height: 30em;
+    position: relative;
+    overflow: hidden; }
+    .mosaic .col-small .section img {
+      height: 100%;
+      width: auto;
+      position: absolute; }
   .mosaic .col-small p {
     text-align: center;
     width: 10em;
@@ -932,28 +954,6 @@ GRID
     font-weight: 400;
     text-transform: none; }
 
-@media all and (max-width: 738px) {
-  section p {
-    width: 100%; }
-
-  .grid {
-    width: 369px; }
-
-  .block {
-    min-height: 333px; }
-
-  .grid li {
-    width: 90%;
-    margin: 5%; }
-
-  .mosaic .col-big {
-    width: 100%; }
-    .mosaic .col-big div {
-      height: 20em; }
-  .mosaic .col-small {
-    width: 100%; }
-    .mosaic .col-small div {
-      height: 20em; } }
 @media all and (max-width: 1107px) and (min-width: 738px) {
   .grid {
     width: 738px; }
@@ -1123,20 +1123,71 @@ GRID
 @media all and (max-width: 950px) {
   header .nav li {
     display: none; }
-  header .mobile {
-    display: block;
+  header .logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -45px; }
+  header .mobile.btn {
+    display: inline-block;
     font-size: 1.5em;
-    margin-top: -.5em; } }
+    width: 2em;
+    padding: 0 .5em;
+    margin-top: -1em; }
+  header a.mobile {
+    color: #FFF;
+    font-size: 1em;
+    display: inline-block;
+    position: absolute;
+    top: 2em;
+    right: 2em; } }
 @media all and (max-width: 870px) {
   .heading {
     width: 100%; }
-
-  .info {
-    width: 100%;
-    padding: 0 2em; }
 
   .mobile-none {
     display: none; }
 
   .mobile {
-    display: block; } }
+    display: block; }
+
+  footer nav.fl {
+    float: none;
+    margin-bottom: 2em; }
+
+  .grid {
+    width: 369px; }
+
+  .block {
+    min-height: 333px; }
+
+  .grid li {
+    width: 90%;
+    margin: 5%; }
+
+  .mosaic .col-small,
+  .mosaic .col-big {
+    width: 100%; }
+    .mosaic .col-small .section,
+    .mosaic .col-big .section {
+      height: 20em; }
+      .mosaic .col-small .section img,
+      .mosaic .col-big .section img {
+        width: 100%;
+        height: auto;
+        top: -20%; } }
+@media all and (max-width: 500px) {
+  .heading {
+    font-size: 2em; }
+
+  .subheader {
+    font-size: 1.5em;
+    width: 100%;
+    padding: 0 2em; }
+
+  section p {
+    width: 100%;
+    padding: 0 2em; }
+
+  img {
+    width: 100%;
+    padding: 0 2em; } }

@@ -11,6 +11,26 @@ layout: default
     margin-right: auto;
   }
 
+  .teams .active {
+    background-color: #3b8fff;
+    color: #FFF;
+  }
+
+  .teams .block.active:hover {
+    background-color: #3b8fff;
+  }
+
+  .teams .active .header,
+  .teams .active .header:after {
+   background: none; 
+  }
+
+  .teams .active .desc,
+  .teams .active .bottom
+  {
+    display: none;
+  }
+
   .teams .block {
     position: relative;
     border-width: 1px;
@@ -65,7 +85,7 @@ layout: default
   .teams .bottom {
     font-size: .75em;
   }
-  
+
   .teams .btn.cta {
     text-transform: uppercase;
     font-weight: 300;
@@ -90,12 +110,12 @@ layout: default
     something huge and beautiful.
   </h1>
 
-  <a class='btn btn-small cta'>
+  <a href='#open' class='btn btn-small cta'>
     View openings
   </a>
 </div>
 
-<section class='space'>
+<section class=''>
   <h2 class='subheader center mb2'>
     How we work
   </h2>
@@ -109,30 +129,51 @@ layout: default
 
 
 </section>
-<section id='about' class='gray pb0 space'>
+<section id='perks' class='gray pb0 '>
   <h2 class='subheader center'>Need more reasons?</h2>
   <p class='mt1'>Working here has its perks</p>
-  <div class='mosaic clearfix mt6'>
-    <div class='col-big'>
-      <div class='teal'>
+  <div class='mosaic dark clearfix mt8'>
+    <div class='col-small'>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/1.jpg'>
+        <p class='vert'>
+          discounts on great products from cool brands, as well as genuinely stylish team swag
+        </p>
       </div>
-      <div class='blue'>
-      </div>
-      <div class='gold'>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/5.jpg'>
+        <p class='vert'>
+          unlimited vacation days
+        </p>
       </div>
     </div>
 
-    <div class='col-small'>
-      <div class='purple'></div>
-      <div class='red'></div>
+    <div class='col-big'>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/2.jpg'>
+        <p class='vert'>
+          meaningful equity sharing and the resources to go after our big idea
+        </p>
+      </div>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/3.jpg'>
+        <p class='vert'>
+          well-designed and casual office with a stocked snack bar
+        </p>
+      </div>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/4.jpg'>
+        <p class='vert'>
+          Puppies!!! Also: adult dogs
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class='space'>
+<section id='open' class=''>
   <h2 class='subheader center'>Open positions</h2>
   <div id='grid' class='grid mt6'>
-
     <ul class='teams center clearfix'>
       <li>
         <div class='block block-tall' href='#about'>
@@ -148,7 +189,7 @@ layout: default
             <p class='btn cta center'>
               View 5 Openings
             </p>
-            <a href='#'>Meet the team</a>
+            <a href='{{ site.baseurl }}/final/team.html?engineering'>Meet the team</a>
           </div>
         </div>
       </li>
@@ -166,7 +207,7 @@ layout: default
             <p class='btn cta center'>
               View 5 Openings
             </p>
-            <a href='#'>Meet the team</a>
+            <a href='{{ site.baseurl }}/final/team.html?design'>Meet the team</a>
           </div>
         </div>
       </li>
@@ -184,7 +225,7 @@ layout: default
             <p class='btn cta center'>
               View 5 Openings
             </p>
-            <a href='#'>Meet the team</a>
+            <a href='{{ site.baseurl }}/final/team.html?marketing'>Meet the team</a>
           </div>
         </div>
       </li>
@@ -202,7 +243,7 @@ layout: default
             <p class='btn cta center'>
               View 5 Openings
             </p>
-            <a href='#'>Meet the team</a>
+            <a href='{{ site.baseurl }}/final/team.html?operations'>Meet the team</a>
           </div>
         </div>
       </li>
@@ -220,7 +261,7 @@ layout: default
             <p class='btn cta center'>
               View 5 Openings
             </p>
-            <a href='#'>Meet the team</a>
+            <a href='{{ site.baseurl }}/final/team.html?brand'>Meet the team</a>
           </div>
         </div>
       </li>
@@ -250,7 +291,22 @@ layout: default
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
 
-<script></script>
+  $('.teams .cta').on('click', function(){
+    var $this = $(this);
+
+    if ( $this.hasClass('active') ) {
+      $this.removeClass('active');
+    } 
+    else {
+      $('.active').removeClass('active');
+
+      $this.parent().parent().addClass('active');
+    }
+  });
+
+
+</script>
 {% include footer-5.html %}
 

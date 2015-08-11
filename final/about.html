@@ -60,7 +60,7 @@ layout: default
   </h1>
 </div>
 
-<section class='space'>
+<section class=''>
   <h2 class='subheader center mb2'>
     Our Mission
   </h2>
@@ -70,7 +70,7 @@ layout: default
   </p>
 </section>
 
-<section id='about' class='gray pb0 space'>
+<section id='about' class='gray pb0'>
   <h2 class='subheader center'>
     Very important stats
   </h2>
@@ -119,15 +119,15 @@ layout: default
       </div>
       <div class='section'>
         <div class='vert'>
+          <h4>Location</h4>
           <p>
-            Looking for more info? 
-            Check out our About page or our blog
+            The iconic Flatiron building in NYC
           </p>
         </div>
       </div>
     </div>
 
-    <div class='col-small'>
+    <div class='col-small bt'>
       <div class='bb section'>
         <div class='vert'>
           <h4>Brands</h4>
@@ -140,9 +140,10 @@ layout: default
       </div>
       <div class='bb section'>
         <div class='vert'>
-          <h4>Location</h4>
           <p>
-            The iconic Flatiron building in NYC
+            Looking for more info? 
+            <br/>
+            Check out <a href='{{ site.baseurl }}/blog.html'>our blog</a>
           </p>
         </div>
       </div>
@@ -150,7 +151,7 @@ layout: default
   </div>
 </section>
 
-<section id='weareteamspring' class='pb0 space'>
+<section id='weareteamspring' class='pb0'>
   <h2 class='subheader center mb1'>
     #WEARETEAMSPRING
   </h2>
@@ -161,26 +162,33 @@ layout: default
     Check out our team or our open positions
   </p>
 
-  <div class='mosaic clearfix mt6'>
-    <div class='col-big'>
-      <div class='teal section'>
+  <div class='mosaic dark pics clearfix mt8'>
+    <div class='col-small'>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/1.jpg'>
       </div>
-      <div class='blue section'>
-      </div>
-      <div class='gold section'>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/5.jpg'>
       </div>
     </div>
 
-    <div class='col-small'>
-      <div class='purple section'></div>
-      <div class='red section'></div>
+    <div class='col-big'>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/2.jpg'>
+      </div>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/3.jpg'>
+      </div>
+      <div class='section'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/4.jpg'>
+      </div>
     </div>
   </div>
 </section>
 
-<section class='gray space'>
+<section class='gray'>
   <h2 class='subheader center mb2'>Think you'd be a good addition?</h2>
-  <a class='btn btn-small center'>
+  <a href='{{ site.baseurl }}/final/careers.html#open' class='btn btn-small center'>
     View Open Positions
   </a>
 </section>

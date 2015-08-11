@@ -18,6 +18,28 @@ header {
 
 .mosaic {
 
+  &.dark {
+    background: #000;
+    color: #FFF;
+    img { 
+      opacity: .4; 
+    }
+  }
+
+  &.pics {
+    &:hover img {
+      opacity: .4;
+    }
+
+    img {
+      transition: opacity .2s;
+      &:hover {
+        opacity: 1;
+
+      }
+    }
+  }
+
   h4 {
     transform: TranslateY(80%);
 
@@ -34,6 +56,14 @@ header {
 
     .section {
       height: 20em; 
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+      }
     }
 
 
@@ -49,6 +79,14 @@ header {
 
     .section { 
       height: 30em; 
+      position: relative;
+      overflow: hidden;
+
+      img { 
+        height: 100%; 
+        width: auto;
+        position: absolute;
+      }
     }
 
     p {
@@ -142,48 +180,6 @@ GRID
       font-weight: 400;
       text-transform: none;
     }
-  }
-
-  @media all and (max-width: 738px) {
-    section p {
-      width: 100%;
-    }
-
-    .grid {
-      width: 369px;
-    }
-
-    .block {
-      min-height: 333px;
-    }
-
-    .grid li { 
-      width: 90%;
-      margin: 5%; 
-    }
-
-    .mosaic {
-
-      .col-big {
-        width: 100%;
-
-        div {
-          height: 20em;
-        }
-
-      }
-
-
-      .col-small {
-        width: 100%;
-
-        div {
-          height: 20em;
-        }
-      }
-
-    }
-
   }
 
   @media all and (max-width: 1107px) and (min-width: 738px)  {

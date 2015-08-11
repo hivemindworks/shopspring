@@ -7,13 +7,30 @@
 }
 
 @media all and (max-width: 950px)  {
-  header {
+ header {
     .nav li { display: none; }
 
-    .mobile {
-      display: block;
+    .logo {
+      position: absolute;
+      left: 50%;
+      margin-left: -45px;
+    }
+
+    .mobile.btn {
+      display: inline-block;
       font-size: 1.5em;
-      margin-top: -.5em;
+      width: 2em;
+      padding: 0 .5em;
+      margin-top: -1em;
+    }
+
+    a.mobile {
+      color: #FFF;
+      font-size: 1em;
+      display: inline-block;
+      position: absolute;
+      top: 2em;
+      right: 2em;
     }
 
   }
@@ -24,11 +41,6 @@
     width: 100%;
   }
 
-  .info {
-    width: 100%;
-    padding: 0 2em;
-  }
-
   .mobile-none {
     display: none;
   }
@@ -37,4 +49,61 @@
     display: block;
   }
 
+  footer nav.fl {
+    float: none;
+    margin-bottom: 2em;
+  }
+
+   .grid {
+      width: 369px;
+    }
+
+    .block {
+      min-height: 333px;
+    }
+
+    .grid li { 
+      width: 90%;
+      margin: 5%; 
+    }
+
+    .mosaic {
+      .col-small, 
+      .col-big {
+        width: 100%;
+
+        .section {
+          height: 20em;
+
+          img {
+            width: 100%;
+            height: auto;
+            top: -20%;
+          }
+        }
+      }
+    }
+
+}
+
+@media all and (max-width: 500px) {
+  .heading {
+    font-size: 2em;
+  }
+
+  .subheader {
+    font-size: 1.5em;
+    width: 100%;
+    padding: 0 2em;
+  }
+
+  section p {
+    width: 100%;
+    padding: 0 2em;
+  }
+
+  img {
+    width: 100%;
+    padding: 0 2em;
+  }
 }

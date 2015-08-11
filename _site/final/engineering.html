@@ -44,10 +44,10 @@
     background-color: #222;
   }
   
-  header.img { background: none; }
+  header { background: transparent; }
 </style>
 
-<header class='dark img'>
+<header class='img'>
   <div class='limit-large'>
 <a class='logo mr2' href='/shopspring/final/index-3.html'>
   Spring
@@ -108,10 +108,12 @@
       </li>
     </ul>
   </div>
-
-  <div class='fr mobile btn btn-light'>
+  <div class='mobile btn btn-light'>
     🍔
   </div>
+  <a href='' class='fr mobile'>
+    Sign in
+  </a>
 </nav>
 </div>
 
@@ -261,19 +263,44 @@
 
 <section id='hired' class='gray pb0 space'>
   <h2 class='subheader center'>Getting hired</h2>
-  <div class='mosaic clearfix mt6'>
+<div class='mosaic dark clearfix mt8'>
+
     <div class='col-big'>
-      <div class='teal'>
+      <div class='section'>
+        <img src='/shopspring/img/weareteamspring/2.jpg'>
+        <p class='vert'>
+          We try to determine whether Spring is right for the engineer, not just whether the engineer is right for Spring.
+        </p>
       </div>
-      <div class='blue'>
+      <div class='section'>
+        <img src='/shopspring/img/weareteamspring/3.jpg'>
+        <p class='vert'>
+          We don't hire unicorns, rockstars, ninjas, 10xers, etc. We hire strong engineers that we look forward to working with every day.
+        </p>
       </div>
-      <div class='gold'>
+      <div class='section'>
+        <img src='/shopspring/img/weareteamspring/4.jpg'>
+        <p class='vert'>
+          Think you’d be a good fit?
+          <br/>
+          <a class='btn center mt1' href='#'>View open positions</a>
+        </p>
       </div>
     </div>
 
     <div class='col-small'>
-      <div class='purple'></div>
-      <div class='red'></div>
+      <div class='section'>
+        <img src='/shopspring/img/weareteamspring/1.jpg'>
+        <p class='vert'>
+          We aren't sadists. An interview shouldn't be an interrogation.
+        </p>
+      </div>
+      <div class='section'>
+        <img src='/shopspring/img/weareteamspring/5.jpg'>
+        <p class='vert'>
+          Everyone gets treated with respect.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -655,12 +682,12 @@
   <nav class='silent ml3 mb2'>
     <span>© Jello Labs 2015</span>
     <span class='ml1'>
-      <a href='/shopspring/iterations/tos-1.html'>
+      <a href='/shopspring/final/tos.html'>
         Terms of Service
       </a>
     </span>
     <span class='ml1'>
-      <a href='/shopspring/iterations/privacy-1.html'>
+      <a href='/shopspring/final/privacy.html'>
         Privacy Policy
       </a>
     </span>
