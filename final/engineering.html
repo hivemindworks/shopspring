@@ -16,6 +16,13 @@ layout: default
   }
   
   header { background: transparent; }
+
+  .gopher {
+    width: 15em;
+    position: absolute;
+    bottom: 0;
+    left: 5em;
+  }
 </style>
 
 {% include header.html %}
@@ -29,7 +36,7 @@ layout: default
   </p>
   -->
 
-  <a class='btn btn-small cta z100 center'>
+  <a href='{{ site.baseurl }}/final/careers.html#open' class='btn btn-small cta z100 center'>
     Open positions
   </a>
   <div id='eng-header' class="eng-header top">
@@ -119,6 +126,8 @@ layout: default
       </li>
     </ul>
   </div>
+
+  <img src='{{ site.baseurl }}/img/gopher.png' class='gopher' />
 </section>
 
 <section class=''>
@@ -179,11 +188,9 @@ layout: default
         </p>
       </div>
       <div class='section'>
-        <img src='{{ site.baseurl }}/img/weareteamspring/4.jpg'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/5.jpg'>
         <p class='vert'>
-          Think you’d be a good fit?
-          <br/>
-          <a class='btn center mt1' href='#'>View open positions</a>
+          Everyone gets treated with respect.
         </p>
       </div>
     </div>
@@ -196,9 +203,11 @@ layout: default
         </p>
       </div>
       <div class='section'>
-        <img src='{{ site.baseurl }}/img/weareteamspring/5.jpg'>
+        <img src='{{ site.baseurl }}/img/weareteamspring/4.jpg'>
         <p class='vert'>
-          Everyone gets treated with respect.
+          Think you’d be a good fit?
+          <br/>
+          <a class='btn center mt1' href='{{ site.baseurl }}/final/careers.html#open'>View open positions</a>
         </p>
       </div>
     </div>
