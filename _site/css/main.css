@@ -582,8 +582,7 @@ section p {
   text-align: center;
   font-size: 30px;
   letter-spacing: .26em;
-  line-height: 1.2em;
-  max-width: 470px; }
+  line-height: 1.2em; }
 
 .info {
   width: 470px;
@@ -1121,13 +1120,48 @@ GRID
   display: block; }
 
 @media all and (max-width: 950px) {
-  header .nav li {
-    display: none; }
+  body {
+    transform: TranslateX(0);
+    transition: transform .2s; }
+
+  html {
+    background-color: #F2f2f2; }
+
+  body.show-nav {
+    transform: TranslateX(15em);
+    overflow: hidden;
+    -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 5px 6px #ccc; }
+
+  header nav {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    bottom: 0;
+    width: 16rem;
+    z-index: -100;
+    transform: TranslateX(-15em); }
+    header nav .fr {
+      float: none; }
+    header nav .nav li {
+      background-color: #FFF;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      border-bottom: 1px solid #F4F4F4;
+      border-top: 1px solid #F8F8F8; }
+      header nav .nav li a {
+        padding-left: 1em;
+        color: #333;
+        line-height: 3em;
+        font-weight: 400;
+        font-size: 1em; }
   header .logo {
     position: absolute;
     left: 50%;
     margin-left: -45px; }
-  header .mobile.btn {
+  header .mobile.ham {
     display: inline-block;
     font-size: 1.5em;
     width: 2em;
@@ -1135,11 +1169,14 @@ GRID
     margin-top: -1em; }
   header a.mobile {
     color: #FFF;
-    font-size: 1em;
+    font-size: .75em;
     display: inline-block;
     position: absolute;
-    top: 2em;
-    right: 2em; } }
+    top: 1.5rem;
+    right: 1.5rem; }
+
+  .mobile-hide {
+    display: none; } }
 @media all and (max-width: 870px) {
   .heading {
     width: 100%; }

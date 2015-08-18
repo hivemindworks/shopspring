@@ -11,6 +11,15 @@ layout: default
     margin-right: auto;
   }
 
+  .link {
+    color: #3b8fff;
+    cursor: pointer;
+  }
+
+  .link:hover {
+    color: #06e;
+  }
+
   .teams .active {
     background-color: #3b8fff;
     color: #FFF;
@@ -23,6 +32,23 @@ layout: default
   .teams .active .header,
   .teams .active .header:after {
    background: none; 
+  }
+
+  .teams .openings { display: none; }
+  .teams .active .openings { display: block; }
+
+  .openings li { 
+    width: 100%;
+    margin: 0;
+    padding: 0em 2em 1em;
+    text-align: left;
+    color: #9cc1ff;
+    font-size: .875em;
+  }
+
+  .openings li:hover {
+    color: #FFF;
+    cursor: pointer;
   }
 
   .teams .active .desc,
@@ -94,6 +120,32 @@ layout: default
     bottom: 1em;
   }
 
+  #position p {
+    text-align: left;
+    margin: 0;
+    width: 80%;
+  }
+
+  #position .title {
+    margin: 0;
+  }
+
+  #position h3 {
+    margin: 0;
+    font-size: 1.2em !important;
+  }
+
+  #position strong {
+    font-weight: normal;
+    size: 1rem;
+  }
+
+  #position a {
+    width: 100%;
+    font-size: 2em;
+    max-width: none;
+  }
+  
   .splash:after {
     background: url({{ site.baseurl }}/img/careers.png) #000 no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -107,17 +159,17 @@ layout: default
 <div class="clearfix splash">
   <h1 class='center heading'>
     Help us build 
-    something huge and beautiful.
+    something huge and beautiful
   </h1>
 
   <a href='#open' class='btn btn-small cta'>
-    View openings
+    View open positions
   </a>
 </div>
 
 <section class=''>
   <h2 class='subheader center mb2'>
-    How we work
+    Why work here?
   </h2>
 
   <p class='mt2'>
@@ -131,19 +183,18 @@ layout: default
 </section>
 <section id='perks' class='gray pb0 '>
   <h2 class='subheader center'>Need more reasons?</h2>
-  <p class='mt1'>Working here has its perks</p>
   <div class='mosaic dark clearfix mt8'>
     <div class='col-small'>
       <div class='section'>
         <img src='{{ site.baseurl }}/img/weareteamspring/1.jpg'>
         <p class='vert'>
-          discounts on great products from cool brands, as well as genuinely stylish team swag
+          Discounts on great products from cool brands, as well as genuinely stylish team swag
         </p>
       </div>
       <div class='section'>
         <img src='{{ site.baseurl }}/img/weareteamspring/5.jpg'>
         <p class='vert'>
-          unlimited vacation days
+          Unlimited vacation days
         </p>
       </div>
     </div>
@@ -152,13 +203,13 @@ layout: default
       <div class='section'>
         <img src='{{ site.baseurl }}/img/weareteamspring/2.jpg'>
         <p class='vert'>
-          meaningful equity sharing and the resources to go after our big idea
+          Meaningful equity sharing and the resources to go after our big idea
         </p>
       </div>
       <div class='section'>
         <img src='{{ site.baseurl }}/img/weareteamspring/3.jpg'>
         <p class='vert'>
-          well-designed and casual office with a stocked snack bar
+          Well-designed and casual office with a stocked snack bar
         </p>
       </div>
       <div class='section'>
@@ -173,10 +224,19 @@ layout: default
 
 <section id='open' class=''>
   <h2 class='subheader center'>Open positions</h2>
+  <div id='position' class='mt6 limit'>
+    <h3 class='title'></h3>
+    <div class='mb2'>
+      <span id='location' class='quiet'></span>
+      <span id='time' class='quiet'></span>
+    </div>
+    <div class='description'></div>
+    <a class='col12 mt2 btn' href='#'>Apply</a>
+  </div>
   <div id='grid' class='grid mt6'>
     <ul class='teams center clearfix'>
       <li>
-        <div class='block block-tall' href='#about'>
+        <div id='engineering' class='block block-tall'>
           <div class='header'>
             <h3 class='section'>
               Engineering & Product
@@ -187,14 +247,13 @@ layout: default
           </p>
           <div class='bottom mb1'>
             <p class='btn cta center'>
-              View 5 Openings
             </p>
             <a href='{{ site.baseurl }}/final/team.html?engineering'>Meet the team</a>
           </div>
         </div>
       </li>
       <li>
-        <div class='block block-tall' href='#account'>
+        <div id='design' class='block block-tall'>
           <div class='header'>
             <h3 class='section'>
               Design
@@ -205,14 +264,13 @@ layout: default
           </p>
           <div class='bottom mb1'>
             <p class='btn cta center'>
-              View 5 Openings
             </p>
             <a href='{{ site.baseurl }}/final/team.html?design'>Meet the team</a>
           </div>
         </div>
       </li>
       <li>
-        <div class='block block-tall' href='#orders'>
+        <div id='marketing' class='block block-tall'>
           <div class='header'>
             <h3 class='section'>
               Marketing 
@@ -222,15 +280,14 @@ layout: default
             Telling the story of Spring in fun, friendly, and evocative ways is what the Marketing team does every day. And when new and cool products drop, the team gets to let people know what's up. Lucky!
           </p>
           <div class='bottom mb1'>
-            <p class='btn cta center'>
-              View 5 Openings
+            <p class='btn cta center '>
             </p>
             <a href='{{ site.baseurl }}/final/team.html?marketing'>Meet the team</a>
           </div>
         </div>
       </li>
       <li>
-        <div class='block block-tall' href='#payment'>
+        <div id='operations' class='block block-tall'>
           <div class='header'>
             <h3 class='section'>
               Operations
@@ -239,16 +296,17 @@ layout: default
           <p class='desc'>
             The Operations team keeps Spring humming along. This amazing crew does a lot, from helping brands thrive on our platform, to providing world-class service and support to our customers, to keeping our employees happy and healthy. (Thanks, Ops!)   
           </p>
+          <ul class='openings'>
+          </ul>
           <div class='bottom mb1'>
-            <p class='btn cta center'>
-              View 5 Openings
+            <p class='btn cta center operations'>
             </p>
             <a href='{{ site.baseurl }}/final/team.html?operations'>Meet the team</a>
           </div>
         </div>
       </li>
       <li>
-        <div class='block block-tall' href='#shipping'>
+        <div id='brand' class='block block-tall'>
           <div class='header'>
             <h3 class='section'>
               Brand Partnerships
@@ -259,24 +317,23 @@ layout: default
           </p>
           <div class='bottom mb1'>
             <p class='btn cta center'>
-              View 5 Openings
             </p>
             <a href='{{ site.baseurl }}/final/team.html?brand'>Meet the team</a>
           </div>
         </div>
       </li>
       <li>
-        <div class='block block-tall' href='#howtouse'>
+        <div class='block block-tall'>
           <div class='header'>
             <h3 class='section'>
-              Can't find the role you're looking for?
+              Can’t find the right role?
             </h3>
           </div>
           <p class='desc'>
-            If you can't find the role you're looking for or have an idea of how you could add to Spring, we'd love to hear from you.
+            Let us know how you can help. We might hire you anyway.
           </p>
           <div class='bottom mb1'>
-            <p class='btn cta center'>
+            <a href='mailto:recruiting@shopspring.com' class='btn cta center'>
               Email us
             </p>
           </div>
@@ -291,21 +348,86 @@ layout: default
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="openings.js"></script>
 <script>
 
+  $.each(openings, function(i, v) {
+
+    var $this = $('#' + i);
+
+  //CTA opening numbers
+    if (v.length == 0) {
+      $this.find('.cta').text('No openings').addClass('disabled');
+    }
+    else if (v.length == 1) {
+      $this.find('.cta').text('View ' + openings[i].length + ' Opening');
+    }
+    else {
+      $this.find('.cta').text('View' + openings[i].length + ' Openings');
+    }
+
+
+    //make ul's in html
+    var department = openings[i];
+    var list = $this.find('.openings');
+    for( var opening in department) {
+      list.append('<li data-id="' + department[opening].id + '"><span>' + department[opening].title + '</span><span class="fr caps">' + department[opening].position_type + '</span></li>');
+    }
+  })
+
+  //load on click
   $('.teams .cta').on('click', function(){
     var $this = $(this);
 
-    if ( $this.hasClass('active') ) {
+    if ( $this.hasClass('disabled') ){
+    }
+    else if ( $this.hasClass('active') ) {
       $this.removeClass('active');
     } 
     else {
       $('.active').removeClass('active');
 
       $this.parent().parent().addClass('active');
+
     }
   });
 
+  $('.teams .openings li').on('click', function() {
+    var id = $(this).data('id');
+    var dept = openings[$(this).parent().parent().get(0).id];
+
+    console.log(dept)
+
+    for ( opening in dept ) {
+      if( dept[opening].id == id ) {
+        console.log(dept[opening]);
+        $('.teams').hide();
+        $('#open h2').text('< Back to open positons').addClass('link')
+
+        $('#position h3').text(dept[opening].title);
+        $('#position #location').text(dept[opening].city);
+        $('#position #time').text(dept[opening].position_type);
+        $('#position .description').append(dept[opening].description);
+
+
+        //jump to top
+        var top = document.getElementById('open').offsetTop;
+        window.scrollTo(0, top); 
+        console.log(top);
+        return
+      }
+    }
+
+  });
+
+  $('#open h2').on('click', function(){
+    if ( $(this).hasClass('link') ) {
+     $(this).removeClass('link').text('Open positions')
+
+    $('#position').hide();
+    $('#open .teams').show();
+    }
+  })
 
 </script>
 {% include footer-5.html %}
