@@ -18,6 +18,21 @@ header {
 
 .mosaic {
 
+  p { @include vertical-align; }
+
+  a.full {
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+    font-size: 1em;
+    height: 100%;
+    border-radius: 0;
+    text-transform: none;
+  }
+
   &.dark {
     background: #000;
     color: #FFF;
@@ -26,27 +41,11 @@ header {
     }
   }
 
-  &.pics {
-    &:hover img {
-      opacity: .4;
-    }
-
-    img {
-      transition: opacity .2s;
-      &:hover {
-        opacity: 1;
-
-      }
-    }
-  }
-
   h4 {
-    transform: TranslateY(80%);
-
     font-size: .6em;
     font-weight: 500;
     text-align: center;
-    margin-bottom: 3em;
+    margin: 2em;
 
     color: #ccc;
   }
@@ -70,7 +69,9 @@ header {
     p {
       text-align: center;
       width: 20em;
-      margin: 0 auto;
+      margin-right: auto;
+      margin-left: auto;
+      font-size: 1.2em;
     }
   }
 
@@ -92,7 +93,9 @@ header {
     p {
       text-align: center;
       width: 10em;
-      margin: 0 auto;
+      margin-right: auto;
+      margin-left: auto;
+      font-size: 1.2em
     }
 
   }
@@ -112,6 +115,13 @@ GRID
       clear: both;
     }
 
+
+
+  .block:nth-child(-n+3),
+  li:nth-child(-n+3) {
+    margin-top: 0;
+  }
+
     li {
       width: 333px;
       margin: 18px;
@@ -123,6 +133,11 @@ GRID
         letter-spacing: .1em;
         font-size: 1em;
         text-transform: uppercase;
+      }
+
+      .cta {
+        bottom: 1em;
+        width: 100%;
       }
     }
   }

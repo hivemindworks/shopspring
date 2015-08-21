@@ -98,6 +98,11 @@ layout: default
     z-index: -1;
   }
 
+  .teams .block:nth-child(-n+3),
+  .teams li:nth-child(-n+3) {
+    margin-top: 0;
+  }
+
   .teams .block h3 {
     color: #FFF;
     line-height: 1em;
@@ -112,7 +117,17 @@ layout: default
     font-size: .75em;
   }
 
+  .disabled {
+    background: #ccc;
+  }
+
+  .disabled:hover {
+    background: #ccc;
+    cursor: default;
+  }
+
   .teams .btn.cta {
+    padding: 1em;
     text-transform: uppercase;
     font-weight: 300;
     width: 15em;
@@ -222,9 +237,9 @@ layout: default
   </div>
 </section>
 
-<section id='open' class=''>
+<section id='open' class='tight'>
   <h2 class='subheader center'>Open positions</h2>
-  <div id='position' class='mt6 limit'>
+  <div id='position' class='mt6 limit hide'>
     <h3 class='title'></h3>
     <div class='mb2'>
       <span id='location' class='quiet'></span>
@@ -335,6 +350,7 @@ layout: default
           <div class='bottom mb1'>
             <a href='mailto:recruiting@shopspring.com' class='btn cta center'>
               Email us
+            </a>
             </p>
           </div>
         </div>
@@ -348,8 +364,20 @@ layout: default
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="openings.js"></script>
 <script>
+  var openings = {
+    'engineering': [],
+    'design': [],
+    'marketing': [],
+    'operations': [],
+    'brand': [],
+  }
+
+  $.getJSON("openings.json", function(json) {
+    $.each(json, function(i, v) {
+      
+    });
+  });
 
   $.each(openings, function(i, v) {
 

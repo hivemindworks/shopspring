@@ -43,14 +43,66 @@
   .splash {
     background-color: #222;
   }
-  
+
   header { background: transparent; }
+
+  .sublime {
+    width: 60em;
+    overflow: auto;
+  }
+
+  .sublime::before {
+    content: '';
+    height: 2em;
+    background: #ccc;
+    width: 100%;
+  }
+
+  .files {
+    width: 10%;
+    background: #333;
+    height: 40em;
+    background: #ccc;
+  }
+
+  .content {
+    width: 90%;
+    background: #333;
+    height: 40em;
+  }
+
+  #tools li {
+    height: 3em;
+  }
+
+  #tools li:nth-last-child(-n+1) {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
 
   .gopher {
     width: 15em;
     position: absolute;
     bottom: 0;
     left: 5em;
+  }
+
+  .projects li {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .projects li h3 {
+    font-weight: 400;
+    text-transform: none;
+  }
+
+  .block:hover {
+    background-color: transparent;
+    border-color: #eee;
+    color: #454545;
+    cursor: default;
   }
 </style>
 
@@ -146,27 +198,34 @@
   </div>
 </div>
 
-<section class='space pb0'>
+<section class='pb0'>
 <h2 class='subheader center mb2'>
   Our Philosophy
   </h2>
   
-  <p class='info center mt1'>
+  <p class='info center'>
   Actually, we don’t have a philosophy. But here are some semi-coherent thoughts on how we do things.
   </p>
 
-<img class='mt6 center' src='/shopspring/img/sublime.png' />
+
+<div class='sublime center mt6'>
+  <div class='files fl'>
+  </div>
+
+  <div class='content fl'>
+  </div>
+</div>
 
 </section>
 
-<section class='blue dark'>
+<section id='tools' class='tight blue dark'>
   <h2 class='subheader center'>Our Tools</h2>
-  <p class='info center mt1'>
+  <p class='info center mt2'>
     We believe in using the right tools for the right jobs.
     In our experience the right tool is often one you already have.
   </p>
 
-  <div class='grid mb8'>
+  <div class='grid'>
     <ul class='center clearfix mt4'>
 <li>
         <h3>
@@ -224,21 +283,21 @@
   <img src='/shopspring/img/gopher.png' class='gopher' />
 </section>
 
-<section class=''>
+<section class='gray tight projects'>
   <h2 class='subheader center'>What We’re Working On</h2>
-<div id='grid' class='grid mt3'>
+<div id='grid' class='grid mt6'>
 <ul class='center clearfix'>
-      <li>
-        <a class='block' href='http://www.wired.com/2014/08/spring/' target='_blank' >
-          <h3 class='section'>
-            Integrating commerce platforms to create an automatically updating catalog of millions of products
-          </h3>
-        </a>
-      </li>
       <li>
         <a class='block' href='http://bits.blogs.nytimes.com/2014/08/14/spring-an-e-commerce-start-up-aims-at-mobile-shopping/' target='_blank'>
           <h3 class='section'>
             Using data science to give people amazing personalized recommendations
+          </h3>
+        </a>
+      </li>
+      <li>
+        <a class='block' href='http://www.wired.com/2014/08/spring/' target='_blank' >
+          <h3 class='section'>
+            Integrating commerce platforms to create an automatically updating catalog of millions of products
           </h3>
         </a>
       </li>
@@ -255,25 +314,22 @@
 </section>
 
 
-<section id='hired' class='gray pb0 space'>
+<section id='hired' class='pb0 tight'>
   <h2 class='subheader center'>Getting hired</h2>
-<div class='mosaic dark clearfix mt8'>
+<div class='mosaic dark clearfix mt6'>
 
     <div class='col-big'>
-      <div class='section'>
-        <img src='/shopspring/img/weareteamspring/2.jpg'>
+      <div class='section red'>
         <p class='vert'>
           We try to determine whether Spring is right for the engineer, not just whether the engineer is right for Spring.
         </p>
       </div>
-      <div class='section'>
-        <img src='/shopspring/img/weareteamspring/3.jpg'>
+      <div class='section teal'>
         <p class='vert'>
           We don't hire unicorns, rockstars, ninjas, 10xers, etc. We hire strong engineers that we look forward to working with every day.
         </p>
       </div>
-      <div class='section'>
-        <img src='/shopspring/img/weareteamspring/5.jpg'>
+      <div class='section purple'>
         <p class='vert'>
           Everyone gets treated with respect.
         </p>
@@ -281,19 +337,18 @@
     </div>
 
     <div class='col-small'>
-      <div class='section'>
-        <img src='/shopspring/img/weareteamspring/1.jpg'>
+      <div class='section gold'>
         <p class='vert'>
           We aren't sadists. An interview shouldn't be an interrogation.
         </p>
       </div>
-      <div class='section'>
-        <img src='/shopspring/img/weareteamspring/4.jpg'>
-        <p class='vert'>
-          Want to gopher the gold?
-          <br/>
-          <a class='btn center mt1' href='/shopspring/final/careers.html#open'>View open positions</a>
-        </p>
+      <div class='section blue'>
+        <a class='btn full center mt1' href='/shopspring/final/careers.html#open'>
+        <div class='vert'>
+          <p>Want to gopher the gold?</p>
+          <p class='mt2'>View open positions</p>
+      </div>
+    </a>
       </div>
     </div>
   </div>
@@ -517,17 +572,17 @@
         </li>
         <li>
           <a href=''>
-            Brands
-          </a>
-        </li>
-        <li>
-          <a href=''>
             Lifestyle
           </a>
         </li>
         <li>
           <a href=''>
             Beauty
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Brands
           </a>
         </li>
         <li>
@@ -543,11 +598,6 @@
         <a class='strong' href='/shopspring/iterations/about-1.html'>
           About
         </a>
-        </li>
-        <li>
-          <a href=''>
-            Our Story
-          </a>
         </li>
         <li>
           <a href='/shopspring/iterations/team-6.html'>
@@ -569,30 +619,10 @@
             For Brands
           </a>
         </li>
-      </ul>
-    </nav>
-
-    <nav class='fl'>
-      <ul>
         <li>
-        <a class='strong' href='/shopspring/final/engineering.html'>
+        <a href='/shopspring/final/engineering.html'>
           Engineering
         </a>
-        </li>
-        <li>
-          <a href='/shopspring/final/engineering.html#tools'>
-            Our Tools
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Engineering Blog
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Getting Hired
-          </a>
         </li>
       </ul>
     </nav>
@@ -610,11 +640,6 @@
           </a>
         </li>
         <li>
-          <a href=''>
-            How to use spring
-          </a>
-        </li>
-        <li>
           <a href='/shopspring/iterations/contact-1.html'>
             Contact Us
           </a>
@@ -625,7 +650,7 @@
 <nav class='fl'>
       <ul>
         <li>
-        <a class='strong' href='/shopspring/iterations/help-1.html'>
+        <a class='strong' href=''>
           Stay connected
         </a>
         </li>
@@ -646,36 +671,6 @@
         </li>
       </ul>
     </nav>
-      <!--
-    <div class='fl'>
-      <p class='strong'>Get our newsletter for exclusive deals</p>
-      <input type='text' placeholder='enter your email'>
-      <nav class='clearfix space-bottom1'>
-        <ul>
-          <li class='fl'>
-            <a href='https://instagram.com/spring/'>
-              <i class="icon-instagram"></i> 
-            </a>
-          </li>
-          <li class='fl'>
-            <a href='https://www.facebook.com/SpringNYC'>
-              <i class="icon-facebook-squared"></i> 
-            </a>
-          </li>
-          <li class='fl'>
-            <a href='https://twitter.com/shopspring'>
-              <i class="icon-twitter"></i> 
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <p class='quiet'>
-          Follow us for inspiration, deals, and notifications on new brands launching
-        </p>
-      </div>
-    </div>
-      -->
   </div>
 
   <nav class='silent ml3 mb2'>

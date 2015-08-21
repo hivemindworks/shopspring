@@ -188,6 +188,10 @@ HEADER STYLES
       background: #f5f5f5;
     }
 
+    &.tight {
+      padding: 6em 0em;
+    }
+
 
     p{
       width: 470px; 
@@ -201,7 +205,7 @@ HEADER STYLES
   .subheader {
     text-transform: uppercase;
     text-align: center;
-    font-size: 30px;
+    font-size: 2em;
     letter-spacing: .26em;
     line-height: 1.2em;
   }
@@ -517,6 +521,8 @@ HEADER STYLES
       color: #111;
     }
   }
+
+  .hide { display: none; }
 
   // BORDERS
   .b  { border: 1px solid #ddd; }

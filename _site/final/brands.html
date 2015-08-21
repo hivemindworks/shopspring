@@ -44,6 +44,23 @@
     background: none;
   }
 
+  .testimonial .subheader {
+    text-transform: none;
+  }
+  
+  .testimonial .heading {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+
+  .testimonial .brand {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #9BC0FF;
+    letter-spacing: .2em;
+  }
+
   .hide { display: none; }
 
   .wufoo select, 
@@ -151,9 +168,12 @@
 </header>
 
 <div class="clearfix splash">
+  <div class='testimonial vert'>
   <h1 class='center heading'>
     Over 750 amazing brands have opened shops on Spring
   </h1>
+  <h3 class='brand center'></h3>
+  </div>
 
   <a href='#apply' class='btn btn-small btn-light cta'>
     Apply in 2 minutes
@@ -216,9 +236,11 @@
   <h2 class='subheader center'>
     Effortless integration
   </h2>
-  <p class='mt2 mb8'>
+  <p class='mt2 mb1'>
     Spring seamless connects with the leading ecommerce solutions, so there’s no new tech work to implement.
     <br/>
+  </p>
+  <p class='mb8'>
     <a href='#apply'>Apply to be a Spring brand.</a>
   </p>
 
@@ -347,7 +369,7 @@
         </li> <li class="buttons ">
         <div>
 
-          <input id="saveForm" name="saveForm" class="btTxt submit btn btn-small" type="submit" value="Apply"></div>
+          <input id="saveForm" name="saveForm" class="btTxt submit btn btn-small" type="submit" value="Submit"></div>
       </li>
 
       <li class="hide">
@@ -365,24 +387,44 @@
 
 <script>
   var testimonials = [
-    'Spring offers a great platform that allows us to introduce our brand to new customers and tie unique visual content to ecommerce.” - Todd Snyder',
-    '“The engagement the channel offers us is absolutely top-notch” -Billy Reid',
-    '“It has changed the mobile shopping landscape and even the way we engage with and view our own product\'s potential” -Bing Bang NYC',
-    '“Spring is without a doubt the benchmark for mobile shopping” -ISAORA',
-    '“Having a shop on Spring is like opening up your own store on prime New York real estate — except at a fraction of the cost” -PLY'
+    {
+      quote:      'Spring offers a great platform that allows us to introduce our brand to new customers and tie unique visual content to ecommerce.',
+      brand:      'Todd Snyder'
+    },
+    {
+      quote:      'The engagement the channel offers us is absolutely top-notch',
+      brand:      'Billy Reid'
+    },
+    {
+      quote:      'It has changed the mobile shopping landscape and even the way we engage with and view our own product\'s potential',
+      brand:      'Bing Bang NYC'
+    },
+    {
+      quote:      'Spring is without a doubt the benchmark for mobile shopping',
+      brand:      'ISAORA'
+    },
+    {
+      quote:      'Having a shop on Spring is like opening up your own store on prime New York real estate — except at a fraction of the cost',
+      brand:      'PLY'
+    }
   ];
   var i = 0;
-  var $header = $('.splash .heading');
+  var $testimonial = $('.splash .testimonial');
+  var $header = $('.splash .testimonial .heading');
+  var $brand = $('.splash .testimonial .brand');
 
   setInterval( function(){
     if ( i == testimonials.length ) { i = 0 };
 
-    //$header.fadeOut();
-    $header.text(testimonials[i]);
-    //$header.fadeIn();
+    $testimonial.fadeOut('slow', function () {
+      $header.addClass('subheader');
+      $header.text(testimonials[i].quote);
+      $brand.text(testimonials[i].brand);
+    });
+    $testimonial.fadeIn();
 
     i ++; 
-  }, 4000)
+  }, 5000)
 </script>
 <footer>
   <div class='nav-group clearfix'>
@@ -405,17 +447,17 @@
         </li>
         <li>
           <a href=''>
-            Brands
-          </a>
-        </li>
-        <li>
-          <a href=''>
             Lifestyle
           </a>
         </li>
         <li>
           <a href=''>
             Beauty
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Brands
           </a>
         </li>
         <li>
@@ -431,11 +473,6 @@
         <a class='strong' href='/shopspring/iterations/about-1.html'>
           About
         </a>
-        </li>
-        <li>
-          <a href=''>
-            Our Story
-          </a>
         </li>
         <li>
           <a href='/shopspring/iterations/team-6.html'>
@@ -457,30 +494,10 @@
             For Brands
           </a>
         </li>
-      </ul>
-    </nav>
-
-    <nav class='fl'>
-      <ul>
         <li>
-        <a class='strong' href='/shopspring/final/engineering.html'>
+        <a href='/shopspring/final/engineering.html'>
           Engineering
         </a>
-        </li>
-        <li>
-          <a href='/shopspring/final/engineering.html#tools'>
-            Our Tools
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Engineering Blog
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Getting Hired
-          </a>
         </li>
       </ul>
     </nav>
@@ -498,11 +515,6 @@
           </a>
         </li>
         <li>
-          <a href=''>
-            How to use spring
-          </a>
-        </li>
-        <li>
           <a href='/shopspring/iterations/contact-1.html'>
             Contact Us
           </a>
@@ -513,7 +525,7 @@
 <nav class='fl'>
       <ul>
         <li>
-        <a class='strong' href='/shopspring/iterations/help-1.html'>
+        <a class='strong' href=''>
           Stay connected
         </a>
         </li>
@@ -534,36 +546,6 @@
         </li>
       </ul>
     </nav>
-      <!--
-    <div class='fl'>
-      <p class='strong'>Get our newsletter for exclusive deals</p>
-      <input type='text' placeholder='enter your email'>
-      <nav class='clearfix space-bottom1'>
-        <ul>
-          <li class='fl'>
-            <a href='https://instagram.com/spring/'>
-              <i class="icon-instagram"></i> 
-            </a>
-          </li>
-          <li class='fl'>
-            <a href='https://www.facebook.com/SpringNYC'>
-              <i class="icon-facebook-squared"></i> 
-            </a>
-          </li>
-          <li class='fl'>
-            <a href='https://twitter.com/shopspring'>
-              <i class="icon-twitter"></i> 
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <p class='quiet'>
-          Follow us for inspiration, deals, and notifications on new brands launching
-        </p>
-      </div>
-    </div>
-      -->
   </div>
 
   <nav class='silent ml3 mb2'>

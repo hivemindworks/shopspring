@@ -127,6 +127,11 @@
     z-index: -1;
   }
 
+  .teams .block:nth-child(-n+3),
+  .teams li:nth-child(-n+3) {
+    margin-top: 0;
+  }
+
   .teams .block h3 {
     color: #FFF;
     line-height: 1em;
@@ -141,7 +146,17 @@
     font-size: .75em;
   }
 
+  .disabled {
+    background: #ccc;
+  }
+
+  .disabled:hover {
+    background: #ccc;
+    cursor: default;
+  }
+
   .teams .btn.cta {
+    padding: 1em;
     text-transform: uppercase;
     font-weight: 300;
     width: 15em;
@@ -323,9 +338,9 @@
   </div>
 </section>
 
-<section id='open' class=''>
+<section id='open' class='tight'>
   <h2 class='subheader center'>Open positions</h2>
-  <div id='position' class='mt6 limit'>
+  <div id='position' class='mt6 limit hide'>
     <h3 class='title'></h3>
     <div class='mb2'>
       <span id='location' class='quiet'></span>
@@ -436,6 +451,7 @@
           <div class='bottom mb1'>
             <a href='mailto:recruiting@shopspring.com' class='btn cta center'>
               Email us
+            </a>
             </p>
           </div>
         </div>
@@ -449,8 +465,20 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="openings.js"></script>
 <script>
+  var openings = {
+    'engineering': [],
+    'design': [],
+    'marketing': [],
+    'operations': [],
+    'brand': [],
+  }
+
+  $.getJSON("openings.json", function(json) {
+    $.each(json, function(i, v) {
+      
+    });
+  });
 
   $.each(openings, function(i, v) {
 
@@ -552,17 +580,17 @@
         </li>
         <li>
           <a href=''>
-            Brands
-          </a>
-        </li>
-        <li>
-          <a href=''>
             Lifestyle
           </a>
         </li>
         <li>
           <a href=''>
             Beauty
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            Brands
           </a>
         </li>
         <li>
@@ -578,11 +606,6 @@
         <a class='strong' href='/shopspring/iterations/about-1.html'>
           About
         </a>
-        </li>
-        <li>
-          <a href=''>
-            Our Story
-          </a>
         </li>
         <li>
           <a href='/shopspring/iterations/team-6.html'>
@@ -604,30 +627,10 @@
             For Brands
           </a>
         </li>
-      </ul>
-    </nav>
-
-    <nav class='fl'>
-      <ul>
         <li>
-        <a class='strong' href='/shopspring/final/engineering.html'>
+        <a href='/shopspring/final/engineering.html'>
           Engineering
         </a>
-        </li>
-        <li>
-          <a href='/shopspring/final/engineering.html#tools'>
-            Our Tools
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Engineering Blog
-          </a>
-        </li>
-        <li>
-          <a href=''>
-            Getting Hired
-          </a>
         </li>
       </ul>
     </nav>
@@ -645,11 +648,6 @@
           </a>
         </li>
         <li>
-          <a href=''>
-            How to use spring
-          </a>
-        </li>
-        <li>
           <a href='/shopspring/iterations/contact-1.html'>
             Contact Us
           </a>
@@ -660,7 +658,7 @@
 <nav class='fl'>
       <ul>
         <li>
-        <a class='strong' href='/shopspring/iterations/help-1.html'>
+        <a class='strong' href=''>
           Stay connected
         </a>
         </li>
@@ -681,36 +679,6 @@
         </li>
       </ul>
     </nav>
-      <!--
-    <div class='fl'>
-      <p class='strong'>Get our newsletter for exclusive deals</p>
-      <input type='text' placeholder='enter your email'>
-      <nav class='clearfix space-bottom1'>
-        <ul>
-          <li class='fl'>
-            <a href='https://instagram.com/spring/'>
-              <i class="icon-instagram"></i> 
-            </a>
-          </li>
-          <li class='fl'>
-            <a href='https://www.facebook.com/SpringNYC'>
-              <i class="icon-facebook-squared"></i> 
-            </a>
-          </li>
-          <li class='fl'>
-            <a href='https://twitter.com/shopspring'>
-              <i class="icon-twitter"></i> 
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <p class='quiet'>
-          Follow us for inspiration, deals, and notifications on new brands launching
-        </p>
-      </div>
-    </div>
-      -->
   </div>
 
   <nav class='silent ml3 mb2'>
