@@ -18,7 +18,9 @@ header {
 
 .mosaic {
 
-  p { @include vertical-align; }
+  p { 
+    @include vertical-align; 
+}
 
   a.full {
     top: 0;
@@ -31,6 +33,10 @@ header {
     height: 100%;
     border-radius: 0;
     text-transform: none;
+
+    p {
+    transform: translateY(-0%);
+    }
   }
 
   &.dark {

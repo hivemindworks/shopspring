@@ -80,7 +80,7 @@ layout: default
 </div>
 
 <section class='space pb0'>
-  <h2 class='subheader center mb2'>
+  <h2 class='subheader center'>
     Commerce made for mobile
   </h2>
 
@@ -91,21 +91,21 @@ layout: default
     Mobile purchases already account for more than 21% of all ecommerce sales. Spring enables brands to tap into this increasingly critical channel unprecedented ways.
   </p>
 
-  <div class='mosaic clearfix mt8'>
+  <div class='mosaic clearfix mt8 dark'>
     <div class='col-big br bt'>
-      <div class='bb section'>
+      <div class='teal section'>
         <p class='vert'>
         Easily create a mobile retail presence with no tech work or costs to join.
         </p>
       </div>
-      <div class='bb section'>
+      <div class='red section'>
         <p class='vert'>
         Tell your story with full 
         control over content and 
         merchandising.
         </p>
       </div>
-      <div class='section'>
+      <div class='gold section'>
         <p class='vert'>
         Reach an engaged 
         audience through a new point of sale.
@@ -114,18 +114,20 @@ layout: default
     </div>
 
     <div class='col-small bt'>
-      <div class='bb section'>
+      <div class='purple section'>
         <p class='vert'>
         Enjoy direct-to-consumer
         margins.
         </p>
       </div>
-      <div class='section'>
-        <p class='vert'>
-        Find out how great 
-        Spring is for yourself.
-        <a href='#apply'>Take Spring for a spin. Contact us</a>
-        </p>
+      <div class='blue section'>
+          <a class='btn full center' href='#apply'>
+            <div class='vert'>
+              <p>
+              Take Spring for a spin. Contact us
+              </p>
+            </div> 
+            </a>
       </div>
     </div>
   </div>
@@ -313,7 +315,7 @@ layout: default
   var $brand = $('.splash .testimonial .brand');
 
   setInterval( function(){
-    if ( i == testimonials.length ) { i = 0 };
+    if ( i == testimonials.length-1 ) { i = 0 };
 
     $testimonial.fadeOut('slow', function () {
       $header.addClass('subheader');

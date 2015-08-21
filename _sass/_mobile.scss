@@ -102,9 +102,22 @@ body.show-nav {
     display: block;
   }
 
+  .limit {
+    width: 83.3333%;;
+  }
+
   footer nav.fl {
     float: none;
     margin-bottom: 2em;
+  }
+
+  #about .stats ul {
+   width: 100%; 
+  }
+
+  .stats ul li {
+    padding: 0em 0 6em;
+    width: 50%;
   }
 
    .grid {
@@ -142,6 +155,11 @@ body.show-nav {
 @media all and (max-width: 500px) {
   .heading {
     font-size: 2em;
+  }
+
+  .stats ul li {
+    padding: 0em 0 6em;
+    width: 100%;
   }
 
   .subheader {
