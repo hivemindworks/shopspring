@@ -1,3 +1,77 @@
 <header class='img'>
-  {% include header-nav.html %}
+<div class='limit-large'>
+<a class='logo mr2' href='/index.html'>
+  Spring
+</a>
+
+<nav class='clearfix'>
+  <ul class='nav'>
+
+    {% if site.hiring %}
+      <li>
+        <a class='hiring' href='/careers.html#open-positions'>
+          !
+        </a>
+      </li>
+    {% endif %}
+    <li>
+      <a class='main' href='/'>
+        Shop
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/about.html'>
+        About
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/team.html'>
+        Team
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/careers.html'>
+        Careers
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/engineering.html'>
+        Engineering
+      </a>
+    </li>
+    <li>
+      <a class='main' href='/brands.html'>
+        For Brands
+      </a>
+    </li>
+  </ul>
+
+  <div class='fr account'>
+    <ul class='nav'>
+      <li>
+        <a class='main' href='/about.html'>
+          Log in
+        </a>
+      </li>
+      <li>
+        <a class='main' href='/about.html'>
+          Sign Up
+        </a>
+      </li>
+      <li class='mobile-hide'>
+        <a style='margin-top: -6px' class='btn btn-light'>
+          Get the App
+        </a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+<div class='mobile btn btn-light ham'>
+    🍔
+  </div>
+  <a href='' class='fr mobile btn btn-light'>
+    Get the app
+  </a>
+
+</div>
 </header>
