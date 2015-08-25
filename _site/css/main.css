@@ -707,7 +707,7 @@ BUTTON STYLES
       color: #FFF;
       background-image: none; }
   .btn.btn-outline {
-    border: 1px solid #eee;
+    border: 1px solid #DDD;
     background-color: #FFF;
     color: #222; }
     .btn.btn-outline:hover {
@@ -1248,7 +1248,21 @@ GRID
       .mosaic .col-big .section img {
         width: 100%;
         height: auto;
-        top: -20%; } }
+        top: -20%; }
+
+  .filter li {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    line-height: 4em;
+    max-width: 20em; }
+
+  .filter li .btn {
+    margin: 1em 0em;
+    padding: 0;
+    max-width: none;
+    width: 326.09375px; } }
 @media all and (max-width: 500px) {
   .heading {
     font-size: 2em; }

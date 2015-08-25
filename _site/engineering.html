@@ -104,6 +104,8 @@
 
 
     <link rel='stylesheet' href='/css/animate.css'>
+<link rel="stylesheet" href="/css/codemirror.css">
+<link rel='stylesheet' href='/css/material.css'>
 
 <style>
   h3 {
@@ -119,6 +121,14 @@
 
   header { background: transparent; }
 
+  .CodeMirror {
+    height: 30em;
+  }
+
+  .cm-s-material .CodeMirror-gutters {
+    height: 30em !important;
+  }
+
   .sublime {
     width: 60em;
     overflow: auto;
@@ -126,22 +136,35 @@
 
   .sublime::before {
     content: '';
-    height: 2em;
-    background: #ccc;
+    display: block;
+    position: relative;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
     width: 100%;
+    background-color: #DDD;
   }
 
   .files {
-    width: 20%;
-    background: #333;
-    height: 40em;
-    background: #ccc;
+    width: 15%;
+    height: 30em;
+    background: rgb(230, 230, 230);
+    color: #333;
+  }
+
+  .files ul {
+    font-family: sans-serif;
+    font-size: .875em;
+    padding: 1em 2em;
+  }
+
+  .files li {
+    line-height: 2em;
   }
 
   .content {
-    width: 80%;
-    background: #333;
-    height: 40em;
+    width: 85%;
+    background: rgb(39, 40, 34);
+    height: 30em;
   }
 
   #tools li {
@@ -183,11 +206,6 @@
   <h1 class='center heading'>
     Engineering at Spring
   </h1>
-  <!--
-  <p class='subhead rotate'>
-    Building Humanity’s Future Overlords 
-  </p>
-  -->
 
   <a href='/final/careers.html#open' class='btn btn-small cta z100 center'>
     Open positions
@@ -210,10 +228,16 @@
 
 <div class='sublime center mt8'>
   <div class='files fl'>
+    <ul>
+      <li>philosohpy.html</li>
+      <li>philosohpy.html</li>
+      <li>philosohpy.html</li>
+      <li>philosohpy.html</li>
+    </ul>
   </div>
 
-  <div class='content fl'>
-  </div>
+  <textarea id='sublime' class='content fl'>
+  </textarea>
 </div>
 
 </section>
@@ -359,6 +383,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
+<script src="/js/codemirror.js"></script>
+<script src="/js/xml.js"></script>
 <script src='/js/EasePack.min.js'></script>
 <script src='/js/TweenLite.min.js'></script>
 <script src='/js/rAF.js'></script>
@@ -548,7 +574,28 @@
     }
 
   })();
+
 </script>
+  <script>
+    
+  var philosophy = [
+    {
+      id: 'philosophy',
+      content: '<h1>\nThere is a balance between getting things done, and getting them right.\n</h1>\n\n<p>\nOur focus is on quickly delivering reliable software. That means committing time to developing infrastructure and features, but not chasing after long refactors that don\'t make our software better.\n</p>'
+    }
+  ]
+
+  var sublime = document.getElementById('sublime');
+  var myCodeMirror = CodeMirror.fromTextArea(sublime, {
+    lineNumbers: true,
+    mode : "xml",
+    htmlMode: true,
+    lineWrapping: true,
+    theme: 'material'
+  });
+
+  myCodeMirror.setValue(philosophy[0].content)
+  </script>
 
 
     <footer>
