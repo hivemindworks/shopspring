@@ -1,0 +1,327 @@
+/*=========================================
+Reset
+=========================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.group:before,
+.group:before,
+.group:after {
+  content: "";
+  display: table; }
+
+.group:after {
+  clear: both; }
+
+.group {
+  zoom: 1; }
+
+/**
+ * Baseline
+ */
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+};
+
+@media all and (max-width: 72em) {
+  body {
+    // font-size: 95%;
+  }
+}
+
+p {
+  font-size: 1em;       /* 15 */
+  line-height: 1.5em;   /* 22.5 */
+  margin-bottom: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  // padding-top: 1px;
+}
+
+h1 {
+  font-size: 3em;       /* 48 */
+  line-height: 1em;     /* 48 */
+}
+
+h2 {
+  font-size: 2.25em;       /* 36 */
+  line-height: 1.3333em;   /* 48 */
+  // margin: .66667em;
+}
+
+h3 {
+  font-size: 1.5em;     /* 24 */
+  line-height: 1em;     /* 24 */
+}
+
+h4, h5, h6 {
+  font-size: 1em;      /* 16 */
+  line-height: 1.5em;  /* 24 */
+}
+
+small,
+.dablink,
+.hatnote {
+  max-width: 46em;
+  font-size: .875em;            /* 14 */
+  line-height: 1.714285714em;   /* 24 */
+  margin: 0 0 1.714285714em;
+}
+
+tr, td, th {
+  padding: 0;
+}
+
+tr th {
+  padding-top: 1.714285714em;
+}
+
+label {
+  font-weight: bold;
+}
+
+/**
+ * Basis Styling
+ */
+
+body {
+  font-family: 'Gotham A', 'Gotham B';
+  font-weight: 400;
+  font-style: normal;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $text-color;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+    margin-left: $spacing-unit;
+    margin-bottom: 3em;
+}
+
+li {
+  font-weight: 400;
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+%caps {
+  text-transform: uppercase;
+  font-weight: bold;
+//  letter-spacing: .15em;
+}
+
+
+
+h1 {
+  font-size: 48px;
+  letter-spacing: .25em;
+  line-height: 6em;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 2em;
+}
+
+
+h3 {
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+
+h4 {
+  @extend %caps;
+  font-size: 14px;
+  line-height: 1.25em;
+
+}
+
+h5 {
+  @extend %caps;
+  font-size: 10px;
+
+}
+
+p {
+  //TOFIX use a var
+  color: rgba(17, 17, 17, 0.6);
+}
+
+/**
+ * Links
+ */
+a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:hover {
+        color: darken($brand-color, 15%);
+    }
+
+
+    &.dark {
+      color: rgba(255,255,255,.5);
+    }
+
+    &.dark:hover {
+      color: #FFF;
+    }
+}
+
+section {
+  padding: 8em 0em;
+  position: relative;
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    padding-left: $spacing-unit / 2;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid $gray;
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/**
+ * Icons
+ */
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $gray;
+        }
+    }
+}

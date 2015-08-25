@@ -1,0 +1,241 @@
+.eng-header {
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 0;
+  opacity: .25;
+}
+
+header {
+  .mobile { display: none; }
+
+}
+
+.vert {
+  @include vertical-align;
+}
+
+.mosaic {
+
+  p { 
+    @include vertical-align; 
+}
+
+  a.full {
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+    font-size: 1em;
+    height: 100%;
+    border-radius: 0;
+    text-transform: none;
+
+    p {
+    transform: translateY(-0%);
+    }
+  }
+
+  &.dark {
+    background: #000;
+    color: #FFF;
+    img { 
+      opacity: .4; 
+    }
+  }
+
+  h4 {
+    font-size: .6em;
+    font-weight: 500;
+    text-align: center;
+    margin: 2em;
+
+    color: #ccc;
+  }
+
+  .col-big {
+    width: 66.66%;
+
+    .section {
+      height: 20em; 
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+      }
+    }
+
+
+    p {
+      text-align: center;
+      width: 20em;
+      margin-right: auto;
+      margin-left: auto;
+      font-size: 1.2em;
+    }
+  }
+
+  .col-small {
+    width: 33.33%;
+
+    .section { 
+      height: 30em; 
+      position: relative;
+      overflow: hidden;
+
+      img { 
+        height: 100%; 
+        width: auto;
+        position: absolute;
+      }
+    }
+
+    p {
+      text-align: center;
+      width: 10em;
+      margin-right: auto;
+      margin-left: auto;
+      font-size: 1.2em
+    }
+
+  }
+}
+
+/*
+GRID
+========================*/
+
+  .grid {
+    margin-right: auto;
+    margin-left: auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+
+  .block:nth-child(-n+3),
+  li:nth-child(-n+3) {
+    margin-top: 0;
+  }
+
+    li {
+      width: 333px;
+      margin: 18px;
+      float: left;
+
+      h3 { 
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: .1em;
+        font-size: 1em;
+        text-transform: uppercase;
+      }
+
+      .cta {
+        bottom: 1em;
+        width: 100%;
+      }
+    }
+  }
+
+  .block {
+    border: 3px solid #eee;
+    text-align: center;
+    position: relative;
+    transition: background .2s, border .2s;
+    float: left;
+    height: 333px;
+    width: inherit;
+    margin: inherit;
+    color: $gray-dark;
+
+    &:hover {
+      background-color: $brand-color;
+      border-color: $brand-color;
+      color: #FFF;
+      cursor: pointer;
+
+      p {
+        color: #FFF;
+      }
+    }
+
+    &.block-tall {
+      height: 390px;
+    }
+
+    h3 {
+      @include vertical-align;
+      font-weight: 400;
+      line-height: 1.2em;
+    }
+
+    .desc {
+      text-transform: none;
+      font-weight: 400;
+      width: 100%;
+      font-size: .875em;
+      line-height: 1.4em;
+      padding: 2em 2em 0em;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0em;
+      width: 100%;
+    }
+
+    .cta {
+      text-align: center;
+      font-size: .875em;
+      font-weight: 400;
+      text-transform: none;
+    }
+  }
+
+  @media all and (max-width: 1107px) and (min-width: 738px)  {
+    .grid {
+      width: 738px;
+    }
+
+    .grid li {
+      width: 333px;
+      margin: 18px;
+    }
+  }
+
+  //three column smaller
+  @media all and (max-width: 1301px) and (min-width: 1107px)  {
+    .grid {
+      width: 1107px;
+    }
+
+    .grid li {
+      width: 333px;
+      margin: 18px;
+    }
+  }
+
+  //three column larger
+  @media all and (max-width: 1400px) and (min-width: 1302px)  {
+    .grid {
+      width: 1302px;
+    }
+
+    .grid li {
+      width: 398px;
+      margin: 18px;
+    }
+  }
+
+  //TODO five column for 30' monitors

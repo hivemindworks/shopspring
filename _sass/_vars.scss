@@ -1,0 +1,39 @@
+// Our variables
+  
+$base-font-family: 'Gotham A', 'Gotham B', Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     20px;
+
+$text-color:       #111;
+$background-color: #f9f9f9;
+$brand-color:      #3B8FFF;
+$teal:             #2ec5bf;
+$gold:             #d9cf96;
+$purple:           #8a669f;
+$red:              #ff7575;
+
+$gray-lightest:    #f0f0f0;
+$gray-lighter:     #eee;
+$gray-light:       #999;
+$gray:             #666;
+$gray-dark:        #454545;
+$gray-darker:      #333;
+$gray-darkest:     #232323;
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+// Mixins
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

@@ -1,0 +1,459 @@
+---
+layout: default
+---
+<link rel='stylesheet' href='/css/animate.css'>
+
+<style>
+  h3 {
+    text-transform: none;
+    width: 14em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .link {
+    color: #3b8fff;
+    cursor: pointer;
+  }
+
+  .link:hover {
+    color: #06e;
+  }
+
+  .teams .active {
+    background-color: #3b8fff;
+    color: #FFF;
+  }
+
+  .teams .block.active:hover {
+    background-color: #3b8fff;
+  }
+
+  .teams .active .header,
+  .teams .active .header:after {
+   background: none; 
+  }
+
+  .teams .openings { display: none; }
+  .teams .active .openings { display: block; }
+
+  .openings li { 
+    width: 100%;
+    margin: 0;
+    padding: 0em 2em 1em;
+    text-align: left;
+    color: #9cc1ff;
+    font-size: .875em;
+  }
+
+  .openings li:hover {
+    color: #FFF;
+    cursor: pointer;
+  }
+
+  .teams .active .desc,
+  .teams .active .bottom
+  {
+    display: none;
+  }
+
+  .teams .block {
+    position: relative;
+    border-width: 1px;
+  }
+
+  .teams .block:hover {
+    background-color: transparent;
+    color: #222;
+    border-color: #eee;
+    cursor: default;
+  }
+
+  .teams .block:hover p {
+    color: rgba(17, 17, 17, 0.6);
+  }
+
+  .teams .block:hover .cta {
+    color: #FFF;
+  }
+
+  .teams .header {
+    height: 5em;
+    background: rgba(0,0,0,0.42);
+    background-position: 0 12em, center;
+    background-size: cover;
+  }
+
+  .teams .header:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('/img/careers-team.png');
+    background-position: 0 12em, center;
+    background-size: cover;
+    width: 100%;
+    height: 5em;
+    z-index: -1;
+  }
+
+  .teams .block:nth-child(-n+3),
+  .teams li:nth-child(-n+3) {
+    margin-top: 0;
+  }
+
+  .teams .block h3 {
+    color: #FFF;
+    line-height: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    width: 100%;
+    margin: 0;
+  }
+
+  .teams .bottom {
+    font-size: .75em;
+  }
+
+  .disabled {
+    background: #ccc;
+  }
+
+  .disabled:hover {
+    background: #ccc;
+    cursor: default;
+  }
+
+  .teams .btn.cta {
+    padding: 1em;
+    text-transform: uppercase;
+    font-weight: 300;
+    width: 15em;
+    margin-left: -7.5em;
+    bottom: 1em;
+  }
+
+  #position p {
+    text-align: left;
+    margin: 0;
+    width: 80%;
+  }
+
+  #position .title {
+    margin: 0;
+  }
+
+  #position h3 {
+    margin: 0;
+    font-size: 1.2em !important;
+  }
+
+  #position strong {
+    font-weight: normal;
+    size: 1rem;
+  }
+
+  #position a {
+    width: 100%;
+    font-size: 2em;
+    max-width: none;
+  }
+  
+  .splash:after {
+    background: url(/img/careers.png) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+</style>
+
+<div class="clearfix splash">
+  <h1 class='center heading'>
+    Help us build 
+    something huge and beautiful
+  </h1>
+
+  <a href='#open' class='btn btn-small cta'>
+    View open positions
+  </a>
+</div>
+
+<section class=''>
+  <h2 class='subheader center'>
+    Why work here?
+  </h2>
+
+  <p class='mt2'>
+    There’s a massive and magnificently interesting problem that needs your attention — we are creating not just a new product, but an entirely new approach to a beloved activity. You’ll have the opportunity to shape our business, our brand, and our customer experience — as well as what snacks we keep in the kitchen. 
+  </p>
+  <p>
+    And speaking of snacks: Spring is a startup for grownups. We’re all adults who work here because we want to tackle a big challenge and build a fantastic business, and we treat each other as such. We don’t really care about playing beer pong. We do care about drinking good beer.
+  </p>
+
+
+</section>
+<section id='perks' class='gray pb0 tight'>
+  <h2 class='subheader center'>Need more reasons?</h2>
+  <div class='mosaic dark clearfix mt6'>
+    <div class='col-small'>
+      <div class='section'>
+        <img src='/img/weareteamspring/1.jpg'>
+        <p class='vert'>
+          Discounts on great products from cool brands, as well as genuinely stylish team swag
+        </p>
+      </div>
+      <div class='section'>
+        <img src='/img/weareteamspring/5.jpg'>
+        <p class='vert'>
+          Unlimited vacation days
+        </p>
+      </div>
+    </div>
+
+    <div class='col-big'>
+      <div class='section'>
+        <img src='/img/weareteamspring/2.jpg'>
+        <p class='vert'>
+          well-designed and casual office
+        </p>
+      </div>
+      <div class='section'>
+        <img src='/img/weareteamspring/3.jpg'>
+        <p class='vert'>
+          Well-designed and casual office with a stocked snack bar
+        </p>
+      </div>
+      <div class='section'>
+        <img src='/img/weareteamspring/4.jpg'>
+        <p class='vert'>
+          Puppies!!! Also: adult dogs
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id='open' class='tight'>
+  <h2 class='subheader center'>Open positions</h2>
+  <div id='position' class='mt6 limit hide'>
+    <h3 class='title'></h3>
+    <div class='mb2'>
+      <span id='location' class='quiet'></span>
+      <span id='time' class='quiet'></span>
+    </div>
+    <div class='description'></div>
+    <a class='col12 mt2 btn' href='#'>Apply</a>
+  </div>
+  <div id='grid' class='grid mt6'>
+    <ul class='teams center clearfix'>
+      <li>
+        <div id='engineering' class='block block-tall'>
+          <div class='header'>
+            <h3 class='section'>
+              Engineering & Product
+            </h3>
+          </div>
+          <p class='desc'>
+            Code wranglers and champions of blissful user experience, these are the people who build Spring and ensure that it works for everyone. They speak a variety of programming languages and sometimes even talk to each other in person. 
+          </p>
+          <div class='bottom mb1'>
+            <p class='btn cta center'>
+            </p>
+            <a href='/final/team.html?engineering'>Meet the team</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div id='design' class='block block-tall'>
+          <div class='header'>
+            <h3 class='section'>
+              Design
+            </h3>
+          </div>
+          <p class='desc'>
+            Beautiful, effective design is integral to Spring’s brand and customer experience. Our design team takes a highly collaborative approach to solving design challenges, and is perpetually sketching and prototyping while striving to perfect our pixels.
+          </p>
+          <div class='bottom mb1'>
+            <p class='btn cta center'>
+            </p>
+            <a href='/final/team.html?design'>Meet the team</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div id='marketing' class='block block-tall'>
+          <div class='header'>
+            <h3 class='section'>
+              Marketing 
+            </h3>
+          </div>
+          <p class='desc'>
+            Telling the story of Spring in fun, friendly, and evocative ways is what the Marketing team does every day. And when new and cool products drop, the team gets to let people know what's up. Lucky!
+          </p>
+          <div class='bottom mb1'>
+            <p class='btn cta center '>
+            </p>
+            <a href='/final/team.html?marketing'>Meet the team</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div id='operations' class='block block-tall'>
+          <div class='header'>
+            <h3 class='section'>
+              Operations
+            </h3>
+          </div>
+          <p class='desc'>
+            The Operations team keeps Spring humming along. This amazing crew does a lot, from helping brands thrive on our platform, to providing world-class service and support to our customers, to keeping our employees happy and healthy. (Thanks, Ops!)   
+          </p>
+          <ul class='openings'>
+          </ul>
+          <div class='bottom mb1'>
+            <p class='btn cta center operations'>
+            </p>
+            <a href='/final/team.html?operations'>Meet the team</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div id='brand' class='block block-tall'>
+          <div class='header'>
+            <h3 class='section'>
+              Brand Partnerships
+            </h3>
+          </div>
+          <p class='desc'>
+            The Brand Partnerships team ensures that Spring is overflowing with amazing brands and products. The team discovers, researches, and welcomes onboard, and is responsible for curating Spring across categories and price points.
+          </p>
+          <div class='bottom mb1'>
+            <p class='btn cta center'>
+            </p>
+            <a href='/final/team.html?brand'>Meet the team</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class='block block-tall'>
+          <div class='header'>
+            <h3 class='section'>
+              Can’t find the right role?
+            </h3>
+          </div>
+          <p class='desc'>
+            Let us know how you can help. We might hire you anyway.
+          </p>
+          <div class='bottom mb1'>
+            <a href='mailto:recruiting@shopspring.com' class='btn cta center'>
+              Email us
+            </a>
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+</section>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+  var openings = {
+    'engineering': [],
+    'design': [],
+    'marketing': [],
+    'operations': [],
+    'brand': [],
+  }
+
+  $.getJSON("openings.json", function(json) {
+    $.each(json, function(i, v) {
+      
+    });
+  });
+
+  $.each(openings, function(i, v) {
+
+    var $this = $('#' + i);
+
+  //CTA opening numbers
+    if (v.length == 0) {
+      $this.find('.cta').text('No openings').addClass('disabled');
+    }
+    else if (v.length == 1) {
+      $this.find('.cta').text('View ' + openings[i].length + ' Opening');
+    }
+    else {
+      $this.find('.cta').text('View' + openings[i].length + ' Openings');
+    }
+
+
+    //make ul's in html
+    var department = openings[i];
+    var list = $this.find('.openings');
+    for( var opening in department) {
+      list.append('<li data-id="' + department[opening].id + '"><span>' + department[opening].title + '</span><span class="fr caps">' + department[opening].position_type + '</span></li>');
+    }
+  })
+
+  //load on click
+  $('.teams .cta').on('click', function(){
+    var $this = $(this);
+
+    if ( $this.hasClass('disabled') ){
+    }
+    else if ( $this.hasClass('active') ) {
+      $this.removeClass('active');
+    } 
+    else {
+      $('.active').removeClass('active');
+
+      $this.parent().parent().addClass('active');
+
+    }
+  });
+
+  $('.teams .openings li').on('click', function() {
+    var id = $(this).data('id');
+    var dept = openings[$(this).parent().parent().get(0).id];
+
+    console.log(dept)
+
+    for ( opening in dept ) {
+      if( dept[opening].id == id ) {
+        console.log(dept[opening]);
+        $('.teams').hide();
+        $('#open h2').text('< Back to open positons').addClass('link')
+
+        $('#position h3').text(dept[opening].title);
+        $('#position #location').text(dept[opening].city);
+        $('#position #time').text(dept[opening].position_type);
+        $('#position .description').append(dept[opening].description);
+
+
+        //jump to top
+        var top = document.getElementById('open').offsetTop;
+        window.scrollTo(0, top); 
+        console.log(top);
+        return
+      }
+    }
+
+  });
+
+  $('#open h2').on('click', function(){
+    if ( $(this).hasClass('link') ) {
+     $(this).removeClass('link').text('Open positions')
+
+    $('#position').hide();
+    $('#open .teams').show();
+    }
+  })
+
+</script>
