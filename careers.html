@@ -373,7 +373,9 @@ layout: default
   }
 
   $.getJSON("openings.json", function(json) {
-    $.each(json, function(i, v) {
+
+    $.each(json.objects, function(i, v) {
+      console.log(v);
       
     });
   });

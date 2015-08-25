@@ -123,8 +123,9 @@
     font-weight: 500;
   }
 
-  .stats h4 {
-    color: #9bc0ff;
+  .stats h4,
+  .mosaic h4 {
+    color: rgba(255,255,255,.6);
     font-size: .6em;
     letter-spacing: .14em;
   }
@@ -133,7 +134,14 @@
     color: #FFF;
     font-size: 3em;
     font-weight: 700;
+  }
 
+  .vert {
+    top: 45%;
+  }
+
+  .mosaic p {
+      transform: translateY(-0%);
   }
 
   .stats li {
@@ -199,9 +207,9 @@
       </li>
     </ul>
   </section>
-  <div class='mosaic clearfix gray'>
-    <div class='col-big br'>
-      <div class='bb section teal'>
+  <div class='mosaic clearfix dark'>
+    <div class='col-big'>
+      <div class='section teal'>
         <div class='vert'>
           <h4>Founders</h4>
           <p>
@@ -211,7 +219,7 @@
           <h4>(yes, they’re brothers)</h4>
         </div>
       </div>
-      <div class='bb section purple'>
+      <div class='section purple'>
         <div class='vert'>
           <h4>Investors</h4>
           <p>
@@ -233,15 +241,15 @@
       </div>
     </div>
 
-    <div class='col-small bt'>
-      <div class='bb section red'>
+    <div class='col-small'>
+      <div class='section red'>
         <div class='vert'>
           <h4>Items</h4>
           <p>40,000+</p>
           <h4>(All perfectly buyable)</h4>
         </div>
       </div>
-      <div class='bb section blue'>
+      <div class='section blue'>
         <div class='vert'>
           <h4>States Shipped To</h4>
           <p>50</p>
