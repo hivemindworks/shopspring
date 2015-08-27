@@ -87,6 +87,16 @@ body.show-nav {
   .mobile-hide {
     display: none;
   }
+
+  section .sublime {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .sublime .files {
+    display: none;
+  }
 }
 
 @media all and (max-width: 870px) {
