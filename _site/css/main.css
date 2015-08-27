@@ -587,7 +587,6 @@ section p {
   line-height: 1.2em; }
 
 .info {
-  width: 470px;
   text-align: center; }
 
 /*
@@ -944,7 +943,6 @@ GRID
   float: left;
   height: 333px;
   width: inherit;
-  margin: inherit;
   color: #454545; }
   .block:hover {
     background-color: #3B8FFF;
@@ -994,7 +992,7 @@ GRID
   .grid li {
     width: 333px;
     margin: 18px; } }
-@media all and (max-width: 1400px) and (min-width: 1302px) {
+@media all and (min-width: 1302px) {
   .grid {
     width: 1302px; }
 

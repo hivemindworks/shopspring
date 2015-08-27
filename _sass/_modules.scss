@@ -156,7 +156,6 @@ GRID
     float: left;
     height: 333px;
     width: inherit;
-    margin: inherit;
     color: $gray-dark;
 
     &:hover {
@@ -227,7 +226,7 @@ GRID
   }
 
   //three column larger
-  @media all and (max-width: 1400px) and (min-width: 1302px)  {
+  @media all and (min-width: 1302px)  {
     .grid {
       width: 1302px;
     }
