@@ -1245,7 +1245,7 @@ GRID
     width: 90%;
     margin: 5%; }
 
-  .mosaic p {
+  .mosaic .section p {
     padding: 5%;
     width: 90%; }
   .mosaic .col-small,
