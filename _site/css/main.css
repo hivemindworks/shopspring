@@ -1166,7 +1166,7 @@ GRID
     bottom: 0;
     width: 16rem;
     z-index: -100;
-    transform: TranslateX(-15em); }
+    transform: TranslateX(-100%); }
     header nav .fr {
       float: none; }
     header nav .nav li {

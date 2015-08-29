@@ -153,6 +153,10 @@
     cursor: pointer;
   }
 
+  .teams .active h3 {
+    color: #FFF !important;
+  }
+
   .teams .active .desc,
   .teams .active .bottom
   {
@@ -162,6 +166,7 @@
   .teams .block {
     position: relative;
     border-width: 1px;
+    overflow: scroll;
   }
 
   .teams .block:hover {
@@ -182,7 +187,6 @@
   .teams .header {
     height: 2em;
     margin-top: 2em;
-    color: #333;
   }
 
   .teams .block:nth-child(-n+3),
@@ -345,6 +349,8 @@
           <p class='desc'>
             Code wranglers and champions of blissful user experience, these are the people who build Spring and ensure that it works for everyone. They speak a variety of programming languages and sometimes even talk to each other in person. 
           </p>
+          <ul class='openings mt2'>
+          </ul>
           <div class='bottom mb1'>
             <p class='btn cta center'>
             </p>
@@ -362,6 +368,8 @@
           <p class='desc'>
             Beautiful, effective design is integral to Spring’s brand and customer experience. Our design team takes a highly collaborative approach to solving design challenges, and is perpetually sketching and prototyping while striving to perfect our pixels.
           </p>
+          <ul class='mt2 openings'>
+          </ul>
           <div class='bottom mb1'>
             <p class='btn cta center'>
             </p>
@@ -379,6 +387,8 @@
           <p class='desc'>
             Telling the story of Spring in fun, friendly, and evocative ways is what the Marketing team does every day. And when new and cool products drop, the team gets to let people know what's up. Lucky!
           </p>
+          <ul class='mt2 openings'>
+          </ul>
           <div class='bottom mb1'>
             <p class='btn cta center '>
             </p>
@@ -396,7 +406,7 @@
           <p class='desc'>
             The Operations team keeps Spring humming along. This amazing crew does a lot, from helping brands thrive on our platform, to providing world-class service and support to our customers, to keeping our employees happy and healthy. (Thanks, Ops!)   
           </p>
-          <ul class='openings'>
+          <ul class='mt2 openings'>
           </ul>
           <div class='bottom mb1'>
             <p class='btn cta center operations'>
@@ -415,6 +425,8 @@
           <p class='desc'>
             The Brand Partnerships team ensures that Spring is overflowing with amazing brands and products. The team discovers, researches, and welcomes onboard, and is responsible for curating Spring across categories and price points.
           </p>
+          <ul class='mt2 openings'>
+          </ul>
           <div class='bottom mb1'>
             <p class='btn cta center'>
             </p>
@@ -461,35 +473,40 @@
   $.getJSON("openings.json", function(json) {
 
     $.each(json.objects, function(i, v) {
-      console.log(v);
-      
+      if (v.team == '') { v.team = 'engineering' }
+      openings[v.team].push(v);
+
     });
+
+    $.each(openings, function(i, v) {
+
+      console.log(i)
+      console.log(v)
+
+      var $this = $('#' + i);
+
+      //CTA opening numbers
+      if (v.length == 0) {
+        $this.find('.cta').text('No openings').addClass('disabled');
+      }
+      else if (v.length == 1) {
+        $this.find('.cta').text('View ' + openings[i].length + ' Opening');
+      }
+      else {
+        $this.find('.cta').text('View' + openings[i].length + ' Openings');
+      }
+
+
+      //make ul's in html
+      var department = openings[i];
+      var list = $this.find('.openings');
+      for( var opening in department) {
+        list.append('<li data-id="' + department[opening].id + '"><span>' + department[opening].title + '</span><span class="fr caps">' + department[opening].position_type + '</span></li>');
+      }
+    })
+
+
   });
-
-  $.each(openings, function(i, v) {
-
-    var $this = $('#' + i);
-
-  //CTA opening numbers
-    if (v.length == 0) {
-      $this.find('.cta').text('No openings').addClass('disabled');
-    }
-    else if (v.length == 1) {
-      $this.find('.cta').text('View ' + openings[i].length + ' Opening');
-    }
-    else {
-      $this.find('.cta').text('View' + openings[i].length + ' Openings');
-    }
-
-
-    //make ul's in html
-    var department = openings[i];
-    var list = $this.find('.openings');
-    for( var opening in department) {
-      list.append('<li data-id="' + department[opening].id + '"><span>' + department[opening].title + '</span><span class="fr caps">' + department[opening].position_type + '</span></li>');
-    }
-  })
-
   //load on click
   $('.teams .cta').on('click', function(){
     var $this = $(this);
