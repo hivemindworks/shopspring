@@ -144,6 +144,11 @@ body.show-nav {
     }
 
     .mosaic {
+      p {
+        padding: 5%;
+        width: 90%;
+      }
+
       .col-small, 
       .col-big {
         width: 100%;
@@ -189,7 +194,7 @@ body.show-nav {
   }
 
   .subheader {
-    font-size: 1.5em;
+    font-size: 1em;
     width: 100%;
     padding: 0 2em;
   }
