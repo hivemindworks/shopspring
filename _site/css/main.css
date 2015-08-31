@@ -1153,6 +1153,7 @@ GRID
     background-color: #F2f2f2; }
 
   body.show-nav {
+    -webkit-transform: TranslateX(15em);
     transform: TranslateX(15em);
     overflow: hidden;
     -moz-box-shadow: 3px 3px 5px 6px #ccc;
@@ -1162,7 +1163,7 @@ GRID
   header nav {
     position: absolute;
     top: 0;
-    left: -30px;
+    left: 0;
     bottom: 0;
     width: 16rem;
     z-index: -100;
@@ -1178,6 +1179,7 @@ GRID
       border-bottom: 1px solid #F4F4F4;
       border-top: 1px solid #F8F8F8; }
       header nav .nav li a {
+        width: 100%;
         padding-left: 1em;
         color: #333;
         line-height: 3em;
@@ -1236,7 +1238,7 @@ GRID
     width: 50%; }
 
   .grid {
-    width: 369px; }
+    width: 100%; }
 
   .block {
     min-height: 333px; }
@@ -1260,19 +1262,8 @@ GRID
         height: auto;
         top: -20%; }
 
-  .filter li {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    line-height: 4em;
-    max-width: 20em; }
-
-  .filter li .btn {
-    margin: 1em 0em;
-    padding: 0;
-    max-width: none;
-    width: 326.09375px; } }
+  section ul.filter {
+    display: none; } }
 @media all and (max-width: 500px) {
   .heading {
     font-size: 2em; }

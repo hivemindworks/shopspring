@@ -24,6 +24,19 @@ layout: default
     color: #FFF;
   }
 
+  .mobile.select {
+    display: block;
+    max-width: 30em;
+    width: 100%;
+    height: 2.5em;
+    padding: 1em;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    border: 1px solid #E1E1E1;
+  }
+
   .employee {
     border: 1px solid #ddd;
     text-align: center;
@@ -152,11 +165,27 @@ layout: default
                         <a href='/final/careers.html'>Life at Spring ></a>
                       </p>
 
-                      
-
-                      <a class='btn filter btn-small center mt6 mobile'>
-                          Filter by team
-                      </a>
+                      <select class="mobile field select medium hasCustomSelect" tabindex="5" placeholder="Filter by team" style="">
+                        <option value="" selected="selected">Filter by team</option>
+                          <option value="product" id='product'>
+                            engineering
+                          </option>
+                          <option value="design" id='design'>
+                          design
+                          </option>
+                          <option value="marketing" id='marketing'>
+                            marketing
+                          </option>
+                          <option value="operations" id='operations'>
+                            operations
+                          </option>
+                          <option value="brand" id='brand'>
+                            brand curation
+                          </option>
+                          <option value="founders" id='founders'>
+                          founders
+                          </option>
+                        </select>
 
                       <ul class='filter nav center clearfix mt6 mobile-none'>
                         <li>
@@ -744,16 +773,11 @@ layout: default
                     }
                   })  
 
-                  $('.btn.filter').on('click', function(){
-                    console.log('yea')
-                    var $filterNav = $('.filter.nav')
+                  $('.mobile.select').on('change', function (e) {
+                    console.log(e);
+                    //get value
 
-                    if ($filterNav.hasClass('active')) {
-                      $(this).removeClass('active');
-                      $filterNav.addClass('mobile-none')
-                    } else {
-                      $filterNav.removeClass('mobile-none')
-                      $(this).hide();
-                    }
+                    //filter by value
+                  
                   })
                 </script>
