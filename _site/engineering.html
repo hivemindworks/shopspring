@@ -134,6 +134,18 @@
     overflow: auto;
   }
 
+
+  .sublime .openings {
+    height: 37em;
+    background: #263238;
+    display: none;
+    width: 100%;
+    color: #5A6F79;
+  }
+  .sublime .openings p {
+    color: #5A6F79;
+  }
+
   .sublime::before {
     content: '';
     display: block;
@@ -154,6 +166,8 @@
     font-family: sans-serif;
     overflow: auto;
     font-size: .875em;
+    z-index: 100;
+    margin-bottom: -1px;
     padding: 1em 1em 0em;
   }
 
@@ -166,6 +180,11 @@
     border-radius: 5px 5px 0 0;
     margin-right: .25em;
     width: 15em;
+    margin-bottom: -2px;
+  }
+
+  .files li:hover {
+    cursor: pointer;
   }
 
   .files li.active {
@@ -173,13 +192,18 @@
     border-right: 1px solid #5A6F79;
     border-left: 1px solid #5A6F79;
     color: #FFF;
+    z-index: 100;
+    position: relative;
     background-color: #263238;
   }
 
   .content {
-    width: 100%;
     background: #263238;
     height: 30em;
+  }
+
+  .CodeMirror {
+    border-top: 1px solid #5A6F79;
   }
 
   #tools li {
@@ -243,14 +267,31 @@
 <div class='sublime center mt8'>
   <div class='files'>
     <ul>
-      <li class='active'>philosohpy.html</li>
-      <li>philosohpy.html</li>
-      <li>philosohpy.html</li>
-      <li>philosohpy.html</li>
+      <li id='philosophy' class='active philosophy'>
+        philosohpy.html
+        <span class='remove fr'>x</span>
+      </li>
+      <li id='teamwork' class='teamwork'>
+        teamwork.html
+        <span class='remove fr'>x</span>
+      </li>
+      <li id='three' class='three'>
+        three.html
+        <span class='remove fr'>x</span>
+      </li>
+      <li id='blah' class='blah'>
+        blah.html
+        <span class='remove fr'>x</span>
+      </li>
     </ul>
   </div>
   <textarea id='sublime' class='content fl'>
   </textarea>
+  <div class="openings">
+    <h2 class='subheader mt6'>Looking for Something?</h2>
+    <p class='mt2'>Check out our</p>
+    <a href='/careers.html#open' class='btn center'>Current openings</a>
+  </div>
 </div>
 
 </section>
@@ -601,12 +642,8 @@
       content: '<h1>\nheadline\n</h1>\n\n<p>\nbody copy 2\n</p>'
     },
     {
-      id: '3',
+      id: 'three',
       content: '<h1>\nheadline\n</h1>\n\n<p>\nbody copy 3\n</p>'
-    },
-    {
-      id: 'barf',
-      content: '<h1>\nheadline\n</h1>\n\n<p>\nbody copy 4\n</p>'
     },
     {
       id: 'blah',
@@ -626,13 +663,55 @@
   myCodeMirror.setValue(philosophy[0].content)
 
   var i = 0;
-  setInterval( function() {
-    if ( i == philosophy.length-1 ) { i = 0 };
+  var sublimeRotation = setInterval( function() {
+    if ( i == philosophy.length ) { i = 0 };
+
+    var $el = $('.'+ philosophy[i].id);
+    $('.sublime li.active').removeClass('active');
+    $el.addClass('active');
+
     
     myCodeMirror.setValue(philosophy[i].content)
 
     i ++; 
   }, 1000)
+
+
+  $('.files li .remove').on('click', function(){
+    var id = $(this).parent()[0].id;
+    $('#'+id).remove();
+    clearInterval(sublimeRotation);
+    var first = $('.files ul li');
+
+    if ( first[0] ) {
+      firstId = first[0].id;
+      $.each(philosophy, function(i,v){
+        if(v.id == firstId) {
+          myCodeMirror.setValue(philosophy[i].content)
+        }
+      })
+    } else {  
+
+      $('.files').remove();
+      $('.content').remove();
+      $('.CodeMirror').remove();
+      $('.sublime .openings').css('display', 'inline-block');
+    }
+
+    });
+
+
+  $('.files li').on('click', function(){
+    $('.active').removeClass('active');
+    var $this = $(this);
+    $this.addClass('active');
+    $.each(philosophy, function(i,v){
+      if( v.id == $this[0].id) {
+        myCodeMirror.setValue(v.content)
+      }
+    });
+    clearInterval(sublimeRotation);
+  })
   </script>
 
 

@@ -127,7 +127,6 @@
   }
 
   .mobile.select {
-    display: block;
     max-width: 30em;
     width: 100%;
     height: 2.5em;
@@ -268,7 +267,7 @@
                       </p>
 
                       <select class="mobile field select medium hasCustomSelect" tabindex="5" placeholder="Filter by team" style="">
-                        <option value="" selected="selected">Filter by team</option>
+                        <option id='clear' value="" selected="selected">Filter by team</option>
                           <option value="product" id='product'>
                             engineering
                           </option>
@@ -876,10 +875,16 @@
                   })  
 
                   $('.mobile.select').on('change', function (e) {
-                    console.log(e);
                     //get value
+                    var team = $(this)[0].selectedOptions[0].id;
 
                     //filter by value
+                    $('.filter .btn#'+team).trigger('click');
+
+                    if ( team == 'clear' ) {
+                      $('.filter .active').removeClass('active');
+                      $('.employee').show();
+                    }
                   
                   })
                 </script>
