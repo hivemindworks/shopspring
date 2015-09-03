@@ -186,7 +186,7 @@ layout: default
                           </option>
                         </select>
 
-                      <ul class='filter nav center clearfix mt6 mobile-none'>
+                      <ul id='filter' class='filter nav center clearfix mt6 mobile-none'>
                         <li>
                           <a id='product' class="btn btn-outline">
                             engineering
@@ -785,4 +785,14 @@ layout: default
                     }
                   
                   })
+
+                  //get filter 
+
+                  var query = window.location.href;
+                  var qMark = query.indexOf('?');
+                  query = query.slice(qMark + 1);
+                  console.log(query)
+
+                  $('#' + query + '.btn').trigger('click');
+                  document.getElementById('filter').scrollIntoView();
                 </script>
