@@ -226,19 +226,30 @@
   .projects li h3 {
     font-weight: 400;
     text-transform: none;
+    color: #fff;
   }
 
   .block {
+    overflow: auto;
     width: 100%;
+    background: #000;
   }
 
-  .block:hover {
+.block:hover {
     background-color: transparent;
     border-color: #eee;
     color: #454545;
     cursor: default;
   }
-</style>
+
+  .grid .block img {
+    height: 100%;
+    max-width: none;
+    position: absolute;
+    opacity: .72;
+    left: 0;
+  }
+  </style>
 
 <div class="clearfix splash">
   <h1 class='center heading'>
@@ -365,25 +376,28 @@
 <div id='grid' class='grid mt6'>
 <ul class='center clearfix'>
       <li>
-        <a class='block' href='http://bits.blogs.nytimes.com/2014/08/14/spring-an-e-commerce-start-up-aims-at-mobile-shopping/' target='_blank'>
-          <h3 class='section'>
+        <div class='block'>
+          <img src='http://www.shopspring.com.s3.amazonaws.com/img/eng_projects1.jpeg'>
+          <h3 class='section vert'>
             Using data science to give people amazing personalized recommendations
           </h3>
-        </a>
+        </div>
       </li>
       <li>
-        <a class='block' href='http://www.wired.com/2014/08/spring/' target='_blank' >
-          <h3 class='section'>
+        <div class='block'>
+          <img src='http://www.shopspring.com.s3.amazonaws.com/img/eng_projects2.jpg'>
+          <h3 class='section vert'>
             Integrating commerce platforms to create an automatically updating catalog of millions of products
           </h3>
-        </a>
+        </div>
       </li>
       <li>
-        <a class='block' href='http://www.luckyshops.com/article/spring-shopping-app-launch' target='_blank'>
-          <h3 class='section'>
+        <div class='block'>
+          <img src='http://www.shopspring.com.s3.amazonaws.com/img/eng_projects3.jpg'>
+          <h3 class='section vert'>
             Helping brands manage inventory and curate content without touching code
           </h3>
-        </a>
+        </div>
       </li>
     </ul>
 

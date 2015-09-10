@@ -411,11 +411,21 @@ ROWZ
 /*
 COLUMNZ
 ========================*/
-[class*='col-'] {
+[class*='col'] {
   float: left; }
+
+.col1-4 {
+  width: 25%; }
+
+.col3-4 {
+  width: 70%;
+  margin-right: 5%; }
 
 .text-right {
   text-align: right; }
+
+.text-left {
+  text-align: left; }
 
 .text-center {
   text-align: center; }
@@ -900,6 +910,7 @@ header .mobile {
     .mosaic .col-small .section img {
       height: 100%;
       width: auto;
+      max-width: none;
       position: absolute; }
   .mosaic .col-small p {
     text-align: center;

@@ -40,7 +40,7 @@ layout: default
   .openings li { 
     width: 100%;
     margin: 0;
-    padding: 0em 2em 1em;
+    padding: 0em 2em 1.5em;
     text-align: left;
     color: #9cc1ff;
     font-size: .875em;
@@ -150,7 +150,7 @@ layout: default
   }
   
   .splash:after {
-    background: url(/img/careers.png) #000 no-repeat center center fixed; 
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/careers_header.jpg) #000 no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -185,13 +185,13 @@ layout: default
   <div class='mosaic dark clearfix mt6'>
     <div class='col-small'>
       <div class='section'>
-        <img src='/img/weareteamspring/1.jpg'>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_discounts.jpg'>
         <p class='vert'>
           Discounts on great products from cool brands, as well as genuinely stylish team swag
         </p>
       </div>
       <div class='section'>
-        <img src='/img/weareteamspring/5.jpg'>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_vacation.jpg'>
         <p class='vert'>
           Unlimited vacation days
         </p>
@@ -200,19 +200,19 @@ layout: default
 
     <div class='col-big'>
       <div class='section'>
-        <img src='/img/weareteamspring/2.jpg'>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_equity.jpg'>
         <p class='vert'>
           well-designed and casual office
         </p>
       </div>
       <div class='section'>
-        <img src='/img/weareteamspring/3.jpg'>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_casual.jpeg'>
         <p class='vert'>
           A well-designed and casual office that's overflowing with snacks and meals
         </p>
       </div>
       <div class='section'>
-        <img src='/img/weareteamspring/4.jpg'>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_puppies.jpg'>
         <p class='vert'>
           Puppies!!! Also: adult dogs
         </p>
@@ -388,7 +388,7 @@ layout: default
         $this.find('.cta').text('View ' + openings[i].length + ' Opening');
       }
       else {
-        $this.find('.cta').text('View' + openings[i].length + ' Openings');
+        $this.find('.cta').text('View ' + openings[i].length + ' Openings');
       }
 
 
@@ -396,7 +396,7 @@ layout: default
       var department = openings[i];
       var list = $this.find('.openings');
       for( var opening in department) {
-        list.append('<li data-id="' + department[opening].id + '"><span>' + department[opening].title + '</span><span class="fr caps">' + department[opening].position_type + '</span></li>');
+        list.append('<li data-id="' + department[opening].id + '"><span class="col3-4">' + department[opening].title + '</span><span class="text-left caps col1-4">' + department[opening].location.city + '</span></li>');
       }
     })
 

@@ -111,9 +111,10 @@ ROWZ
 /*
 COLUMNZ
 ========================*/
-[class*='col-'] {
+[class*='col'] {
   float: left;
 }
 
-
+.col1-4 { width: 25%; }
+.col3-4 { width: 70%; margin-right: 5%; }
 
