@@ -123,24 +123,40 @@ layout: default
     bottom: 1em;
   }
 
+
+
+  
+  #position {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #333;
+  }
+
   #position p {
     text-align: left;
-    margin: 0;
-    width: 80%;
+    margin: 1em 0 0;
+    width: 100%;
   }
 
   #position .title {
     margin: 0;
   }
 
-  #position h3 {
-    margin: 0;
+
+  #position .description strong, 
+  #position .description h3 {
+    font-weight: bold;
+    margin: 2em 0 0;
     font-size: 1.2em !important;
   }
 
-  #position strong {
-    font-weight: normal;
-    size: 1rem;
+  #position ul {
+    list-style-type: disc;
+  }
+
+  #position li {
+    margin-top: 1em;
   }
 
   #position a {
@@ -223,14 +239,14 @@ layout: default
 
 <section id='open' class='tight'>
   <h2 class='subheader center'>Open positions</h2>
-  <div id='position' class='mt6 limit hide'>
+  <div id='position' class='mt6 hide'>
     <h3 class='title'></h3>
     <div class='mb2'>
       <span id='location' class='quiet'></span>
       <span id='time' class='quiet'></span>
     </div>
     <div class='description'></div>
-    <a class='col12 mt2 btn' href='#'>Apply</a>
+    <a id='apply' class='col12 mt2 btn' href='#'>Apply</a>
   </div>
   <div id='grid' class='grid mt6'>
     <ul class='teams center clearfix'>
@@ -375,9 +391,6 @@ layout: default
 
     $.each(openings, function(i, v) {
 
-      console.log(i)
-      console.log(v)
-
       var $this = $('#' + i);
 
       //CTA opening numbers
@@ -398,10 +411,39 @@ layout: default
       for( var opening in department) {
         list.append('<li data-id="' + department[opening].id + '"><span class="col3-4">' + department[opening].title + '</span><span class="text-left caps col1-4">' + department[opening].location.city + '</span></li>');
       }
+
     })
 
+    $('.openings li').on('click', function() {
+      var id = $(this).data('id');
+      var dept = openings[$(this).parent().parent().get(0).id];
+      var $position = $('#position');
 
+      for ( opening in dept ) {
+        if( dept[opening].id == id ) {
+          $('.teams').hide();
+          $('#open h2').text('< Back to open positons').addClass('link')
+
+          console.log(dept[opening])
+
+          $('#position h3').text(dept[opening].title);
+          $('#position #location').text(dept[opening].location.city);
+          //$('#position #time').text(dept[opening].position_type);
+          $('#position .description').append(dept[opening].description);
+          $('#position #apply').attr('href', 'mailto:' + dept[opening].application_email);
+          $position.show();
+
+
+          //jump to top
+          var top = document.getElementById('open').offsetTop;
+          window.scrollTo(0, top); 
+          return
+        }
+      }
+
+    });
   });
+
   //load on click
   $('.teams .cta').on('click', function(){
     var $this = $(this);
@@ -417,34 +459,6 @@ layout: default
       $this.parent().parent().addClass('active');
 
     }
-  });
-
-  $('.teams .openings li').on('click', function() {
-    var id = $(this).data('id');
-    var dept = openings[$(this).parent().parent().get(0).id];
-
-    console.log(dept)
-
-    for ( opening in dept ) {
-      if( dept[opening].id == id ) {
-        console.log(dept[opening]);
-        $('.teams').hide();
-        $('#open h2').text('< Back to open positons').addClass('link')
-
-        $('#position h3').text(dept[opening].title);
-        $('#position #location').text(dept[opening].city);
-        $('#position #time').text(dept[opening].position_type);
-        $('#position .description').append(dept[opening].description);
-
-
-        //jump to top
-        var top = document.getElementById('open').offsetTop;
-        window.scrollTo(0, top); 
-        console.log(top);
-        return
-      }
-    }
-
   });
 
   $('#open h2').on('click', function(){

@@ -278,20 +278,20 @@
 <div class='sublime center mt8'>
   <div class='files'>
     <ul>
-      <li id='philosophy' class='active philosophy'>
-        philosohpy.html
+      <li id='done' class='active done'>
+        get_things_done.html
         <span class='remove fr'>x</span>
       </li>
-      <li id='teamwork' class='teamwork'>
-        teamwork.html
+      <li id='think' class='think'>
+        think_together.html
         <span class='remove fr'>x</span>
       </li>
-      <li id='three' class='three'>
-        three.html
+      <li id='code' class='code'>
+        code_for_humans.html
         <span class='remove fr'>x</span>
       </li>
-      <li id='blah' class='blah'>
-        blah.html
+      <li id='ux' class='ux'>
+        ux.html
         <span class='remove fr'>x</span>
       </li>
     </ul>
@@ -647,20 +647,20 @@
     
   var philosophy = [
     {
-      id: 'philosophy',
-      content: '<h1>\nThere is a balance between getting things done, and getting them right.\n</h1>\n\n<p>\nOur focus is on quickly delivering reliable software. That means committing time to developing infrastructure and features, but not chasing after long refactors that don\'t make our software better.\n</p>'
+      id: 'done',
+      content: '<h1>\nWe know there’s a balance between getting things done and getting things right.\n</h1>\n\n<p>\nOur focus is on quickly delivering reliable software, which means building features and infrastructure we need, and not things we only might need. Also, we don\'t chase huge refactors that don\'t meaningfully improve our software.\n</p>'
     },
     {
-      id: 'teamwork',
-      content: '<h1>\nheadline\n</h1>\n\n<p>\nbody copy 2\n</p>'
+      id: 'think',
+      content: '<h1>\nWe think about things — together — before building them.\n</h1>\n\n<p>\nMost of our best ideas have come from a few people scribbling on a whiteboard, not one person staring bleary-eyed at Vim.\n</p>'
     },
     {
-      id: 'three',
-      content: '<h1>\nheadline\n</h1>\n\n<p>\nbody copy 3\n</p>'
+      id: 'code',
+      content: '<h1>\nWe believe code is written for humans, not machines.\n</h1>\n\n<p>\nIn addition to being correct, code should be expressive and easy to reason about. At Spring, every line of code is reviewed by a human before it\'s committed, and code review isn\'t just quality control — it\'s a chance to discuss ideas, provide feedback, and learn from others. We always want to be better engineers.\n</p>'
     },
     {
-      id: 'blah',
-      content: '<h1>\nheadline\n</h1>\n\n<p>\nbody copy 5\n</p>'
+      id: 'ux',
+      content: '<h1>\n In the end, the user experience is all that matters.\n</h1>\n\n<p>\nWe know code can be beautiful, but that a beautiful product is more important than a beautiful codebase.\n</p>'
     }
   ]
 
@@ -687,7 +687,7 @@
     myCodeMirror.setValue(philosophy[i].content)
 
     i ++; 
-  }, 1000)
+  }, 6000)
 
 
   $('.files li .remove').on('click', function(){
