@@ -318,15 +318,15 @@
 
     <div class='col-big'>
       <div class='section'>
-        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_equity.jpg'>
-        <p class='vert'>
-          well-designed and casual office
-        </p>
-      </div>
-      <div class='section'>
         <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_casual.jpeg'>
         <p class='vert'>
           A well-designed and casual office that's overflowing with snacks and meals
+        </p>
+      </div>
+      <div class='section'>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_equity.jpg'>
+        <p class='vert'>
+          meaningful equity sharing and the resources to go after our big idea
         </p>
       </div>
       <div class='section'>
@@ -486,7 +486,7 @@
   $.getJSON("openings.json", function(json) {
 
     $.each(json.objects, function(i, v) {
-      if (v.team == '') { v.team = 'engineering' }
+      if (v.team == '') { v.team = 'operations' }
       openings[v.team].push(v);
 
     });

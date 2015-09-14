@@ -111,6 +111,12 @@
     height: 25em;
   }
 
+  .block:hover img {
+    opacity: 1;
+   -webkit-filter: invert(.5) brightness(3);
+     filter: invert(1);
+  }
+
   .logo-small {
     opacity: .42;
     width: 5em;
@@ -127,6 +133,7 @@
     top: 25%;
   }
 
+
   .logo-long {
     opacity: .42;
     width: 8em;
@@ -142,8 +149,54 @@
     margin-right: auto;
   }
 
+  .mosaic.dark img {
+    opacity: 1;
+  }
+
+  .mosaic .col-big .section img {
+    height: auto;
+    display: block;
+    position: relative;
+  }
+
+  .mosaic .col-big .pair {
+    max-width: 40em;
+    margin: 0 auto;
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+  }
+
+  .mosaic .col-big img, 
+  .mosaic .col-big p {
+    width: 50%;
+  }
+
+  .mosaic .col-small .section img {
+    height: 5em;
+    width: auto;
+    position: static;
+    display: block;
+    margin: 0 auto 4em;
+  }
+
+  .container {
+    max-width: 40em;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .col1-2 {
+    width: 50%;
+  }
+
+  .col1-2 img, 
+  .col1-2 p {
+    margin: 0 auto;
+  }
+
   .splash:after {
-    background: url(/img/press/fast-co.jpg) #000 no-repeat center center fixed; 
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/press_header.jpg) #000 no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -162,12 +215,12 @@
 </div>
 
 <section class=''>
-<h2 class='subheader center mb4'>
-  Press
-</h2>
+  <h2 class='subheader center mb4'>
+    Press
+  </h2>
 
   <div id='grid' class='grid'>
-<ul class='center clearfix'>
+    <ul class='center clearfix'>
       <li>
         <a class='block' href='http://techcrunch.com/2015/04/16/spring-the-shoppable-instagram-closes-25m-in-series-b/' target='_blank'>
           <img class='logo-med' src='/img/press/tc-logo-gray.png' />
@@ -227,7 +280,7 @@
       </li>
       <li>
         <a class='block' href='http://www.luckyshops.com/article/spring-shopping-app-launch' target='_blank'>
-          <img class='logo-small' src='/img/press/lucky-logo.jpg' />
+          <img class='logo-small' src='/img/press/lucky-logo.png' />
           <h3 class='section'>
             The shopping app of your dreams is finally live
           </h3>
@@ -246,23 +299,50 @@
   <div class='mosaic clearfix dark mt6'>
     <div class='col-big'>
       <div class='teal section'>
-        <p>Apple Best Apps of 2014</p>
+        <div class='container'>
+        <div class='col1-2 vert'>
+          <img class='' src='/img/apple-logo.png' style='width: 8em' />
+        </div>
+        <div class='col1-2 vert'>
+          <p>Apple Best Apps of 2014</p>
+        </div>
+        </div>
       </div>
       <div class='blue section'>
-        <p>Inc. Top 10 Most Innovative 
-        Startups of 2014</p>
+        <div class='container'>
+          <div class='col1-2 vert'>
+            <img class='' src='/img/inc-logo.png' style='width: 15em' />
+          </div>
+          <div class='col1-2 vert'>
+            <p>Inc. Top 10 Most Innovative 
+              Startups of 2014</p>
+          </div>
+        </div>
       </div>
       <div class='gold section'>
-        <p>Vogue 10 best apps of 2014</p>
+        <div class='container'>
+          <div class='col1-2 vert'>
+            <img class='' src='/img/vogue-logo.png' style='width: 15em' />
+          </div>
+          <div class='col1-2 vert'>
+            <p>Vogue 10 best apps of 2014</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class='col-small'>
       <div class='purple section'>
-        <p>Webby Award, Shopping (Handheld Devices)</p>
+        <div class='vert'>
+          <img src='/img/webby-logo.png' />
+          <p>Webby Award, Shopping (Handheld Devices)</p>
+        </div>
       </div>
       <div class='red section'>
-        <p>The CNN 10 startups</p>
+        <div class='vert'>
+          <img src='/img/cnn-logo.png' />
+          <p>The CNN 10 startups</p>
+        </div>
       </div>
     </div>
   </div>
@@ -284,7 +364,10 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-<script></script>
+<script>
+  
+  
+</script>
 
 
     <footer>

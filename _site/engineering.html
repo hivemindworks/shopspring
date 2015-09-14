@@ -115,8 +115,12 @@
     margin-right: auto;
   }
 
-  .splash {
-    background-color: #222;
+.splash:after {
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/eng_header.jpg) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 
   header { background: transparent; }
@@ -235,7 +239,7 @@
     background: #000;
   }
 
-.block:hover {
+  .block:hover {
     background-color: transparent;
     border-color: #eee;
     color: #454545;
@@ -249,7 +253,7 @@
     opacity: .72;
     left: 0;
   }
-  </style>
+</style>
 
 <div class="clearfix splash">
   <h1 class='center heading'>
@@ -259,50 +263,46 @@
   <a href='/careers.html#open' class='btn btn-small cta z100 center'>
     Open positions
   </a>
-  <div id='eng-header' class="eng-header top">
-    <canvas id='demo-canvas'>
-    </canvas>
-  </div>
 </div>
 
 <section class='pb0'>
-<h2 class='subheader center'>
-  Our Philosophy
+  <h2 class='subheader center'>
+    Our Philosophy
   </h2>
-  
+
   <p class='info center mt2'>
-  Actually, we don’t have a philosophy. But here are some semi-coherent thoughts on how we do things.
+    Actually, we don’t have a philosophy. But here are some semi-coherent thoughts on how we do things.
   </p>
 
 
-<div class='sublime center mt8'>
-  <div class='files'>
-    <ul>
-      <li id='done' class='active done'>
-        get_things_done.html
-        <span class='remove fr'>x</span>
-      </li>
-      <li id='think' class='think'>
-        think_together.html
-        <span class='remove fr'>x</span>
-      </li>
-      <li id='code' class='code'>
-        code_for_humans.html
-        <span class='remove fr'>x</span>
-      </li>
-      <li id='ux' class='ux'>
-        ux.html
-        <span class='remove fr'>x</span>
-      </li>
-    </ul>
+  <div class='sublime center mt8'>
+    <div class='files'>
+      <ul>
+        <li id='done' class='active done'>
+          get_things_done.html
+          <span class='remove fr'>x</span>
+        </li>
+        <li id='think' class='think'>
+          think_together.html
+          <span class='remove fr'>x</span>
+        </li>
+        <li id='code' class='code'>
+          code_for_humans.html
+          <span class='remove fr'>x</span>
+        </li>
+        <li id='ux' class='ux'>
+          ux.html
+          <span class='remove fr'>x</span>
+        </li>
+      </ul>
+    </div>
+    <textarea id='sublime' class='content fl'>
+    </textarea>
+    <div class="openings">
+      <h2 class='subheader mt6'>Looking for Something?</h2>
+      <a href='/careers.html#open' class='btn center mt4'>Current openings</a>
+    </div>
   </div>
-  <textarea id='sublime' class='content fl'>
-  </textarea>
-  <div class="openings">
-    <h2 class='subheader mt6'>Looking for Something?</h2>
-    <a href='/careers.html#open' class='btn center mt4'>Current openings</a>
-  </div>
-</div>
 
 </section>
 
@@ -315,12 +315,12 @@
 
   <div class='grid'>
     <ul class='center clearfix mt8'>
-<li>
+      <li>
         <h3>
           GOLANG
         </h3>
       </li>
-<li>
+      <li>
         <h3>
           python
         </h3>
@@ -330,12 +330,12 @@
           Objective-C
         </h3>
       </li>
-<li>
+      <li>
         <h3>
           Postgres
         </h3>
       </li>
-<li>
+      <li>
         <h3>
           React
         </h3>
@@ -345,12 +345,12 @@
           Amazon web services
         </h3>
       </li>
-<li>
+      <li>
         <h3>
           Memcached
         </h3>
       </li>
-<li>
+      <li>
         <h3>
           Elasticsearch
         </h3>
@@ -373,8 +373,8 @@
 
 <section class='gray tight projects'>
   <h2 class='subheader center'>What We’re Working On</h2>
-<div id='grid' class='grid mt6'>
-<ul class='center clearfix'>
+  <div id='grid' class='grid mt6'>
+    <ul class='center clearfix'>
       <li>
         <div class='block'>
           <img src='http://www.shopspring.com.s3.amazonaws.com/img/eng_projects1.jpeg'>
@@ -407,7 +407,7 @@
 
 <section id='hired' class='pb0 tight'>
   <h2 class='subheader center'>Getting hired</h2>
-<div class='mosaic dark clearfix mt6'>
+  <div class='mosaic dark clearfix mt6'>
 
     <div class='col-big'>
       <div class='section red'>
@@ -435,11 +435,11 @@
       </div>
       <div class='section blue'>
         <a class='btn full center' href='/careers.html#open'>
-        <div class='vert'>
-          <p>Want to gopher the gold?</p>
-          <p class='mt2'>View open positions</p>
-      </div>
-    </a>
+          <div class='vert'>
+            <p>Want to gopher the gold?</p>
+            <p class='mt2'>View open positions</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -452,199 +452,8 @@
 
 <script src="/js/codemirror.js"></script>
 <script src="/js/xml.js"></script>
-<script src='/js/EasePack.min.js'></script>
-<script src='/js/TweenLite.min.js'></script>
-<script src='/js/rAF.js'></script>
 <script>
-  (function() {
 
-    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
-
-    // Main
-    initHeader();
-    initAnimation();
-    addListeners();
-
-    function initHeader() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      target = {x: width/2, y: height/2};
-
-      largeHeader = document.getElementById('eng-header');
-      largeHeader.style.height = height+'px';
-
-      canvas = document.getElementById('demo-canvas');
-      canvas.width = width;
-      canvas.height = height;
-      ctx = canvas.getContext('2d');
-
-      // create points
-      points = [];
-      for(var x = 0; x < width; x = x + width/20) {
-        for(var y = 0; y < height; y = y + height/20) {
-          var px = x + Math.random()*width/20;
-          var py = y + Math.random()*height/20;
-          var p = {x: px, originX: px, y: py, originY: py };
-          points.push(p);
-        }
-      }
-
-      // for each point find the 5 closest points
-      for(var i = 0; i < points.length; i++) {
-        var closest = [];
-        var p1 = points[i];
-        for(var j = 0; j < points.length; j++) {
-          var p2 = points[j]
-          if(!(p1 == p2)) {
-            var placed = false;
-            for(var k = 0; k < 5; k++) {
-              if(!placed) {
-                if(closest[k] == undefined) {
-                  closest[k] = p2;
-                  placed = true;
-                }
-              }
-            }
-
-            for(var k = 0; k < 5; k++) {
-              if(!placed) {
-                if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
-                  closest[k] = p2;
-                  placed = true;
-                }
-              }
-            }
-          }
-        }
-        p1.closest = closest;
-      }
-
-      // assign a circle to each point
-      for(var i in points) {
-        var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
-        points[i].circle = c;
-      }
-    }
-
-    // Event handling
-    function addListeners() {
-      if(!('ontouchstart' in window)) {
-        window.addEventListener('mousemove', mouseMove);
-      }
-      window.addEventListener('scroll', scrollCheck);
-      window.addEventListener('resize', resize);
-    }
-
-    function mouseMove(e) {
-      var posx = posy = 0;
-      if (e.pageX || e.pageY) {
-        posx = e.pageX;
-        posy = e.pageY;
-      }
-      else if (e.clientX || e.clientY)    {
-        posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-        posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-      }
-      target.x = posx;
-      target.y = posy;
-    }
-
-    function scrollCheck() {
-      if(document.body.scrollTop > height) animateHeader = false;
-      else animateHeader = true;
-    }
-
-    function resize() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      largeHeader.style.height = height+'px';
-      canvas.width = width;
-      canvas.height = height;
-    }
-
-    // animation
-    function initAnimation() {
-      animate();
-      for(var i in points) {
-        shiftPoint(points[i]);
-      }
-    }
-
-    function animate() {
-      if(animateHeader) {
-        ctx.clearRect(0,0,width,height);
-        for(var i in points) {
-          // detect points in range
-          if(Math.abs(getDistance(target, points[i])) < 4000) {
-            points[i].active = 0.5;
-            points[i].circle.active = 1;
-          } else if(Math.abs(getDistance(target, points[i])) < 20000) {
-            points[i].active = 0.2;
-            points[i].circle.active = 0.3;
-          } else if(Math.abs(getDistance(target, points[i])) < 40000) {
-            points[i].active = 0.02;
-            points[i].circle.active = 0.2;
-          } else {
-            points[i].active = 0;
-            points[i].circle.active = 0;
-          }
-
-          drawLines(points[i]);
-          points[i].circle.draw();
-        }
-      }
-      requestAnimationFrame(animate);
-    }
-
-    function shiftPoint(p) {
-      TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
-                   y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
-                   onComplete: function() {
-                     shiftPoint(p);
-                   }});
-    }
-
-    // Canvas manipulation
-    function drawLines(p) {
-      if(!p.active) return;
-      for(var i in p.closest) {
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(p.closest[i].x, p.closest[i].y);
-        ctx.strokeStyle = 'rgba(225,225,225,'+ p.active+')';
-        ctx.stroke();
-      }
-    }
-
-    function Circle(pos,rad,color) {
-      var _this = this;
-
-      // constructor
-      (function() {
-        _this.pos = pos || null;
-        _this.radius = rad || null;
-        _this.color = color || null;
-      })();
-
-      this.draw = function() {
-        if(!_this.active) return;
-        ctx.beginPath();
-        ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-        ctx.fillStyle = 'rgba(225,225,225,'+ _this.active+')';
-        ctx.fill();
-      };
-    }
-
-    // Util
-    function getDistance(p1, p2) {
-      return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
-    }
-
-  })();
-
-</script>
-  <script>
-    
   var philosophy = [
     {
       id: 'done',
@@ -683,7 +492,7 @@
     $('.sublime li.active').removeClass('active');
     $el.addClass('active');
 
-    
+
     myCodeMirror.setValue(philosophy[i].content)
 
     i ++; 
@@ -711,7 +520,7 @@
       $('.sublime .openings').css('display', 'inline-block');
     }
 
-    });
+  });
 
 
   $('.files li').on('click', function(){
@@ -725,7 +534,7 @@
     });
     clearInterval(sublimeRotation);
   })
-  </script>
+</script>
 
 
     <footer>
