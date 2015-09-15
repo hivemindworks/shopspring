@@ -559,7 +559,7 @@ ul.nav {
     color: #FFF;
     font-size: 11px;
     letter-spacing: .08em; }
-    ul.nav li a.main:hover {
+    ul.nav li a.active, ul.nav li a.main:hover {
       padding-bottom: .42em;
       border-bottom: 2px solid #FFF; }
 

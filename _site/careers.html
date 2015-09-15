@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <link rel="stylesheet" type="text/css" href="/css/normalize.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/css/custom.css" media="screen">
-
     <link rel="stylesheet" type="text/css" href="/css/spring-codes.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/spring-embedded.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/spring-ie7-codes.css" media="screen">
@@ -41,32 +38,32 @@
 
     
     <li>
-      <a class='main' href='/'>
+      <a class='main shop' href='www.shopspring.com'>
         Shop
       </a>
     </li>
     <li>
-      <a class='main' href='/about.html'>
+      <a class='main about' href='/about.html'>
         About
       </a>
     </li>
     <li>
-      <a class='main' href='/team.html'>
+      <a class='main team' href='/team.html'>
         Team
       </a>
     </li>
     <li>
-      <a class='main' href='/careers.html'>
+      <a class='main careers' href='/careers.html'>
         Careers
       </a>
     </li>
     <li>
-      <a class='main' href='/engineering.html'>
+      <a class='main engineering' href='/engineering.html'>
         Engineering
       </a>
     </li>
     <li>
-      <a class='main' href='/brands.html'>
+      <a class='main brands' href='/brands.html'>
         For Brands
       </a>
     </li>
@@ -74,16 +71,6 @@
 
   <div class='fr account'>
     <ul class='nav'>
-      <li>
-        <a class='main' href='/about.html'>
-          Log in
-        </a>
-      </li>
-      <li>
-        <a class='main' href='/about.html'>
-          Sign Up
-        </a>
-      </li>
       <li class='mobile-hide'>
         <a style='margin-top: -6px' class='btn btn-light'>
           Get the App
@@ -95,9 +82,6 @@
 <div class='mobile btn btn-light ham'>
     🍔
   </div>
-  <a href='' class='fr mobile btn btn-light'>
-    Get the app
-  </a>
 
 </div>
 </header>
@@ -235,6 +219,14 @@
     color: #333;
   }
 
+  #position h3 {
+    width: 100%;
+  }
+
+  #position .btn {
+    float: none;
+  }
+
   #position p {
     text-align: left;
     margin: 1em 0 0;
@@ -259,12 +251,6 @@
 
   #position li {
     margin-top: 1em;
-  }
-
-  #position a {
-    width: 100%;
-    font-size: 2em;
-    max-width: none;
   }
   
   .splash:after {
@@ -348,12 +334,12 @@
       <span id='time' class='quiet'></span>
     </div>
     <div class='description'></div>
-    <a id='apply' class='col12 mt2 btn' href='#'>Apply</a>
+    <a id='apply' class='col12 center mt6 btn btn-small' href='#'>Apply</a>
   </div>
   <div id='grid' class='grid mt6'>
     <ul class='teams center clearfix'>
       <li>
-        <div id='engineering' class='block block-tall'>
+        <div id='product' class='block block-tall'>
           <div class='header'>
             <h3 class='section'>
               Engineering & Product
@@ -475,8 +461,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
+  $('nav .careers').addClass('active');
   var openings = {
-    'engineering': [],
+    'product': [],
     'design': [],
     'marketing': [],
     'operations': [],
@@ -484,11 +471,14 @@
   }
 
   $.getJSON("openings.json", function(json) {
-
+    
     $.each(json.objects, function(i, v) {
-      if (v.team == '') { v.team = 'operations' }
-      openings[v.team].push(v);
 
+      if ( v.is_archived == false && v.is_private == false ) {
+        if (v.team == '') { v.team = 'operations' }
+        v.team = v.team.toLowerCase();
+        openings[v.team].push(v);
+      } 
     });
 
     $.each(openings, function(i, v) {
@@ -532,7 +522,7 @@
           $('#position #location').text(dept[opening].location.city);
           //$('#position #time').text(dept[opening].position_type);
           $('#position .description').append(dept[opening].description);
-          $('#position #apply').attr('href', 'mailto:' + dept[opening].application_email);
+          $('#position #apply').attr('href', dept[opening].hosted_url);
           $position.show();
 
 
