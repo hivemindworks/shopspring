@@ -154,6 +154,23 @@ body.show-nav {
     }
 
     .mosaic {
+      &.press {
+        .col-small .section,
+        .col-big .section {
+          .col1-2 {
+            width: 50%;
+          }
+          
+          img, p {
+            margin: 0 auto;
+            width: 50%;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+          } 
+        }
+      }
+
      .section  p {
         padding: 5%;
         width: 90%;

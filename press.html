@@ -11,8 +11,8 @@ layout: default
 
   .block:hover img {
     opacity: 1;
-   -webkit-filter: invert(.5) brightness(3);
-     filter: invert(1);
+    -webkit-filter: invert(.5) brightness(3);
+    filter: invert(1);
   }
 
   .logo-small {
@@ -46,22 +46,14 @@ layout: default
     margin-right: auto;
   }
 
-  .mosaic.dark img {
-    opacity: 1;
+  .mosaic.press p {
+    color: #FFF;
   }
 
   .mosaic .col-big .section img {
     height: auto;
     display: block;
     position: relative;
-  }
-
-  .mosaic .col-big .pair {
-    max-width: 40em;
-    margin: 0 auto;
-    width: 100%;
-    overflow: auto;
-    height: 100%;
   }
 
   .mosaic .col-big img, 
@@ -90,6 +82,10 @@ layout: default
     width: 50%;
   }
 
+  .col-small .col1-2 {
+    width: 100%;
+  }
+
   .col1-2 img, 
   .col1-2 p {
     margin: 0 auto;
@@ -102,6 +98,8 @@ layout: default
     -o-background-size: cover;
     background-size: cover;
   }
+
+
 </style>
 
 <div class="clearfix splash">
@@ -196,16 +194,16 @@ layout: default
 </section>
 <section id='about' class='gray pb0 tight'>
   <h2 class='subheader center'>Awards</h2>
-  <div class='mosaic clearfix dark mt6'>
+  <div class='mosaic press clearfix mt6'>
     <div class='col-big'>
       <div class='teal section'>
         <div class='container'>
-        <div class='col1-2 vert'>
-          <img class='' src='/img/apple-logo.png' style='width: 8em' />
-        </div>
-        <div class='col1-2 vert'>
-          <p>Apple Best Apps of 2014</p>
-        </div>
+          <div class='col1-2 vert'>
+            <img class='' src='/img/apple-logo.png' style='width: 8em' />
+          </div>
+          <div class='col1-2 vert'>
+            <p>Apple Best Apps of 2014</p>
+          </div>
         </div>
       </div>
       <div class='blue section'>
@@ -233,19 +231,24 @@ layout: default
 
     <div class='col-small'>
       <div class='purple section'>
-        <div class='vert'>
+        <div class='col1-2 vert'>
           <img src='/img/webby-logo.png' />
+        </div>
+        <div class='col1-2 vert'>
           <p>Webby Award, Shopping (Handheld Devices)</p>
         </div>
       </div>
       <div class='red section'>
-        <div class='vert'>
+        <div class='col1-2 vert'>
           <img src='/img/cnn-logo.png' />
+        </div>
+        <div class='col1-2 vert'>
           <p>The CNN 10 startups</p>
         </div>
       </div>
     </div>
   </div>
+</div>
 </section>
 <section id='contact' class=''>
   <h2 class='subheader center'>
@@ -265,6 +268,6 @@ layout: default
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <script>
-  
-  
+
+
 </script>

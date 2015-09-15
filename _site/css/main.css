@@ -1263,6 +1263,17 @@ GRID
     float: none;
     margin: 0 auto; }
 
+  .mosaic.press .col-small .section .col1-2,
+  .mosaic.press .col-big .section .col1-2 {
+    width: 50%; }
+  .mosaic.press .col-small .section img, .mosaic.press .col-small .section p,
+  .mosaic.press .col-big .section img,
+  .mosaic.press .col-big .section p {
+    margin: 0 auto;
+    width: 50%;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none; }
   .mosaic .section p {
     padding: 5%;
     width: 90%; }
