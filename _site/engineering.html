@@ -218,14 +218,14 @@
   }
 
   .block {
-    overflow: auto;
+    overflow: hidden;
     width: 100%;
     background: #000;
   }
 
-  .block:hover {
-    background-color: transparent;
+  .grid .block:hover {
     border-color: #eee;
+    background: #000;
     color: #454545;
     cursor: default;
   }
@@ -357,7 +357,7 @@
 
 <section class='gray tight projects'>
   <h2 class='subheader center'>What We’re Working On</h2>
-  <div id='grid' class='grid mt6'>
+  <div id='grid' class='grid mt6 pics'>
     <ul class='center clearfix'>
       <li>
         <div class='block'>
@@ -421,7 +421,7 @@
         <a class='btn full center' href='/careers.html#open'>
           <div class='vert'>
             <p>Want to gopher the gold?</p>
-            <p class='mt2'>View open positions</p>
+            <p class='link mt2'>View open positions</p>
           </div>
         </a>
       </div>
@@ -437,6 +437,7 @@
 <script src="/js/codemirror.js"></script>
 <script src="/js/xml.js"></script>
 <script>
+  $('nav .engineering').addClass('active');
 
   var philosophy = [
     {
@@ -480,7 +481,7 @@
     myCodeMirror.setValue(philosophy[i].content)
 
     i ++; 
-  }, 6000)
+  }, 8000)
 
 
   $('.files li .remove').on('click', function(){
@@ -610,7 +611,7 @@
           </a>
         </li>
         <li>
-          <a href='/contact.html'>
+          <a href='mailto:concierge@shopspring.com'>
             Contact Us
           </a>
         </li>

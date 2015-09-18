@@ -27,6 +27,13 @@ body.show-nav {
   box-shadow:         3px 3px 5px 6px #ccc;
 }
 
+.grid .block:nth-child(-n+3), .grid li:nth-child(-n+3) {
+  margin: 18px;
+}
+
+.grid .block:nth-child(-n+2), .grid li:nth-child(-n+2) {
+  margin-top: 0;
+}
  header {
     nav {
       position: absolute;
@@ -100,6 +107,7 @@ body.show-nav {
   .sublime .files {
     display: none;
   }
+
 }
 
 @media all and (max-width: 870px) {
@@ -186,7 +194,6 @@ body.show-nav {
           img {
             width: 100%;
             height: auto;
-            top: -20%;
           }
         }
       }

@@ -18,6 +18,18 @@ header {
 
 .mosaic {
 
+  .col-small p.link {
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-bottom: 2px solid lighten($brand-color, 15%);
+    width: 7em;
+
+    
+  }
+  .col-small .btn:hover p.link {
+      border-bottom-color: #FFF; 
+    }
+
   p { 
     @include vertical-align; 
 }
@@ -45,6 +57,25 @@ header {
     img { 
       opacity: .4; 
     }
+
+
+    .col-small .section {
+      &:hover {
+        img {
+          height: 120%;
+          transform: translateX(-10%) translateY(-7em);
+        }
+      }
+    }
+
+    .col-big .section {
+      &:hover {
+          img {
+            width: 110%;
+            transform: translateY(-30%) translateX(-5%);
+          }
+      }
+    }
   }
 
   h4 {
@@ -66,8 +97,9 @@ header {
 
       img {
         width: 100%;
-        height: auto;
-        position: absolute;
+        transform: translateY(-25%);
+        transition: .42s all;
+        max-width: none;
       }
     }
 
@@ -78,6 +110,7 @@ header {
       margin-right: auto;
       margin-left: auto;
       font-size: 1.2em;
+      z-index: 100;
     }
   }
 
@@ -89,11 +122,17 @@ header {
       position: relative;
       overflow: hidden;
 
-      img { 
-        height: 100%; 
+      img {
+        height: 30em;
+        //transform: translateY(-5.3em);
+        max-height: none;
         width: auto;
         max-width: none;
         position: absolute;
+        top: 0;
+        transition: .42s all;
+
+        
       }
     }
 
@@ -102,7 +141,8 @@ header {
       width: 10em;
       margin-right: auto;
       margin-left: auto;
-      font-size: 1.2em
+      font-size: 1.2em;
+      z-index: 100;
     }
 
   }
@@ -134,7 +174,7 @@ GRID
       margin: 18px;
       float: left;
 
-      h3 { 
+      h3 {
         text-align: center;
         font-weight: 500;
         letter-spacing: .1em;
@@ -149,15 +189,26 @@ GRID
     }
   }
 
-  .block {
+.grid.pics .block:hover img {
+        height: 110%;
+        transform: translate3d(-2.5%, -5%, 0);
+      }
+
+
+.block {
     border: 3px solid #eee;
     text-align: center;
     position: relative;
     transition: background .2s, border .2s;
     float: left;
-    height: 333px;
     width: inherit;
+    height: 333px;
     color: $gray-dark;
+
+
+    img {
+      transition: .42s all;
+    }
 
     &:hover {
       background-color: $brand-color;
@@ -175,8 +226,13 @@ GRID
     }
 
     h3 {
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: .1em;
+      font-size: 1em;
+      text-transform: uppercase;
+
       @include vertical-align;
-      font-weight: 400;
       line-height: 1.2em;
     }
 

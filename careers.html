@@ -51,13 +51,19 @@ layout: default
     cursor: pointer;
   }
 
+  .openings .quiet {
+    text-transform: uppercase;
+    font-size: .75em;
+    color: #9cc1ff;
+    opacity: .5;
+  }
+
   .teams .active h3 {
     color: #FFF !important;
   }
 
   .teams .active .desc,
-  .teams .active .bottom
-  {
+  .teams .active .bottom  .btn{
     display: none;
   }
 
@@ -203,37 +209,37 @@ layout: default
   <div class='mosaic dark clearfix mt6'>
     <div class='col-small'>
       <div class='section'>
-        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_discounts.jpg'>
         <p class='vert'>
           Discounts on great products from cool brands, as well as genuinely stylish team swag
         </p>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_discounts.jpg'>
       </div>
       <div class='section'>
-        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_vacation.jpg'>
         <p class='vert'>
           Unlimited vacation days
         </p>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_vacation.jpg'>
       </div>
     </div>
 
     <div class='col-big'>
       <div class='section'>
-        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_casual.jpeg'>
         <p class='vert'>
           A well-designed and casual office that's overflowing with snacks and meals
         </p>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_casual.jpeg'>
       </div>
       <div class='section'>
-        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_equity.jpg'>
         <p class='vert'>
-          meaningful equity sharing and the resources to go after our big idea
+          Meaningful equity sharing and the resources to go after our big idea
         </p>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_equity.jpg'>
       </div>
       <div class='section'>
-        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_puppies.jpg'>
         <p class='vert'>
           Puppies!!! Also: adult dogs
         </p>
+        <img src='http://www.shopspring.com.s3.amazonaws.com/img/careers_perks_puppies.jpg'>
       </div>
     </div>
   </div>
@@ -336,7 +342,7 @@ layout: default
             </h3>
           </div>
           <p class='desc'>
-            The Brand Partnerships team ensures that Spring is overflowing with amazing brands and products. The team discovers, researches, and welcomes onboard, and is responsible for curating Spring across categories and price points.
+            The Brand Partnerships team ensures that Spring is overflowing with amazing brands and products. This team is responsible for brand discovery, research, and onboarding, and its curatorial prowess is why Spring has something great for everyone.
           </p>
           <ul class='mt2 openings'>
           </ul>
@@ -415,7 +421,7 @@ layout: default
       var department = openings[i];
       var list = $this.find('.openings');
       for( var opening in department) {
-        list.append('<li data-id="' + department[opening].id + '"><span class="col3-4">' + department[opening].title + '</span><span class="text-left caps col1-4">' + department[opening].location.city + '</span></li>');
+        list.append('<li data-id="' + department[opening].id + '"><div>' + department[opening].title + '</div><div class="text-left caps quiet">' + department[opening].location.city + '</div></li>');
       }
 
     })
@@ -463,7 +469,6 @@ layout: default
       $('.active').removeClass('active');
 
       $this.parent().parent().addClass('active');
-
     }
   });
 
