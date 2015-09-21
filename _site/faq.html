@@ -87,58 +87,7 @@
 </header>
 
 
-    <link rel='stylesheet' href='/css/animate.css'>
-
-<style>
-
-  .splash:after {
-    background: url(http://www.shopspring.com.s3.amazonaws.com/img/faq_header.jpg) #000 no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-  .qa.limit {
-    width: 52em;
-  }
-
-  .qa p {
-    width: 100%;
-    text-align: left;
-  }
-
-
-  .question { width: 100% }
-  .question:hover{
-    cursor: pointer;
-    color: #3b8fff;
-  }
-  .question:after {
-    content: '+';
-    float: right;
-    color: #ddd;
-  }
-
-  .active .question:after {
-    content: '-';
-  }
-
-  .question:hover:after {
-    color: #3b8fff;
-  }
-
-  .answer { 
-    height: 0;
-    overflow: hidden;
-    transition: all .2s;
-  }
-
-  .active .answer { 
-    height: auto;
-  }
-</style>
-
+    <div id='faq'>
 <div class="clearfix splash">
   <h1 class='center heading'>
     Frequently asked questions 
@@ -593,8 +542,7 @@
 
 </div>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</div>
 
 <script>
   $('.qa li').on('click', function(){
@@ -752,5 +700,6 @@
 
   </body>
 
+  <script type='text/javascript' src='/js/jquery-2.1.0.min.js'></script>
   <script type='text/javascript' src='/js/base.js'></script>
 </html>

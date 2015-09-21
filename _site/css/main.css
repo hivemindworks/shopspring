@@ -82,7 +82,11 @@ h3 {
   font-size: 1.5em;
   /* 24 */
   line-height: 1em;
-  /* 24 */ }
+  /* 24 */
+  text-transform: none;
+  width: 14em;
+  margin-left: auto;
+  margin-right: auto; }
 
 h4, h5, h6 {
   font-size: 1em;
@@ -433,20 +437,6 @@ header {
   position: relative;
   box-shadow: 0px 1px 1px #999;
   width: 100%;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, transparent));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
-  /* IE6-9 */
   box-shadow: none;
   position: absolute;
   top: 0; }
@@ -1169,6 +1159,491 @@ GRID
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+#about .stats {
+  padding: 6em 0em; }
+#about .stats ul {
+  width: 1010px;
+  margin: 0 auto;
+  font-weight: 500; }
+#about .stats h4,
+#about .mosaic h4 {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: .6em;
+  letter-spacing: .14em; }
+#about .stats h2 {
+  color: #FFF;
+  font-size: 3em;
+  font-weight: 700; }
+#about .vert {
+  top: 45%; }
+#about .mosaic .col-big img {
+  top: -50%; }
+@media all and (max-width: 1000px) {
+  #about .mosaic .col-big img {
+    top: 0%; } }
+#about .mosaic p {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%); }
+#about .stats li {
+  float: left;
+  text-align: center;
+  padding-right: 8em; }
+#about .stats li:last-child {
+  padding-right: 0em; }
+#about .splash:after {
+  background: url(http://www.shopspring.com.s3.amazonaws.com/img/about_header.jpg) #000 no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#brands .splash .cta {
+  color: #3B8FFF; }
+#brands .testimonial .subheader {
+  text-transform: none; }
+#brands .testimonial .heading {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%); }
+#brands .testimonial .brand {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #9BC0FF;
+  letter-spacing: .2em; }
+#brands .hide {
+  display: none; }
+#brands .wufoo select,
+#brands .wufoo textarea,
+#brands .wufoo input {
+  display: block;
+  max-width: 30em;
+  width: 100%;
+  padding: 1em;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  border: 1px solid #e1e1e1; }
+#brands .wufoo .btn {
+  width: 100%;
+  font-size: 1em;
+  margin-top: 2em;
+  border: none; }
+#brands .splash {
+  background: none; }
+#brands .splash:after {
+  background: url(http://www.shopspring.com.s3.amazonaws.com/img/brands_header.jpg) #000 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#careeers .link {
+  color: #3b8fff;
+  cursor: pointer; }
+#careeers .link:hover {
+  color: #06e; }
+#careeers .teams .active {
+  background-color: #3b8fff;
+  color: #FFF; }
+#careeers .teams .block.active:hover {
+  background-color: #3b8fff; }
+#careeers .teams .active .header,
+#careeers .teams .active .header:after {
+  background: none; }
+#careeers .teams .openings {
+  display: none; }
+#careeers .teams .active .openings {
+  display: block; }
+#careeers .openings li {
+  width: 100%;
+  margin: 0;
+  padding: 0em 2em 1.5em;
+  text-align: left;
+  color: #9cc1ff;
+  font-size: .875em; }
+#careeers .openings li:hover {
+  color: #FFF;
+  cursor: pointer; }
+#careeers .openings .quiet {
+  text-transform: uppercase;
+  font-size: .75em;
+  color: #9cc1ff;
+  opacity: .5; }
+#careeers .teams .active h3 {
+  color: #FFF !important; }
+#careeers .teams .active .desc,
+#careeers .teams .active .bottom .btn {
+  display: none; }
+#careeers .teams .block {
+  position: relative;
+  border-width: 1px;
+  overflow: scroll; }
+#careeers .teams .block:hover {
+  background-color: transparent;
+  color: #222;
+  border-color: #eee;
+  cursor: default; }
+#careeers .teams .block:hover p {
+  color: rgba(17, 17, 17, 0.6); }
+#careeers .teams .block:hover .cta {
+  color: #FFF; }
+#careeers .teams .header {
+  height: 2em;
+  margin-top: 2em; }
+#careeers .teams .block:nth-child(-n+3),
+#careeers .teams li:nth-child(-n+3) {
+  margin-top: 0; }
+#careeers .teams .block h3 {
+  line-height: 1.25em;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  width: 60%; }
+#careeers .teams .bottom {
+  font-size: .75em; }
+#careeers .disabled {
+  background: #ccc; }
+#careeers .disabled:hover {
+  background: #ccc;
+  cursor: default; }
+#careeers .teams .btn.cta {
+  padding: 1em;
+  text-transform: uppercase;
+  font-weight: 300;
+  width: 15em;
+  margin-left: -7.5em;
+  bottom: 1em; }
+#careeers #position {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: #333; }
+#careeers #position h3 {
+  width: 100%; }
+#careeers #position .btn {
+  float: none; }
+#careeers #position p {
+  text-align: left;
+  margin: 1em 0 0;
+  width: 100%; }
+#careeers #position .title {
+  margin: 0; }
+#careeers #position .description strong,
+#careeers #position .description h3 {
+  font-weight: bold;
+  margin: 2em 0 0;
+  font-size: 1.2em !important; }
+#careeers #position ul {
+  list-style-type: disc; }
+#careeers #position li {
+  margin-top: 1em; }
+#careeers .splash:after {
+  background: url(http://www.shopspring.com.s3.amazonaws.com/img/careers_header.jpg) #000 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#engineering .splash:after {
+  background: url(http://www.shopspring.com.s3.amazonaws.com/img/eng_header.jpg) #000 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+#engineering .CodeMirror {
+  height: 30em; }
+#engineering .cm-s-material .CodeMirror-gutters {
+  height: 30em !important; }
+#engineering .sublime {
+  width: 60em;
+  overflow: auto; }
+#engineering .sublime .openings {
+  height: 32.5em;
+  background: #263238;
+  display: none;
+  width: 100%;
+  color: #5A6F79; }
+#engineering .sublime .openings p {
+  color: #5A6F79; }
+#engineering .sublime::before {
+  content: '';
+  display: block;
+  position: relative;
+  height: 30px;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  background-color: #DDD; }
+#engineering .files {
+  width: 100%;
+  background: #181F23;
+  color: #333; }
+#engineering .files ul {
+  font-family: sans-serif;
+  overflow: auto;
+  font-size: .875em;
+  z-index: 100;
+  margin-bottom: -1px;
+  padding: 1em 1em 0em; }
+#engineering .files li {
+  float: left;
+  font-size: .875em;
+  padding: .5rem 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #5A6F79;
+  border-radius: 5px 5px 0 0;
+  margin-right: .25em;
+  width: 15em;
+  margin-bottom: -2px; }
+#engineering .files li:hover {
+  cursor: pointer; }
+#engineering .files li.active {
+  border-top: 1px solid #5A6F79;
+  border-right: 1px solid #5A6F79;
+  border-left: 1px solid #5A6F79;
+  color: #FFF;
+  z-index: 100;
+  position: relative;
+  background-color: #263238; }
+#engineering .content {
+  background: #263238;
+  height: 30em; }
+#engineering .CodeMirror {
+  border-top: 1px solid #5A6F79; }
+#engineering #tools li {
+  height: 3em; }
+#engineering #tools li:nth-last-child(-n+1) {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0; }
+#engineering .gopher {
+  width: 15em;
+  position: absolute;
+  bottom: 0;
+  left: 5em; }
+#engineering .projects li h3 {
+  font-weight: 400;
+  text-transform: none;
+  color: #fff; }
+#engineering .block {
+  overflow: hidden;
+  width: 100%;
+  background: #000; }
+#engineering .grid .block:hover {
+  border-color: #eee;
+  background: #000;
+  color: #454545;
+  cursor: default; }
+#engineering .grid .block img {
+  height: 100%;
+  max-width: none;
+  position: absolute;
+  opacity: .72;
+  left: 0; }
+
+#faq .splash:after {
+  background: url(http://www.shopspring.com.s3.amazonaws.com/img/faq_header.jpg) #000 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+#faq .qa.limit {
+  width: 52em; }
+#faq .qa p {
+  width: 100%;
+  text-align: left; }
+#faq .question {
+  width: 100%; }
+#faq .question:hover {
+  cursor: pointer;
+  color: #3b8fff; }
+#faq .question:after {
+  content: '+';
+  float: right;
+  color: #ddd; }
+#faq .active .question:after {
+  content: '-'; }
+#faq .question:hover:after {
+  color: #3b8fff; }
+#faq .answer {
+  height: 0;
+  overflow: hidden;
+  transition: all .2s; }
+#faq .active .answer {
+  height: auto; }
+
+#press .block {
+  height: 25em; }
+#press .block:hover img {
+  opacity: 1;
+  -webkit-filter: invert(0.5) brightness(3);
+  filter: invert(1); }
+#press .logo-small {
+  opacity: .42;
+  width: 5em;
+  margin-left: -3em;
+  position: absolute;
+  top: 25%; }
+#press .logo-med {
+  opacity: .42;
+  width: 6em;
+  margin-left: -3em;
+  position: absolute;
+  top: 25%; }
+#press .logo-long {
+  opacity: .42;
+  width: 8em;
+  margin-left: -4em;
+  position: absolute;
+  top: 25%; }
+#press .grid .block h3 {
+  text-transform: none;
+  width: 14em;
+  margin-left: auto;
+  margin-right: auto; }
+#press .mosaic.press p {
+  color: #FFF; }
+#press .mosaic .col-big .section img {
+  height: auto;
+  display: block;
+  position: relative; }
+#press .mosaic .col-big img,
+#press .mosaic .col-big p {
+  width: 50%;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none; }
+#press .mosaic .col-small .section img {
+  height: 5em;
+  transform: translateY(0);
+  width: auto;
+  position: static;
+  display: block;
+  margin: 0 auto 3em; }
+#press .container {
+  max-width: 40em;
+  margin: 0 auto;
+  height: 100%; }
+#press .col1-2 {
+  width: 50%; }
+#press .col-small .col1-2 {
+  width: 100%; }
+#press .col1-2 img,
+#press .col1-2 p {
+  margin: 0 auto; }
+#press .splash:after {
+  background: url(http://www.shopspring.com.s3.amazonaws.com/img/press_header.jpg) #000 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#privacy .splash:after {
+  background: url(http://www.shopspring.com.s3.amazonaws.com/img/privacy_header.jpg) #000 no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#team .filter .active {
+  background-color: #3b8fff;
+  color: #FFF;
+  border-color: #3b8fff; }
+#team ul.filter {
+  display: inline-block; }
+#team .filter .btn:hover {
+  background-color: #FFF;
+  color: #3b8fff; }
+#team .filter .active:hover {
+  background-color: #3b8fff;
+  color: #FFF; }
+#team .mobile.select {
+  max-width: 30em;
+  width: 100%;
+  height: 2.5em;
+  padding: 1em;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  border: 1px solid #E1E1E1; }
+#team .employee {
+  border: 1px solid #ddd;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  transition: background .2s, border .2s;
+  height: 390px; }
+#team .grid .block:nth-child(-n+3), #team .grid li:nth-child(-n+3) {
+  margin-top: 18px; }
+#team .employee .name-active, #team .employee .role, #team .employee .bio, #team .employee .quiet, #team .employee .where-you-spring {
+  display: none; }
+#team .employee.active .name-active, #team .employee.active .role, #team .employee.active .bio, #team .employee.active .quiet, #team .employee.active .where-you-spring {
+  display: block; }
+#team .employee:hover {
+  color: #3b8fff;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #fff; }
+#team .employee.active {
+  background: #3b8fff;
+  text-align: left;
+  text-transform: none;
+  color: #FFF;
+  border-color: #3b8fff;
+  padding: 1em 2em;
+  font-weight: 300; }
+#team .employee.active img, #team .employee.active .name {
+  display: none; }
+#team .employee.active .brand-block {
+  -webkit-animation-delay: .25s;
+  -moz-animation-delay: .25s; }
+#team .employee.active .bio,
+#team .employee.active .where-you-spring {
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  font-size: .875rem; }
+#team .employee.active .role {
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s; }
+#team .employee.active .name-active {
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s; }
+#team .employee.active .name-active {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 1em;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  letter-spacing: .14em; }
+#team .employee.active .role {
+  line-height: 1em;
+  margin-bottom: 2em; }
+#team .employee.active .brand-block {
+  position: absolute;
+  bottom: 1.5rem; }
+#team .employee.active .quiet {
+  color: #fff;
+  opacity: .33;
+  font-size: .875rem; }
+#team .employee.active .brand-favorite:hover {
+  text-decoration: underline; }
+#team .employee img {
+  max-width: 100%;
+  min-height: 320px;
+  padding: 1em 1em 0 1em; }
+#team .employee .name {
+  letter-spacing: .1em;
+  line-height: 4em; }
+#team .splash:after {
+  background: url(http://www.shopspring.com.s3.amazonaws.com/img/team_header.jpg) #000 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 .mobile {
   display: none; }

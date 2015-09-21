@@ -1,187 +1,8 @@
 ---
 layout: default
 ---
-<link rel='stylesheet' href='/css/animate.css'>
 
-<style>
-  h3 {
-    text-transform: none;
-    width: 14em;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .link {
-    color: #3b8fff;
-    cursor: pointer;
-  }
-
-  .link:hover {
-    color: #06e;
-  }
-
-  .teams .active {
-    background-color: #3b8fff;
-    color: #FFF;
-  }
-
-  .teams .block.active:hover {
-    background-color: #3b8fff;
-  }
-
-  .teams .active .header,
-  .teams .active .header:after {
-   background: none; 
-  }
-
-  .teams .openings { display: none; }
-  .teams .active .openings { display: block; }
-
-  .openings li { 
-    width: 100%;
-    margin: 0;
-    padding: 0em 2em 1.5em;
-    text-align: left;
-    color: #9cc1ff;
-    font-size: .875em;
-  }
-
-  .openings li:hover {
-    color: #FFF;
-    cursor: pointer;
-  }
-
-  .openings .quiet {
-    text-transform: uppercase;
-    font-size: .75em;
-    color: #9cc1ff;
-    opacity: .5;
-  }
-
-  .teams .active h3 {
-    color: #FFF !important;
-  }
-
-  .teams .active .desc,
-  .teams .active .bottom  .btn{
-    display: none;
-  }
-
-  .teams .block {
-    position: relative;
-    border-width: 1px;
-    overflow: scroll;
-  }
-
-  .teams .block:hover {
-    background-color: transparent;
-    color: #222;
-    border-color: #eee;
-    cursor: default;
-  }
-
-  .teams .block:hover p {
-    color: rgba(17, 17, 17, 0.6);
-  }
-
-  .teams .block:hover .cta {
-    color: #FFF;
-  }
-
-  .teams .header {
-    height: 2em;
-    margin-top: 2em;
-  }
-
-  .teams .block:nth-child(-n+3),
-  .teams li:nth-child(-n+3) {
-    margin-top: 0;
-  }
-
-  .teams .block h3 {
-    line-height: 1.25em;
-    font-size: 1.2em;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    width: 60%;
-  }
-
-  .teams .bottom {
-    font-size: .75em;
-  }
-
-  .disabled {
-    background: #ccc;
-  }
-
-  .disabled:hover {
-    background: #ccc;
-    cursor: default;
-  }
-
-  .teams .btn.cta {
-    padding: 1em;
-    text-transform: uppercase;
-    font-weight: 300;
-    width: 15em;
-    margin-left: -7.5em;
-    bottom: 1em;
-  }
-
-
-
-  
-  #position {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    color: #333;
-  }
-
-  #position h3 {
-    width: 100%;
-  }
-
-  #position .btn {
-    float: none;
-  }
-
-  #position p {
-    text-align: left;
-    margin: 1em 0 0;
-    width: 100%;
-  }
-
-  #position .title {
-    margin: 0;
-  }
-
-
-  #position .description strong, 
-  #position .description h3 {
-    font-weight: bold;
-    margin: 2em 0 0;
-    font-size: 1.2em !important;
-  }
-
-  #position ul {
-    list-style-type: disc;
-  }
-
-  #position li {
-    margin-top: 1em;
-  }
-  
-  .splash:after {
-    background: url(http://www.shopspring.com.s3.amazonaws.com/img/careers_header.jpg) #000 no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-</style>
-
+<div id='careers' class='subpage'>
 <div class="clearfix splash">
   <h1 class='center heading'>
     Help us build 
@@ -378,10 +199,9 @@ layout: default
 </section>
 </div>
 </div>
+</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-  $('nav .careers').addClass('active');
   var openings = {
     'product': [],
     'design': [],
@@ -480,5 +300,4 @@ layout: default
     $('#open .teams').show();
     }
   })
-
 </script>

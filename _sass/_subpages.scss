@@ -1,0 +1,729 @@
+#about {
+  h3 {
+  }
+
+  .stats {
+    padding: 6em 0em;
+  }
+
+  .stats ul {
+    width: 1010px;
+    margin: 0 auto;
+    font-weight: 500;
+  }
+
+  .stats h4,
+  .mosaic h4 {
+    color: rgba(255,255,255,.6);
+    font-size: .6em;
+    letter-spacing: .14em;
+  }
+
+  .stats h2 {
+    color: #FFF;
+    font-size: 3em;
+    font-weight: 700;
+  }
+
+  .vert {
+    top: 45%;
+  }
+
+  .mosaic .col-big img {
+    top: -50%;
+  }
+
+  @media all and (max-width: 1000px) {
+    .mosaic .col-big img {
+      top: 0%;
+    }
+  }
+
+  .mosaic p {
+    -webkit-transform: translateY(-0%);
+    transform: translateY(-0%);
+  }
+
+  .stats li {
+    float: left;
+    text-align: center;
+    padding-right: 8em;
+  }
+
+  .stats li:last-child {
+    padding-right: 0em; 
+  }
+
+  .splash:after {
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/about_header.jpg) #000 no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+#brands {
+  .splash .cta { color: #3B8FFF }
+
+  .testimonial .subheader {
+    text-transform: none;
+  }
+  
+  .testimonial .heading {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+
+  .testimonial .brand {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #9BC0FF;
+    letter-spacing: .2em;
+  }
+
+  .hide { display: none; }
+
+  .wufoo select, 
+  .wufoo textarea, 
+  .wufoo input {
+    display: block;
+    max-width: 30em;
+    width: 100%;
+    padding: 1em;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    border: 1px solid #e1e1e1;
+  }
+
+  .wufoo .btn {
+    width: 100%;
+    font-size: 1em;
+    margin-top: 2em;
+    border: none;
+  }
+
+  .splash {
+    background: none;
+  }
+
+.splash:after {
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/brands_header.jpg) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+#careeers {
+  .link {
+    color: #3b8fff;
+    cursor: pointer;
+  }
+
+  .link:hover {
+    color: #06e;
+  }
+
+  .teams .active {
+    background-color: #3b8fff;
+    color: #FFF;
+  }
+
+  .teams .block.active:hover {
+    background-color: #3b8fff;
+  }
+
+  .teams .active .header,
+  .teams .active .header:after {
+   background: none; 
+  }
+
+  .teams .openings { display: none; }
+  .teams .active .openings { display: block; }
+
+  .openings li { 
+    width: 100%;
+    margin: 0;
+    padding: 0em 2em 1.5em;
+    text-align: left;
+    color: #9cc1ff;
+    font-size: .875em;
+  }
+
+  .openings li:hover {
+    color: #FFF;
+    cursor: pointer;
+  }
+
+  .openings .quiet {
+    text-transform: uppercase;
+    font-size: .75em;
+    color: #9cc1ff;
+    opacity: .5;
+  }
+
+  .teams .active h3 {
+    color: #FFF !important;
+  }
+
+  .teams .active .desc,
+  .teams .active .bottom  .btn{
+    display: none;
+  }
+
+  .teams .block {
+    position: relative;
+    border-width: 1px;
+    overflow: scroll;
+  }
+
+  .teams .block:hover {
+    background-color: transparent;
+    color: #222;
+    border-color: #eee;
+    cursor: default;
+  }
+
+  .teams .block:hover p {
+    color: rgba(17, 17, 17, 0.6);
+  }
+
+  .teams .block:hover .cta {
+    color: #FFF;
+  }
+
+  .teams .header {
+    height: 2em;
+    margin-top: 2em;
+  }
+
+  .teams .block:nth-child(-n+3),
+  .teams li:nth-child(-n+3) {
+    margin-top: 0;
+  }
+
+  .teams .block h3 {
+    line-height: 1.25em;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    width: 60%;
+  }
+
+  .teams .bottom {
+    font-size: .75em;
+  }
+
+  .disabled {
+    background: #ccc;
+  }
+
+  .disabled:hover {
+    background: #ccc;
+    cursor: default;
+  }
+
+  .teams .btn.cta {
+    padding: 1em;
+    text-transform: uppercase;
+    font-weight: 300;
+    width: 15em;
+    margin-left: -7.5em;
+    bottom: 1em;
+  }
+
+
+
+  
+  #position {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #333;
+  }
+
+  #position h3 {
+    width: 100%;
+  }
+
+  #position .btn {
+    float: none;
+  }
+
+  #position p {
+    text-align: left;
+    margin: 1em 0 0;
+    width: 100%;
+  }
+
+  #position .title {
+    margin: 0;
+  }
+
+
+  #position .description strong, 
+  #position .description h3 {
+    font-weight: bold;
+    margin: 2em 0 0;
+    font-size: 1.2em !important;
+  }
+
+  #position ul {
+    list-style-type: disc;
+  }
+
+  #position li {
+    margin-top: 1em;
+  }
+  
+  .splash:after {
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/careers_header.jpg) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+#engineering {
+
+.splash:after {
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/eng_header.jpg) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .CodeMirror {
+    height: 30em;
+  }
+
+  .cm-s-material .CodeMirror-gutters {
+    height: 30em !important;
+  }
+
+  .sublime {
+    width: 60em;
+    overflow: auto;
+  }
+
+  .sublime .openings {
+    height: 32.5em;
+    background: #263238;
+    display: none;
+    width: 100%;
+    color: #5A6F79;
+  }
+  .sublime .openings p {
+    color: #5A6F79;
+  }
+
+  .sublime::before {
+    content: '';
+    display: block;
+    position: relative;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    background-color: #DDD;
+  }
+
+  .files {
+    width: 100%;
+    background: #181F23;
+    color: #333;
+  }
+
+  .files ul {
+    font-family: sans-serif;
+    overflow: auto;
+    font-size: .875em;
+    z-index: 100;
+    margin-bottom: -1px;
+    padding: 1em 1em 0em;
+  }
+
+  .files li {
+    float: left;
+    font-size: .875em;
+    padding: .5rem 1rem;
+    color: rgba(255,255,255,.5);
+    background-color: #5A6F79;
+    border-radius: 5px 5px 0 0;
+    margin-right: .25em;
+    width: 15em;
+    margin-bottom: -2px;
+  }
+
+  .files li:hover {
+    cursor: pointer;
+  }
+
+  .files li.active {
+    border-top: 1px solid #5A6F79;
+    border-right: 1px solid #5A6F79;
+    border-left: 1px solid #5A6F79;
+    color: #FFF;
+    z-index: 100;
+    position: relative;
+    background-color: #263238;
+  }
+
+  .content {
+    background: #263238;
+    height: 30em;
+  }
+
+  .CodeMirror {
+    border-top: 1px solid #5A6F79;
+  }
+
+  #tools li {
+    height: 3em;
+  }
+
+  #tools li:nth-last-child(-n+1) {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .gopher {
+    width: 15em;
+    position: absolute;
+    bottom: 0;
+    left: 5em;
+  }
+
+  .projects li h3 {
+    font-weight: 400;
+    text-transform: none;
+    color: #fff;
+  }
+
+  .block {
+    overflow: hidden;
+    width: 100%;
+    background: #000;
+  }
+
+  .grid .block:hover {
+    border-color: #eee;
+    background: #000;
+    color: #454545;
+    cursor: default;
+  }
+
+  .grid .block img {
+    height: 100%;
+    max-width: none;
+    position: absolute;
+    opacity: .72;
+    left: 0;
+  }
+}
+
+#faq {
+  .splash:after {
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/faq_header.jpg) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .qa.limit {
+    width: 52em;
+  }
+
+  .qa p {
+    width: 100%;
+    text-align: left;
+  }
+
+
+  .question { width: 100% }
+  .question:hover{
+    cursor: pointer;
+    color: #3b8fff;
+  }
+  .question:after {
+    content: '+';
+    float: right;
+    color: #ddd;
+  }
+
+  .active .question:after {
+    content: '-';
+  }
+
+  .question:hover:after {
+    color: #3b8fff;
+  }
+
+  .answer { 
+    height: 0;
+    overflow: hidden;
+    transition: all .2s;
+  }
+
+  .active .answer { 
+    height: auto;
+  }
+}
+
+#press {
+  .block {
+    height: 25em;
+  }
+
+  .block:hover img {
+    opacity: 1;
+    -webkit-filter: invert(.5) brightness(3);
+    filter: invert(1);
+  }
+
+  .logo-small {
+    opacity: .42;
+    width: 5em;
+    margin-left: -3em;
+    position: absolute;
+    top: 25%;
+  }
+
+  .logo-med {
+    opacity: .42;
+    width: 6em;
+    margin-left: -3em;
+    position: absolute;
+    top: 25%;
+  }
+
+  .logo-long {
+    opacity: .42;
+    width: 8em;
+    margin-left: -4em;
+    position: absolute;
+    top: 25%;
+  }
+
+  .grid .block h3 {
+    text-transform: none;
+    width: 14em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mosaic.press p {
+    color: #FFF;
+  }
+
+  .mosaic .col-big .section img {
+    height: auto;
+    display: block;
+    position: relative;
+  }
+
+  .mosaic .col-big img, 
+  .mosaic .col-big p {
+    width: 50%;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+
+  .mosaic .col-small .section img {
+    height: 5em;
+    transform: translateY(0);
+    width: auto;
+    position: static;
+    display: block;
+    margin: 0 auto 3em;
+  }
+
+  .container {
+    max-width: 40em;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .col1-2 {
+    width: 50%;
+  }
+
+  .col-small .col1-2 {
+    width: 100%;
+  }
+
+  .col1-2 img, 
+  .col1-2 p {
+    margin: 0 auto;
+  }
+
+  .splash:after {
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/press_header.jpg) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+#privacy {
+.splash:after {
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/privacy_header.jpg) #000 no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+#team {
+  .filter .active {
+    background-color: #3b8fff;
+    color: #FFF;
+    border-color: #3b8fff;
+  }
+
+  ul.filter {
+    display: inline-block;
+  }
+
+  .filter .btn:hover {
+    background-color: #FFF;
+    color: #3b8fff;
+  }
+
+  .filter .active:hover {
+    background-color: #3b8fff;
+    color: #FFF;
+  }
+
+  .mobile.select {
+    max-width: 30em;
+    width: 100%;
+    height: 2.5em;
+    padding: 1em;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    border: 1px solid #E1E1E1;
+  }
+
+  .employee {
+    border: 1px solid #ddd;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: background .2s, border .2s;
+    height: 390px;
+  }
+
+  .grid .block:nth-child(-n+3), .grid li:nth-child(-n+3) {
+      margin-top: 18px;
+    }
+
+  .employee .name-active, .employee .role, .employee .bio, .employee .quiet, .employee .where-you-spring { display: none; }
+  .employee.active .name-active, .employee.active .role, .employee.active .bio, .employee.active .quiet, .employee.active .where-you-spring { display: block; }
+
+  .employee:hover {
+    color: #3b8fff;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #fff;
+  }
+
+  .employee.active {
+    background: #3b8fff;
+    text-align: left;
+    text-transform: none;
+    color: #FFF;
+    border-color: #3b8fff;
+    padding: 1em 2em;
+    font-weight: 300;
+  }
+
+  .employee.active img, .employee.active .name {
+    display: none;
+  }
+
+  .employee.active .brand-block {
+    -webkit-animation-delay: .25s;
+  -moz-animation-delay: .25s; }
+
+  .employee.active .bio,
+  .employee.active .where-you-spring {
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s; 
+    font-size: .875rem;
+  }
+
+  .employee.active .role {
+    -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s; }
+
+  .employee.active .name-active {
+    -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s; }
+
+  .employee.active .name-active {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2em;
+    line-height: 1em;
+    margin-top: 1em;
+    margin-bottom: .5em;
+    letter-spacing: .14em;
+  }
+
+  .employee.active .role {
+    line-height: 1em;
+    margin-bottom: 2em;
+  }
+
+  .employee.active .bio {
+  }
+
+  .employee.active .brand-block {
+    position: absolute;
+    bottom: 1.5rem;
+  }
+  .employee.active .quiet {
+    color: #fff;
+    opacity: .33;
+    font-size: .875rem;
+  }
+
+  .employee.active .brand-favorite:hover {
+    text-decoration: underline;
+  }
+
+  .employee img {
+    max-width: 100%;
+    min-height: 320px;
+    padding: 1em 1em 0 1em;
+  }
+
+  .employee .name {
+    letter-spacing: .1em;
+    line-height: 4em;
+  }
+
+  .splash:after {
+    background: url(http://www.shopspring.com.s3.amazonaws.com/img/team_header.jpg) #000 no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+}

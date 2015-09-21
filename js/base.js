@@ -8,3 +8,8 @@ $('.mobile.btn').on('click', function(){
     $('body').addClass('show-nav')
   }
 })
+
+//underline on active nav link
+var subpage = $('.subpage')[0].id;
+$('nav .' + subpage).addClass('active');
+console.log(subpage);
